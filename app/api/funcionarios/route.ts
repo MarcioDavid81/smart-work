@@ -16,3 +16,32 @@ export async function GET() {
     );
   }
 }
+
+export async function POST(req: Request) {
+  try {
+    const body = await req.json();
+
+    const colaborador = await db.employee.create({
+      data: {
+        name: body.name,
+        adress: body.adress,
+        city: body.city,
+        email: body.email,
+        phone: body.phone,
+        birthDate: new Date(body.birthDate),
+        admission: new Date(body.admission),
+        cpf: body.cpf,
+        rg: body.rg,
+        employer: body.employer,
+        department: body.department,
+        function: body.function,
+        status: body.status,
+      },
+    });
+
+    return NextResponse.json(colaborador, { status: 201 });
+  } catch (error) {
+    console.error('Erro ao cadastrar colaborador:', error);
+    return NextResponse.json({ message: 'Erro ao cadastrar' }, { status: 500 });
+  }
+}
