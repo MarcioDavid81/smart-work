@@ -140,10 +140,9 @@ exports.Prisma.EpiScalarFieldEnum = {
   id: 'id',
   name: 'name',
   description: 'description',
-  type: 'type',
-  brand: 'brand',
-  model: 'model',
-  size: 'size',
+  certification: 'certification',
+  supplier: 'supplier',
+  expiration: 'expiration',
   quantity: 'quantity',
   createdAt: 'createdAt',
   updatedAt: 'updatedAt'

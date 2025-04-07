@@ -2695,10 +2695,9 @@ export namespace Prisma {
     id: number | null
     name: string | null
     description: string | null
-    type: string | null
-    brand: string | null
-    model: string | null
-    size: string | null
+    certification: string | null
+    supplier: string | null
+    expiration: Date | null
     quantity: number | null
     createdAt: Date | null
     updatedAt: Date | null
@@ -2708,10 +2707,9 @@ export namespace Prisma {
     id: number | null
     name: string | null
     description: string | null
-    type: string | null
-    brand: string | null
-    model: string | null
-    size: string | null
+    certification: string | null
+    supplier: string | null
+    expiration: Date | null
     quantity: number | null
     createdAt: Date | null
     updatedAt: Date | null
@@ -2721,10 +2719,9 @@ export namespace Prisma {
     id: number
     name: number
     description: number
-    type: number
-    brand: number
-    model: number
-    size: number
+    certification: number
+    supplier: number
+    expiration: number
     quantity: number
     createdAt: number
     updatedAt: number
@@ -2746,10 +2743,9 @@ export namespace Prisma {
     id?: true
     name?: true
     description?: true
-    type?: true
-    brand?: true
-    model?: true
-    size?: true
+    certification?: true
+    supplier?: true
+    expiration?: true
     quantity?: true
     createdAt?: true
     updatedAt?: true
@@ -2759,10 +2755,9 @@ export namespace Prisma {
     id?: true
     name?: true
     description?: true
-    type?: true
-    brand?: true
-    model?: true
-    size?: true
+    certification?: true
+    supplier?: true
+    expiration?: true
     quantity?: true
     createdAt?: true
     updatedAt?: true
@@ -2772,10 +2767,9 @@ export namespace Prisma {
     id?: true
     name?: true
     description?: true
-    type?: true
-    brand?: true
-    model?: true
-    size?: true
+    certification?: true
+    supplier?: true
+    expiration?: true
     quantity?: true
     createdAt?: true
     updatedAt?: true
@@ -2872,10 +2866,9 @@ export namespace Prisma {
     id: number
     name: string
     description: string
-    type: string
-    brand: string
-    model: string
-    size: string
+    certification: string
+    supplier: string
+    expiration: Date
     quantity: number
     createdAt: Date
     updatedAt: Date
@@ -2904,10 +2897,9 @@ export namespace Prisma {
     id?: boolean
     name?: boolean
     description?: boolean
-    type?: boolean
-    brand?: boolean
-    model?: boolean
-    size?: boolean
+    certification?: boolean
+    supplier?: boolean
+    expiration?: boolean
     quantity?: boolean
     createdAt?: boolean
     updatedAt?: boolean
@@ -2919,10 +2911,9 @@ export namespace Prisma {
     id?: boolean
     name?: boolean
     description?: boolean
-    type?: boolean
-    brand?: boolean
-    model?: boolean
-    size?: boolean
+    certification?: boolean
+    supplier?: boolean
+    expiration?: boolean
     quantity?: boolean
     createdAt?: boolean
     updatedAt?: boolean
@@ -2932,10 +2923,9 @@ export namespace Prisma {
     id?: boolean
     name?: boolean
     description?: boolean
-    type?: boolean
-    brand?: boolean
-    model?: boolean
-    size?: boolean
+    certification?: boolean
+    supplier?: boolean
+    expiration?: boolean
     quantity?: boolean
     createdAt?: boolean
     updatedAt?: boolean
@@ -2945,16 +2935,15 @@ export namespace Prisma {
     id?: boolean
     name?: boolean
     description?: boolean
-    type?: boolean
-    brand?: boolean
-    model?: boolean
-    size?: boolean
+    certification?: boolean
+    supplier?: boolean
+    expiration?: boolean
     quantity?: boolean
     createdAt?: boolean
     updatedAt?: boolean
   }
 
-  export type EpiOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "name" | "description" | "type" | "brand" | "model" | "size" | "quantity" | "createdAt" | "updatedAt", ExtArgs["result"]["epi"]>
+  export type EpiOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "name" | "description" | "certification" | "supplier" | "expiration" | "quantity" | "createdAt" | "updatedAt", ExtArgs["result"]["epi"]>
   export type EpiInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     employees?: boolean | Epi$employeesArgs<ExtArgs>
     _count?: boolean | EpiCountOutputTypeDefaultArgs<ExtArgs>
@@ -2971,10 +2960,9 @@ export namespace Prisma {
       id: number
       name: string
       description: string
-      type: string
-      brand: string
-      model: string
-      size: string
+      certification: string
+      supplier: string
+      expiration: Date
       quantity: number
       createdAt: Date
       updatedAt: Date
@@ -3405,10 +3393,9 @@ export namespace Prisma {
     readonly id: FieldRef<"Epi", 'Int'>
     readonly name: FieldRef<"Epi", 'String'>
     readonly description: FieldRef<"Epi", 'String'>
-    readonly type: FieldRef<"Epi", 'String'>
-    readonly brand: FieldRef<"Epi", 'String'>
-    readonly model: FieldRef<"Epi", 'String'>
-    readonly size: FieldRef<"Epi", 'String'>
+    readonly certification: FieldRef<"Epi", 'String'>
+    readonly supplier: FieldRef<"Epi", 'String'>
+    readonly expiration: FieldRef<"Epi", 'DateTime'>
     readonly quantity: FieldRef<"Epi", 'Int'>
     readonly createdAt: FieldRef<"Epi", 'DateTime'>
     readonly updatedAt: FieldRef<"Epi", 'DateTime'>
@@ -7215,10 +7202,9 @@ export namespace Prisma {
     id: 'id',
     name: 'name',
     description: 'description',
-    type: 'type',
-    brand: 'brand',
-    model: 'model',
-    size: 'size',
+    certification: 'certification',
+    supplier: 'supplier',
+    expiration: 'expiration',
     quantity: 'quantity',
     createdAt: 'createdAt',
     updatedAt: 'updatedAt'
@@ -7519,10 +7505,9 @@ export namespace Prisma {
     id?: IntFilter<"Epi"> | number
     name?: StringFilter<"Epi"> | string
     description?: StringFilter<"Epi"> | string
-    type?: StringFilter<"Epi"> | string
-    brand?: StringFilter<"Epi"> | string
-    model?: StringFilter<"Epi"> | string
-    size?: StringFilter<"Epi"> | string
+    certification?: StringFilter<"Epi"> | string
+    supplier?: StringFilter<"Epi"> | string
+    expiration?: DateTimeFilter<"Epi"> | Date | string
     quantity?: IntFilter<"Epi"> | number
     createdAt?: DateTimeFilter<"Epi"> | Date | string
     updatedAt?: DateTimeFilter<"Epi"> | Date | string
@@ -7533,10 +7518,9 @@ export namespace Prisma {
     id?: SortOrder
     name?: SortOrder
     description?: SortOrder
-    type?: SortOrder
-    brand?: SortOrder
-    model?: SortOrder
-    size?: SortOrder
+    certification?: SortOrder
+    supplier?: SortOrder
+    expiration?: SortOrder
     quantity?: SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
@@ -7550,10 +7534,9 @@ export namespace Prisma {
     NOT?: EpiWhereInput | EpiWhereInput[]
     name?: StringFilter<"Epi"> | string
     description?: StringFilter<"Epi"> | string
-    type?: StringFilter<"Epi"> | string
-    brand?: StringFilter<"Epi"> | string
-    model?: StringFilter<"Epi"> | string
-    size?: StringFilter<"Epi"> | string
+    certification?: StringFilter<"Epi"> | string
+    supplier?: StringFilter<"Epi"> | string
+    expiration?: DateTimeFilter<"Epi"> | Date | string
     quantity?: IntFilter<"Epi"> | number
     createdAt?: DateTimeFilter<"Epi"> | Date | string
     updatedAt?: DateTimeFilter<"Epi"> | Date | string
@@ -7564,10 +7547,9 @@ export namespace Prisma {
     id?: SortOrder
     name?: SortOrder
     description?: SortOrder
-    type?: SortOrder
-    brand?: SortOrder
-    model?: SortOrder
-    size?: SortOrder
+    certification?: SortOrder
+    supplier?: SortOrder
+    expiration?: SortOrder
     quantity?: SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
@@ -7585,10 +7567,9 @@ export namespace Prisma {
     id?: IntWithAggregatesFilter<"Epi"> | number
     name?: StringWithAggregatesFilter<"Epi"> | string
     description?: StringWithAggregatesFilter<"Epi"> | string
-    type?: StringWithAggregatesFilter<"Epi"> | string
-    brand?: StringWithAggregatesFilter<"Epi"> | string
-    model?: StringWithAggregatesFilter<"Epi"> | string
-    size?: StringWithAggregatesFilter<"Epi"> | string
+    certification?: StringWithAggregatesFilter<"Epi"> | string
+    supplier?: StringWithAggregatesFilter<"Epi"> | string
+    expiration?: DateTimeWithAggregatesFilter<"Epi"> | Date | string
     quantity?: IntWithAggregatesFilter<"Epi"> | number
     createdAt?: DateTimeWithAggregatesFilter<"Epi"> | Date | string
     updatedAt?: DateTimeWithAggregatesFilter<"Epi"> | Date | string
@@ -7917,10 +7898,9 @@ export namespace Prisma {
   export type EpiCreateInput = {
     name: string
     description: string
-    type: string
-    brand: string
-    model: string
-    size: string
+    certification: string
+    supplier: string
+    expiration: Date | string
     quantity: number
     createdAt?: Date | string
     updatedAt?: Date | string
@@ -7931,10 +7911,9 @@ export namespace Prisma {
     id?: number
     name: string
     description: string
-    type: string
-    brand: string
-    model: string
-    size: string
+    certification: string
+    supplier: string
+    expiration: Date | string
     quantity: number
     createdAt?: Date | string
     updatedAt?: Date | string
@@ -7944,10 +7923,9 @@ export namespace Prisma {
   export type EpiUpdateInput = {
     name?: StringFieldUpdateOperationsInput | string
     description?: StringFieldUpdateOperationsInput | string
-    type?: StringFieldUpdateOperationsInput | string
-    brand?: StringFieldUpdateOperationsInput | string
-    model?: StringFieldUpdateOperationsInput | string
-    size?: StringFieldUpdateOperationsInput | string
+    certification?: StringFieldUpdateOperationsInput | string
+    supplier?: StringFieldUpdateOperationsInput | string
+    expiration?: DateTimeFieldUpdateOperationsInput | Date | string
     quantity?: IntFieldUpdateOperationsInput | number
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -7958,10 +7936,9 @@ export namespace Prisma {
     id?: IntFieldUpdateOperationsInput | number
     name?: StringFieldUpdateOperationsInput | string
     description?: StringFieldUpdateOperationsInput | string
-    type?: StringFieldUpdateOperationsInput | string
-    brand?: StringFieldUpdateOperationsInput | string
-    model?: StringFieldUpdateOperationsInput | string
-    size?: StringFieldUpdateOperationsInput | string
+    certification?: StringFieldUpdateOperationsInput | string
+    supplier?: StringFieldUpdateOperationsInput | string
+    expiration?: DateTimeFieldUpdateOperationsInput | Date | string
     quantity?: IntFieldUpdateOperationsInput | number
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -7972,10 +7949,9 @@ export namespace Prisma {
     id?: number
     name: string
     description: string
-    type: string
-    brand: string
-    model: string
-    size: string
+    certification: string
+    supplier: string
+    expiration: Date | string
     quantity: number
     createdAt?: Date | string
     updatedAt?: Date | string
@@ -7984,10 +7960,9 @@ export namespace Prisma {
   export type EpiUpdateManyMutationInput = {
     name?: StringFieldUpdateOperationsInput | string
     description?: StringFieldUpdateOperationsInput | string
-    type?: StringFieldUpdateOperationsInput | string
-    brand?: StringFieldUpdateOperationsInput | string
-    model?: StringFieldUpdateOperationsInput | string
-    size?: StringFieldUpdateOperationsInput | string
+    certification?: StringFieldUpdateOperationsInput | string
+    supplier?: StringFieldUpdateOperationsInput | string
+    expiration?: DateTimeFieldUpdateOperationsInput | Date | string
     quantity?: IntFieldUpdateOperationsInput | number
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -7997,10 +7972,9 @@ export namespace Prisma {
     id?: IntFieldUpdateOperationsInput | number
     name?: StringFieldUpdateOperationsInput | string
     description?: StringFieldUpdateOperationsInput | string
-    type?: StringFieldUpdateOperationsInput | string
-    brand?: StringFieldUpdateOperationsInput | string
-    model?: StringFieldUpdateOperationsInput | string
-    size?: StringFieldUpdateOperationsInput | string
+    certification?: StringFieldUpdateOperationsInput | string
+    supplier?: StringFieldUpdateOperationsInput | string
+    expiration?: DateTimeFieldUpdateOperationsInput | Date | string
     quantity?: IntFieldUpdateOperationsInput | number
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -8414,10 +8388,9 @@ export namespace Prisma {
     id?: SortOrder
     name?: SortOrder
     description?: SortOrder
-    type?: SortOrder
-    brand?: SortOrder
-    model?: SortOrder
-    size?: SortOrder
+    certification?: SortOrder
+    supplier?: SortOrder
+    expiration?: SortOrder
     quantity?: SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
@@ -8432,10 +8405,9 @@ export namespace Prisma {
     id?: SortOrder
     name?: SortOrder
     description?: SortOrder
-    type?: SortOrder
-    brand?: SortOrder
-    model?: SortOrder
-    size?: SortOrder
+    certification?: SortOrder
+    supplier?: SortOrder
+    expiration?: SortOrder
     quantity?: SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
@@ -8445,10 +8417,9 @@ export namespace Prisma {
     id?: SortOrder
     name?: SortOrder
     description?: SortOrder
-    type?: SortOrder
-    brand?: SortOrder
-    model?: SortOrder
-    size?: SortOrder
+    certification?: SortOrder
+    supplier?: SortOrder
+    expiration?: SortOrder
     quantity?: SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
@@ -9185,10 +9156,9 @@ export namespace Prisma {
   export type EpiCreateWithoutEmployeesInput = {
     name: string
     description: string
-    type: string
-    brand: string
-    model: string
-    size: string
+    certification: string
+    supplier: string
+    expiration: Date | string
     quantity: number
     createdAt?: Date | string
     updatedAt?: Date | string
@@ -9198,10 +9168,9 @@ export namespace Prisma {
     id?: number
     name: string
     description: string
-    type: string
-    brand: string
-    model: string
-    size: string
+    certification: string
+    supplier: string
+    expiration: Date | string
     quantity: number
     createdAt?: Date | string
     updatedAt?: Date | string
@@ -9276,10 +9245,9 @@ export namespace Prisma {
   export type EpiUpdateWithoutEmployeesInput = {
     name?: StringFieldUpdateOperationsInput | string
     description?: StringFieldUpdateOperationsInput | string
-    type?: StringFieldUpdateOperationsInput | string
-    brand?: StringFieldUpdateOperationsInput | string
-    model?: StringFieldUpdateOperationsInput | string
-    size?: StringFieldUpdateOperationsInput | string
+    certification?: StringFieldUpdateOperationsInput | string
+    supplier?: StringFieldUpdateOperationsInput | string
+    expiration?: DateTimeFieldUpdateOperationsInput | Date | string
     quantity?: IntFieldUpdateOperationsInput | number
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -9289,10 +9257,9 @@ export namespace Prisma {
     id?: IntFieldUpdateOperationsInput | number
     name?: StringFieldUpdateOperationsInput | string
     description?: StringFieldUpdateOperationsInput | string
-    type?: StringFieldUpdateOperationsInput | string
-    brand?: StringFieldUpdateOperationsInput | string
-    model?: StringFieldUpdateOperationsInput | string
-    size?: StringFieldUpdateOperationsInput | string
+    certification?: StringFieldUpdateOperationsInput | string
+    supplier?: StringFieldUpdateOperationsInput | string
+    expiration?: DateTimeFieldUpdateOperationsInput | Date | string
     quantity?: IntFieldUpdateOperationsInput | number
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
