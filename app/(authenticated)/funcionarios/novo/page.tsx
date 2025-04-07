@@ -16,8 +16,8 @@ export default function NewEmployeePage() {
           {/* Botão para retornar para a lista de funcionários */}
           <Link href="/funcionarios">
             <Button
-              variant="outline"
-              className="bg-white text-gray-800 hover:bg-gray-100 border-gray-300 shadow-sm rounded-lg px-4 py-2 flex items-center gap-2"
+              variant="default"
+              className="bg-[#78b49a] text-white hover:bg-[#78b49a]/80 border-gray-300 shadow-sm rounded-lg px-4 py-2 flex items-center gap-2"
             >
               <GrReturn className="h-4 w-4" aria-hidden="true" />
               Voltar

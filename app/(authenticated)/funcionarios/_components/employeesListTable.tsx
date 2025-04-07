@@ -11,6 +11,11 @@ import {
   TooltipTrigger,
 } from "@/components/ui/tooltip";
 import { EditEmployeeModal } from "./editEmployeeModal";
+import { GenerateReportModal, ReportFilters } from "./generateReportModal";
+import { Button } from "@/components/ui/button";
+import { generateEmployeeReport } from "@/lib/pdfGenerator";
+import { Label } from "@/components/ui/label";
+import { Switch } from "@/components/ui/switch";
 
 interface Employee {
   id: number;
@@ -31,6 +36,12 @@ export default function EmployeesListTable() {
   const [search, setSearch] = useState("");
   const [loading, setLoading] = useState(true);
   const itemsPerPage = 9;
+  const [isReportModalOpen, setIsReportModalOpen] = useState(false);
+  const [showOnlyActive, setShowOnlyActive] = useState(true);
+
+  function handleGenerateReport(filters: ReportFilters) {
+    generateEmployeeReport(filters);
+  }
 
   async function fetchEmployees() {
     try {
@@ -43,7 +54,7 @@ export default function EmployeesListTable() {
       setLoading(false);
     }
   }
-  
+
   useEffect(() => {
     fetchEmployees();
   }, []);
@@ -58,8 +69,10 @@ export default function EmployeesListTable() {
     setSelectedEmployee(null);
   }
 
-  const filteredEmployees = employees.filter((emp) =>
-    emp.name.toLowerCase().includes(search.toLowerCase())
+  const filteredEmployees = employees.filter(
+    (emp) =>
+      emp.name.toLowerCase().includes(search.toLowerCase()) &&
+      (showOnlyActive ? emp.status === "Ativo" : true)
   );
 
   const totalPages = Math.ceil(filteredEmployees.length / itemsPerPage);
@@ -72,6 +85,14 @@ export default function EmployeesListTable() {
     <div className="bg-white rounded-xl shadow-md p-6">
       <div className="flex justify-between items-center mb-4">
         <h2 className="text-xl font-bold">Funcionários Cadastrados</h2>
+        <div className="flex items-center gap-2 mb-4">
+            <Label htmlFor="status-switch">{showOnlyActive ? "Ativos" : "Todos"}</Label>
+            <Switch
+              id="status-switch"
+              checked={showOnlyActive}
+              onCheckedChange={(checked) => setShowOnlyActive(checked)}
+            />
+          </div>
         <Input
           type="text"
           placeholder="Buscar por nome..."
@@ -138,29 +159,36 @@ export default function EmployeesListTable() {
               ))}
             </tbody>
           </table>
-          
-
-          <div className="flex justify-center mt-4 gap-2">
-            {Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => (
-              <button
-                key={page}
-                onClick={() => setCurrentPage(page)}
-                className={`px-3 py-1 rounded-full text-sm ${
-                  currentPage === page
-                    ? "bg-[#78b49a] text-white"
-                    : "bg-gray-200 text-gray-700"
-                }`}
-              >
-                {page}
-              </button>
-            ))}
+          <div className="flex justify-between mt-4">
+          <div><Button className="bg-[#78b49a] text-white hover:bg-[#78b49a]/80" onClick={() => setIsReportModalOpen(true)}>Gerar Relatório</Button></div>
+            <div className="flex items-center space-x-2">
+              {Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => (
+                <button
+                  key={page}
+                  onClick={() => setCurrentPage(page)}
+                  className={`px-3 py-1 rounded-full text-sm ${
+                    currentPage === page
+                      ? "bg-[#78b49a] text-white hover:bg-[#78b49a]/80"
+                      : "bg-gray-200 text-gray-700"
+                  }`}
+                >
+                  {page}
+                </button>
+              ))}
+            </div>
           </div>
+          {/* Modais */}
+          <GenerateReportModal
+            isOpen={isReportModalOpen}
+            onClose={() => setIsReportModalOpen(false)}
+            onGenerate={handleGenerateReport}
+          />
           <EditEmployeeModal
             isOpen={isEditModalOpen}
             onClose={handleCloseEditModal}
             employee={selectedEmployee}
             onUpdate={fetchEmployees}
-          />          
+          />
         </>
       )}
     </div>

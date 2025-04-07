@@ -1,17 +1,34 @@
-import { NextResponse } from 'next/server';
+import { NextRequest, NextResponse } from 'next/server';
 import { db } from '@/lib/prisma';
+import { Department, Employer } from '@/generated/prisma';
 
-export async function GET() {
+
+export async function GET(req: NextRequest) {
   try {
+    const { searchParams } = new URL(req.url);
+
+    const employer = searchParams.get("employer") as Employer | null;
+    const department = searchParams.get("department") as Department | null;
+    const admissionDate = searchParams.get("admissionDate");
+
     const colaboradores = await db.employee.findMany({
-      orderBy: { name: 'asc' }, // opcional: ordena por nome
+      where: {
+        ...(employer && { employer: employer as Employer }),
+        ...(department && { department: department as Department }),
+        ...(admissionDate && {
+          admission: {
+            gte: new Date(admissionDate),
+          },
+        }),
+      },
+      orderBy: { name: "asc" },
     });
 
     return NextResponse.json(colaboradores);
   } catch (error) {
-    console.error('Erro ao buscar colaboradores:', error);
+    console.error("Erro ao buscar colaboradores:", error);
     return NextResponse.json(
-      { message: 'Erro ao buscar colaboradores' },
+      { message: "Erro ao buscar colaboradores" },
       { status: 500 }
     );
   }

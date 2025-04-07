@@ -66,7 +66,7 @@ export function EditEmployeeModal({ isOpen, onClose, employee, onUpdate }: any) 
             <option value="Inativo">Inativo</option>
           </select>
 
-          <Button type="submit" disabled={loading}>
+          <Button className="bg-[#78b49a] text-white hover:bg-[#78b49a]/80" type="submit" disabled={loading}>
             {loading ? "Salvando..." : "Salvar Alterações"}
           </Button>
         </form>

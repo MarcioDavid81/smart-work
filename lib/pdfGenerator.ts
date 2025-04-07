@@ -1,0 +1,127 @@
+import jsPDF from "jspdf";
+import autoTable from "jspdf-autotable";
+import { toZonedTime, format, formatInTimeZone } from "date-fns-tz";
+
+interface Employee {
+  name: string;
+  phone: string;
+  department: string;
+  employer: string;
+  admission: string;
+  status: string;
+}
+
+interface ReportFilters {
+  employer?: string;
+  department?: string;
+  admissionDate?: string;
+}
+
+export async function generateEmployeeReport(filters: ReportFilters) {
+  const timeZone = "America/Sao_Paulo"; // Fuso horário do Brasil
+
+  try {
+    // 1. Buscar os dados com filtros
+    const query = new URLSearchParams(filters as any).toString();
+    const res = await fetch(`/api/funcionarios?${query}`);
+
+    if (!res.ok) throw new Error("Erro ao buscar funcionários");
+    const employees: Employee[] = await res.json();
+
+    // 2. Criar documento
+    const doc = new jsPDF();
+
+    // 3. Carregar logotipo (base64)
+    const logo = await fetch("/logo.png").then(res => res.blob());
+    const reader = new FileReader();
+
+    reader.onloadend = () => {
+      const logoBase64 = reader.result as string;
+
+      // 4. Adicionar logotipo
+      doc.addImage(logoBase64, "PNG", 14, 10, 30, 15); // x, y, largura, altura
+
+      // 5. Título
+      doc.setFontSize(16);
+      doc.text("Relatório de Funcionários", 105, 20, { align: "center" });
+
+      // 6. Filtros aplicados
+      let y = 32;
+      doc.setFontSize(10);
+      doc.setTextColor(100);
+      doc.text("Filtrado por:", 14, y);
+      y += 6;
+
+      if (filters.employer) {
+        doc.text(`• Empregador: ${filters.employer}`, 14, y);
+        y += 6;
+      }
+      if (filters.department) {
+        doc.text(`• Setor: ${filters.department}`, 14, y);
+        y += 6;
+      }
+      if (filters.admissionDate) {
+        const formattedFilterDate = formatInTimeZone(
+          filters.admissionDate,
+          timeZone,
+          "dd/MM/yyyy"
+        );
+        doc.text(`• Admissão após: ${formattedFilterDate}`, 14, y);
+        y += 6;
+      }
+
+      // 7. Tabela
+      autoTable(doc, {
+        startY: y + 4,
+        head: [["Nome", "Telefone", "Setor", "Empregador", "Admissão", "Status"]],
+        body: employees.map((emp) => {
+          const zoned = toZonedTime(emp.admission, timeZone);
+          const formattedDate = format(zoned, "dd/MM/yyyy", { timeZone });
+
+          return [
+            emp.name,
+            emp.phone,
+            emp.department,
+            emp.employer,
+            formattedDate,
+            emp.status,
+          ];
+        }),
+        styles: {
+          fontSize: 10,
+        },
+        headStyles: {
+          fillColor: [120, 180, 154],
+        },
+        didDrawPage: (data) => {
+          // Rodapé
+          const pageSize = doc.internal.pageSize;
+          const pageHeight = pageSize.height || pageSize.getHeight();
+          const pageNumber = doc.internal.getCurrentPageInfo().pageNumber;
+          const totalPages = doc.internal.getNumberOfPages();
+
+          doc.setFontSize(10);
+          doc.setTextColor(150);
+          doc.text(
+            `Página ${pageNumber} de ${totalPages}`,
+            data.settings.margin.left,
+            pageHeight - 10
+          );
+
+          const date = format(new Date(), "dd/MM/yyyy", { timeZone });
+          doc.text(`Gerado em: ${date} - Sistema Smart Work`, 150, pageHeight - 10, {
+            align: "right",
+          });
+        },
+      });
+
+      // 8. Salvar
+      doc.save("relatorio-funcionarios.pdf");
+    };
+
+    reader.readAsDataURL(logo);
+  } catch (error) {
+    console.error("Erro ao gerar relatório:", error);
+    alert("Erro ao gerar o relatório.");
+  }
+}

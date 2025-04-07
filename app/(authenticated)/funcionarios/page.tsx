@@ -1,11 +1,11 @@
 "use client";
 
-import { Button } from "@/components/ui/button";
 import Sidebar from "../_components/Sidebar";
 import CreateEmployeeButton from "./_components/createEmployee";
 import EmployeesListTable from "./_components/employeesListTable";
 
 const Funcionarios = () => {
+
   return (
     <div className="min-h-screen flex bg-gray-50">
       <Sidebar />
