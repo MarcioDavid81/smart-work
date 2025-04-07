@@ -53,8 +53,12 @@ export default function EmployeeForm() {
   }
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+    function ajustarFusoHorario(data: string) {
+      return new Date(`${data}T12:00:00Z`).toISOString();
+    }
+
     e.preventDefault();
-    setIsSubmitting(true); // Disable the button to prevent multiple submissions
+    setIsSubmitting(true);
     function resetForm() {
       setFormData({
         name: "",
@@ -78,6 +82,8 @@ export default function EmployeeForm() {
       phone: cleanField(formData.phone),
       cpf: cleanField(formData.cpf),
       rg: cleanField(formData.rg),
+      birthDate: ajustarFusoHorario(formData.birthDate),
+      admission: ajustarFusoHorario(formData.admission),
     };
 
     try {
@@ -116,90 +122,124 @@ export default function EmployeeForm() {
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.4 }}
     >
-      <input
-        type="text"
-        name="name"
-        placeholder="Nome"
-        value={formData.name}
-        onChange={handleChange}
-        required
-        className="px-4 border border-gray-300 rounded-md focus:outline-none focus:ring-1 focus:ring-[#78b49a]"
-      />
-      <input
-        type="text"
-        name="adress"
-        placeholder="Endereço"
-        value={formData.adress}
-        onChange={handleChange}
-        required
-        className="px-4 border border-gray-300 rounded-md focus:outline-none focus:ring-1 focus:ring-[#78b49a]"
-      />
-      <input
-        type="text"
-        name="city"
-        placeholder="Cidade"
-        value={formData.city}
-        onChange={handleChange}
-        required
-        className="px-4 border border-gray-300 rounded-md focus:outline-none focus:ring-1 focus:ring-[#78b49a]"
-      />
-      <input
-        type="email"
-        name="email"
-        placeholder="Email"
-        value={formData.email}
-        onChange={handleChange}
-        required
-        className="px-4 border border-gray-300 rounded-md focus:outline-none focus:ring-1 focus:ring-[#78b49a]"
-      />
+      <div>
+        <label htmlFor="name" className="text-sm font-medium mb-1 block">
+          Nome
+        </label>
+        <input
+          type="text"
+          name="name"
+          placeholder="Nome"
+          value={formData.name}
+          onChange={handleChange}
+          required
+          className="px-4 py-2 w-full border border-gray-300 rounded-md focus:outline-none focus:ring-1 focus:ring-[#78b49a]"
+        />
+      </div>
+      <div>
+        <label htmlFor="adress" className="text-sm font-medium mb-1 block">
+          Endereço
+        </label>
+        <input
+          type="text"
+          name="adress"
+          placeholder="Endereço"
+          value={formData.adress}
+          onChange={handleChange}
+          required
+          className="px-4 py-2 w-full border border-gray-300 rounded-md focus:outline-none focus:ring-1 focus:ring-[#78b49a]"
+        />
+      </div>
+      <div>
+        <label htmlFor="city" className="text-sm font-medium mb-1 block">
+          Cidade
+        </label>
+        <input
+          type="text"
+          name="city"
+          placeholder="Cidade"
+          value={formData.city}
+          onChange={handleChange}
+          required
+          className="px-4 py-2 w-full border border-gray-300 rounded-md focus:outline-none focus:ring-1 focus:ring-[#78b49a]"
+        />
+      </div>
+      <div>
+        <label htmlFor="email" className="text-sm font-medium mb-1 block">
+          Email
+        </label>
+        <input
+          type="text"
+          name="email"
+          placeholder="Email"
+          value={formData.email}
+          onChange={handleChange}
+          required
+          className="px-4 py-2 w-full border border-gray-300 rounded-md focus:outline-none focus:ring-1 focus:ring-[#78b49a]"
+        />
+      </div>
       <InputMask
         mask="(99) 99999-9999"
         value={formData.phone}
         onChange={handleChange}
       >
         {(inputProps: React.InputHTMLAttributes<HTMLInputElement>) => (
-          <input
-            {...inputProps}
-            type="text"
-            name="phone"
-            placeholder="Celular"
-            required
-            className="px-4 border border-gray-300 rounded-md focus:outline-none focus:ring-1 focus:ring-[#78b49a]"
-          />
+          <div>
+            <label htmlFor="phone" className="text-sm font-medium mb-1 block"> Celular</label>
+            <input
+              {...inputProps}
+              type="text"
+              name="phone"
+              placeholder="Celular"
+              required
+              className="px-4 py-2 w-full border border-gray-300 rounded-md focus:outline-none focus:ring-1 focus:ring-[#78b49a]"
+            />
+          </div>
         )}
       </InputMask>
-      <input
+
+      <div>
+        <label htmlFor="birthDate" className="text-sm font-medium mb-1 block">Data de Nascimento</label>
+        <input
         type="date"
         name="birthDate"
         placeholder="Nascimento"
         value={formData.birthDate}
         onChange={handleChange}
         required
-        className="px-4 border border-gray-300 rounded-md focus:outline-none focus:ring-1 focus:ring-[#78b49a]"
+        className="px-4 py-2 w-full border border-gray-300 rounded-md focus:outline-none focus:ring-1 focus:ring-[#78b49a]"
       />
-      <input
+      </div>
+      <div>
+        <label htmlFor="admission" className="text-sm font-medium mb-1 block">Admissão</label>
+        <input
         type="date"
         name="admission"
         placeholder="Admissão"
         value={formData.admission}
         onChange={handleChange}
         required
-        className="px-4 border border-gray-300 rounded-md focus:outline-none focus:ring-1 focus:ring-[#78b49a]"
+        className="px-4 py-2 w-full border border-gray-300 rounded-md focus:outline-none focus:ring-1 focus:ring-[#78b49a]"
       />
+      </div>
+
       <InputMask
         mask="999.999.999-99"
         value={formData.cpf}
         onChange={handleChange}
       >
         {(inputProps: React.InputHTMLAttributes<HTMLInputElement>) => (
-          <input
-            {...inputProps}
-            type="text"
-            name="cpf"
-            placeholder="CPF"
-            required
-            className="px-4 border border-gray-300 rounded-md focus:outline-none focus:ring-1 focus:ring-[#78b49a]"
-          />
+          <div>
+            <label htmlFor="cpf" className="text-sm font-medium mb-1 block">CPF</label>
+            <input
+              {...inputProps}
+              type="text"
+              name="cpf"
+              placeholder="CPF"
+              required
+              className="px-4 py-2 w-full border border-gray-300 rounded-md focus:outline-none focus:ring-1 focus:ring-[#78b49a]"
+            />
+          </div>
         )}
       </InputMask>
       <InputMask
@@ -208,79 +248,91 @@ export default function EmployeeForm() {
         onChange={handleChange}
       >
         {(inputProps: React.InputHTMLAttributes<HTMLInputElement>) => (
-          <input
-            {...inputProps}
-            type="text"
-            name="rg"
-            placeholder="RG"
-            required
-            className="px-4 border border-gray-300 rounded-md focus:outline-none focus:ring-1 focus:ring-[#78b49a]"
-          />
+          <div>
+            <label htmlFor="rg" className="text-sm font-medium mb-1 block">RG</label>
+            <input
+              {...inputProps}
+              type="text"
+              name="rg"
+              placeholder="RG"
+              required
+              className="px-4 py-2 w-full border border-gray-300 rounded-md focus:outline-none focus:ring-1 focus:ring-[#78b49a]"
+            />
+          </div>
         )}
       </InputMask>
 
-      <select
-        name="employer"
-        onChange={handleChange}
-        value={formData.employer}
-        required
-        className="px-4 border border-gray-300 rounded-md focus:outline-none focus:ring-1 focus:ring-[#78b49a]"
-      >
-        <option value="">Selecione o empregador</option>
-        {enums.employer.map((item) => (
-          <option key={item} value={item}>
-            {item}
-          </option>
-        ))}
-      </select>
-
-      <select
-        name="department"
-        onChange={handleChange}
-        value={formData.department}
-        required
-        className="px-4 border border-gray-300 rounded-md focus:outline-none focus:ring-1 focus:ring-[#78b49a]"
-      >
-        <option value="">Selecione o setor</option>
-        {enums.department.map((item) => (
-          <option key={item} value={item}>
-            {item}
-          </option>
-        ))}
-      </select>
-
-      <select
-        name="function"
-        onChange={handleChange}
-        value={formData.function}
-        required
-        className="px-4 border border-gray-300 rounded-md focus:outline-none focus:ring-1 focus:ring-[#78b49a]"
-      >
-        <option value="">Selecione a função</option>
-        {enums.function.map((item) => (
-          <option key={item} value={item}>
-            {item}
-          </option>
-        ))}
-      </select>
-
-      <div className="col-span-2">
-        <label className="mr-4">Status:</label>
-        {enums.status.map((item) => (
-          <label key={item} className="mr-4">
-            <input
-              type="radio"
-              name="status"
-              value={item}
-              checked={formData.status === item}
-              onChange={handleChange}
-              className="mr-2"
-            />{" "}
-            {item}
-          </label>
-        ))}
+      <div>
+        <label htmlFor="employer" className="text-sm font-medium mb-1 block">Empregador</label>
+        <select
+          name="employer"
+          onChange={handleChange}
+          value={formData.employer}
+          required
+          className="px-4 py-2 w-full border border-gray-300 rounded-md focus:outline-none focus:ring-1 focus:ring-[#78b49a]"
+        >
+          <option value="">Selecione o empregador</option>
+          {enums.employer.map((item) => (
+            <option key={item} value={item}>
+              {item}
+            </option>
+          ))}
+        </select>
       </div>
 
+      <div>
+        <label htmlFor="department" className="text-sm font-medium mb-1 block">Setor</label>
+        <select
+          name="department"
+          onChange={handleChange}
+          value={formData.department}
+          required
+          className="px-4 py-2 w-full border border-gray-300 rounded-md focus:outline-none focus:ring-1 focus:ring-[#78b49a]"
+        >
+          <option value="">Selecione o setor</option>
+          {enums.department.map((item) => (
+            <option key={item} value={item}>
+              {item}
+            </option>
+          ))}
+        </select>
+      </div>
+
+      <div>
+        <label htmlFor="function" className="text-sm font-medium mb-1 block">Função</label>
+        <select
+          name="function"
+          onChange={handleChange}
+          value={formData.function}
+          required
+          className="px-4 py-2 w-full border border-gray-300 rounded-md focus:outline-none focus:ring-1 focus:ring-[#78b49a]"
+        >
+          <option value="">Selecione a função</option>
+          {enums.function.map((item) => (
+            <option key={item} value={item}>
+              {item}
+            </option>
+          ))}
+        </select>
+      </div>
+
+      <div className="flex items-center justify-between col-span-2">
+        <div>
+          <label className="mr-4">Status:</label>
+          {enums.status.map((item) => (
+            <label key={item} className="mr-4">
+              <input
+                type="radio"
+                name="status"
+                value={item}
+                checked={formData.status === item}
+                onChange={handleChange}
+                className="mr-2"
+              />{" "}
+              {item}
+            </label>
+          ))}
+        </div>
       <button
         type="submit"
         disabled={isSubmitting}
@@ -295,6 +347,8 @@ export default function EmployeeForm() {
           "Cadastrar"
         )}
       </button>
+      </div>
+
     </motion.form>
   );
 }

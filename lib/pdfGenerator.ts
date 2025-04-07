@@ -14,7 +14,7 @@ interface Employee {
 interface ReportFilters {
   employer?: string;
   department?: string;
-  admissionDate?: string;
+  admission?: string;
 }
 
 export async function generateEmployeeReport(filters: ReportFilters) {
@@ -39,10 +39,11 @@ export async function generateEmployeeReport(filters: ReportFilters) {
       const logoBase64 = reader.result as string;
 
       // 4. Adicionar logotipo
-      doc.addImage(logoBase64, "PNG", 14, 10, 30, 15); // x, y, largura, altura
+      doc.addImage(logoBase64, "PNG", 14, 10, 50, 20); // x, y, largura, altura
 
       // 5. Título
       doc.setFontSize(16);
+      doc.setTextColor(100);
       doc.text("Relatório de Funcionários", 105, 20, { align: "center" });
 
       // 6. Filtros aplicados
@@ -60,9 +61,9 @@ export async function generateEmployeeReport(filters: ReportFilters) {
         doc.text(`• Setor: ${filters.department}`, 14, y);
         y += 6;
       }
-      if (filters.admissionDate) {
+      if (filters.admission) {
         const formattedFilterDate = formatInTimeZone(
-          filters.admissionDate,
+          filters.admission,
           timeZone,
           "dd/MM/yyyy"
         );
@@ -116,7 +117,9 @@ export async function generateEmployeeReport(filters: ReportFilters) {
       });
 
       // 8. Salvar
-      doc.save("relatorio-funcionarios.pdf");
+      const fileNumber = new Date().getTime(); // Número do arquivo baseado no timestamp
+      const fileName = `Relatorio-Funcionarios-${fileNumber}.pdf`;
+      doc.save(fileName);
     };
 
     reader.readAsDataURL(logo);

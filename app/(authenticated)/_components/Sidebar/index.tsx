@@ -73,7 +73,7 @@ const Sidebar = () => {
             </h1>
           )}
         </div>
-        <nav className="space-y-4 flex flex-col border-b-2 border-zinc-500 pb-4">
+        <nav className="space-y-4 mt-4 flex flex-col border-b-2 border-zinc-500 pb-4">
           {routes.map((route) => (
             <TooltipProvider key={route.path} delayDuration={100}>
               <Tooltip>
