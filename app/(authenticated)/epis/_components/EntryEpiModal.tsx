@@ -38,10 +38,10 @@ export function EntryEpiModal({ isOpen, onClose, epi, onEntryAdded }: AddEpiEntr
     });
   
     if (response.ok) {
-      toast.success("Entrada registrada com sucesso!");
+      toast("Parabéns! Entrada registrada com sucesso.");
       onEntryAdded();
       onClose();
-      setEntryQuantity(0); // Limpa o campo
+      setEntryQuantity(0);
     } else {
       toast.error("Erro ao registrar entrada de EPI.");
     }

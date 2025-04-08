@@ -20,6 +20,7 @@ import { EditEpiModal } from "./EditEpiModal";
 import { EntryEpiModal } from "./EntryEpiModal";
 import { ExitEpiModal } from "./ExitEpiModal";
 import { Epi } from "../../../types";
+import { Employee } from "@/generated/prisma";
 
 
 
@@ -31,7 +32,7 @@ export default function EpisListTable() {
   const itemsPerPage = 9;
   const [isReportModalOpen, setIsReportModalOpen] = useState(false);
   const [showOnlyActive, setShowOnlyActive] = useState(false);
-
+  const [employeesList, setEmployeesList] = useState<Employee[]>([]);
   const [selectedEpi, setSelectedEpi] = useState<Epi | null>(null);
   const [openEditModal, setOpenEditModal] = useState(false);
   const [openEntryModal, setOpenEntryModal] = useState(false);
@@ -51,6 +52,16 @@ export default function EpisListTable() {
     setSelectedEpi(epi);
     setOpenExitModal(true);
   }
+
+  useEffect(() => {
+    const fetchEmployees = async () => {
+      const res = await fetch("/api/funcionarios");
+      const data = await res.json();
+      setEmployeesList(data);
+    };
+  
+    fetchEmployees();
+  }, []);
 
   async function fetchEpis() {
     try {
@@ -200,6 +211,9 @@ export default function EpisListTable() {
 
           {openExitModal && selectedEpi && (
             <ExitEpiModal
+              isOpen={openExitModal}
+              onSaved={fetchEpis}
+              employees={employeesList}
               epi={selectedEpi}
               onClose={() => setOpenExitModal(false)}
             />

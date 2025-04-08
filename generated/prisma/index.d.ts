@@ -34,6 +34,11 @@ export type EpiEmployee = $Result.DefaultSelection<Prisma.$EpiEmployeePayload>
  */
 export type EpiEntry = $Result.DefaultSelection<Prisma.$EpiEntryPayload>
 /**
+ * Model EpiExit
+ * 
+ */
+export type EpiExit = $Result.DefaultSelection<Prisma.$EpiExitPayload>
+/**
  * Model Exam
  * 
  */
@@ -268,6 +273,16 @@ export class PrismaClient<
     * ```
     */
   get epiEntry(): Prisma.EpiEntryDelegate<ExtArgs, ClientOptions>;
+
+  /**
+   * `prisma.epiExit`: Exposes CRUD operations for the **EpiExit** model.
+    * Example usage:
+    * ```ts
+    * // Fetch zero or more EpiExits
+    * const epiExits = await prisma.epiExit.findMany()
+    * ```
+    */
+  get epiExit(): Prisma.EpiExitDelegate<ExtArgs, ClientOptions>;
 
   /**
    * `prisma.exam`: Exposes CRUD operations for the **Exam** model.
@@ -732,6 +747,7 @@ export namespace Prisma {
     Epi: 'Epi',
     EpiEmployee: 'EpiEmployee',
     EpiEntry: 'EpiEntry',
+    EpiExit: 'EpiExit',
     Exam: 'Exam',
     ExamEmployee: 'ExamEmployee'
   };
@@ -752,7 +768,7 @@ export namespace Prisma {
       omit: GlobalOmitOptions
     }
     meta: {
-      modelProps: "employee" | "epi" | "epiEmployee" | "epiEntry" | "exam" | "examEmployee"
+      modelProps: "employee" | "epi" | "epiEmployee" | "epiEntry" | "epiExit" | "exam" | "examEmployee"
       txIsolationLevel: Prisma.TransactionIsolationLevel
     }
     model: {
@@ -1052,6 +1068,80 @@ export namespace Prisma {
           }
         }
       }
+      EpiExit: {
+        payload: Prisma.$EpiExitPayload<ExtArgs>
+        fields: Prisma.EpiExitFieldRefs
+        operations: {
+          findUnique: {
+            args: Prisma.EpiExitFindUniqueArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$EpiExitPayload> | null
+          }
+          findUniqueOrThrow: {
+            args: Prisma.EpiExitFindUniqueOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$EpiExitPayload>
+          }
+          findFirst: {
+            args: Prisma.EpiExitFindFirstArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$EpiExitPayload> | null
+          }
+          findFirstOrThrow: {
+            args: Prisma.EpiExitFindFirstOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$EpiExitPayload>
+          }
+          findMany: {
+            args: Prisma.EpiExitFindManyArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$EpiExitPayload>[]
+          }
+          create: {
+            args: Prisma.EpiExitCreateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$EpiExitPayload>
+          }
+          createMany: {
+            args: Prisma.EpiExitCreateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          createManyAndReturn: {
+            args: Prisma.EpiExitCreateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$EpiExitPayload>[]
+          }
+          delete: {
+            args: Prisma.EpiExitDeleteArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$EpiExitPayload>
+          }
+          update: {
+            args: Prisma.EpiExitUpdateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$EpiExitPayload>
+          }
+          deleteMany: {
+            args: Prisma.EpiExitDeleteManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateMany: {
+            args: Prisma.EpiExitUpdateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateManyAndReturn: {
+            args: Prisma.EpiExitUpdateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$EpiExitPayload>[]
+          }
+          upsert: {
+            args: Prisma.EpiExitUpsertArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$EpiExitPayload>
+          }
+          aggregate: {
+            args: Prisma.EpiExitAggregateArgs<ExtArgs>
+            result: $Utils.Optional<AggregateEpiExit>
+          }
+          groupBy: {
+            args: Prisma.EpiExitGroupByArgs<ExtArgs>
+            result: $Utils.Optional<EpiExitGroupByOutputType>[]
+          }
+          count: {
+            args: Prisma.EpiExitCountArgs<ExtArgs>
+            result: $Utils.Optional<EpiExitCountAggregateOutputType> | number
+          }
+        }
+      }
       Exam: {
         payload: Prisma.$ExamPayload<ExtArgs>
         fields: Prisma.ExamFieldRefs
@@ -1288,6 +1378,7 @@ export namespace Prisma {
     epi?: EpiOmit
     epiEmployee?: EpiEmployeeOmit
     epiEntry?: EpiEntryOmit
+    epiExit?: EpiExitOmit
     exam?: ExamOmit
     examEmployee?: ExamEmployeeOmit
   }
@@ -1386,11 +1477,13 @@ export namespace Prisma {
   export type EmployeeCountOutputType = {
     epies: number
     exams: number
+    exits: number
   }
 
   export type EmployeeCountOutputTypeSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     epies?: boolean | EmployeeCountOutputTypeCountEpiesArgs
     exams?: boolean | EmployeeCountOutputTypeCountExamsArgs
+    exits?: boolean | EmployeeCountOutputTypeCountExitsArgs
   }
 
   // Custom InputTypes
@@ -1418,6 +1511,13 @@ export namespace Prisma {
     where?: ExamEmployeeWhereInput
   }
 
+  /**
+   * EmployeeCountOutputType without action
+   */
+  export type EmployeeCountOutputTypeCountExitsArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: EpiExitWhereInput
+  }
+
 
   /**
    * Count Type EpiCountOutputType
@@ -1426,11 +1526,13 @@ export namespace Prisma {
   export type EpiCountOutputType = {
     employees: number
     entries: number
+    exits: number
   }
 
   export type EpiCountOutputTypeSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     employees?: boolean | EpiCountOutputTypeCountEmployeesArgs
     entries?: boolean | EpiCountOutputTypeCountEntriesArgs
+    exits?: boolean | EpiCountOutputTypeCountExitsArgs
   }
 
   // Custom InputTypes
@@ -1456,6 +1558,13 @@ export namespace Prisma {
    */
   export type EpiCountOutputTypeCountEntriesArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     where?: EpiEntryWhereInput
+  }
+
+  /**
+   * EpiCountOutputType without action
+   */
+  export type EpiCountOutputTypeCountExitsArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: EpiExitWhereInput
   }
 
 
@@ -1782,6 +1891,7 @@ export namespace Prisma {
     updatedAt?: boolean
     epies?: boolean | Employee$epiesArgs<ExtArgs>
     exams?: boolean | Employee$examsArgs<ExtArgs>
+    exits?: boolean | Employee$exitsArgs<ExtArgs>
     _count?: boolean | EmployeeCountOutputTypeDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["employee"]>
 
@@ -1846,6 +1956,7 @@ export namespace Prisma {
   export type EmployeeInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     epies?: boolean | Employee$epiesArgs<ExtArgs>
     exams?: boolean | Employee$examsArgs<ExtArgs>
+    exits?: boolean | Employee$exitsArgs<ExtArgs>
     _count?: boolean | EmployeeCountOutputTypeDefaultArgs<ExtArgs>
   }
   export type EmployeeIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {}
@@ -1856,6 +1967,7 @@ export namespace Prisma {
     objects: {
       epies: Prisma.$EpiEmployeePayload<ExtArgs>[]
       exams: Prisma.$ExamEmployeePayload<ExtArgs>[]
+      exits: Prisma.$EpiExitPayload<ExtArgs>[]
     }
     scalars: $Extensions.GetPayloadResult<{
       id: number
@@ -2270,6 +2382,7 @@ export namespace Prisma {
     readonly [Symbol.toStringTag]: "PrismaPromise"
     epies<T extends Employee$epiesArgs<ExtArgs> = {}>(args?: Subset<T, Employee$epiesArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$EpiEmployeePayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
     exams<T extends Employee$examsArgs<ExtArgs> = {}>(args?: Subset<T, Employee$examsArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$ExamEmployeePayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+    exits<T extends Employee$exitsArgs<ExtArgs> = {}>(args?: Subset<T, Employee$exitsArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$EpiExitPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
     /**
      * Attaches callbacks for the resolution and/or rejection of the Promise.
      * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -2751,6 +2864,30 @@ export namespace Prisma {
   }
 
   /**
+   * Employee.exits
+   */
+  export type Employee$exitsArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the EpiExit
+     */
+    select?: EpiExitSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the EpiExit
+     */
+    omit?: EpiExitOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: EpiExitInclude<ExtArgs> | null
+    where?: EpiExitWhereInput
+    orderBy?: EpiExitOrderByWithRelationInput | EpiExitOrderByWithRelationInput[]
+    cursor?: EpiExitWhereUniqueInput
+    take?: number
+    skip?: number
+    distinct?: EpiExitScalarFieldEnum | EpiExitScalarFieldEnum[]
+  }
+
+  /**
    * Employee without action
    */
   export type EmployeeDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
@@ -3005,6 +3142,7 @@ export namespace Prisma {
     updatedAt?: boolean
     employees?: boolean | Epi$employeesArgs<ExtArgs>
     entries?: boolean | Epi$entriesArgs<ExtArgs>
+    exits?: boolean | Epi$exitsArgs<ExtArgs>
     _count?: boolean | EpiCountOutputTypeDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["epi"]>
 
@@ -3048,6 +3186,7 @@ export namespace Prisma {
   export type EpiInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     employees?: boolean | Epi$employeesArgs<ExtArgs>
     entries?: boolean | Epi$entriesArgs<ExtArgs>
+    exits?: boolean | Epi$exitsArgs<ExtArgs>
     _count?: boolean | EpiCountOutputTypeDefaultArgs<ExtArgs>
   }
   export type EpiIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {}
@@ -3058,6 +3197,7 @@ export namespace Prisma {
     objects: {
       employees: Prisma.$EpiEmployeePayload<ExtArgs>[]
       entries: Prisma.$EpiEntryPayload<ExtArgs>[]
+      exits: Prisma.$EpiExitPayload<ExtArgs>[]
     }
     scalars: $Extensions.GetPayloadResult<{
       id: number
@@ -3465,6 +3605,7 @@ export namespace Prisma {
     readonly [Symbol.toStringTag]: "PrismaPromise"
     employees<T extends Epi$employeesArgs<ExtArgs> = {}>(args?: Subset<T, Epi$employeesArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$EpiEmployeePayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
     entries<T extends Epi$entriesArgs<ExtArgs> = {}>(args?: Subset<T, Epi$entriesArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$EpiEntryPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+    exits<T extends Epi$exitsArgs<ExtArgs> = {}>(args?: Subset<T, Epi$exitsArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$EpiExitPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
     /**
      * Attaches callbacks for the resolution and/or rejection of the Promise.
      * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -3939,6 +4080,30 @@ export namespace Prisma {
   }
 
   /**
+   * Epi.exits
+   */
+  export type Epi$exitsArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the EpiExit
+     */
+    select?: EpiExitSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the EpiExit
+     */
+    omit?: EpiExitOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: EpiExitInclude<ExtArgs> | null
+    where?: EpiExitWhereInput
+    orderBy?: EpiExitOrderByWithRelationInput | EpiExitOrderByWithRelationInput[]
+    cursor?: EpiExitWhereUniqueInput
+    take?: number
+    skip?: number
+    distinct?: EpiExitScalarFieldEnum | EpiExitScalarFieldEnum[]
+  }
+
+  /**
    * Epi without action
    */
   export type EpiDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
@@ -3971,76 +4136,80 @@ export namespace Prisma {
 
   export type EpiEmployeeAvgAggregateOutputType = {
     id: number | null
-    employeeId: number | null
     epiId: number | null
+    employeeId: number | null
+    quantity: number | null
   }
 
   export type EpiEmployeeSumAggregateOutputType = {
     id: number | null
-    employeeId: number | null
     epiId: number | null
+    employeeId: number | null
+    quantity: number | null
   }
 
   export type EpiEmployeeMinAggregateOutputType = {
     id: number | null
-    employeeId: number | null
     epiId: number | null
-    createdAt: Date | null
-    updatedAt: Date | null
+    employeeId: number | null
+    quantity: number | null
+    deliveryDate: Date | null
   }
 
   export type EpiEmployeeMaxAggregateOutputType = {
     id: number | null
-    employeeId: number | null
     epiId: number | null
-    createdAt: Date | null
-    updatedAt: Date | null
+    employeeId: number | null
+    quantity: number | null
+    deliveryDate: Date | null
   }
 
   export type EpiEmployeeCountAggregateOutputType = {
     id: number
-    employeeId: number
     epiId: number
-    createdAt: number
-    updatedAt: number
+    employeeId: number
+    quantity: number
+    deliveryDate: number
     _all: number
   }
 
 
   export type EpiEmployeeAvgAggregateInputType = {
     id?: true
-    employeeId?: true
     epiId?: true
+    employeeId?: true
+    quantity?: true
   }
 
   export type EpiEmployeeSumAggregateInputType = {
     id?: true
-    employeeId?: true
     epiId?: true
+    employeeId?: true
+    quantity?: true
   }
 
   export type EpiEmployeeMinAggregateInputType = {
     id?: true
-    employeeId?: true
     epiId?: true
-    createdAt?: true
-    updatedAt?: true
+    employeeId?: true
+    quantity?: true
+    deliveryDate?: true
   }
 
   export type EpiEmployeeMaxAggregateInputType = {
     id?: true
-    employeeId?: true
     epiId?: true
-    createdAt?: true
-    updatedAt?: true
+    employeeId?: true
+    quantity?: true
+    deliveryDate?: true
   }
 
   export type EpiEmployeeCountAggregateInputType = {
     id?: true
-    employeeId?: true
     epiId?: true
-    createdAt?: true
-    updatedAt?: true
+    employeeId?: true
+    quantity?: true
+    deliveryDate?: true
     _all?: true
   }
 
@@ -4132,10 +4301,10 @@ export namespace Prisma {
 
   export type EpiEmployeeGroupByOutputType = {
     id: number
-    employeeId: number
     epiId: number
-    createdAt: Date
-    updatedAt: Date
+    employeeId: number
+    quantity: number
+    deliveryDate: Date
     _count: EpiEmployeeCountAggregateOutputType | null
     _avg: EpiEmployeeAvgAggregateOutputType | null
     _sum: EpiEmployeeSumAggregateOutputType | null
@@ -4159,68 +4328,68 @@ export namespace Prisma {
 
   export type EpiEmployeeSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
-    employeeId?: boolean
     epiId?: boolean
-    createdAt?: boolean
-    updatedAt?: boolean
-    employee?: boolean | EmployeeDefaultArgs<ExtArgs>
+    employeeId?: boolean
+    quantity?: boolean
+    deliveryDate?: boolean
     epi?: boolean | EpiDefaultArgs<ExtArgs>
+    employee?: boolean | EmployeeDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["epiEmployee"]>
 
   export type EpiEmployeeSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
-    employeeId?: boolean
     epiId?: boolean
-    createdAt?: boolean
-    updatedAt?: boolean
-    employee?: boolean | EmployeeDefaultArgs<ExtArgs>
+    employeeId?: boolean
+    quantity?: boolean
+    deliveryDate?: boolean
     epi?: boolean | EpiDefaultArgs<ExtArgs>
+    employee?: boolean | EmployeeDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["epiEmployee"]>
 
   export type EpiEmployeeSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
-    employeeId?: boolean
     epiId?: boolean
-    createdAt?: boolean
-    updatedAt?: boolean
-    employee?: boolean | EmployeeDefaultArgs<ExtArgs>
+    employeeId?: boolean
+    quantity?: boolean
+    deliveryDate?: boolean
     epi?: boolean | EpiDefaultArgs<ExtArgs>
+    employee?: boolean | EmployeeDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["epiEmployee"]>
 
   export type EpiEmployeeSelectScalar = {
     id?: boolean
-    employeeId?: boolean
     epiId?: boolean
-    createdAt?: boolean
-    updatedAt?: boolean
+    employeeId?: boolean
+    quantity?: boolean
+    deliveryDate?: boolean
   }
 
-  export type EpiEmployeeOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "employeeId" | "epiId" | "createdAt" | "updatedAt", ExtArgs["result"]["epiEmployee"]>
+  export type EpiEmployeeOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "epiId" | "employeeId" | "quantity" | "deliveryDate", ExtArgs["result"]["epiEmployee"]>
   export type EpiEmployeeInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    employee?: boolean | EmployeeDefaultArgs<ExtArgs>
     epi?: boolean | EpiDefaultArgs<ExtArgs>
+    employee?: boolean | EmployeeDefaultArgs<ExtArgs>
   }
   export type EpiEmployeeIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    employee?: boolean | EmployeeDefaultArgs<ExtArgs>
     epi?: boolean | EpiDefaultArgs<ExtArgs>
+    employee?: boolean | EmployeeDefaultArgs<ExtArgs>
   }
   export type EpiEmployeeIncludeUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    employee?: boolean | EmployeeDefaultArgs<ExtArgs>
     epi?: boolean | EpiDefaultArgs<ExtArgs>
+    employee?: boolean | EmployeeDefaultArgs<ExtArgs>
   }
 
   export type $EpiEmployeePayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     name: "EpiEmployee"
     objects: {
-      employee: Prisma.$EmployeePayload<ExtArgs>
       epi: Prisma.$EpiPayload<ExtArgs>
+      employee: Prisma.$EmployeePayload<ExtArgs>
     }
     scalars: $Extensions.GetPayloadResult<{
       id: number
-      employeeId: number
       epiId: number
-      createdAt: Date
-      updatedAt: Date
+      employeeId: number
+      quantity: number
+      deliveryDate: Date
     }, ExtArgs["result"]["epiEmployee"]>
     composites: {}
   }
@@ -4615,8 +4784,8 @@ export namespace Prisma {
    */
   export interface Prisma__EpiEmployeeClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
     readonly [Symbol.toStringTag]: "PrismaPromise"
-    employee<T extends EmployeeDefaultArgs<ExtArgs> = {}>(args?: Subset<T, EmployeeDefaultArgs<ExtArgs>>): Prisma__EmployeeClient<$Result.GetResult<Prisma.$EmployeePayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
     epi<T extends EpiDefaultArgs<ExtArgs> = {}>(args?: Subset<T, EpiDefaultArgs<ExtArgs>>): Prisma__EpiClient<$Result.GetResult<Prisma.$EpiPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
+    employee<T extends EmployeeDefaultArgs<ExtArgs> = {}>(args?: Subset<T, EmployeeDefaultArgs<ExtArgs>>): Prisma__EmployeeClient<$Result.GetResult<Prisma.$EmployeePayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
     /**
      * Attaches callbacks for the resolution and/or rejection of the Promise.
      * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -4647,10 +4816,10 @@ export namespace Prisma {
    */ 
   interface EpiEmployeeFieldRefs {
     readonly id: FieldRef<"EpiEmployee", 'Int'>
-    readonly employeeId: FieldRef<"EpiEmployee", 'Int'>
     readonly epiId: FieldRef<"EpiEmployee", 'Int'>
-    readonly createdAt: FieldRef<"EpiEmployee", 'DateTime'>
-    readonly updatedAt: FieldRef<"EpiEmployee", 'DateTime'>
+    readonly employeeId: FieldRef<"EpiEmployee", 'Int'>
+    readonly quantity: FieldRef<"EpiEmployee", 'Int'>
+    readonly deliveryDate: FieldRef<"EpiEmployee", 'DateTime'>
   }
     
 
@@ -6201,6 +6370,1131 @@ export namespace Prisma {
      * Choose, which related nodes to fetch as well
      */
     include?: EpiEntryInclude<ExtArgs> | null
+  }
+
+
+  /**
+   * Model EpiExit
+   */
+
+  export type AggregateEpiExit = {
+    _count: EpiExitCountAggregateOutputType | null
+    _avg: EpiExitAvgAggregateOutputType | null
+    _sum: EpiExitSumAggregateOutputType | null
+    _min: EpiExitMinAggregateOutputType | null
+    _max: EpiExitMaxAggregateOutputType | null
+  }
+
+  export type EpiExitAvgAggregateOutputType = {
+    id: number | null
+    epiId: number | null
+    employeeId: number | null
+    quantity: number | null
+  }
+
+  export type EpiExitSumAggregateOutputType = {
+    id: number | null
+    epiId: number | null
+    employeeId: number | null
+    quantity: number | null
+  }
+
+  export type EpiExitMinAggregateOutputType = {
+    id: number | null
+    epiId: number | null
+    employeeId: number | null
+    quantity: number | null
+    date: Date | null
+    createdAt: Date | null
+  }
+
+  export type EpiExitMaxAggregateOutputType = {
+    id: number | null
+    epiId: number | null
+    employeeId: number | null
+    quantity: number | null
+    date: Date | null
+    createdAt: Date | null
+  }
+
+  export type EpiExitCountAggregateOutputType = {
+    id: number
+    epiId: number
+    employeeId: number
+    quantity: number
+    date: number
+    createdAt: number
+    _all: number
+  }
+
+
+  export type EpiExitAvgAggregateInputType = {
+    id?: true
+    epiId?: true
+    employeeId?: true
+    quantity?: true
+  }
+
+  export type EpiExitSumAggregateInputType = {
+    id?: true
+    epiId?: true
+    employeeId?: true
+    quantity?: true
+  }
+
+  export type EpiExitMinAggregateInputType = {
+    id?: true
+    epiId?: true
+    employeeId?: true
+    quantity?: true
+    date?: true
+    createdAt?: true
+  }
+
+  export type EpiExitMaxAggregateInputType = {
+    id?: true
+    epiId?: true
+    employeeId?: true
+    quantity?: true
+    date?: true
+    createdAt?: true
+  }
+
+  export type EpiExitCountAggregateInputType = {
+    id?: true
+    epiId?: true
+    employeeId?: true
+    quantity?: true
+    date?: true
+    createdAt?: true
+    _all?: true
+  }
+
+  export type EpiExitAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which EpiExit to aggregate.
+     */
+    where?: EpiExitWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of EpiExits to fetch.
+     */
+    orderBy?: EpiExitOrderByWithRelationInput | EpiExitOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the start position
+     */
+    cursor?: EpiExitWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` EpiExits from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` EpiExits.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Count returned EpiExits
+    **/
+    _count?: true | EpiExitCountAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to average
+    **/
+    _avg?: EpiExitAvgAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to sum
+    **/
+    _sum?: EpiExitSumAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the minimum value
+    **/
+    _min?: EpiExitMinAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the maximum value
+    **/
+    _max?: EpiExitMaxAggregateInputType
+  }
+
+  export type GetEpiExitAggregateType<T extends EpiExitAggregateArgs> = {
+        [P in keyof T & keyof AggregateEpiExit]: P extends '_count' | 'count'
+      ? T[P] extends true
+        ? number
+        : GetScalarType<T[P], AggregateEpiExit[P]>
+      : GetScalarType<T[P], AggregateEpiExit[P]>
+  }
+
+
+
+
+  export type EpiExitGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: EpiExitWhereInput
+    orderBy?: EpiExitOrderByWithAggregationInput | EpiExitOrderByWithAggregationInput[]
+    by: EpiExitScalarFieldEnum[] | EpiExitScalarFieldEnum
+    having?: EpiExitScalarWhereWithAggregatesInput
+    take?: number
+    skip?: number
+    _count?: EpiExitCountAggregateInputType | true
+    _avg?: EpiExitAvgAggregateInputType
+    _sum?: EpiExitSumAggregateInputType
+    _min?: EpiExitMinAggregateInputType
+    _max?: EpiExitMaxAggregateInputType
+  }
+
+  export type EpiExitGroupByOutputType = {
+    id: number
+    epiId: number
+    employeeId: number
+    quantity: number
+    date: Date
+    createdAt: Date
+    _count: EpiExitCountAggregateOutputType | null
+    _avg: EpiExitAvgAggregateOutputType | null
+    _sum: EpiExitSumAggregateOutputType | null
+    _min: EpiExitMinAggregateOutputType | null
+    _max: EpiExitMaxAggregateOutputType | null
+  }
+
+  type GetEpiExitGroupByPayload<T extends EpiExitGroupByArgs> = Prisma.PrismaPromise<
+    Array<
+      PickEnumerable<EpiExitGroupByOutputType, T['by']> &
+        {
+          [P in ((keyof T) & (keyof EpiExitGroupByOutputType))]: P extends '_count'
+            ? T[P] extends boolean
+              ? number
+              : GetScalarType<T[P], EpiExitGroupByOutputType[P]>
+            : GetScalarType<T[P], EpiExitGroupByOutputType[P]>
+        }
+      >
+    >
+
+
+  export type EpiExitSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    epiId?: boolean
+    employeeId?: boolean
+    quantity?: boolean
+    date?: boolean
+    createdAt?: boolean
+    epi?: boolean | EpiDefaultArgs<ExtArgs>
+    employee?: boolean | EmployeeDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["epiExit"]>
+
+  export type EpiExitSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    epiId?: boolean
+    employeeId?: boolean
+    quantity?: boolean
+    date?: boolean
+    createdAt?: boolean
+    epi?: boolean | EpiDefaultArgs<ExtArgs>
+    employee?: boolean | EmployeeDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["epiExit"]>
+
+  export type EpiExitSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    epiId?: boolean
+    employeeId?: boolean
+    quantity?: boolean
+    date?: boolean
+    createdAt?: boolean
+    epi?: boolean | EpiDefaultArgs<ExtArgs>
+    employee?: boolean | EmployeeDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["epiExit"]>
+
+  export type EpiExitSelectScalar = {
+    id?: boolean
+    epiId?: boolean
+    employeeId?: boolean
+    quantity?: boolean
+    date?: boolean
+    createdAt?: boolean
+  }
+
+  export type EpiExitOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "epiId" | "employeeId" | "quantity" | "date" | "createdAt", ExtArgs["result"]["epiExit"]>
+  export type EpiExitInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    epi?: boolean | EpiDefaultArgs<ExtArgs>
+    employee?: boolean | EmployeeDefaultArgs<ExtArgs>
+  }
+  export type EpiExitIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    epi?: boolean | EpiDefaultArgs<ExtArgs>
+    employee?: boolean | EmployeeDefaultArgs<ExtArgs>
+  }
+  export type EpiExitIncludeUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    epi?: boolean | EpiDefaultArgs<ExtArgs>
+    employee?: boolean | EmployeeDefaultArgs<ExtArgs>
+  }
+
+  export type $EpiExitPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    name: "EpiExit"
+    objects: {
+      epi: Prisma.$EpiPayload<ExtArgs>
+      employee: Prisma.$EmployeePayload<ExtArgs>
+    }
+    scalars: $Extensions.GetPayloadResult<{
+      id: number
+      epiId: number
+      employeeId: number
+      quantity: number
+      date: Date
+      createdAt: Date
+    }, ExtArgs["result"]["epiExit"]>
+    composites: {}
+  }
+
+  type EpiExitGetPayload<S extends boolean | null | undefined | EpiExitDefaultArgs> = $Result.GetResult<Prisma.$EpiExitPayload, S>
+
+  type EpiExitCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
+    Omit<EpiExitFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
+      select?: EpiExitCountAggregateInputType | true
+    }
+
+  export interface EpiExitDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> {
+    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['EpiExit'], meta: { name: 'EpiExit' } }
+    /**
+     * Find zero or one EpiExit that matches the filter.
+     * @param {EpiExitFindUniqueArgs} args - Arguments to find a EpiExit
+     * @example
+     * // Get one EpiExit
+     * const epiExit = await prisma.epiExit.findUnique({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUnique<T extends EpiExitFindUniqueArgs>(args: SelectSubset<T, EpiExitFindUniqueArgs<ExtArgs>>): Prisma__EpiExitClient<$Result.GetResult<Prisma.$EpiExitPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find one EpiExit that matches the filter or throw an error with `error.code='P2025'`
+     * if no matches were found.
+     * @param {EpiExitFindUniqueOrThrowArgs} args - Arguments to find a EpiExit
+     * @example
+     * // Get one EpiExit
+     * const epiExit = await prisma.epiExit.findUniqueOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUniqueOrThrow<T extends EpiExitFindUniqueOrThrowArgs>(args: SelectSubset<T, EpiExitFindUniqueOrThrowArgs<ExtArgs>>): Prisma__EpiExitClient<$Result.GetResult<Prisma.$EpiExitPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first EpiExit that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {EpiExitFindFirstArgs} args - Arguments to find a EpiExit
+     * @example
+     * // Get one EpiExit
+     * const epiExit = await prisma.epiExit.findFirst({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirst<T extends EpiExitFindFirstArgs>(args?: SelectSubset<T, EpiExitFindFirstArgs<ExtArgs>>): Prisma__EpiExitClient<$Result.GetResult<Prisma.$EpiExitPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first EpiExit that matches the filter or
+     * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {EpiExitFindFirstOrThrowArgs} args - Arguments to find a EpiExit
+     * @example
+     * // Get one EpiExit
+     * const epiExit = await prisma.epiExit.findFirstOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirstOrThrow<T extends EpiExitFindFirstOrThrowArgs>(args?: SelectSubset<T, EpiExitFindFirstOrThrowArgs<ExtArgs>>): Prisma__EpiExitClient<$Result.GetResult<Prisma.$EpiExitPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find zero or more EpiExits that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {EpiExitFindManyArgs} args - Arguments to filter and select certain fields only.
+     * @example
+     * // Get all EpiExits
+     * const epiExits = await prisma.epiExit.findMany()
+     * 
+     * // Get first 10 EpiExits
+     * const epiExits = await prisma.epiExit.findMany({ take: 10 })
+     * 
+     * // Only select the `id`
+     * const epiExitWithIdOnly = await prisma.epiExit.findMany({ select: { id: true } })
+     * 
+     */
+    findMany<T extends EpiExitFindManyArgs>(args?: SelectSubset<T, EpiExitFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$EpiExitPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
+
+    /**
+     * Create a EpiExit.
+     * @param {EpiExitCreateArgs} args - Arguments to create a EpiExit.
+     * @example
+     * // Create one EpiExit
+     * const EpiExit = await prisma.epiExit.create({
+     *   data: {
+     *     // ... data to create a EpiExit
+     *   }
+     * })
+     * 
+     */
+    create<T extends EpiExitCreateArgs>(args: SelectSubset<T, EpiExitCreateArgs<ExtArgs>>): Prisma__EpiExitClient<$Result.GetResult<Prisma.$EpiExitPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Create many EpiExits.
+     * @param {EpiExitCreateManyArgs} args - Arguments to create many EpiExits.
+     * @example
+     * // Create many EpiExits
+     * const epiExit = await prisma.epiExit.createMany({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     *     
+     */
+    createMany<T extends EpiExitCreateManyArgs>(args?: SelectSubset<T, EpiExitCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Create many EpiExits and returns the data saved in the database.
+     * @param {EpiExitCreateManyAndReturnArgs} args - Arguments to create many EpiExits.
+     * @example
+     * // Create many EpiExits
+     * const epiExit = await prisma.epiExit.createManyAndReturn({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Create many EpiExits and only return the `id`
+     * const epiExitWithIdOnly = await prisma.epiExit.createManyAndReturn({
+     *   select: { id: true },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    createManyAndReturn<T extends EpiExitCreateManyAndReturnArgs>(args?: SelectSubset<T, EpiExitCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$EpiExitPayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Delete a EpiExit.
+     * @param {EpiExitDeleteArgs} args - Arguments to delete one EpiExit.
+     * @example
+     * // Delete one EpiExit
+     * const EpiExit = await prisma.epiExit.delete({
+     *   where: {
+     *     // ... filter to delete one EpiExit
+     *   }
+     * })
+     * 
+     */
+    delete<T extends EpiExitDeleteArgs>(args: SelectSubset<T, EpiExitDeleteArgs<ExtArgs>>): Prisma__EpiExitClient<$Result.GetResult<Prisma.$EpiExitPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Update one EpiExit.
+     * @param {EpiExitUpdateArgs} args - Arguments to update one EpiExit.
+     * @example
+     * // Update one EpiExit
+     * const epiExit = await prisma.epiExit.update({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    update<T extends EpiExitUpdateArgs>(args: SelectSubset<T, EpiExitUpdateArgs<ExtArgs>>): Prisma__EpiExitClient<$Result.GetResult<Prisma.$EpiExitPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Delete zero or more EpiExits.
+     * @param {EpiExitDeleteManyArgs} args - Arguments to filter EpiExits to delete.
+     * @example
+     * // Delete a few EpiExits
+     * const { count } = await prisma.epiExit.deleteMany({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     * 
+     */
+    deleteMany<T extends EpiExitDeleteManyArgs>(args?: SelectSubset<T, EpiExitDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more EpiExits.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {EpiExitUpdateManyArgs} args - Arguments to update one or more rows.
+     * @example
+     * // Update many EpiExits
+     * const epiExit = await prisma.epiExit.updateMany({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    updateMany<T extends EpiExitUpdateManyArgs>(args: SelectSubset<T, EpiExitUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more EpiExits and returns the data updated in the database.
+     * @param {EpiExitUpdateManyAndReturnArgs} args - Arguments to update many EpiExits.
+     * @example
+     * // Update many EpiExits
+     * const epiExit = await prisma.epiExit.updateManyAndReturn({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Update zero or more EpiExits and only return the `id`
+     * const epiExitWithIdOnly = await prisma.epiExit.updateManyAndReturn({
+     *   select: { id: true },
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    updateManyAndReturn<T extends EpiExitUpdateManyAndReturnArgs>(args: SelectSubset<T, EpiExitUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$EpiExitPayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Create or update one EpiExit.
+     * @param {EpiExitUpsertArgs} args - Arguments to update or create a EpiExit.
+     * @example
+     * // Update or create a EpiExit
+     * const epiExit = await prisma.epiExit.upsert({
+     *   create: {
+     *     // ... data to create a EpiExit
+     *   },
+     *   update: {
+     *     // ... in case it already exists, update
+     *   },
+     *   where: {
+     *     // ... the filter for the EpiExit we want to update
+     *   }
+     * })
+     */
+    upsert<T extends EpiExitUpsertArgs>(args: SelectSubset<T, EpiExitUpsertArgs<ExtArgs>>): Prisma__EpiExitClient<$Result.GetResult<Prisma.$EpiExitPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+
+    /**
+     * Count the number of EpiExits.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {EpiExitCountArgs} args - Arguments to filter EpiExits to count.
+     * @example
+     * // Count the number of EpiExits
+     * const count = await prisma.epiExit.count({
+     *   where: {
+     *     // ... the filter for the EpiExits we want to count
+     *   }
+     * })
+    **/
+    count<T extends EpiExitCountArgs>(
+      args?: Subset<T, EpiExitCountArgs>,
+    ): Prisma.PrismaPromise<
+      T extends $Utils.Record<'select', any>
+        ? T['select'] extends true
+          ? number
+          : GetScalarType<T['select'], EpiExitCountAggregateOutputType>
+        : number
+    >
+
+    /**
+     * Allows you to perform aggregations operations on a EpiExit.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {EpiExitAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+     * @example
+     * // Ordered by age ascending
+     * // Where email contains prisma.io
+     * // Limited to the 10 users
+     * const aggregations = await prisma.user.aggregate({
+     *   _avg: {
+     *     age: true,
+     *   },
+     *   where: {
+     *     email: {
+     *       contains: "prisma.io",
+     *     },
+     *   },
+     *   orderBy: {
+     *     age: "asc",
+     *   },
+     *   take: 10,
+     * })
+    **/
+    aggregate<T extends EpiExitAggregateArgs>(args: Subset<T, EpiExitAggregateArgs>): Prisma.PrismaPromise<GetEpiExitAggregateType<T>>
+
+    /**
+     * Group by EpiExit.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {EpiExitGroupByArgs} args - Group by arguments.
+     * @example
+     * // Group by city, order by createdAt, get count
+     * const result = await prisma.user.groupBy({
+     *   by: ['city', 'createdAt'],
+     *   orderBy: {
+     *     createdAt: true
+     *   },
+     *   _count: {
+     *     _all: true
+     *   },
+     * })
+     * 
+    **/
+    groupBy<
+      T extends EpiExitGroupByArgs,
+      HasSelectOrTake extends Or<
+        Extends<'skip', Keys<T>>,
+        Extends<'take', Keys<T>>
+      >,
+      OrderByArg extends True extends HasSelectOrTake
+        ? { orderBy: EpiExitGroupByArgs['orderBy'] }
+        : { orderBy?: EpiExitGroupByArgs['orderBy'] },
+      OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
+      ByFields extends MaybeTupleToUnion<T['by']>,
+      ByValid extends Has<ByFields, OrderFields>,
+      HavingFields extends GetHavingFields<T['having']>,
+      HavingValid extends Has<ByFields, HavingFields>,
+      ByEmpty extends T['by'] extends never[] ? True : False,
+      InputErrors extends ByEmpty extends True
+      ? `Error: "by" must not be empty.`
+      : HavingValid extends False
+      ? {
+          [P in HavingFields]: P extends ByFields
+            ? never
+            : P extends string
+            ? `Error: Field "${P}" used in "having" needs to be provided in "by".`
+            : [
+                Error,
+                'Field ',
+                P,
+                ` in "having" needs to be provided in "by"`,
+              ]
+        }[HavingFields]
+      : 'take' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "take", you also need to provide "orderBy"'
+      : 'skip' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "skip", you also need to provide "orderBy"'
+      : ByValid extends True
+      ? {}
+      : {
+          [P in OrderFields]: P extends ByFields
+            ? never
+            : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+        }[OrderFields]
+    >(args: SubsetIntersection<T, EpiExitGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetEpiExitGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+  /**
+   * Fields of the EpiExit model
+   */
+  readonly fields: EpiExitFieldRefs;
+  }
+
+  /**
+   * The delegate class that acts as a "Promise-like" for EpiExit.
+   * Why is this prefixed with `Prisma__`?
+   * Because we want to prevent naming conflicts as mentioned in
+   * https://github.com/prisma/prisma-client-js/issues/707
+   */
+  export interface Prisma__EpiExitClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
+    readonly [Symbol.toStringTag]: "PrismaPromise"
+    epi<T extends EpiDefaultArgs<ExtArgs> = {}>(args?: Subset<T, EpiDefaultArgs<ExtArgs>>): Prisma__EpiClient<$Result.GetResult<Prisma.$EpiPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
+    employee<T extends EmployeeDefaultArgs<ExtArgs> = {}>(args?: Subset<T, EmployeeDefaultArgs<ExtArgs>>): Prisma__EmployeeClient<$Result.GetResult<Prisma.$EmployeePayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
+    /**
+     * Attaches callbacks for the resolution and/or rejection of the Promise.
+     * @param onfulfilled The callback to execute when the Promise is resolved.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of which ever callback is executed.
+     */
+    then<TResult1 = T, TResult2 = never>(onfulfilled?: ((value: T) => TResult1 | PromiseLike<TResult1>) | undefined | null, onrejected?: ((reason: any) => TResult2 | PromiseLike<TResult2>) | undefined | null): $Utils.JsPromise<TResult1 | TResult2>
+    /**
+     * Attaches a callback for only the rejection of the Promise.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of the callback.
+     */
+    catch<TResult = never>(onrejected?: ((reason: any) => TResult | PromiseLike<TResult>) | undefined | null): $Utils.JsPromise<T | TResult>
+    /**
+     * Attaches a callback that is invoked when the Promise is settled (fulfilled or rejected). The
+     * resolved value cannot be modified from the callback.
+     * @param onfinally The callback to execute when the Promise is settled (fulfilled or rejected).
+     * @returns A Promise for the completion of the callback.
+     */
+    finally(onfinally?: (() => void) | undefined | null): $Utils.JsPromise<T>
+  }
+
+
+
+
+  /**
+   * Fields of the EpiExit model
+   */ 
+  interface EpiExitFieldRefs {
+    readonly id: FieldRef<"EpiExit", 'Int'>
+    readonly epiId: FieldRef<"EpiExit", 'Int'>
+    readonly employeeId: FieldRef<"EpiExit", 'Int'>
+    readonly quantity: FieldRef<"EpiExit", 'Int'>
+    readonly date: FieldRef<"EpiExit", 'DateTime'>
+    readonly createdAt: FieldRef<"EpiExit", 'DateTime'>
+  }
+    
+
+  // Custom InputTypes
+  /**
+   * EpiExit findUnique
+   */
+  export type EpiExitFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the EpiExit
+     */
+    select?: EpiExitSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the EpiExit
+     */
+    omit?: EpiExitOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: EpiExitInclude<ExtArgs> | null
+    /**
+     * Filter, which EpiExit to fetch.
+     */
+    where: EpiExitWhereUniqueInput
+  }
+
+  /**
+   * EpiExit findUniqueOrThrow
+   */
+  export type EpiExitFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the EpiExit
+     */
+    select?: EpiExitSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the EpiExit
+     */
+    omit?: EpiExitOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: EpiExitInclude<ExtArgs> | null
+    /**
+     * Filter, which EpiExit to fetch.
+     */
+    where: EpiExitWhereUniqueInput
+  }
+
+  /**
+   * EpiExit findFirst
+   */
+  export type EpiExitFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the EpiExit
+     */
+    select?: EpiExitSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the EpiExit
+     */
+    omit?: EpiExitOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: EpiExitInclude<ExtArgs> | null
+    /**
+     * Filter, which EpiExit to fetch.
+     */
+    where?: EpiExitWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of EpiExits to fetch.
+     */
+    orderBy?: EpiExitOrderByWithRelationInput | EpiExitOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for EpiExits.
+     */
+    cursor?: EpiExitWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` EpiExits from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` EpiExits.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of EpiExits.
+     */
+    distinct?: EpiExitScalarFieldEnum | EpiExitScalarFieldEnum[]
+  }
+
+  /**
+   * EpiExit findFirstOrThrow
+   */
+  export type EpiExitFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the EpiExit
+     */
+    select?: EpiExitSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the EpiExit
+     */
+    omit?: EpiExitOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: EpiExitInclude<ExtArgs> | null
+    /**
+     * Filter, which EpiExit to fetch.
+     */
+    where?: EpiExitWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of EpiExits to fetch.
+     */
+    orderBy?: EpiExitOrderByWithRelationInput | EpiExitOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for EpiExits.
+     */
+    cursor?: EpiExitWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` EpiExits from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` EpiExits.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of EpiExits.
+     */
+    distinct?: EpiExitScalarFieldEnum | EpiExitScalarFieldEnum[]
+  }
+
+  /**
+   * EpiExit findMany
+   */
+  export type EpiExitFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the EpiExit
+     */
+    select?: EpiExitSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the EpiExit
+     */
+    omit?: EpiExitOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: EpiExitInclude<ExtArgs> | null
+    /**
+     * Filter, which EpiExits to fetch.
+     */
+    where?: EpiExitWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of EpiExits to fetch.
+     */
+    orderBy?: EpiExitOrderByWithRelationInput | EpiExitOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for listing EpiExits.
+     */
+    cursor?: EpiExitWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` EpiExits from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` EpiExits.
+     */
+    skip?: number
+    distinct?: EpiExitScalarFieldEnum | EpiExitScalarFieldEnum[]
+  }
+
+  /**
+   * EpiExit create
+   */
+  export type EpiExitCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the EpiExit
+     */
+    select?: EpiExitSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the EpiExit
+     */
+    omit?: EpiExitOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: EpiExitInclude<ExtArgs> | null
+    /**
+     * The data needed to create a EpiExit.
+     */
+    data: XOR<EpiExitCreateInput, EpiExitUncheckedCreateInput>
+  }
+
+  /**
+   * EpiExit createMany
+   */
+  export type EpiExitCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to create many EpiExits.
+     */
+    data: EpiExitCreateManyInput | EpiExitCreateManyInput[]
+    skipDuplicates?: boolean
+  }
+
+  /**
+   * EpiExit createManyAndReturn
+   */
+  export type EpiExitCreateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the EpiExit
+     */
+    select?: EpiExitSelectCreateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the EpiExit
+     */
+    omit?: EpiExitOmit<ExtArgs> | null
+    /**
+     * The data used to create many EpiExits.
+     */
+    data: EpiExitCreateManyInput | EpiExitCreateManyInput[]
+    skipDuplicates?: boolean
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: EpiExitIncludeCreateManyAndReturn<ExtArgs> | null
+  }
+
+  /**
+   * EpiExit update
+   */
+  export type EpiExitUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the EpiExit
+     */
+    select?: EpiExitSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the EpiExit
+     */
+    omit?: EpiExitOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: EpiExitInclude<ExtArgs> | null
+    /**
+     * The data needed to update a EpiExit.
+     */
+    data: XOR<EpiExitUpdateInput, EpiExitUncheckedUpdateInput>
+    /**
+     * Choose, which EpiExit to update.
+     */
+    where: EpiExitWhereUniqueInput
+  }
+
+  /**
+   * EpiExit updateMany
+   */
+  export type EpiExitUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to update EpiExits.
+     */
+    data: XOR<EpiExitUpdateManyMutationInput, EpiExitUncheckedUpdateManyInput>
+    /**
+     * Filter which EpiExits to update
+     */
+    where?: EpiExitWhereInput
+    /**
+     * Limit how many EpiExits to update.
+     */
+    limit?: number
+  }
+
+  /**
+   * EpiExit updateManyAndReturn
+   */
+  export type EpiExitUpdateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the EpiExit
+     */
+    select?: EpiExitSelectUpdateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the EpiExit
+     */
+    omit?: EpiExitOmit<ExtArgs> | null
+    /**
+     * The data used to update EpiExits.
+     */
+    data: XOR<EpiExitUpdateManyMutationInput, EpiExitUncheckedUpdateManyInput>
+    /**
+     * Filter which EpiExits to update
+     */
+    where?: EpiExitWhereInput
+    /**
+     * Limit how many EpiExits to update.
+     */
+    limit?: number
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: EpiExitIncludeUpdateManyAndReturn<ExtArgs> | null
+  }
+
+  /**
+   * EpiExit upsert
+   */
+  export type EpiExitUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the EpiExit
+     */
+    select?: EpiExitSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the EpiExit
+     */
+    omit?: EpiExitOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: EpiExitInclude<ExtArgs> | null
+    /**
+     * The filter to search for the EpiExit to update in case it exists.
+     */
+    where: EpiExitWhereUniqueInput
+    /**
+     * In case the EpiExit found by the `where` argument doesn't exist, create a new EpiExit with this data.
+     */
+    create: XOR<EpiExitCreateInput, EpiExitUncheckedCreateInput>
+    /**
+     * In case the EpiExit was found with the provided `where` argument, update it with this data.
+     */
+    update: XOR<EpiExitUpdateInput, EpiExitUncheckedUpdateInput>
+  }
+
+  /**
+   * EpiExit delete
+   */
+  export type EpiExitDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the EpiExit
+     */
+    select?: EpiExitSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the EpiExit
+     */
+    omit?: EpiExitOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: EpiExitInclude<ExtArgs> | null
+    /**
+     * Filter which EpiExit to delete.
+     */
+    where: EpiExitWhereUniqueInput
+  }
+
+  /**
+   * EpiExit deleteMany
+   */
+  export type EpiExitDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which EpiExits to delete
+     */
+    where?: EpiExitWhereInput
+    /**
+     * Limit how many EpiExits to delete.
+     */
+    limit?: number
+  }
+
+  /**
+   * EpiExit without action
+   */
+  export type EpiExitDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the EpiExit
+     */
+    select?: EpiExitSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the EpiExit
+     */
+    omit?: EpiExitOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: EpiExitInclude<ExtArgs> | null
   }
 
 
@@ -8482,10 +9776,10 @@ export namespace Prisma {
 
   export const EpiEmployeeScalarFieldEnum: {
     id: 'id',
-    employeeId: 'employeeId',
     epiId: 'epiId',
-    createdAt: 'createdAt',
-    updatedAt: 'updatedAt'
+    employeeId: 'employeeId',
+    quantity: 'quantity',
+    deliveryDate: 'deliveryDate'
   };
 
   export type EpiEmployeeScalarFieldEnum = (typeof EpiEmployeeScalarFieldEnum)[keyof typeof EpiEmployeeScalarFieldEnum]
@@ -8503,6 +9797,18 @@ export namespace Prisma {
   };
 
   export type EpiEntryScalarFieldEnum = (typeof EpiEntryScalarFieldEnum)[keyof typeof EpiEntryScalarFieldEnum]
+
+
+  export const EpiExitScalarFieldEnum: {
+    id: 'id',
+    epiId: 'epiId',
+    employeeId: 'employeeId',
+    quantity: 'quantity',
+    date: 'date',
+    createdAt: 'createdAt'
+  };
+
+  export type EpiExitScalarFieldEnum = (typeof EpiExitScalarFieldEnum)[keyof typeof EpiExitScalarFieldEnum]
 
 
   export const ExamScalarFieldEnum: {
@@ -8694,6 +10000,7 @@ export namespace Prisma {
     updatedAt?: DateTimeFilter<"Employee"> | Date | string
     epies?: EpiEmployeeListRelationFilter
     exams?: ExamEmployeeListRelationFilter
+    exits?: EpiExitListRelationFilter
   }
 
   export type EmployeeOrderByWithRelationInput = {
@@ -8715,6 +10022,7 @@ export namespace Prisma {
     updatedAt?: SortOrder
     epies?: EpiEmployeeOrderByRelationAggregateInput
     exams?: ExamEmployeeOrderByRelationAggregateInput
+    exits?: EpiExitOrderByRelationAggregateInput
   }
 
   export type EmployeeWhereUniqueInput = Prisma.AtLeast<{
@@ -8739,6 +10047,7 @@ export namespace Prisma {
     updatedAt?: DateTimeFilter<"Employee"> | Date | string
     epies?: EpiEmployeeListRelationFilter
     exams?: ExamEmployeeListRelationFilter
+    exits?: EpiExitListRelationFilter
   }, "id" | "email" | "phone" | "cpf" | "rg">
 
   export type EmployeeOrderByWithAggregationInput = {
@@ -8802,6 +10111,7 @@ export namespace Prisma {
     updatedAt?: DateTimeFilter<"Epi"> | Date | string
     employees?: EpiEmployeeListRelationFilter
     entries?: EpiEntryListRelationFilter
+    exits?: EpiExitListRelationFilter
   }
 
   export type EpiOrderByWithRelationInput = {
@@ -8816,6 +10126,7 @@ export namespace Prisma {
     updatedAt?: SortOrder
     employees?: EpiEmployeeOrderByRelationAggregateInput
     entries?: EpiEntryOrderByRelationAggregateInput
+    exits?: EpiExitOrderByRelationAggregateInput
   }
 
   export type EpiWhereUniqueInput = Prisma.AtLeast<{
@@ -8833,6 +10144,7 @@ export namespace Prisma {
     updatedAt?: DateTimeFilter<"Epi"> | Date | string
     employees?: EpiEmployeeListRelationFilter
     entries?: EpiEntryListRelationFilter
+    exits?: EpiExitListRelationFilter
   }, "id">
 
   export type EpiOrderByWithAggregationInput = {
@@ -8872,22 +10184,22 @@ export namespace Prisma {
     OR?: EpiEmployeeWhereInput[]
     NOT?: EpiEmployeeWhereInput | EpiEmployeeWhereInput[]
     id?: IntFilter<"EpiEmployee"> | number
-    employeeId?: IntFilter<"EpiEmployee"> | number
     epiId?: IntFilter<"EpiEmployee"> | number
-    createdAt?: DateTimeFilter<"EpiEmployee"> | Date | string
-    updatedAt?: DateTimeFilter<"EpiEmployee"> | Date | string
-    employee?: XOR<EmployeeScalarRelationFilter, EmployeeWhereInput>
+    employeeId?: IntFilter<"EpiEmployee"> | number
+    quantity?: IntFilter<"EpiEmployee"> | number
+    deliveryDate?: DateTimeFilter<"EpiEmployee"> | Date | string
     epi?: XOR<EpiScalarRelationFilter, EpiWhereInput>
+    employee?: XOR<EmployeeScalarRelationFilter, EmployeeWhereInput>
   }
 
   export type EpiEmployeeOrderByWithRelationInput = {
     id?: SortOrder
-    employeeId?: SortOrder
     epiId?: SortOrder
-    createdAt?: SortOrder
-    updatedAt?: SortOrder
-    employee?: EmployeeOrderByWithRelationInput
+    employeeId?: SortOrder
+    quantity?: SortOrder
+    deliveryDate?: SortOrder
     epi?: EpiOrderByWithRelationInput
+    employee?: EmployeeOrderByWithRelationInput
   }
 
   export type EpiEmployeeWhereUniqueInput = Prisma.AtLeast<{
@@ -8895,20 +10207,20 @@ export namespace Prisma {
     AND?: EpiEmployeeWhereInput | EpiEmployeeWhereInput[]
     OR?: EpiEmployeeWhereInput[]
     NOT?: EpiEmployeeWhereInput | EpiEmployeeWhereInput[]
-    employeeId?: IntFilter<"EpiEmployee"> | number
     epiId?: IntFilter<"EpiEmployee"> | number
-    createdAt?: DateTimeFilter<"EpiEmployee"> | Date | string
-    updatedAt?: DateTimeFilter<"EpiEmployee"> | Date | string
-    employee?: XOR<EmployeeScalarRelationFilter, EmployeeWhereInput>
+    employeeId?: IntFilter<"EpiEmployee"> | number
+    quantity?: IntFilter<"EpiEmployee"> | number
+    deliveryDate?: DateTimeFilter<"EpiEmployee"> | Date | string
     epi?: XOR<EpiScalarRelationFilter, EpiWhereInput>
+    employee?: XOR<EmployeeScalarRelationFilter, EmployeeWhereInput>
   }, "id">
 
   export type EpiEmployeeOrderByWithAggregationInput = {
     id?: SortOrder
-    employeeId?: SortOrder
     epiId?: SortOrder
-    createdAt?: SortOrder
-    updatedAt?: SortOrder
+    employeeId?: SortOrder
+    quantity?: SortOrder
+    deliveryDate?: SortOrder
     _count?: EpiEmployeeCountOrderByAggregateInput
     _avg?: EpiEmployeeAvgOrderByAggregateInput
     _max?: EpiEmployeeMaxOrderByAggregateInput
@@ -8921,10 +10233,10 @@ export namespace Prisma {
     OR?: EpiEmployeeScalarWhereWithAggregatesInput[]
     NOT?: EpiEmployeeScalarWhereWithAggregatesInput | EpiEmployeeScalarWhereWithAggregatesInput[]
     id?: IntWithAggregatesFilter<"EpiEmployee"> | number
-    employeeId?: IntWithAggregatesFilter<"EpiEmployee"> | number
     epiId?: IntWithAggregatesFilter<"EpiEmployee"> | number
-    createdAt?: DateTimeWithAggregatesFilter<"EpiEmployee"> | Date | string
-    updatedAt?: DateTimeWithAggregatesFilter<"EpiEmployee"> | Date | string
+    employeeId?: IntWithAggregatesFilter<"EpiEmployee"> | number
+    quantity?: IntWithAggregatesFilter<"EpiEmployee"> | number
+    deliveryDate?: DateTimeWithAggregatesFilter<"EpiEmployee"> | Date | string
   }
 
   export type EpiEntryWhereInput = {
@@ -8997,6 +10309,71 @@ export namespace Prisma {
     supplier?: StringNullableWithAggregatesFilter<"EpiEntry"> | string | null
     createdAt?: DateTimeWithAggregatesFilter<"EpiEntry"> | Date | string
     updatedAt?: DateTimeWithAggregatesFilter<"EpiEntry"> | Date | string
+  }
+
+  export type EpiExitWhereInput = {
+    AND?: EpiExitWhereInput | EpiExitWhereInput[]
+    OR?: EpiExitWhereInput[]
+    NOT?: EpiExitWhereInput | EpiExitWhereInput[]
+    id?: IntFilter<"EpiExit"> | number
+    epiId?: IntFilter<"EpiExit"> | number
+    employeeId?: IntFilter<"EpiExit"> | number
+    quantity?: IntFilter<"EpiExit"> | number
+    date?: DateTimeFilter<"EpiExit"> | Date | string
+    createdAt?: DateTimeFilter<"EpiExit"> | Date | string
+    epi?: XOR<EpiScalarRelationFilter, EpiWhereInput>
+    employee?: XOR<EmployeeScalarRelationFilter, EmployeeWhereInput>
+  }
+
+  export type EpiExitOrderByWithRelationInput = {
+    id?: SortOrder
+    epiId?: SortOrder
+    employeeId?: SortOrder
+    quantity?: SortOrder
+    date?: SortOrder
+    createdAt?: SortOrder
+    epi?: EpiOrderByWithRelationInput
+    employee?: EmployeeOrderByWithRelationInput
+  }
+
+  export type EpiExitWhereUniqueInput = Prisma.AtLeast<{
+    id?: number
+    AND?: EpiExitWhereInput | EpiExitWhereInput[]
+    OR?: EpiExitWhereInput[]
+    NOT?: EpiExitWhereInput | EpiExitWhereInput[]
+    epiId?: IntFilter<"EpiExit"> | number
+    employeeId?: IntFilter<"EpiExit"> | number
+    quantity?: IntFilter<"EpiExit"> | number
+    date?: DateTimeFilter<"EpiExit"> | Date | string
+    createdAt?: DateTimeFilter<"EpiExit"> | Date | string
+    epi?: XOR<EpiScalarRelationFilter, EpiWhereInput>
+    employee?: XOR<EmployeeScalarRelationFilter, EmployeeWhereInput>
+  }, "id">
+
+  export type EpiExitOrderByWithAggregationInput = {
+    id?: SortOrder
+    epiId?: SortOrder
+    employeeId?: SortOrder
+    quantity?: SortOrder
+    date?: SortOrder
+    createdAt?: SortOrder
+    _count?: EpiExitCountOrderByAggregateInput
+    _avg?: EpiExitAvgOrderByAggregateInput
+    _max?: EpiExitMaxOrderByAggregateInput
+    _min?: EpiExitMinOrderByAggregateInput
+    _sum?: EpiExitSumOrderByAggregateInput
+  }
+
+  export type EpiExitScalarWhereWithAggregatesInput = {
+    AND?: EpiExitScalarWhereWithAggregatesInput | EpiExitScalarWhereWithAggregatesInput[]
+    OR?: EpiExitScalarWhereWithAggregatesInput[]
+    NOT?: EpiExitScalarWhereWithAggregatesInput | EpiExitScalarWhereWithAggregatesInput[]
+    id?: IntWithAggregatesFilter<"EpiExit"> | number
+    epiId?: IntWithAggregatesFilter<"EpiExit"> | number
+    employeeId?: IntWithAggregatesFilter<"EpiExit"> | number
+    quantity?: IntWithAggregatesFilter<"EpiExit"> | number
+    date?: DateTimeWithAggregatesFilter<"EpiExit"> | Date | string
+    createdAt?: DateTimeWithAggregatesFilter<"EpiExit"> | Date | string
   }
 
   export type ExamWhereInput = {
@@ -9139,6 +10516,7 @@ export namespace Prisma {
     updatedAt?: Date | string
     epies?: EpiEmployeeCreateNestedManyWithoutEmployeeInput
     exams?: ExamEmployeeCreateNestedManyWithoutEmployeeInput
+    exits?: EpiExitCreateNestedManyWithoutEmployeeInput
   }
 
   export type EmployeeUncheckedCreateInput = {
@@ -9160,6 +10538,7 @@ export namespace Prisma {
     updatedAt?: Date | string
     epies?: EpiEmployeeUncheckedCreateNestedManyWithoutEmployeeInput
     exams?: ExamEmployeeUncheckedCreateNestedManyWithoutEmployeeInput
+    exits?: EpiExitUncheckedCreateNestedManyWithoutEmployeeInput
   }
 
   export type EmployeeUpdateInput = {
@@ -9180,6 +10559,7 @@ export namespace Prisma {
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     epies?: EpiEmployeeUpdateManyWithoutEmployeeNestedInput
     exams?: ExamEmployeeUpdateManyWithoutEmployeeNestedInput
+    exits?: EpiExitUpdateManyWithoutEmployeeNestedInput
   }
 
   export type EmployeeUncheckedUpdateInput = {
@@ -9201,6 +10581,7 @@ export namespace Prisma {
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     epies?: EpiEmployeeUncheckedUpdateManyWithoutEmployeeNestedInput
     exams?: ExamEmployeeUncheckedUpdateManyWithoutEmployeeNestedInput
+    exits?: EpiExitUncheckedUpdateManyWithoutEmployeeNestedInput
   }
 
   export type EmployeeCreateManyInput = {
@@ -9270,6 +10651,7 @@ export namespace Prisma {
     updatedAt?: Date | string
     employees?: EpiEmployeeCreateNestedManyWithoutEpiInput
     entries?: EpiEntryCreateNestedManyWithoutEpiInput
+    exits?: EpiExitCreateNestedManyWithoutEpiInput
   }
 
   export type EpiUncheckedCreateInput = {
@@ -9284,6 +10666,7 @@ export namespace Prisma {
     updatedAt?: Date | string
     employees?: EpiEmployeeUncheckedCreateNestedManyWithoutEpiInput
     entries?: EpiEntryUncheckedCreateNestedManyWithoutEpiInput
+    exits?: EpiExitUncheckedCreateNestedManyWithoutEpiInput
   }
 
   export type EpiUpdateInput = {
@@ -9297,6 +10680,7 @@ export namespace Prisma {
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     employees?: EpiEmployeeUpdateManyWithoutEpiNestedInput
     entries?: EpiEntryUpdateManyWithoutEpiNestedInput
+    exits?: EpiExitUpdateManyWithoutEpiNestedInput
   }
 
   export type EpiUncheckedUpdateInput = {
@@ -9311,6 +10695,7 @@ export namespace Prisma {
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     employees?: EpiEmployeeUncheckedUpdateManyWithoutEpiNestedInput
     entries?: EpiEntryUncheckedUpdateManyWithoutEpiNestedInput
+    exits?: EpiExitUncheckedUpdateManyWithoutEpiNestedInput
   }
 
   export type EpiCreateManyInput = {
@@ -9349,54 +10734,54 @@ export namespace Prisma {
   }
 
   export type EpiEmployeeCreateInput = {
-    createdAt?: Date | string
-    updatedAt?: Date | string
-    employee: EmployeeCreateNestedOneWithoutEpiesInput
+    quantity: number
+    deliveryDate?: Date | string
     epi: EpiCreateNestedOneWithoutEmployeesInput
+    employee: EmployeeCreateNestedOneWithoutEpiesInput
   }
 
   export type EpiEmployeeUncheckedCreateInput = {
     id?: number
-    employeeId: number
     epiId: number
-    createdAt?: Date | string
-    updatedAt?: Date | string
+    employeeId: number
+    quantity: number
+    deliveryDate?: Date | string
   }
 
   export type EpiEmployeeUpdateInput = {
-    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    employee?: EmployeeUpdateOneRequiredWithoutEpiesNestedInput
+    quantity?: IntFieldUpdateOperationsInput | number
+    deliveryDate?: DateTimeFieldUpdateOperationsInput | Date | string
     epi?: EpiUpdateOneRequiredWithoutEmployeesNestedInput
+    employee?: EmployeeUpdateOneRequiredWithoutEpiesNestedInput
   }
 
   export type EpiEmployeeUncheckedUpdateInput = {
     id?: IntFieldUpdateOperationsInput | number
-    employeeId?: IntFieldUpdateOperationsInput | number
     epiId?: IntFieldUpdateOperationsInput | number
-    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    employeeId?: IntFieldUpdateOperationsInput | number
+    quantity?: IntFieldUpdateOperationsInput | number
+    deliveryDate?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type EpiEmployeeCreateManyInput = {
     id?: number
-    employeeId: number
     epiId: number
-    createdAt?: Date | string
-    updatedAt?: Date | string
+    employeeId: number
+    quantity: number
+    deliveryDate?: Date | string
   }
 
   export type EpiEmployeeUpdateManyMutationInput = {
-    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    quantity?: IntFieldUpdateOperationsInput | number
+    deliveryDate?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type EpiEmployeeUncheckedUpdateManyInput = {
     id?: IntFieldUpdateOperationsInput | number
-    employeeId?: IntFieldUpdateOperationsInput | number
     epiId?: IntFieldUpdateOperationsInput | number
-    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    employeeId?: IntFieldUpdateOperationsInput | number
+    quantity?: IntFieldUpdateOperationsInput | number
+    deliveryDate?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type EpiEntryCreateInput = {
@@ -9470,6 +10855,64 @@ export namespace Prisma {
     supplier?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type EpiExitCreateInput = {
+    quantity: number
+    date?: Date | string
+    createdAt?: Date | string
+    epi: EpiCreateNestedOneWithoutExitsInput
+    employee: EmployeeCreateNestedOneWithoutExitsInput
+  }
+
+  export type EpiExitUncheckedCreateInput = {
+    id?: number
+    epiId: number
+    employeeId: number
+    quantity: number
+    date?: Date | string
+    createdAt?: Date | string
+  }
+
+  export type EpiExitUpdateInput = {
+    quantity?: IntFieldUpdateOperationsInput | number
+    date?: DateTimeFieldUpdateOperationsInput | Date | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    epi?: EpiUpdateOneRequiredWithoutExitsNestedInput
+    employee?: EmployeeUpdateOneRequiredWithoutExitsNestedInput
+  }
+
+  export type EpiExitUncheckedUpdateInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    epiId?: IntFieldUpdateOperationsInput | number
+    employeeId?: IntFieldUpdateOperationsInput | number
+    quantity?: IntFieldUpdateOperationsInput | number
+    date?: DateTimeFieldUpdateOperationsInput | Date | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type EpiExitCreateManyInput = {
+    id?: number
+    epiId: number
+    employeeId: number
+    quantity: number
+    date?: Date | string
+    createdAt?: Date | string
+  }
+
+  export type EpiExitUpdateManyMutationInput = {
+    quantity?: IntFieldUpdateOperationsInput | number
+    date?: DateTimeFieldUpdateOperationsInput | Date | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type EpiExitUncheckedUpdateManyInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    epiId?: IntFieldUpdateOperationsInput | number
+    employeeId?: IntFieldUpdateOperationsInput | number
+    quantity?: IntFieldUpdateOperationsInput | number
+    date?: DateTimeFieldUpdateOperationsInput | Date | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type ExamCreateInput = {
@@ -9664,11 +11107,21 @@ export namespace Prisma {
     none?: ExamEmployeeWhereInput
   }
 
+  export type EpiExitListRelationFilter = {
+    every?: EpiExitWhereInput
+    some?: EpiExitWhereInput
+    none?: EpiExitWhereInput
+  }
+
   export type EpiEmployeeOrderByRelationAggregateInput = {
     _count?: SortOrder
   }
 
   export type ExamEmployeeOrderByRelationAggregateInput = {
+    _count?: SortOrder
+  }
+
+  export type EpiExitOrderByRelationAggregateInput = {
     _count?: SortOrder
   }
 
@@ -9881,50 +11334,52 @@ export namespace Prisma {
     quantity?: SortOrder
   }
 
-  export type EmployeeScalarRelationFilter = {
-    is?: EmployeeWhereInput
-    isNot?: EmployeeWhereInput
-  }
-
   export type EpiScalarRelationFilter = {
     is?: EpiWhereInput
     isNot?: EpiWhereInput
   }
 
+  export type EmployeeScalarRelationFilter = {
+    is?: EmployeeWhereInput
+    isNot?: EmployeeWhereInput
+  }
+
   export type EpiEmployeeCountOrderByAggregateInput = {
     id?: SortOrder
-    employeeId?: SortOrder
     epiId?: SortOrder
-    createdAt?: SortOrder
-    updatedAt?: SortOrder
+    employeeId?: SortOrder
+    quantity?: SortOrder
+    deliveryDate?: SortOrder
   }
 
   export type EpiEmployeeAvgOrderByAggregateInput = {
     id?: SortOrder
-    employeeId?: SortOrder
     epiId?: SortOrder
+    employeeId?: SortOrder
+    quantity?: SortOrder
   }
 
   export type EpiEmployeeMaxOrderByAggregateInput = {
     id?: SortOrder
-    employeeId?: SortOrder
     epiId?: SortOrder
-    createdAt?: SortOrder
-    updatedAt?: SortOrder
+    employeeId?: SortOrder
+    quantity?: SortOrder
+    deliveryDate?: SortOrder
   }
 
   export type EpiEmployeeMinOrderByAggregateInput = {
     id?: SortOrder
-    employeeId?: SortOrder
     epiId?: SortOrder
-    createdAt?: SortOrder
-    updatedAt?: SortOrder
+    employeeId?: SortOrder
+    quantity?: SortOrder
+    deliveryDate?: SortOrder
   }
 
   export type EpiEmployeeSumOrderByAggregateInput = {
     id?: SortOrder
-    employeeId?: SortOrder
     epiId?: SortOrder
+    employeeId?: SortOrder
+    quantity?: SortOrder
   }
 
   export type StringNullableFilter<$PrismaModel = never> = {
@@ -10008,6 +11463,47 @@ export namespace Prisma {
     _count?: NestedIntNullableFilter<$PrismaModel>
     _min?: NestedStringNullableFilter<$PrismaModel>
     _max?: NestedStringNullableFilter<$PrismaModel>
+  }
+
+  export type EpiExitCountOrderByAggregateInput = {
+    id?: SortOrder
+    epiId?: SortOrder
+    employeeId?: SortOrder
+    quantity?: SortOrder
+    date?: SortOrder
+    createdAt?: SortOrder
+  }
+
+  export type EpiExitAvgOrderByAggregateInput = {
+    id?: SortOrder
+    epiId?: SortOrder
+    employeeId?: SortOrder
+    quantity?: SortOrder
+  }
+
+  export type EpiExitMaxOrderByAggregateInput = {
+    id?: SortOrder
+    epiId?: SortOrder
+    employeeId?: SortOrder
+    quantity?: SortOrder
+    date?: SortOrder
+    createdAt?: SortOrder
+  }
+
+  export type EpiExitMinOrderByAggregateInput = {
+    id?: SortOrder
+    epiId?: SortOrder
+    employeeId?: SortOrder
+    quantity?: SortOrder
+    date?: SortOrder
+    createdAt?: SortOrder
+  }
+
+  export type EpiExitSumOrderByAggregateInput = {
+    id?: SortOrder
+    epiId?: SortOrder
+    employeeId?: SortOrder
+    quantity?: SortOrder
   }
 
   export type ExamCountOrderByAggregateInput = {
@@ -10100,6 +11596,13 @@ export namespace Prisma {
     connect?: ExamEmployeeWhereUniqueInput | ExamEmployeeWhereUniqueInput[]
   }
 
+  export type EpiExitCreateNestedManyWithoutEmployeeInput = {
+    create?: XOR<EpiExitCreateWithoutEmployeeInput, EpiExitUncheckedCreateWithoutEmployeeInput> | EpiExitCreateWithoutEmployeeInput[] | EpiExitUncheckedCreateWithoutEmployeeInput[]
+    connectOrCreate?: EpiExitCreateOrConnectWithoutEmployeeInput | EpiExitCreateOrConnectWithoutEmployeeInput[]
+    createMany?: EpiExitCreateManyEmployeeInputEnvelope
+    connect?: EpiExitWhereUniqueInput | EpiExitWhereUniqueInput[]
+  }
+
   export type EpiEmployeeUncheckedCreateNestedManyWithoutEmployeeInput = {
     create?: XOR<EpiEmployeeCreateWithoutEmployeeInput, EpiEmployeeUncheckedCreateWithoutEmployeeInput> | EpiEmployeeCreateWithoutEmployeeInput[] | EpiEmployeeUncheckedCreateWithoutEmployeeInput[]
     connectOrCreate?: EpiEmployeeCreateOrConnectWithoutEmployeeInput | EpiEmployeeCreateOrConnectWithoutEmployeeInput[]
@@ -10112,6 +11615,13 @@ export namespace Prisma {
     connectOrCreate?: ExamEmployeeCreateOrConnectWithoutEmployeeInput | ExamEmployeeCreateOrConnectWithoutEmployeeInput[]
     createMany?: ExamEmployeeCreateManyEmployeeInputEnvelope
     connect?: ExamEmployeeWhereUniqueInput | ExamEmployeeWhereUniqueInput[]
+  }
+
+  export type EpiExitUncheckedCreateNestedManyWithoutEmployeeInput = {
+    create?: XOR<EpiExitCreateWithoutEmployeeInput, EpiExitUncheckedCreateWithoutEmployeeInput> | EpiExitCreateWithoutEmployeeInput[] | EpiExitUncheckedCreateWithoutEmployeeInput[]
+    connectOrCreate?: EpiExitCreateOrConnectWithoutEmployeeInput | EpiExitCreateOrConnectWithoutEmployeeInput[]
+    createMany?: EpiExitCreateManyEmployeeInputEnvelope
+    connect?: EpiExitWhereUniqueInput | EpiExitWhereUniqueInput[]
   }
 
   export type StringFieldUpdateOperationsInput = {
@@ -10166,6 +11676,20 @@ export namespace Prisma {
     deleteMany?: ExamEmployeeScalarWhereInput | ExamEmployeeScalarWhereInput[]
   }
 
+  export type EpiExitUpdateManyWithoutEmployeeNestedInput = {
+    create?: XOR<EpiExitCreateWithoutEmployeeInput, EpiExitUncheckedCreateWithoutEmployeeInput> | EpiExitCreateWithoutEmployeeInput[] | EpiExitUncheckedCreateWithoutEmployeeInput[]
+    connectOrCreate?: EpiExitCreateOrConnectWithoutEmployeeInput | EpiExitCreateOrConnectWithoutEmployeeInput[]
+    upsert?: EpiExitUpsertWithWhereUniqueWithoutEmployeeInput | EpiExitUpsertWithWhereUniqueWithoutEmployeeInput[]
+    createMany?: EpiExitCreateManyEmployeeInputEnvelope
+    set?: EpiExitWhereUniqueInput | EpiExitWhereUniqueInput[]
+    disconnect?: EpiExitWhereUniqueInput | EpiExitWhereUniqueInput[]
+    delete?: EpiExitWhereUniqueInput | EpiExitWhereUniqueInput[]
+    connect?: EpiExitWhereUniqueInput | EpiExitWhereUniqueInput[]
+    update?: EpiExitUpdateWithWhereUniqueWithoutEmployeeInput | EpiExitUpdateWithWhereUniqueWithoutEmployeeInput[]
+    updateMany?: EpiExitUpdateManyWithWhereWithoutEmployeeInput | EpiExitUpdateManyWithWhereWithoutEmployeeInput[]
+    deleteMany?: EpiExitScalarWhereInput | EpiExitScalarWhereInput[]
+  }
+
   export type IntFieldUpdateOperationsInput = {
     set?: number
     increment?: number
@@ -10202,6 +11726,20 @@ export namespace Prisma {
     deleteMany?: ExamEmployeeScalarWhereInput | ExamEmployeeScalarWhereInput[]
   }
 
+  export type EpiExitUncheckedUpdateManyWithoutEmployeeNestedInput = {
+    create?: XOR<EpiExitCreateWithoutEmployeeInput, EpiExitUncheckedCreateWithoutEmployeeInput> | EpiExitCreateWithoutEmployeeInput[] | EpiExitUncheckedCreateWithoutEmployeeInput[]
+    connectOrCreate?: EpiExitCreateOrConnectWithoutEmployeeInput | EpiExitCreateOrConnectWithoutEmployeeInput[]
+    upsert?: EpiExitUpsertWithWhereUniqueWithoutEmployeeInput | EpiExitUpsertWithWhereUniqueWithoutEmployeeInput[]
+    createMany?: EpiExitCreateManyEmployeeInputEnvelope
+    set?: EpiExitWhereUniqueInput | EpiExitWhereUniqueInput[]
+    disconnect?: EpiExitWhereUniqueInput | EpiExitWhereUniqueInput[]
+    delete?: EpiExitWhereUniqueInput | EpiExitWhereUniqueInput[]
+    connect?: EpiExitWhereUniqueInput | EpiExitWhereUniqueInput[]
+    update?: EpiExitUpdateWithWhereUniqueWithoutEmployeeInput | EpiExitUpdateWithWhereUniqueWithoutEmployeeInput[]
+    updateMany?: EpiExitUpdateManyWithWhereWithoutEmployeeInput | EpiExitUpdateManyWithWhereWithoutEmployeeInput[]
+    deleteMany?: EpiExitScalarWhereInput | EpiExitScalarWhereInput[]
+  }
+
   export type EpiEmployeeCreateNestedManyWithoutEpiInput = {
     create?: XOR<EpiEmployeeCreateWithoutEpiInput, EpiEmployeeUncheckedCreateWithoutEpiInput> | EpiEmployeeCreateWithoutEpiInput[] | EpiEmployeeUncheckedCreateWithoutEpiInput[]
     connectOrCreate?: EpiEmployeeCreateOrConnectWithoutEpiInput | EpiEmployeeCreateOrConnectWithoutEpiInput[]
@@ -10216,6 +11754,13 @@ export namespace Prisma {
     connect?: EpiEntryWhereUniqueInput | EpiEntryWhereUniqueInput[]
   }
 
+  export type EpiExitCreateNestedManyWithoutEpiInput = {
+    create?: XOR<EpiExitCreateWithoutEpiInput, EpiExitUncheckedCreateWithoutEpiInput> | EpiExitCreateWithoutEpiInput[] | EpiExitUncheckedCreateWithoutEpiInput[]
+    connectOrCreate?: EpiExitCreateOrConnectWithoutEpiInput | EpiExitCreateOrConnectWithoutEpiInput[]
+    createMany?: EpiExitCreateManyEpiInputEnvelope
+    connect?: EpiExitWhereUniqueInput | EpiExitWhereUniqueInput[]
+  }
+
   export type EpiEmployeeUncheckedCreateNestedManyWithoutEpiInput = {
     create?: XOR<EpiEmployeeCreateWithoutEpiInput, EpiEmployeeUncheckedCreateWithoutEpiInput> | EpiEmployeeCreateWithoutEpiInput[] | EpiEmployeeUncheckedCreateWithoutEpiInput[]
     connectOrCreate?: EpiEmployeeCreateOrConnectWithoutEpiInput | EpiEmployeeCreateOrConnectWithoutEpiInput[]
@@ -10228,6 +11773,13 @@ export namespace Prisma {
     connectOrCreate?: EpiEntryCreateOrConnectWithoutEpiInput | EpiEntryCreateOrConnectWithoutEpiInput[]
     createMany?: EpiEntryCreateManyEpiInputEnvelope
     connect?: EpiEntryWhereUniqueInput | EpiEntryWhereUniqueInput[]
+  }
+
+  export type EpiExitUncheckedCreateNestedManyWithoutEpiInput = {
+    create?: XOR<EpiExitCreateWithoutEpiInput, EpiExitUncheckedCreateWithoutEpiInput> | EpiExitCreateWithoutEpiInput[] | EpiExitUncheckedCreateWithoutEpiInput[]
+    connectOrCreate?: EpiExitCreateOrConnectWithoutEpiInput | EpiExitCreateOrConnectWithoutEpiInput[]
+    createMany?: EpiExitCreateManyEpiInputEnvelope
+    connect?: EpiExitWhereUniqueInput | EpiExitWhereUniqueInput[]
   }
 
   export type EpiEmployeeUpdateManyWithoutEpiNestedInput = {
@@ -10258,6 +11810,20 @@ export namespace Prisma {
     deleteMany?: EpiEntryScalarWhereInput | EpiEntryScalarWhereInput[]
   }
 
+  export type EpiExitUpdateManyWithoutEpiNestedInput = {
+    create?: XOR<EpiExitCreateWithoutEpiInput, EpiExitUncheckedCreateWithoutEpiInput> | EpiExitCreateWithoutEpiInput[] | EpiExitUncheckedCreateWithoutEpiInput[]
+    connectOrCreate?: EpiExitCreateOrConnectWithoutEpiInput | EpiExitCreateOrConnectWithoutEpiInput[]
+    upsert?: EpiExitUpsertWithWhereUniqueWithoutEpiInput | EpiExitUpsertWithWhereUniqueWithoutEpiInput[]
+    createMany?: EpiExitCreateManyEpiInputEnvelope
+    set?: EpiExitWhereUniqueInput | EpiExitWhereUniqueInput[]
+    disconnect?: EpiExitWhereUniqueInput | EpiExitWhereUniqueInput[]
+    delete?: EpiExitWhereUniqueInput | EpiExitWhereUniqueInput[]
+    connect?: EpiExitWhereUniqueInput | EpiExitWhereUniqueInput[]
+    update?: EpiExitUpdateWithWhereUniqueWithoutEpiInput | EpiExitUpdateWithWhereUniqueWithoutEpiInput[]
+    updateMany?: EpiExitUpdateManyWithWhereWithoutEpiInput | EpiExitUpdateManyWithWhereWithoutEpiInput[]
+    deleteMany?: EpiExitScalarWhereInput | EpiExitScalarWhereInput[]
+  }
+
   export type EpiEmployeeUncheckedUpdateManyWithoutEpiNestedInput = {
     create?: XOR<EpiEmployeeCreateWithoutEpiInput, EpiEmployeeUncheckedCreateWithoutEpiInput> | EpiEmployeeCreateWithoutEpiInput[] | EpiEmployeeUncheckedCreateWithoutEpiInput[]
     connectOrCreate?: EpiEmployeeCreateOrConnectWithoutEpiInput | EpiEmployeeCreateOrConnectWithoutEpiInput[]
@@ -10286,10 +11852,18 @@ export namespace Prisma {
     deleteMany?: EpiEntryScalarWhereInput | EpiEntryScalarWhereInput[]
   }
 
-  export type EmployeeCreateNestedOneWithoutEpiesInput = {
-    create?: XOR<EmployeeCreateWithoutEpiesInput, EmployeeUncheckedCreateWithoutEpiesInput>
-    connectOrCreate?: EmployeeCreateOrConnectWithoutEpiesInput
-    connect?: EmployeeWhereUniqueInput
+  export type EpiExitUncheckedUpdateManyWithoutEpiNestedInput = {
+    create?: XOR<EpiExitCreateWithoutEpiInput, EpiExitUncheckedCreateWithoutEpiInput> | EpiExitCreateWithoutEpiInput[] | EpiExitUncheckedCreateWithoutEpiInput[]
+    connectOrCreate?: EpiExitCreateOrConnectWithoutEpiInput | EpiExitCreateOrConnectWithoutEpiInput[]
+    upsert?: EpiExitUpsertWithWhereUniqueWithoutEpiInput | EpiExitUpsertWithWhereUniqueWithoutEpiInput[]
+    createMany?: EpiExitCreateManyEpiInputEnvelope
+    set?: EpiExitWhereUniqueInput | EpiExitWhereUniqueInput[]
+    disconnect?: EpiExitWhereUniqueInput | EpiExitWhereUniqueInput[]
+    delete?: EpiExitWhereUniqueInput | EpiExitWhereUniqueInput[]
+    connect?: EpiExitWhereUniqueInput | EpiExitWhereUniqueInput[]
+    update?: EpiExitUpdateWithWhereUniqueWithoutEpiInput | EpiExitUpdateWithWhereUniqueWithoutEpiInput[]
+    updateMany?: EpiExitUpdateManyWithWhereWithoutEpiInput | EpiExitUpdateManyWithWhereWithoutEpiInput[]
+    deleteMany?: EpiExitScalarWhereInput | EpiExitScalarWhereInput[]
   }
 
   export type EpiCreateNestedOneWithoutEmployeesInput = {
@@ -10298,12 +11872,10 @@ export namespace Prisma {
     connect?: EpiWhereUniqueInput
   }
 
-  export type EmployeeUpdateOneRequiredWithoutEpiesNestedInput = {
+  export type EmployeeCreateNestedOneWithoutEpiesInput = {
     create?: XOR<EmployeeCreateWithoutEpiesInput, EmployeeUncheckedCreateWithoutEpiesInput>
     connectOrCreate?: EmployeeCreateOrConnectWithoutEpiesInput
-    upsert?: EmployeeUpsertWithoutEpiesInput
     connect?: EmployeeWhereUniqueInput
-    update?: XOR<XOR<EmployeeUpdateToOneWithWhereWithoutEpiesInput, EmployeeUpdateWithoutEpiesInput>, EmployeeUncheckedUpdateWithoutEpiesInput>
   }
 
   export type EpiUpdateOneRequiredWithoutEmployeesNestedInput = {
@@ -10312,6 +11884,14 @@ export namespace Prisma {
     upsert?: EpiUpsertWithoutEmployeesInput
     connect?: EpiWhereUniqueInput
     update?: XOR<XOR<EpiUpdateToOneWithWhereWithoutEmployeesInput, EpiUpdateWithoutEmployeesInput>, EpiUncheckedUpdateWithoutEmployeesInput>
+  }
+
+  export type EmployeeUpdateOneRequiredWithoutEpiesNestedInput = {
+    create?: XOR<EmployeeCreateWithoutEpiesInput, EmployeeUncheckedCreateWithoutEpiesInput>
+    connectOrCreate?: EmployeeCreateOrConnectWithoutEpiesInput
+    upsert?: EmployeeUpsertWithoutEpiesInput
+    connect?: EmployeeWhereUniqueInput
+    update?: XOR<XOR<EmployeeUpdateToOneWithWhereWithoutEpiesInput, EmployeeUpdateWithoutEpiesInput>, EmployeeUncheckedUpdateWithoutEpiesInput>
   }
 
   export type EpiCreateNestedOneWithoutEntriesInput = {
@@ -10330,6 +11910,34 @@ export namespace Prisma {
     upsert?: EpiUpsertWithoutEntriesInput
     connect?: EpiWhereUniqueInput
     update?: XOR<XOR<EpiUpdateToOneWithWhereWithoutEntriesInput, EpiUpdateWithoutEntriesInput>, EpiUncheckedUpdateWithoutEntriesInput>
+  }
+
+  export type EpiCreateNestedOneWithoutExitsInput = {
+    create?: XOR<EpiCreateWithoutExitsInput, EpiUncheckedCreateWithoutExitsInput>
+    connectOrCreate?: EpiCreateOrConnectWithoutExitsInput
+    connect?: EpiWhereUniqueInput
+  }
+
+  export type EmployeeCreateNestedOneWithoutExitsInput = {
+    create?: XOR<EmployeeCreateWithoutExitsInput, EmployeeUncheckedCreateWithoutExitsInput>
+    connectOrCreate?: EmployeeCreateOrConnectWithoutExitsInput
+    connect?: EmployeeWhereUniqueInput
+  }
+
+  export type EpiUpdateOneRequiredWithoutExitsNestedInput = {
+    create?: XOR<EpiCreateWithoutExitsInput, EpiUncheckedCreateWithoutExitsInput>
+    connectOrCreate?: EpiCreateOrConnectWithoutExitsInput
+    upsert?: EpiUpsertWithoutExitsInput
+    connect?: EpiWhereUniqueInput
+    update?: XOR<XOR<EpiUpdateToOneWithWhereWithoutExitsInput, EpiUpdateWithoutExitsInput>, EpiUncheckedUpdateWithoutExitsInput>
+  }
+
+  export type EmployeeUpdateOneRequiredWithoutExitsNestedInput = {
+    create?: XOR<EmployeeCreateWithoutExitsInput, EmployeeUncheckedCreateWithoutExitsInput>
+    connectOrCreate?: EmployeeCreateOrConnectWithoutExitsInput
+    upsert?: EmployeeUpsertWithoutExitsInput
+    connect?: EmployeeWhereUniqueInput
+    update?: XOR<XOR<EmployeeUpdateToOneWithWhereWithoutExitsInput, EmployeeUpdateWithoutExitsInput>, EmployeeUncheckedUpdateWithoutExitsInput>
   }
 
   export type ExamEmployeeCreateNestedManyWithoutExamInput = {
@@ -10607,16 +12215,16 @@ export namespace Prisma {
   }
 
   export type EpiEmployeeCreateWithoutEmployeeInput = {
-    createdAt?: Date | string
-    updatedAt?: Date | string
+    quantity: number
+    deliveryDate?: Date | string
     epi: EpiCreateNestedOneWithoutEmployeesInput
   }
 
   export type EpiEmployeeUncheckedCreateWithoutEmployeeInput = {
     id?: number
     epiId: number
-    createdAt?: Date | string
-    updatedAt?: Date | string
+    quantity: number
+    deliveryDate?: Date | string
   }
 
   export type EpiEmployeeCreateOrConnectWithoutEmployeeInput = {
@@ -10652,6 +12260,31 @@ export namespace Prisma {
     skipDuplicates?: boolean
   }
 
+  export type EpiExitCreateWithoutEmployeeInput = {
+    quantity: number
+    date?: Date | string
+    createdAt?: Date | string
+    epi: EpiCreateNestedOneWithoutExitsInput
+  }
+
+  export type EpiExitUncheckedCreateWithoutEmployeeInput = {
+    id?: number
+    epiId: number
+    quantity: number
+    date?: Date | string
+    createdAt?: Date | string
+  }
+
+  export type EpiExitCreateOrConnectWithoutEmployeeInput = {
+    where: EpiExitWhereUniqueInput
+    create: XOR<EpiExitCreateWithoutEmployeeInput, EpiExitUncheckedCreateWithoutEmployeeInput>
+  }
+
+  export type EpiExitCreateManyEmployeeInputEnvelope = {
+    data: EpiExitCreateManyEmployeeInput | EpiExitCreateManyEmployeeInput[]
+    skipDuplicates?: boolean
+  }
+
   export type EpiEmployeeUpsertWithWhereUniqueWithoutEmployeeInput = {
     where: EpiEmployeeWhereUniqueInput
     update: XOR<EpiEmployeeUpdateWithoutEmployeeInput, EpiEmployeeUncheckedUpdateWithoutEmployeeInput>
@@ -10673,10 +12306,10 @@ export namespace Prisma {
     OR?: EpiEmployeeScalarWhereInput[]
     NOT?: EpiEmployeeScalarWhereInput | EpiEmployeeScalarWhereInput[]
     id?: IntFilter<"EpiEmployee"> | number
-    employeeId?: IntFilter<"EpiEmployee"> | number
     epiId?: IntFilter<"EpiEmployee"> | number
-    createdAt?: DateTimeFilter<"EpiEmployee"> | Date | string
-    updatedAt?: DateTimeFilter<"EpiEmployee"> | Date | string
+    employeeId?: IntFilter<"EpiEmployee"> | number
+    quantity?: IntFilter<"EpiEmployee"> | number
+    deliveryDate?: DateTimeFilter<"EpiEmployee"> | Date | string
   }
 
   export type ExamEmployeeUpsertWithWhereUniqueWithoutEmployeeInput = {
@@ -10706,17 +12339,45 @@ export namespace Prisma {
     updatedAt?: DateTimeFilter<"ExamEmployee"> | Date | string
   }
 
+  export type EpiExitUpsertWithWhereUniqueWithoutEmployeeInput = {
+    where: EpiExitWhereUniqueInput
+    update: XOR<EpiExitUpdateWithoutEmployeeInput, EpiExitUncheckedUpdateWithoutEmployeeInput>
+    create: XOR<EpiExitCreateWithoutEmployeeInput, EpiExitUncheckedCreateWithoutEmployeeInput>
+  }
+
+  export type EpiExitUpdateWithWhereUniqueWithoutEmployeeInput = {
+    where: EpiExitWhereUniqueInput
+    data: XOR<EpiExitUpdateWithoutEmployeeInput, EpiExitUncheckedUpdateWithoutEmployeeInput>
+  }
+
+  export type EpiExitUpdateManyWithWhereWithoutEmployeeInput = {
+    where: EpiExitScalarWhereInput
+    data: XOR<EpiExitUpdateManyMutationInput, EpiExitUncheckedUpdateManyWithoutEmployeeInput>
+  }
+
+  export type EpiExitScalarWhereInput = {
+    AND?: EpiExitScalarWhereInput | EpiExitScalarWhereInput[]
+    OR?: EpiExitScalarWhereInput[]
+    NOT?: EpiExitScalarWhereInput | EpiExitScalarWhereInput[]
+    id?: IntFilter<"EpiExit"> | number
+    epiId?: IntFilter<"EpiExit"> | number
+    employeeId?: IntFilter<"EpiExit"> | number
+    quantity?: IntFilter<"EpiExit"> | number
+    date?: DateTimeFilter<"EpiExit"> | Date | string
+    createdAt?: DateTimeFilter<"EpiExit"> | Date | string
+  }
+
   export type EpiEmployeeCreateWithoutEpiInput = {
-    createdAt?: Date | string
-    updatedAt?: Date | string
+    quantity: number
+    deliveryDate?: Date | string
     employee: EmployeeCreateNestedOneWithoutEpiesInput
   }
 
   export type EpiEmployeeUncheckedCreateWithoutEpiInput = {
     id?: number
     employeeId: number
-    createdAt?: Date | string
-    updatedAt?: Date | string
+    quantity: number
+    deliveryDate?: Date | string
   }
 
   export type EpiEmployeeCreateOrConnectWithoutEpiInput = {
@@ -10755,6 +12416,31 @@ export namespace Prisma {
 
   export type EpiEntryCreateManyEpiInputEnvelope = {
     data: EpiEntryCreateManyEpiInput | EpiEntryCreateManyEpiInput[]
+    skipDuplicates?: boolean
+  }
+
+  export type EpiExitCreateWithoutEpiInput = {
+    quantity: number
+    date?: Date | string
+    createdAt?: Date | string
+    employee: EmployeeCreateNestedOneWithoutExitsInput
+  }
+
+  export type EpiExitUncheckedCreateWithoutEpiInput = {
+    id?: number
+    employeeId: number
+    quantity: number
+    date?: Date | string
+    createdAt?: Date | string
+  }
+
+  export type EpiExitCreateOrConnectWithoutEpiInput = {
+    where: EpiExitWhereUniqueInput
+    create: XOR<EpiExitCreateWithoutEpiInput, EpiExitUncheckedCreateWithoutEpiInput>
+  }
+
+  export type EpiExitCreateManyEpiInputEnvelope = {
+    data: EpiExitCreateManyEpiInput | EpiExitCreateManyEpiInput[]
     skipDuplicates?: boolean
   }
 
@@ -10804,6 +12490,54 @@ export namespace Prisma {
     updatedAt?: DateTimeFilter<"EpiEntry"> | Date | string
   }
 
+  export type EpiExitUpsertWithWhereUniqueWithoutEpiInput = {
+    where: EpiExitWhereUniqueInput
+    update: XOR<EpiExitUpdateWithoutEpiInput, EpiExitUncheckedUpdateWithoutEpiInput>
+    create: XOR<EpiExitCreateWithoutEpiInput, EpiExitUncheckedCreateWithoutEpiInput>
+  }
+
+  export type EpiExitUpdateWithWhereUniqueWithoutEpiInput = {
+    where: EpiExitWhereUniqueInput
+    data: XOR<EpiExitUpdateWithoutEpiInput, EpiExitUncheckedUpdateWithoutEpiInput>
+  }
+
+  export type EpiExitUpdateManyWithWhereWithoutEpiInput = {
+    where: EpiExitScalarWhereInput
+    data: XOR<EpiExitUpdateManyMutationInput, EpiExitUncheckedUpdateManyWithoutEpiInput>
+  }
+
+  export type EpiCreateWithoutEmployeesInput = {
+    name: string
+    description: string
+    certification: string
+    supplier: string
+    expiration: Date | string
+    quantity: number
+    createdAt?: Date | string
+    updatedAt?: Date | string
+    entries?: EpiEntryCreateNestedManyWithoutEpiInput
+    exits?: EpiExitCreateNestedManyWithoutEpiInput
+  }
+
+  export type EpiUncheckedCreateWithoutEmployeesInput = {
+    id?: number
+    name: string
+    description: string
+    certification: string
+    supplier: string
+    expiration: Date | string
+    quantity: number
+    createdAt?: Date | string
+    updatedAt?: Date | string
+    entries?: EpiEntryUncheckedCreateNestedManyWithoutEpiInput
+    exits?: EpiExitUncheckedCreateNestedManyWithoutEpiInput
+  }
+
+  export type EpiCreateOrConnectWithoutEmployeesInput = {
+    where: EpiWhereUniqueInput
+    create: XOR<EpiCreateWithoutEmployeesInput, EpiUncheckedCreateWithoutEmployeesInput>
+  }
+
   export type EmployeeCreateWithoutEpiesInput = {
     name: string
     adress: string
@@ -10821,6 +12555,7 @@ export namespace Prisma {
     createdAt?: Date | string
     updatedAt?: Date | string
     exams?: ExamEmployeeCreateNestedManyWithoutEmployeeInput
+    exits?: EpiExitCreateNestedManyWithoutEmployeeInput
   }
 
   export type EmployeeUncheckedCreateWithoutEpiesInput = {
@@ -10841,6 +12576,7 @@ export namespace Prisma {
     createdAt?: Date | string
     updatedAt?: Date | string
     exams?: ExamEmployeeUncheckedCreateNestedManyWithoutEmployeeInput
+    exits?: EpiExitUncheckedCreateNestedManyWithoutEmployeeInput
   }
 
   export type EmployeeCreateOrConnectWithoutEpiesInput = {
@@ -10848,34 +12584,42 @@ export namespace Prisma {
     create: XOR<EmployeeCreateWithoutEpiesInput, EmployeeUncheckedCreateWithoutEpiesInput>
   }
 
-  export type EpiCreateWithoutEmployeesInput = {
-    name: string
-    description: string
-    certification: string
-    supplier: string
-    expiration: Date | string
-    quantity: number
-    createdAt?: Date | string
-    updatedAt?: Date | string
-    entries?: EpiEntryCreateNestedManyWithoutEpiInput
-  }
-
-  export type EpiUncheckedCreateWithoutEmployeesInput = {
-    id?: number
-    name: string
-    description: string
-    certification: string
-    supplier: string
-    expiration: Date | string
-    quantity: number
-    createdAt?: Date | string
-    updatedAt?: Date | string
-    entries?: EpiEntryUncheckedCreateNestedManyWithoutEpiInput
-  }
-
-  export type EpiCreateOrConnectWithoutEmployeesInput = {
-    where: EpiWhereUniqueInput
+  export type EpiUpsertWithoutEmployeesInput = {
+    update: XOR<EpiUpdateWithoutEmployeesInput, EpiUncheckedUpdateWithoutEmployeesInput>
     create: XOR<EpiCreateWithoutEmployeesInput, EpiUncheckedCreateWithoutEmployeesInput>
+    where?: EpiWhereInput
+  }
+
+  export type EpiUpdateToOneWithWhereWithoutEmployeesInput = {
+    where?: EpiWhereInput
+    data: XOR<EpiUpdateWithoutEmployeesInput, EpiUncheckedUpdateWithoutEmployeesInput>
+  }
+
+  export type EpiUpdateWithoutEmployeesInput = {
+    name?: StringFieldUpdateOperationsInput | string
+    description?: StringFieldUpdateOperationsInput | string
+    certification?: StringFieldUpdateOperationsInput | string
+    supplier?: StringFieldUpdateOperationsInput | string
+    expiration?: DateTimeFieldUpdateOperationsInput | Date | string
+    quantity?: IntFieldUpdateOperationsInput | number
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    entries?: EpiEntryUpdateManyWithoutEpiNestedInput
+    exits?: EpiExitUpdateManyWithoutEpiNestedInput
+  }
+
+  export type EpiUncheckedUpdateWithoutEmployeesInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    name?: StringFieldUpdateOperationsInput | string
+    description?: StringFieldUpdateOperationsInput | string
+    certification?: StringFieldUpdateOperationsInput | string
+    supplier?: StringFieldUpdateOperationsInput | string
+    expiration?: DateTimeFieldUpdateOperationsInput | Date | string
+    quantity?: IntFieldUpdateOperationsInput | number
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    entries?: EpiEntryUncheckedUpdateManyWithoutEpiNestedInput
+    exits?: EpiExitUncheckedUpdateManyWithoutEpiNestedInput
   }
 
   export type EmployeeUpsertWithoutEpiesInput = {
@@ -10906,6 +12650,7 @@ export namespace Prisma {
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     exams?: ExamEmployeeUpdateManyWithoutEmployeeNestedInput
+    exits?: EpiExitUpdateManyWithoutEmployeeNestedInput
   }
 
   export type EmployeeUncheckedUpdateWithoutEpiesInput = {
@@ -10926,42 +12671,7 @@ export namespace Prisma {
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     exams?: ExamEmployeeUncheckedUpdateManyWithoutEmployeeNestedInput
-  }
-
-  export type EpiUpsertWithoutEmployeesInput = {
-    update: XOR<EpiUpdateWithoutEmployeesInput, EpiUncheckedUpdateWithoutEmployeesInput>
-    create: XOR<EpiCreateWithoutEmployeesInput, EpiUncheckedCreateWithoutEmployeesInput>
-    where?: EpiWhereInput
-  }
-
-  export type EpiUpdateToOneWithWhereWithoutEmployeesInput = {
-    where?: EpiWhereInput
-    data: XOR<EpiUpdateWithoutEmployeesInput, EpiUncheckedUpdateWithoutEmployeesInput>
-  }
-
-  export type EpiUpdateWithoutEmployeesInput = {
-    name?: StringFieldUpdateOperationsInput | string
-    description?: StringFieldUpdateOperationsInput | string
-    certification?: StringFieldUpdateOperationsInput | string
-    supplier?: StringFieldUpdateOperationsInput | string
-    expiration?: DateTimeFieldUpdateOperationsInput | Date | string
-    quantity?: IntFieldUpdateOperationsInput | number
-    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    entries?: EpiEntryUpdateManyWithoutEpiNestedInput
-  }
-
-  export type EpiUncheckedUpdateWithoutEmployeesInput = {
-    id?: IntFieldUpdateOperationsInput | number
-    name?: StringFieldUpdateOperationsInput | string
-    description?: StringFieldUpdateOperationsInput | string
-    certification?: StringFieldUpdateOperationsInput | string
-    supplier?: StringFieldUpdateOperationsInput | string
-    expiration?: DateTimeFieldUpdateOperationsInput | Date | string
-    quantity?: IntFieldUpdateOperationsInput | number
-    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    entries?: EpiEntryUncheckedUpdateManyWithoutEpiNestedInput
+    exits?: EpiExitUncheckedUpdateManyWithoutEmployeeNestedInput
   }
 
   export type EpiCreateWithoutEntriesInput = {
@@ -10974,6 +12684,7 @@ export namespace Prisma {
     createdAt?: Date | string
     updatedAt?: Date | string
     employees?: EpiEmployeeCreateNestedManyWithoutEpiInput
+    exits?: EpiExitCreateNestedManyWithoutEpiInput
   }
 
   export type EpiUncheckedCreateWithoutEntriesInput = {
@@ -10987,6 +12698,7 @@ export namespace Prisma {
     createdAt?: Date | string
     updatedAt?: Date | string
     employees?: EpiEmployeeUncheckedCreateNestedManyWithoutEpiInput
+    exits?: EpiExitUncheckedCreateNestedManyWithoutEpiInput
   }
 
   export type EpiCreateOrConnectWithoutEntriesInput = {
@@ -11015,6 +12727,7 @@ export namespace Prisma {
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     employees?: EpiEmployeeUpdateManyWithoutEpiNestedInput
+    exits?: EpiExitUpdateManyWithoutEpiNestedInput
   }
 
   export type EpiUncheckedUpdateWithoutEntriesInput = {
@@ -11028,6 +12741,175 @@ export namespace Prisma {
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     employees?: EpiEmployeeUncheckedUpdateManyWithoutEpiNestedInput
+    exits?: EpiExitUncheckedUpdateManyWithoutEpiNestedInput
+  }
+
+  export type EpiCreateWithoutExitsInput = {
+    name: string
+    description: string
+    certification: string
+    supplier: string
+    expiration: Date | string
+    quantity: number
+    createdAt?: Date | string
+    updatedAt?: Date | string
+    employees?: EpiEmployeeCreateNestedManyWithoutEpiInput
+    entries?: EpiEntryCreateNestedManyWithoutEpiInput
+  }
+
+  export type EpiUncheckedCreateWithoutExitsInput = {
+    id?: number
+    name: string
+    description: string
+    certification: string
+    supplier: string
+    expiration: Date | string
+    quantity: number
+    createdAt?: Date | string
+    updatedAt?: Date | string
+    employees?: EpiEmployeeUncheckedCreateNestedManyWithoutEpiInput
+    entries?: EpiEntryUncheckedCreateNestedManyWithoutEpiInput
+  }
+
+  export type EpiCreateOrConnectWithoutExitsInput = {
+    where: EpiWhereUniqueInput
+    create: XOR<EpiCreateWithoutExitsInput, EpiUncheckedCreateWithoutExitsInput>
+  }
+
+  export type EmployeeCreateWithoutExitsInput = {
+    name: string
+    adress: string
+    city: string
+    email: string
+    phone: string
+    birthDate: Date | string
+    admission: Date | string
+    cpf: string
+    rg: string
+    employer: $Enums.Employer
+    department: $Enums.Department
+    function: $Enums.Function
+    status: $Enums.Status
+    createdAt?: Date | string
+    updatedAt?: Date | string
+    epies?: EpiEmployeeCreateNestedManyWithoutEmployeeInput
+    exams?: ExamEmployeeCreateNestedManyWithoutEmployeeInput
+  }
+
+  export type EmployeeUncheckedCreateWithoutExitsInput = {
+    id?: number
+    name: string
+    adress: string
+    city: string
+    email: string
+    phone: string
+    birthDate: Date | string
+    admission: Date | string
+    cpf: string
+    rg: string
+    employer: $Enums.Employer
+    department: $Enums.Department
+    function: $Enums.Function
+    status: $Enums.Status
+    createdAt?: Date | string
+    updatedAt?: Date | string
+    epies?: EpiEmployeeUncheckedCreateNestedManyWithoutEmployeeInput
+    exams?: ExamEmployeeUncheckedCreateNestedManyWithoutEmployeeInput
+  }
+
+  export type EmployeeCreateOrConnectWithoutExitsInput = {
+    where: EmployeeWhereUniqueInput
+    create: XOR<EmployeeCreateWithoutExitsInput, EmployeeUncheckedCreateWithoutExitsInput>
+  }
+
+  export type EpiUpsertWithoutExitsInput = {
+    update: XOR<EpiUpdateWithoutExitsInput, EpiUncheckedUpdateWithoutExitsInput>
+    create: XOR<EpiCreateWithoutExitsInput, EpiUncheckedCreateWithoutExitsInput>
+    where?: EpiWhereInput
+  }
+
+  export type EpiUpdateToOneWithWhereWithoutExitsInput = {
+    where?: EpiWhereInput
+    data: XOR<EpiUpdateWithoutExitsInput, EpiUncheckedUpdateWithoutExitsInput>
+  }
+
+  export type EpiUpdateWithoutExitsInput = {
+    name?: StringFieldUpdateOperationsInput | string
+    description?: StringFieldUpdateOperationsInput | string
+    certification?: StringFieldUpdateOperationsInput | string
+    supplier?: StringFieldUpdateOperationsInput | string
+    expiration?: DateTimeFieldUpdateOperationsInput | Date | string
+    quantity?: IntFieldUpdateOperationsInput | number
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    employees?: EpiEmployeeUpdateManyWithoutEpiNestedInput
+    entries?: EpiEntryUpdateManyWithoutEpiNestedInput
+  }
+
+  export type EpiUncheckedUpdateWithoutExitsInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    name?: StringFieldUpdateOperationsInput | string
+    description?: StringFieldUpdateOperationsInput | string
+    certification?: StringFieldUpdateOperationsInput | string
+    supplier?: StringFieldUpdateOperationsInput | string
+    expiration?: DateTimeFieldUpdateOperationsInput | Date | string
+    quantity?: IntFieldUpdateOperationsInput | number
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    employees?: EpiEmployeeUncheckedUpdateManyWithoutEpiNestedInput
+    entries?: EpiEntryUncheckedUpdateManyWithoutEpiNestedInput
+  }
+
+  export type EmployeeUpsertWithoutExitsInput = {
+    update: XOR<EmployeeUpdateWithoutExitsInput, EmployeeUncheckedUpdateWithoutExitsInput>
+    create: XOR<EmployeeCreateWithoutExitsInput, EmployeeUncheckedCreateWithoutExitsInput>
+    where?: EmployeeWhereInput
+  }
+
+  export type EmployeeUpdateToOneWithWhereWithoutExitsInput = {
+    where?: EmployeeWhereInput
+    data: XOR<EmployeeUpdateWithoutExitsInput, EmployeeUncheckedUpdateWithoutExitsInput>
+  }
+
+  export type EmployeeUpdateWithoutExitsInput = {
+    name?: StringFieldUpdateOperationsInput | string
+    adress?: StringFieldUpdateOperationsInput | string
+    city?: StringFieldUpdateOperationsInput | string
+    email?: StringFieldUpdateOperationsInput | string
+    phone?: StringFieldUpdateOperationsInput | string
+    birthDate?: DateTimeFieldUpdateOperationsInput | Date | string
+    admission?: DateTimeFieldUpdateOperationsInput | Date | string
+    cpf?: StringFieldUpdateOperationsInput | string
+    rg?: StringFieldUpdateOperationsInput | string
+    employer?: EnumEmployerFieldUpdateOperationsInput | $Enums.Employer
+    department?: EnumDepartmentFieldUpdateOperationsInput | $Enums.Department
+    function?: EnumFunctionFieldUpdateOperationsInput | $Enums.Function
+    status?: EnumStatusFieldUpdateOperationsInput | $Enums.Status
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    epies?: EpiEmployeeUpdateManyWithoutEmployeeNestedInput
+    exams?: ExamEmployeeUpdateManyWithoutEmployeeNestedInput
+  }
+
+  export type EmployeeUncheckedUpdateWithoutExitsInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    name?: StringFieldUpdateOperationsInput | string
+    adress?: StringFieldUpdateOperationsInput | string
+    city?: StringFieldUpdateOperationsInput | string
+    email?: StringFieldUpdateOperationsInput | string
+    phone?: StringFieldUpdateOperationsInput | string
+    birthDate?: DateTimeFieldUpdateOperationsInput | Date | string
+    admission?: DateTimeFieldUpdateOperationsInput | Date | string
+    cpf?: StringFieldUpdateOperationsInput | string
+    rg?: StringFieldUpdateOperationsInput | string
+    employer?: EnumEmployerFieldUpdateOperationsInput | $Enums.Employer
+    department?: EnumDepartmentFieldUpdateOperationsInput | $Enums.Department
+    function?: EnumFunctionFieldUpdateOperationsInput | $Enums.Function
+    status?: EnumStatusFieldUpdateOperationsInput | $Enums.Status
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    epies?: EpiEmployeeUncheckedUpdateManyWithoutEmployeeNestedInput
+    exams?: ExamEmployeeUncheckedUpdateManyWithoutEmployeeNestedInput
   }
 
   export type ExamEmployeeCreateWithoutExamInput = {
@@ -11086,6 +12968,7 @@ export namespace Prisma {
     createdAt?: Date | string
     updatedAt?: Date | string
     epies?: EpiEmployeeCreateNestedManyWithoutEmployeeInput
+    exits?: EpiExitCreateNestedManyWithoutEmployeeInput
   }
 
   export type EmployeeUncheckedCreateWithoutExamsInput = {
@@ -11106,6 +12989,7 @@ export namespace Prisma {
     createdAt?: Date | string
     updatedAt?: Date | string
     epies?: EpiEmployeeUncheckedCreateNestedManyWithoutEmployeeInput
+    exits?: EpiExitUncheckedCreateNestedManyWithoutEmployeeInput
   }
 
   export type EmployeeCreateOrConnectWithoutExamsInput = {
@@ -11163,6 +13047,7 @@ export namespace Prisma {
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     epies?: EpiEmployeeUpdateManyWithoutEmployeeNestedInput
+    exits?: EpiExitUpdateManyWithoutEmployeeNestedInput
   }
 
   export type EmployeeUncheckedUpdateWithoutExamsInput = {
@@ -11183,6 +13068,7 @@ export namespace Prisma {
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     epies?: EpiEmployeeUncheckedUpdateManyWithoutEmployeeNestedInput
+    exits?: EpiExitUncheckedUpdateManyWithoutEmployeeNestedInput
   }
 
   export type ExamUpsertWithoutEmployeesInput = {
@@ -11216,8 +13102,8 @@ export namespace Prisma {
   export type EpiEmployeeCreateManyEmployeeInput = {
     id?: number
     epiId: number
-    createdAt?: Date | string
-    updatedAt?: Date | string
+    quantity: number
+    deliveryDate?: Date | string
   }
 
   export type ExamEmployeeCreateManyEmployeeInput = {
@@ -11227,24 +13113,32 @@ export namespace Prisma {
     updatedAt?: Date | string
   }
 
+  export type EpiExitCreateManyEmployeeInput = {
+    id?: number
+    epiId: number
+    quantity: number
+    date?: Date | string
+    createdAt?: Date | string
+  }
+
   export type EpiEmployeeUpdateWithoutEmployeeInput = {
-    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    quantity?: IntFieldUpdateOperationsInput | number
+    deliveryDate?: DateTimeFieldUpdateOperationsInput | Date | string
     epi?: EpiUpdateOneRequiredWithoutEmployeesNestedInput
   }
 
   export type EpiEmployeeUncheckedUpdateWithoutEmployeeInput = {
     id?: IntFieldUpdateOperationsInput | number
     epiId?: IntFieldUpdateOperationsInput | number
-    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    quantity?: IntFieldUpdateOperationsInput | number
+    deliveryDate?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type EpiEmployeeUncheckedUpdateManyWithoutEmployeeInput = {
     id?: IntFieldUpdateOperationsInput | number
     epiId?: IntFieldUpdateOperationsInput | number
-    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    quantity?: IntFieldUpdateOperationsInput | number
+    deliveryDate?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type ExamEmployeeUpdateWithoutEmployeeInput = {
@@ -11267,11 +13161,34 @@ export namespace Prisma {
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
+  export type EpiExitUpdateWithoutEmployeeInput = {
+    quantity?: IntFieldUpdateOperationsInput | number
+    date?: DateTimeFieldUpdateOperationsInput | Date | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    epi?: EpiUpdateOneRequiredWithoutExitsNestedInput
+  }
+
+  export type EpiExitUncheckedUpdateWithoutEmployeeInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    epiId?: IntFieldUpdateOperationsInput | number
+    quantity?: IntFieldUpdateOperationsInput | number
+    date?: DateTimeFieldUpdateOperationsInput | Date | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type EpiExitUncheckedUpdateManyWithoutEmployeeInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    epiId?: IntFieldUpdateOperationsInput | number
+    quantity?: IntFieldUpdateOperationsInput | number
+    date?: DateTimeFieldUpdateOperationsInput | Date | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
   export type EpiEmployeeCreateManyEpiInput = {
     id?: number
     employeeId: number
-    createdAt?: Date | string
-    updatedAt?: Date | string
+    quantity: number
+    deliveryDate?: Date | string
   }
 
   export type EpiEntryCreateManyEpiInput = {
@@ -11284,24 +13201,32 @@ export namespace Prisma {
     updatedAt?: Date | string
   }
 
+  export type EpiExitCreateManyEpiInput = {
+    id?: number
+    employeeId: number
+    quantity: number
+    date?: Date | string
+    createdAt?: Date | string
+  }
+
   export type EpiEmployeeUpdateWithoutEpiInput = {
-    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    quantity?: IntFieldUpdateOperationsInput | number
+    deliveryDate?: DateTimeFieldUpdateOperationsInput | Date | string
     employee?: EmployeeUpdateOneRequiredWithoutEpiesNestedInput
   }
 
   export type EpiEmployeeUncheckedUpdateWithoutEpiInput = {
     id?: IntFieldUpdateOperationsInput | number
     employeeId?: IntFieldUpdateOperationsInput | number
-    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    quantity?: IntFieldUpdateOperationsInput | number
+    deliveryDate?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type EpiEmployeeUncheckedUpdateManyWithoutEpiInput = {
     id?: IntFieldUpdateOperationsInput | number
     employeeId?: IntFieldUpdateOperationsInput | number
-    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    quantity?: IntFieldUpdateOperationsInput | number
+    deliveryDate?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type EpiEntryUpdateWithoutEpiInput = {
@@ -11331,6 +13256,29 @@ export namespace Prisma {
     supplier?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type EpiExitUpdateWithoutEpiInput = {
+    quantity?: IntFieldUpdateOperationsInput | number
+    date?: DateTimeFieldUpdateOperationsInput | Date | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    employee?: EmployeeUpdateOneRequiredWithoutExitsNestedInput
+  }
+
+  export type EpiExitUncheckedUpdateWithoutEpiInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    employeeId?: IntFieldUpdateOperationsInput | number
+    quantity?: IntFieldUpdateOperationsInput | number
+    date?: DateTimeFieldUpdateOperationsInput | Date | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type EpiExitUncheckedUpdateManyWithoutEpiInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    employeeId?: IntFieldUpdateOperationsInput | number
+    quantity?: IntFieldUpdateOperationsInput | number
+    date?: DateTimeFieldUpdateOperationsInput | Date | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type ExamEmployeeCreateManyExamInput = {

@@ -150,10 +150,10 @@ exports.Prisma.EpiScalarFieldEnum = {
 
 exports.Prisma.EpiEmployeeScalarFieldEnum = {
   id: 'id',
-  employeeId: 'employeeId',
   epiId: 'epiId',
-  createdAt: 'createdAt',
-  updatedAt: 'updatedAt'
+  employeeId: 'employeeId',
+  quantity: 'quantity',
+  deliveryDate: 'deliveryDate'
 };
 
 exports.Prisma.EpiEntryScalarFieldEnum = {
@@ -165,6 +165,15 @@ exports.Prisma.EpiEntryScalarFieldEnum = {
   supplier: 'supplier',
   createdAt: 'createdAt',
   updatedAt: 'updatedAt'
+};
+
+exports.Prisma.EpiExitScalarFieldEnum = {
+  id: 'id',
+  epiId: 'epiId',
+  employeeId: 'employeeId',
+  quantity: 'quantity',
+  date: 'date',
+  createdAt: 'createdAt'
 };
 
 exports.Prisma.ExamScalarFieldEnum = {
@@ -230,6 +239,7 @@ exports.Prisma.ModelName = {
   Epi: 'Epi',
   EpiEmployee: 'EpiEmployee',
   EpiEntry: 'EpiEntry',
+  EpiExit: 'EpiExit',
   Exam: 'Exam',
   ExamEmployee: 'ExamEmployee'
 };

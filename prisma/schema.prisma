@@ -33,6 +33,7 @@ model Employee {
   updatedAt  DateTime       @updatedAt
   epies      EpiEmployee[]
   exams      ExamEmployee[]
+  exits      EpiExit[]
 }
 
 model Epi {
@@ -47,28 +48,40 @@ model Epi {
   updatedAt     DateTime      @updatedAt
   employees     EpiEmployee[]
   entries       EpiEntry[]
+  exits         EpiExit[]
 }
 
 model EpiEmployee {
-  id         Int      @id @default(autoincrement())
-  employee   Employee @relation(fields: [employeeId], references: [id])
-  employeeId Int
-  epi        Epi      @relation(fields: [epiId], references: [id])
-  epiId      Int
-  createdAt  DateTime @default(now())
-  updatedAt  DateTime @updatedAt
+  id           Int      @id @default(autoincrement())
+  epi          Epi      @relation(fields: [epiId], references: [id])
+  epiId        Int
+  employee     Employee @relation(fields: [employeeId], references: [id])
+  employeeId   Int
+  quantity     Int
+  deliveryDate DateTime @default(now())
 }
 
 model EpiEntry {
+  id        Int      @id @default(autoincrement())
+  epi       Epi      @relation(fields: [epiId], references: [id])
+  epiId     Int
+  quantity  Int
+  date      DateTime @default(now())
+  note      String?
+  supplier  String?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model EpiExit {
   id         Int      @id @default(autoincrement())
   epi        Epi      @relation(fields: [epiId], references: [id])
   epiId      Int
+  employee   Employee @relation(fields: [employeeId], references: [id])
+  employeeId Int
   quantity   Int
   date       DateTime @default(now())
-  note       String?
-  supplier   String?
   createdAt  DateTime @default(now())
-  updatedAt  DateTime @updatedAt
 }
 
 model Exam {

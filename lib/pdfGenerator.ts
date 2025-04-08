@@ -111,14 +111,14 @@ export async function generateEmployeeReport(filters: ReportFilters) {
 
           const date = format(new Date(), "dd/MM/yyyy", { timeZone });
           doc.text(`Gerado em: ${date} - Sistema Smart Work`, 150, pageHeight - 10, {
-            align: "right",
+            align: "center",
           });
         },
       });
 
       // 8. Salvar
       const fileNumber = new Date().getTime(); // Número do arquivo baseado no timestamp
-      const fileName = `Relatorio-Funcionarios-${fileNumber}.pdf`;
+      const fileName = `Relatorio de Funcionarios - ${fileNumber}.pdf`;
       doc.save(fileName);
     };
 
