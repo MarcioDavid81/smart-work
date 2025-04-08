@@ -156,6 +156,17 @@ exports.Prisma.EpiEmployeeScalarFieldEnum = {
   updatedAt: 'updatedAt'
 };
 
+exports.Prisma.EpiEntryScalarFieldEnum = {
+  id: 'id',
+  epiId: 'epiId',
+  quantity: 'quantity',
+  date: 'date',
+  note: 'note',
+  supplier: 'supplier',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+};
+
 exports.Prisma.ExamScalarFieldEnum = {
   id: 'id',
   name: 'name',
@@ -181,6 +192,11 @@ exports.Prisma.SortOrder = {
 exports.Prisma.QueryMode = {
   default: 'default',
   insensitive: 'insensitive'
+};
+
+exports.Prisma.NullsOrder = {
+  first: 'first',
+  last: 'last'
 };
 exports.Employer = exports.$Enums.Employer = {
   Glênio: 'Glênio',
@@ -213,6 +229,7 @@ exports.Prisma.ModelName = {
   Employee: 'Employee',
   Epi: 'Epi',
   EpiEmployee: 'EpiEmployee',
+  EpiEntry: 'EpiEntry',
   Exam: 'Exam',
   ExamEmployee: 'ExamEmployee'
 };

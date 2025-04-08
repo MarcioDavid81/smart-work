@@ -46,6 +46,7 @@ model Epi {
   createdAt     DateTime      @default(now())
   updatedAt     DateTime      @updatedAt
   employees     EpiEmployee[]
+  entries       EpiEntry[]
 }
 
 model EpiEmployee {
@@ -54,6 +55,18 @@ model EpiEmployee {
   employeeId Int
   epi        Epi      @relation(fields: [epiId], references: [id])
   epiId      Int
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+}
+
+model EpiEntry {
+  id         Int      @id @default(autoincrement())
+  epi        Epi      @relation(fields: [epiId], references: [id])
+  epiId      Int
+  quantity   Int
+  date       DateTime @default(now())
+  note       String?
+  supplier   String?
   createdAt  DateTime @default(now())
   updatedAt  DateTime @updatedAt
 }

@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
-import { db } from "@/lib/prisma"; // Ajusta se necessário
+import { db } from "@/lib/prisma";
 
 export async function GET(req: NextRequest, { params }: { params: { id: string } }) {
   const { id } = params;

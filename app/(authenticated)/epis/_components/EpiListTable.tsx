@@ -4,12 +4,6 @@ import { useEffect, useState } from "react";
 import { Input } from "@/components/ui/input";
 import { FaSpinner } from "react-icons/fa";
 import {
-  Tooltip,
-  TooltipContent,
-  TooltipProvider,
-  TooltipTrigger,
-} from "@/components/ui/tooltip";
-import {
   DropdownMenu,
   DropdownMenuTrigger,
   DropdownMenuContent,
@@ -22,20 +16,15 @@ import {
   ArrowUpCircle,
   MoreHorizontal,
 } from "lucide-react";
+import { EditEpiModal } from "./EditEpiModal";
+import { EntryEpiModal } from "./EntryEpiModal";
+import { ExitEpiModal } from "./ExitEpiModal";
+import { Epi } from "../../../types";
 
-interface Epi {
-  id: number;
-  name: string;
-  description: string;
-  certification: string;
-  supplier: string;
-  expiration: string;
-  quantity: number;
-}
+
 
 export default function EpisListTable() {
   const [epis, setEpis] = useState<Epi[]>([]);
-  const [isEditModalOpen, setIsEditModalOpen] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
   const [search, setSearch] = useState("");
   const [loading, setLoading] = useState(true);
@@ -78,16 +67,6 @@ export default function EpisListTable() {
   useEffect(() => {
     fetchEpis();
   }, []);
-
-  function handleOpenEditModal(epi: Epi) {
-    setSelectedEpi(epi);
-    setIsEditModalOpen(true);
-  }
-
-  function handleCloseEditModal() {
-    setIsEditModalOpen(false);
-    setSelectedEpi(null);
-  }
 
   const filteredEpis = epis.filter(
     (epi) =>
@@ -147,29 +126,27 @@ export default function EpisListTable() {
                   </td>
                   <td className="p-2 border-b">{epi.quantity}</td>
                   <td className="p-2 border-b">
-                          <DropdownMenu>
-                            <DropdownMenuTrigger asChild>
-                              <Button variant="ghost" size="icon">
-                                <MoreHorizontal className="h-5 w-5" />
-                              </Button>
-                            </DropdownMenuTrigger>
-                            <DropdownMenuContent align="end">
-                              <DropdownMenuItem onClick={() => handleEdit(epi)}>
-                                <Pencil className="mr-2 h-4 w-4" />
-                                Editar
-                              </DropdownMenuItem>
-                              <DropdownMenuItem
-                                onClick={() => handleEntry(epi)}
-                              >
-                                <ArrowDownCircle className="mr-2 h-4 w-4" />
-                                Entrada
-                              </DropdownMenuItem>
-                              <DropdownMenuItem onClick={() => handleExit(epi)}>
-                                <ArrowUpCircle className="mr-2 h-4 w-4" />
-                                Saída
-                              </DropdownMenuItem>
-                            </DropdownMenuContent>
-                          </DropdownMenu>
+                    <DropdownMenu>
+                      <DropdownMenuTrigger asChild>
+                        <Button variant="ghost" size="icon">
+                          <MoreHorizontal className="h-5 w-5" />
+                        </Button>
+                      </DropdownMenuTrigger>
+                      <DropdownMenuContent align="end">
+                        <DropdownMenuItem onClick={() => handleEdit(epi)}>
+                          <Pencil className="mr-2 h-4 w-4" />
+                          Editar
+                        </DropdownMenuItem>
+                        <DropdownMenuItem onClick={() => handleEntry(epi)}>
+                          <ArrowDownCircle className="mr-2 h-4 w-4" />
+                          Entrada
+                        </DropdownMenuItem>
+                        <DropdownMenuItem onClick={() => handleExit(epi)}>
+                          <ArrowUpCircle className="mr-2 h-4 w-4" />
+                          Saída
+                        </DropdownMenuItem>
+                      </DropdownMenuContent>
+                    </DropdownMenu>
                   </td>
                 </tr>
               ))}
@@ -203,6 +180,30 @@ export default function EpisListTable() {
             </div>
           </div>
           {/* Modais */}
+          {openEditModal && selectedEpi && (
+            <EditEpiModal
+            isOpen={openEditModal}
+            epi={selectedEpi}
+            onClose={() => setOpenEditModal(false)}
+            onUpdated={fetchEpis}
+          />
+          )}
+
+          {openEntryModal && selectedEpi && (
+            <EntryEpiModal
+              isOpen={openEntryModal}
+              epi={selectedEpi}
+              onEntryAdded={fetchEpis}
+              onClose={() => setOpenEntryModal(false)}
+            />
+          )}
+
+          {openExitModal && selectedEpi && (
+            <ExitEpiModal
+              epi={selectedEpi}
+              onClose={() => setOpenExitModal(false)}
+            />
+          )}
         </>
       )}
     </div>
