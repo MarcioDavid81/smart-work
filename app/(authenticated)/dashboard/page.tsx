@@ -1,7 +1,6 @@
 import { auth } from "@clerk/nextjs/server";
 import { redirect } from "next/navigation";
-import Sidebar from "../_components/Sidebar";
-import Navbar from "../_components/Navbar";
+
 
 export default async function Dashboard() {
 
@@ -11,12 +10,8 @@ export default async function Dashboard() {
     }
 
   return (
-    <div className="flex flex-col min-h-screen bg-gray-50">   
-      {/* Navbar */}
-      <Navbar />
-    <div className="min-h-screen flex bg-gray-50">
-      {/* Sidebar */}
-      <Sidebar />
+    <div className="flex flex-col w-full min-h-screen bg-gray-50">   
+    <div className="min-h-screen  w-full flex bg-gray-50">
       {/* Conteúdo principal */}
       <main className="flex-1 p-8 text-gray-800">
         <div className="flex justify-between items-center mb-6">

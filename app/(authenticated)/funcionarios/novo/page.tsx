@@ -1,18 +1,13 @@
 import React from "react";
-import Sidebar from "../../_components/Sidebar";
 import EmployeeForm from "../_components/employeeForm";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { GrReturn } from "react-icons/gr";
-import Navbar from "../../_components/Navbar";
 
 export default function NewEmployeePage() {
   return (
-    <div className="flex flex-col min-h-screen bg-gray-50">
-      {/* Navbar */}
-      <Navbar />
+    <div className="flex flex-col w-full min-h-screen bg-gray-50">
     <div className="min-h-screen flex bg-gray-50">
-      <Sidebar />
       {/* Conteúdo principal */}
       <main className="flex-1 py-4 px-8 text-gray-800">
         <div className="flex justify-between items-center mb-6">

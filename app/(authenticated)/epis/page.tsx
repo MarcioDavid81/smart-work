@@ -1,12 +1,10 @@
 import Link from "next/link";
-import Sidebar from "../_components/Sidebar";
 import CreateEpiButton from "./_components/CreateEpiButton";
 import EpisListTable from "./_components/EpiListTable";
 import { Button } from "@/components/ui/button";
 import { IoExit } from "react-icons/io5";
 import { auth } from "@clerk/nextjs/server";
 import { redirect } from "next/navigation";
-import Navbar from "../_components/Navbar";
 
 
 const Epis = async () => {
@@ -17,11 +15,8 @@ const Epis = async () => {
       }
 
   return (
-    <div className="flex flex-col min-h-screen bg-gray-50">
-      {/* Navbar */}
-      <Navbar />
+    <div className="flex flex-col w-full min-h-screen bg-gray-50">
     <div className="min-h-screen flex bg-gray-50">
-      <Sidebar />
       {/* Conteúdo principal */}
       <main className="flex-1 py-4 px-8 text-gray-800">
         <div className="flex justify-between items-center mb-6">

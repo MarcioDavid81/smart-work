@@ -14,6 +14,7 @@ import {
   TooltipProvider,
   TooltipTrigger,
 } from "@/components/ui/tooltip";
+import { motion } from "framer-motion";
 
 const routes = [
   {
@@ -42,6 +43,7 @@ const routes = [
     icon: <FaHardHat size={20} />,
   },
 ];
+
 
 const Sidebar = () => {
   const pathname = usePathname();

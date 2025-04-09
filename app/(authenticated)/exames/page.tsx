@@ -1,9 +1,7 @@
 import { auth } from "@clerk/nextjs/server";
-import Sidebar from "../_components/Sidebar";
 import { redirect } from "next/navigation";
 import CreateExamButton from "./_components/CreateExamButton";
 import ExamListTable from "./_components/ExamListTable";
-import Navbar from "../_components/Navbar";
 
 const Exames = async () => {
 
@@ -13,11 +11,8 @@ const Exames = async () => {
       }
 
   return (
-    <div className="flex flex-col min-h-screen bg-gray-50">
-      {/* Navbar */}
-      <Navbar />
+    <div className="flex flex-col w-full min-h-screen bg-gray-50">
     <div className="min-h-screen flex bg-gray-50">
-      <Sidebar />
       {/* Conteúdo principal */}
       <main className="flex-1 p-8 text-gray-800">
         <div className="flex justify-between items-center mb-6">

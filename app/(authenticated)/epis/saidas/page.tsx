@@ -1,7 +1,6 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
-import Sidebar from "../../_components/Sidebar";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { GrReturn } from "react-icons/gr";
@@ -11,7 +10,6 @@ import autoTable from "jspdf-autotable";
 import { EpiExit } from "@/app/types";
 import { toast } from "sonner";
 import { FileText } from "lucide-react";
-import Navbar from "../../_components/Navbar";
 
 interface EpiExitHistoryProps {
   onDataChange?: (data: EpiExit[]) => void;
@@ -124,11 +122,8 @@ export default function ExitsEpiPage({ onDataChange }: EpiExitHistoryProps) {
   };
 
   return (
-    <div className="flex flex-col min-h-screen bg-gray-50">
-      {/* Navbar */}
-      <Navbar />
+    <div className="flex flex-col w-full min-h-screen bg-gray-50">
     <div className="min-h-screen flex bg-gray-50">
-      <Sidebar />
       {/* Conteúdo principal */}
       <main className="flex-1 py-4 px-8 text-gray-800">
         <div className="flex justify-between items-center mb-6">

@@ -4,6 +4,11 @@ import "../globals.css";
 import { ClerkProvider } from "@clerk/nextjs";
 import { dark } from "@clerk/themes";
 import { Toaster } from "sonner";
+import dynamic from "next/dynamic";
+import { Loader2Icon } from "lucide-react";
+import Navbar from "./_components/Navbar";
+
+const Sidebar = dynamic(() => import("./_components/Sidebar"), { ssr: false, loading: () => <div className="w-[264px] bg-zinc-600 min-h-screen hidden md:flex items-center justify-center"><Loader2Icon className="animate-spin text-[#78b49a]" /></div>, });
 
 const nunito = Nunito({
   weight: ["400", "700"],
@@ -32,8 +37,10 @@ export default function RootLayout({
           }}
         >
       <body
-        className={`${nunito.className} antialiased`}
+        className={`${nunito.className} antialiased md:flex  w-full min-h-screen`}
       >
+        <Navbar />
+        <Sidebar />
         {children}
         <Toaster />
       </body>
