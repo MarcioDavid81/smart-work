@@ -40,3 +40,15 @@ export interface Epi {
     quantity: number;
     date: string;
   }
+
+  export interface MedicalExam {
+    id: number;
+    date: string;
+    type: string;
+    result: string;
+    expiration: string;
+    employeeId: number;
+    employee: {
+      name: string;
+    }    
+  }

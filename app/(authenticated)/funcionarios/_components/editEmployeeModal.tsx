@@ -34,15 +34,33 @@ export function EditEmployeeModal({ isOpen, onClose, employee, onUpdate }: any) 
       const result = await res.json();
 
       if (!res.ok) {
-        toast.error("Erro ao atualizar funcionário");
+        toast("Erro ao atualizar funcionário", {
+            style: {
+                backgroundColor: "#f87171",
+                color: "white",
+              },
+            icon: "❌",
+        });
         return;
       }
 
-      toast.success("Funcionário atualizado com sucesso!");
+      toast("Funcionário atualizado com sucesso!", {
+        style: {
+            backgroundColor: "#78b49a",
+            color: "white",
+        },
+        icon: "✅",
+    });
       onUpdate(); // Atualiza a lista
       onClose();  // Fecha modal
     } catch (err) {
-      toast.error("Erro inesperado ao atualizar funcionário");
+      toast("Erro inesperado ao atualizar funcionário", {
+            style: {
+                backgroundColor: "#f87171",
+                color: "white",
+              },
+            icon: "❌",
+        });
     } finally {
       setLoading(false);
     }

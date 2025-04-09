@@ -48,7 +48,13 @@ export default function EpiExitHistory({ onDataChange }: EpiExitHistoryProps) {
         setEpis(episData);
       } catch (err) {
         console.error(err);
-        toast.error("Erro ao carregar funcionários ou EPIs.");
+        toast("Erro ao carregar funcionários ou EPIs.", {
+          style: {
+              backgroundColor: "#f87171",
+              color: "white",
+            },
+          icon: "❌",
+      });
       }
     };
 
@@ -71,7 +77,13 @@ export default function EpiExitHistory({ onDataChange }: EpiExitHistoryProps) {
       } // <- envia os dados pro componente pai
     } catch (error) {
       console.error(error);
-      toast.error("Falha ao buscar saídas.");
+      toast("Falha ao buscar saídas.", {
+        style: {
+            backgroundColor: "#f87171",
+            color: "white",
+          },
+        icon: "❌",
+    });
     }
   };
 

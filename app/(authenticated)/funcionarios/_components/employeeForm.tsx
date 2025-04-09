@@ -99,16 +99,32 @@ export default function EmployeeForm() {
 
       if (!res.ok) {
         alert(result.message || "Erro ao cadastrar");
-        toast.error("Erro ao cadastrar funcionário");
+        toast("Erro ao cadastrar funcionário", {
+            style: {
+                backgroundColor: "#f87171",
+                color: "white",
+              },
+            icon: "❌",
+        });
         return;
       }
-      console.log("toast chegou aqui");
-      toast.success("Funcionário cadastrado com sucesso!");
+      toast("Funcionário cadastrado com sucesso!", {
+        style: {
+            backgroundColor: "#78b49a",
+            color: "white",
+        },
+        icon: "✅",
+    });
       resetForm();
     } catch (err) {
       console.error("Erro no envio do formulário:", err);
-      alert("Erro inesperado. Tente novamente.");
-      toast.error("Erro inesperado. Tente novamente.");
+      toast("Erro inesperado. Tente novamente.", {
+            style: {
+                backgroundColor: "#f87171",
+                color: "white",
+              },
+            icon: "❌",
+        });
     } finally {
       setIsSubmitting(false); // Re-enable the button after submission
     }

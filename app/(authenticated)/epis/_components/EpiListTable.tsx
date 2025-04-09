@@ -8,6 +8,8 @@ import {
   DropdownMenuTrigger,
   DropdownMenuContent,
   DropdownMenuItem,
+  DropdownMenuLabel,
+  DropdownMenuSeparator,
 } from "@/components/ui/dropdown-menu";
 import { Button } from "@/components/ui/button";
 import {
@@ -144,6 +146,8 @@ export default function EpisListTable() {
                         </Button>
                       </DropdownMenuTrigger>
                       <DropdownMenuContent align="end">
+                      <DropdownMenuLabel>Ações em {epi.name}</DropdownMenuLabel>
+                      <DropdownMenuSeparator />
                         <DropdownMenuItem onClick={() => handleEdit(epi)}>
                           <Pencil className="mr-2 h-4 w-4" />
                           Editar
@@ -163,15 +167,7 @@ export default function EpisListTable() {
               ))}
             </tbody>
           </table>
-          <div className="flex justify-between mt-4">
-            <div>
-              <Button
-                className="bg-[#78b49a] text-white hover:bg-[#78b49a]/80"
-                onClick={() => setIsReportModalOpen(true)}
-              >
-                Gerar Relatório
-              </Button>
-            </div>
+          <div className="flex justify-center mt-4">
             <div className="flex items-center space-x-2">
               {Array.from({ length: totalPages }, (_, i) => i + 1).map(
                 (page) => (

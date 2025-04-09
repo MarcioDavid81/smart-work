@@ -1,7 +1,16 @@
+import { auth } from "@clerk/nextjs/server";
 import Sidebar from "../_components/Sidebar";
-import { UserButton } from "@clerk/nextjs";
+import { redirect } from "next/navigation";
+import CreateExamButton from "./_components/CreateExamButton";
+import ExamListTable from "./_components/ExamListTable";
 
-const Exames = () => {
+const Exames = async () => {
+
+  const { userId } = await auth();
+      if (!userId) {
+        redirect("/");
+      }
+
   return (
     <div className="min-h-screen flex bg-gray-50">
       <Sidebar />
@@ -9,13 +18,11 @@ const Exames = () => {
       <main className="flex-1 p-8 text-gray-800">
         <div className="flex justify-between items-center mb-6">
           <h1 className="text-2xl font-bold">Exames</h1>
+          {/* Botão para criar exame */}
+          <CreateExamButton />
         </div>
-        <div className="bg-white p-6 rounded-xl shadow-md">
-          <p>Bem-vindo ao sistema de gestão Smart Work.</p>
-          <p className="text-sm text-gray-500 mt-2">
-            Selecione uma funcionalidade na barra lateral para começar.
-          </p>
-        </div>
+        {/* Tabela de exames */}
+        <ExamListTable />
       </main>
     </div>
   );

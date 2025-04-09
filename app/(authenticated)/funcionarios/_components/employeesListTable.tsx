@@ -86,13 +86,15 @@ export default function EmployeesListTable() {
       <div className="flex justify-between items-center mb-4">
         <h2 className="text-xl font-bold">Funcionários Cadastrados</h2>
         <div className="flex items-center gap-2 mb-4">
-            <Label htmlFor="status-switch">{showOnlyActive ? "Ativos" : "Todos"}</Label>
-            <Switch
-              id="status-switch"
-              checked={showOnlyActive}
-              onCheckedChange={(checked) => setShowOnlyActive(checked)}
-            />
-          </div>
+          <Label htmlFor="status-switch">
+            {showOnlyActive ? "Ativos" : "Todos"}
+          </Label>
+          <Switch
+            id="status-switch"
+            checked={showOnlyActive}
+            onCheckedChange={(checked) => setShowOnlyActive(checked)}
+          />
+        </div>
         <Input
           type="text"
           placeholder="Buscar por nome..."
@@ -160,21 +162,30 @@ export default function EmployeesListTable() {
             </tbody>
           </table>
           <div className="flex justify-between mt-4">
-          <div><Button className="bg-[#78b49a] text-white hover:bg-[#78b49a]/80" onClick={() => setIsReportModalOpen(true)}>Gerar Relatório</Button></div>
+            <div>
+              <Button
+                className="bg-[#78b49a] text-white hover:bg-[#78b49a]/80"
+                onClick={() => setIsReportModalOpen(true)}
+              >
+                Gerar Relatório
+              </Button>
+            </div>
             <div className="flex items-center space-x-2">
-              {Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => (
-                <button
-                  key={page}
-                  onClick={() => setCurrentPage(page)}
-                  className={`px-3 py-1 rounded-full text-sm ${
-                    currentPage === page
-                      ? "bg-[#78b49a] text-white hover:bg-[#78b49a]/80"
-                      : "bg-gray-200 text-gray-700"
-                  }`}
-                >
-                  {page}
-                </button>
-              ))}
+              {Array.from({ length: totalPages }, (_, i) => i + 1).map(
+                (page) => (
+                  <button
+                    key={page}
+                    onClick={() => setCurrentPage(page)}
+                    className={`px-3 py-1 rounded-full text-sm ${
+                      currentPage === page
+                        ? "bg-[#78b49a] text-white hover:bg-[#78b49a]/80"
+                        : "bg-gray-200 text-gray-700"
+                    }`}
+                  >
+                    {page}
+                  </button>
+                )
+              )}
             </div>
           </div>
           {/* Modais */}

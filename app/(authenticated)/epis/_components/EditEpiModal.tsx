@@ -42,11 +42,23 @@ export function EditEpiModal({ isOpen, onClose, epi, onUpdated }: EditEpiModalPr
     });
 
     if (response.ok) {
-      toast.success("EPI atualizado com sucesso!");
+      toast("EPI atualizado com sucesso!", {
+        style: {
+          backgroundColor: "#78b49a",
+          color: "white",
+        },
+        icon: "✅",
+      });
       onUpdated();
       onClose();
     } else {
-      toast.error("Erro ao atualizar o EPI.");
+      toast("Erro ao atualizar o EPI.", {
+        style: {
+          backgroundColor: "#f87171",
+          color: "white",
+        },
+        icon: "❌",
+      });
     }
   };
 
@@ -69,7 +81,7 @@ export function EditEpiModal({ isOpen, onClose, epi, onUpdated }: EditEpiModalPr
         </div>
 
         <div className="flex justify-end mt-4">
-          <Button onClick={handleUpdate} className="bg-green-600 text-white">Salvar</Button>
+          <Button onClick={handleUpdate} className="bg-[#78b49a] text-white hover:bg-[#78b49a]/80">Salvar</Button>
         </div>
       </DialogContent>
     </Dialog>

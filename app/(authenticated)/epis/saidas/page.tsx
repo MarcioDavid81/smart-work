@@ -36,7 +36,13 @@ export default function ExitsEpiPage({ onDataChange }: EpiExitHistoryProps) {
 
   const generatePDFReport = async () => {
     if (!localExits || localExits.length === 0) {
-      toast.warning("Nenhum dado para gerar o relatório.");
+      toast("Nenhum dado para gerar o relatório.", {
+        style: {
+          backgroundColor: "#b5b800",
+          color: "black",
+        },
+        icon: "⚠️",
+      });
       return;
     }
 

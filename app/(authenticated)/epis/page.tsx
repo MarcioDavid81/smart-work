@@ -4,9 +4,17 @@ import CreateEpiButton from "./_components/CreateEpiButton";
 import EpisListTable from "./_components/EpiListTable";
 import { Button } from "@/components/ui/button";
 import { IoExit } from "react-icons/io5";
+import { auth } from "@clerk/nextjs/server";
+import { redirect } from "next/navigation";
 
 
-const Epis = () => {
+const Epis = async () => {
+
+  const { userId } = await auth();
+      if (!userId) {
+        redirect("/");
+      }
+
   return (
     <div className="min-h-screen flex bg-gray-50">
       <Sidebar />

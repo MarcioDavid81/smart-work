@@ -1,10 +1,15 @@
-"use client";
-
+import { auth } from "@clerk/nextjs/server";
 import Sidebar from "../_components/Sidebar";
 import CreateEmployeeButton from "./_components/createEmployee";
 import EmployeesListTable from "./_components/employeesListTable";
+import { redirect } from "next/navigation";
 
-const Funcionarios = () => {
+const Funcionarios = async () => {
+
+  const { userId } = await auth();
+      if (!userId) {
+        redirect("/");
+      }
 
   return (
     <div className="min-h-screen flex bg-gray-50">

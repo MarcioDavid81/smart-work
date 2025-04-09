@@ -39,15 +39,10 @@ export type EpiEntry = $Result.DefaultSelection<Prisma.$EpiEntryPayload>
  */
 export type EpiExit = $Result.DefaultSelection<Prisma.$EpiExitPayload>
 /**
- * Model Exam
+ * Model MedicalExam
  * 
  */
-export type Exam = $Result.DefaultSelection<Prisma.$ExamPayload>
-/**
- * Model ExamEmployee
- * 
- */
-export type ExamEmployee = $Result.DefaultSelection<Prisma.$ExamEmployeePayload>
+export type MedicalExam = $Result.DefaultSelection<Prisma.$MedicalExamPayload>
 
 /**
  * Enums
@@ -285,24 +280,14 @@ export class PrismaClient<
   get epiExit(): Prisma.EpiExitDelegate<ExtArgs, ClientOptions>;
 
   /**
-   * `prisma.exam`: Exposes CRUD operations for the **Exam** model.
+   * `prisma.medicalExam`: Exposes CRUD operations for the **MedicalExam** model.
     * Example usage:
     * ```ts
-    * // Fetch zero or more Exams
-    * const exams = await prisma.exam.findMany()
+    * // Fetch zero or more MedicalExams
+    * const medicalExams = await prisma.medicalExam.findMany()
     * ```
     */
-  get exam(): Prisma.ExamDelegate<ExtArgs, ClientOptions>;
-
-  /**
-   * `prisma.examEmployee`: Exposes CRUD operations for the **ExamEmployee** model.
-    * Example usage:
-    * ```ts
-    * // Fetch zero or more ExamEmployees
-    * const examEmployees = await prisma.examEmployee.findMany()
-    * ```
-    */
-  get examEmployee(): Prisma.ExamEmployeeDelegate<ExtArgs, ClientOptions>;
+  get medicalExam(): Prisma.MedicalExamDelegate<ExtArgs, ClientOptions>;
 }
 
 export namespace Prisma {
@@ -748,8 +733,7 @@ export namespace Prisma {
     EpiEmployee: 'EpiEmployee',
     EpiEntry: 'EpiEntry',
     EpiExit: 'EpiExit',
-    Exam: 'Exam',
-    ExamEmployee: 'ExamEmployee'
+    MedicalExam: 'MedicalExam'
   };
 
   export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -768,7 +752,7 @@ export namespace Prisma {
       omit: GlobalOmitOptions
     }
     meta: {
-      modelProps: "employee" | "epi" | "epiEmployee" | "epiEntry" | "epiExit" | "exam" | "examEmployee"
+      modelProps: "employee" | "epi" | "epiEmployee" | "epiEntry" | "epiExit" | "medicalExam"
       txIsolationLevel: Prisma.TransactionIsolationLevel
     }
     model: {
@@ -1142,151 +1126,77 @@ export namespace Prisma {
           }
         }
       }
-      Exam: {
-        payload: Prisma.$ExamPayload<ExtArgs>
-        fields: Prisma.ExamFieldRefs
+      MedicalExam: {
+        payload: Prisma.$MedicalExamPayload<ExtArgs>
+        fields: Prisma.MedicalExamFieldRefs
         operations: {
           findUnique: {
-            args: Prisma.ExamFindUniqueArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$ExamPayload> | null
+            args: Prisma.MedicalExamFindUniqueArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$MedicalExamPayload> | null
           }
           findUniqueOrThrow: {
-            args: Prisma.ExamFindUniqueOrThrowArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$ExamPayload>
+            args: Prisma.MedicalExamFindUniqueOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$MedicalExamPayload>
           }
           findFirst: {
-            args: Prisma.ExamFindFirstArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$ExamPayload> | null
+            args: Prisma.MedicalExamFindFirstArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$MedicalExamPayload> | null
           }
           findFirstOrThrow: {
-            args: Prisma.ExamFindFirstOrThrowArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$ExamPayload>
+            args: Prisma.MedicalExamFindFirstOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$MedicalExamPayload>
           }
           findMany: {
-            args: Prisma.ExamFindManyArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$ExamPayload>[]
+            args: Prisma.MedicalExamFindManyArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$MedicalExamPayload>[]
           }
           create: {
-            args: Prisma.ExamCreateArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$ExamPayload>
+            args: Prisma.MedicalExamCreateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$MedicalExamPayload>
           }
           createMany: {
-            args: Prisma.ExamCreateManyArgs<ExtArgs>
+            args: Prisma.MedicalExamCreateManyArgs<ExtArgs>
             result: BatchPayload
           }
           createManyAndReturn: {
-            args: Prisma.ExamCreateManyAndReturnArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$ExamPayload>[]
+            args: Prisma.MedicalExamCreateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$MedicalExamPayload>[]
           }
           delete: {
-            args: Prisma.ExamDeleteArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$ExamPayload>
+            args: Prisma.MedicalExamDeleteArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$MedicalExamPayload>
           }
           update: {
-            args: Prisma.ExamUpdateArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$ExamPayload>
+            args: Prisma.MedicalExamUpdateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$MedicalExamPayload>
           }
           deleteMany: {
-            args: Prisma.ExamDeleteManyArgs<ExtArgs>
+            args: Prisma.MedicalExamDeleteManyArgs<ExtArgs>
             result: BatchPayload
           }
           updateMany: {
-            args: Prisma.ExamUpdateManyArgs<ExtArgs>
+            args: Prisma.MedicalExamUpdateManyArgs<ExtArgs>
             result: BatchPayload
           }
           updateManyAndReturn: {
-            args: Prisma.ExamUpdateManyAndReturnArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$ExamPayload>[]
+            args: Prisma.MedicalExamUpdateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$MedicalExamPayload>[]
           }
           upsert: {
-            args: Prisma.ExamUpsertArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$ExamPayload>
+            args: Prisma.MedicalExamUpsertArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$MedicalExamPayload>
           }
           aggregate: {
-            args: Prisma.ExamAggregateArgs<ExtArgs>
-            result: $Utils.Optional<AggregateExam>
+            args: Prisma.MedicalExamAggregateArgs<ExtArgs>
+            result: $Utils.Optional<AggregateMedicalExam>
           }
           groupBy: {
-            args: Prisma.ExamGroupByArgs<ExtArgs>
-            result: $Utils.Optional<ExamGroupByOutputType>[]
+            args: Prisma.MedicalExamGroupByArgs<ExtArgs>
+            result: $Utils.Optional<MedicalExamGroupByOutputType>[]
           }
           count: {
-            args: Prisma.ExamCountArgs<ExtArgs>
-            result: $Utils.Optional<ExamCountAggregateOutputType> | number
-          }
-        }
-      }
-      ExamEmployee: {
-        payload: Prisma.$ExamEmployeePayload<ExtArgs>
-        fields: Prisma.ExamEmployeeFieldRefs
-        operations: {
-          findUnique: {
-            args: Prisma.ExamEmployeeFindUniqueArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$ExamEmployeePayload> | null
-          }
-          findUniqueOrThrow: {
-            args: Prisma.ExamEmployeeFindUniqueOrThrowArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$ExamEmployeePayload>
-          }
-          findFirst: {
-            args: Prisma.ExamEmployeeFindFirstArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$ExamEmployeePayload> | null
-          }
-          findFirstOrThrow: {
-            args: Prisma.ExamEmployeeFindFirstOrThrowArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$ExamEmployeePayload>
-          }
-          findMany: {
-            args: Prisma.ExamEmployeeFindManyArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$ExamEmployeePayload>[]
-          }
-          create: {
-            args: Prisma.ExamEmployeeCreateArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$ExamEmployeePayload>
-          }
-          createMany: {
-            args: Prisma.ExamEmployeeCreateManyArgs<ExtArgs>
-            result: BatchPayload
-          }
-          createManyAndReturn: {
-            args: Prisma.ExamEmployeeCreateManyAndReturnArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$ExamEmployeePayload>[]
-          }
-          delete: {
-            args: Prisma.ExamEmployeeDeleteArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$ExamEmployeePayload>
-          }
-          update: {
-            args: Prisma.ExamEmployeeUpdateArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$ExamEmployeePayload>
-          }
-          deleteMany: {
-            args: Prisma.ExamEmployeeDeleteManyArgs<ExtArgs>
-            result: BatchPayload
-          }
-          updateMany: {
-            args: Prisma.ExamEmployeeUpdateManyArgs<ExtArgs>
-            result: BatchPayload
-          }
-          updateManyAndReturn: {
-            args: Prisma.ExamEmployeeUpdateManyAndReturnArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$ExamEmployeePayload>[]
-          }
-          upsert: {
-            args: Prisma.ExamEmployeeUpsertArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$ExamEmployeePayload>
-          }
-          aggregate: {
-            args: Prisma.ExamEmployeeAggregateArgs<ExtArgs>
-            result: $Utils.Optional<AggregateExamEmployee>
-          }
-          groupBy: {
-            args: Prisma.ExamEmployeeGroupByArgs<ExtArgs>
-            result: $Utils.Optional<ExamEmployeeGroupByOutputType>[]
-          }
-          count: {
-            args: Prisma.ExamEmployeeCountArgs<ExtArgs>
-            result: $Utils.Optional<ExamEmployeeCountAggregateOutputType> | number
+            args: Prisma.MedicalExamCountArgs<ExtArgs>
+            result: $Utils.Optional<MedicalExamCountAggregateOutputType> | number
           }
         }
       }
@@ -1379,8 +1289,7 @@ export namespace Prisma {
     epiEmployee?: EpiEmployeeOmit
     epiEntry?: EpiEntryOmit
     epiExit?: EpiExitOmit
-    exam?: ExamOmit
-    examEmployee?: ExamEmployeeOmit
+    medicalExam?: MedicalExamOmit
   }
 
   /* Types for Logging */
@@ -1476,14 +1385,14 @@ export namespace Prisma {
 
   export type EmployeeCountOutputType = {
     epies: number
-    exams: number
     exits: number
+    medicalExams: number
   }
 
   export type EmployeeCountOutputTypeSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     epies?: boolean | EmployeeCountOutputTypeCountEpiesArgs
-    exams?: boolean | EmployeeCountOutputTypeCountExamsArgs
     exits?: boolean | EmployeeCountOutputTypeCountExitsArgs
+    medicalExams?: boolean | EmployeeCountOutputTypeCountMedicalExamsArgs
   }
 
   // Custom InputTypes
@@ -1507,15 +1416,15 @@ export namespace Prisma {
   /**
    * EmployeeCountOutputType without action
    */
-  export type EmployeeCountOutputTypeCountExamsArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    where?: ExamEmployeeWhereInput
+  export type EmployeeCountOutputTypeCountExitsArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: EpiExitWhereInput
   }
 
   /**
    * EmployeeCountOutputType without action
    */
-  export type EmployeeCountOutputTypeCountExitsArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    where?: EpiExitWhereInput
+  export type EmployeeCountOutputTypeCountMedicalExamsArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: MedicalExamWhereInput
   }
 
 
@@ -1565,37 +1474,6 @@ export namespace Prisma {
    */
   export type EpiCountOutputTypeCountExitsArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     where?: EpiExitWhereInput
-  }
-
-
-  /**
-   * Count Type ExamCountOutputType
-   */
-
-  export type ExamCountOutputType = {
-    employees: number
-  }
-
-  export type ExamCountOutputTypeSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    employees?: boolean | ExamCountOutputTypeCountEmployeesArgs
-  }
-
-  // Custom InputTypes
-  /**
-   * ExamCountOutputType without action
-   */
-  export type ExamCountOutputTypeDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the ExamCountOutputType
-     */
-    select?: ExamCountOutputTypeSelect<ExtArgs> | null
-  }
-
-  /**
-   * ExamCountOutputType without action
-   */
-  export type ExamCountOutputTypeCountEmployeesArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    where?: ExamEmployeeWhereInput
   }
 
 
@@ -1890,8 +1768,8 @@ export namespace Prisma {
     createdAt?: boolean
     updatedAt?: boolean
     epies?: boolean | Employee$epiesArgs<ExtArgs>
-    exams?: boolean | Employee$examsArgs<ExtArgs>
     exits?: boolean | Employee$exitsArgs<ExtArgs>
+    medicalExams?: boolean | Employee$medicalExamsArgs<ExtArgs>
     _count?: boolean | EmployeeCountOutputTypeDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["employee"]>
 
@@ -1955,8 +1833,8 @@ export namespace Prisma {
   export type EmployeeOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "name" | "adress" | "city" | "email" | "phone" | "birthDate" | "admission" | "cpf" | "rg" | "employer" | "department" | "function" | "status" | "createdAt" | "updatedAt", ExtArgs["result"]["employee"]>
   export type EmployeeInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     epies?: boolean | Employee$epiesArgs<ExtArgs>
-    exams?: boolean | Employee$examsArgs<ExtArgs>
     exits?: boolean | Employee$exitsArgs<ExtArgs>
+    medicalExams?: boolean | Employee$medicalExamsArgs<ExtArgs>
     _count?: boolean | EmployeeCountOutputTypeDefaultArgs<ExtArgs>
   }
   export type EmployeeIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {}
@@ -1966,8 +1844,8 @@ export namespace Prisma {
     name: "Employee"
     objects: {
       epies: Prisma.$EpiEmployeePayload<ExtArgs>[]
-      exams: Prisma.$ExamEmployeePayload<ExtArgs>[]
       exits: Prisma.$EpiExitPayload<ExtArgs>[]
+      medicalExams: Prisma.$MedicalExamPayload<ExtArgs>[]
     }
     scalars: $Extensions.GetPayloadResult<{
       id: number
@@ -2381,8 +2259,8 @@ export namespace Prisma {
   export interface Prisma__EmployeeClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
     readonly [Symbol.toStringTag]: "PrismaPromise"
     epies<T extends Employee$epiesArgs<ExtArgs> = {}>(args?: Subset<T, Employee$epiesArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$EpiEmployeePayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
-    exams<T extends Employee$examsArgs<ExtArgs> = {}>(args?: Subset<T, Employee$examsArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$ExamEmployeePayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
     exits<T extends Employee$exitsArgs<ExtArgs> = {}>(args?: Subset<T, Employee$exitsArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$EpiExitPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+    medicalExams<T extends Employee$medicalExamsArgs<ExtArgs> = {}>(args?: Subset<T, Employee$medicalExamsArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$MedicalExamPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
     /**
      * Attaches callbacks for the resolution and/or rejection of the Promise.
      * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -2840,30 +2718,6 @@ export namespace Prisma {
   }
 
   /**
-   * Employee.exams
-   */
-  export type Employee$examsArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the ExamEmployee
-     */
-    select?: ExamEmployeeSelect<ExtArgs> | null
-    /**
-     * Omit specific fields from the ExamEmployee
-     */
-    omit?: ExamEmployeeOmit<ExtArgs> | null
-    /**
-     * Choose, which related nodes to fetch as well
-     */
-    include?: ExamEmployeeInclude<ExtArgs> | null
-    where?: ExamEmployeeWhereInput
-    orderBy?: ExamEmployeeOrderByWithRelationInput | ExamEmployeeOrderByWithRelationInput[]
-    cursor?: ExamEmployeeWhereUniqueInput
-    take?: number
-    skip?: number
-    distinct?: ExamEmployeeScalarFieldEnum | ExamEmployeeScalarFieldEnum[]
-  }
-
-  /**
    * Employee.exits
    */
   export type Employee$exitsArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
@@ -2885,6 +2739,30 @@ export namespace Prisma {
     take?: number
     skip?: number
     distinct?: EpiExitScalarFieldEnum | EpiExitScalarFieldEnum[]
+  }
+
+  /**
+   * Employee.medicalExams
+   */
+  export type Employee$medicalExamsArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the MedicalExam
+     */
+    select?: MedicalExamSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the MedicalExam
+     */
+    omit?: MedicalExamOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: MedicalExamInclude<ExtArgs> | null
+    where?: MedicalExamWhereInput
+    orderBy?: MedicalExamOrderByWithRelationInput | MedicalExamOrderByWithRelationInput[]
+    cursor?: MedicalExamWhereUniqueInput
+    take?: number
+    skip?: number
+    distinct?: MedicalExamScalarFieldEnum | MedicalExamScalarFieldEnum[]
   }
 
   /**
@@ -7499,1516 +7377,424 @@ export namespace Prisma {
 
 
   /**
-   * Model Exam
+   * Model MedicalExam
    */
 
-  export type AggregateExam = {
-    _count: ExamCountAggregateOutputType | null
-    _avg: ExamAvgAggregateOutputType | null
-    _sum: ExamSumAggregateOutputType | null
-    _min: ExamMinAggregateOutputType | null
-    _max: ExamMaxAggregateOutputType | null
+  export type AggregateMedicalExam = {
+    _count: MedicalExamCountAggregateOutputType | null
+    _avg: MedicalExamAvgAggregateOutputType | null
+    _sum: MedicalExamSumAggregateOutputType | null
+    _min: MedicalExamMinAggregateOutputType | null
+    _max: MedicalExamMaxAggregateOutputType | null
   }
 
-  export type ExamAvgAggregateOutputType = {
+  export type MedicalExamAvgAggregateOutputType = {
     id: number | null
+    employeeId: number | null
   }
 
-  export type ExamSumAggregateOutputType = {
+  export type MedicalExamSumAggregateOutputType = {
     id: number | null
+    employeeId: number | null
   }
 
-  export type ExamMinAggregateOutputType = {
+  export type MedicalExamMinAggregateOutputType = {
     id: number | null
-    name: string | null
-    description: string | null
+    date: Date | null
     type: string | null
+    result: string | null
+    expiration: Date | null
+    employeeId: number | null
     createdAt: Date | null
     updatedAt: Date | null
   }
 
-  export type ExamMaxAggregateOutputType = {
+  export type MedicalExamMaxAggregateOutputType = {
     id: number | null
-    name: string | null
-    description: string | null
+    date: Date | null
     type: string | null
+    result: string | null
+    expiration: Date | null
+    employeeId: number | null
     createdAt: Date | null
     updatedAt: Date | null
   }
 
-  export type ExamCountAggregateOutputType = {
+  export type MedicalExamCountAggregateOutputType = {
     id: number
-    name: number
-    description: number
+    date: number
     type: number
+    result: number
+    expiration: number
+    employeeId: number
     createdAt: number
     updatedAt: number
     _all: number
   }
 
 
-  export type ExamAvgAggregateInputType = {
+  export type MedicalExamAvgAggregateInputType = {
     id?: true
+    employeeId?: true
   }
 
-  export type ExamSumAggregateInputType = {
+  export type MedicalExamSumAggregateInputType = {
     id?: true
+    employeeId?: true
   }
 
-  export type ExamMinAggregateInputType = {
+  export type MedicalExamMinAggregateInputType = {
     id?: true
-    name?: true
-    description?: true
+    date?: true
     type?: true
+    result?: true
+    expiration?: true
+    employeeId?: true
     createdAt?: true
     updatedAt?: true
   }
 
-  export type ExamMaxAggregateInputType = {
+  export type MedicalExamMaxAggregateInputType = {
     id?: true
-    name?: true
-    description?: true
+    date?: true
     type?: true
+    result?: true
+    expiration?: true
+    employeeId?: true
     createdAt?: true
     updatedAt?: true
   }
 
-  export type ExamCountAggregateInputType = {
+  export type MedicalExamCountAggregateInputType = {
     id?: true
-    name?: true
-    description?: true
+    date?: true
     type?: true
+    result?: true
+    expiration?: true
+    employeeId?: true
     createdAt?: true
     updatedAt?: true
     _all?: true
   }
 
-  export type ExamAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type MedicalExamAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Filter which Exam to aggregate.
+     * Filter which MedicalExam to aggregate.
      */
-    where?: ExamWhereInput
+    where?: MedicalExamWhereInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
      * 
-     * Determine the order of Exams to fetch.
+     * Determine the order of MedicalExams to fetch.
      */
-    orderBy?: ExamOrderByWithRelationInput | ExamOrderByWithRelationInput[]
+    orderBy?: MedicalExamOrderByWithRelationInput | MedicalExamOrderByWithRelationInput[]
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
      * 
      * Sets the start position
      */
-    cursor?: ExamWhereUniqueInput
+    cursor?: MedicalExamWhereUniqueInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Take `±n` Exams from the position of the cursor.
+     * Take `±n` MedicalExams from the position of the cursor.
      */
     take?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Skip the first `n` Exams.
+     * Skip the first `n` MedicalExams.
      */
     skip?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
      * 
-     * Count returned Exams
+     * Count returned MedicalExams
     **/
-    _count?: true | ExamCountAggregateInputType
+    _count?: true | MedicalExamCountAggregateInputType
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
      * 
      * Select which fields to average
     **/
-    _avg?: ExamAvgAggregateInputType
+    _avg?: MedicalExamAvgAggregateInputType
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
      * 
      * Select which fields to sum
     **/
-    _sum?: ExamSumAggregateInputType
+    _sum?: MedicalExamSumAggregateInputType
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
      * 
      * Select which fields to find the minimum value
     **/
-    _min?: ExamMinAggregateInputType
+    _min?: MedicalExamMinAggregateInputType
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
      * 
      * Select which fields to find the maximum value
     **/
-    _max?: ExamMaxAggregateInputType
+    _max?: MedicalExamMaxAggregateInputType
   }
 
-  export type GetExamAggregateType<T extends ExamAggregateArgs> = {
-        [P in keyof T & keyof AggregateExam]: P extends '_count' | 'count'
+  export type GetMedicalExamAggregateType<T extends MedicalExamAggregateArgs> = {
+        [P in keyof T & keyof AggregateMedicalExam]: P extends '_count' | 'count'
       ? T[P] extends true
         ? number
-        : GetScalarType<T[P], AggregateExam[P]>
-      : GetScalarType<T[P], AggregateExam[P]>
+        : GetScalarType<T[P], AggregateMedicalExam[P]>
+      : GetScalarType<T[P], AggregateMedicalExam[P]>
   }
 
 
 
 
-  export type ExamGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    where?: ExamWhereInput
-    orderBy?: ExamOrderByWithAggregationInput | ExamOrderByWithAggregationInput[]
-    by: ExamScalarFieldEnum[] | ExamScalarFieldEnum
-    having?: ExamScalarWhereWithAggregatesInput
+  export type MedicalExamGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: MedicalExamWhereInput
+    orderBy?: MedicalExamOrderByWithAggregationInput | MedicalExamOrderByWithAggregationInput[]
+    by: MedicalExamScalarFieldEnum[] | MedicalExamScalarFieldEnum
+    having?: MedicalExamScalarWhereWithAggregatesInput
     take?: number
     skip?: number
-    _count?: ExamCountAggregateInputType | true
-    _avg?: ExamAvgAggregateInputType
-    _sum?: ExamSumAggregateInputType
-    _min?: ExamMinAggregateInputType
-    _max?: ExamMaxAggregateInputType
+    _count?: MedicalExamCountAggregateInputType | true
+    _avg?: MedicalExamAvgAggregateInputType
+    _sum?: MedicalExamSumAggregateInputType
+    _min?: MedicalExamMinAggregateInputType
+    _max?: MedicalExamMaxAggregateInputType
   }
 
-  export type ExamGroupByOutputType = {
+  export type MedicalExamGroupByOutputType = {
     id: number
-    name: string
-    description: string
+    date: Date
     type: string
+    result: string | null
+    expiration: Date
+    employeeId: number
     createdAt: Date
     updatedAt: Date
-    _count: ExamCountAggregateOutputType | null
-    _avg: ExamAvgAggregateOutputType | null
-    _sum: ExamSumAggregateOutputType | null
-    _min: ExamMinAggregateOutputType | null
-    _max: ExamMaxAggregateOutputType | null
+    _count: MedicalExamCountAggregateOutputType | null
+    _avg: MedicalExamAvgAggregateOutputType | null
+    _sum: MedicalExamSumAggregateOutputType | null
+    _min: MedicalExamMinAggregateOutputType | null
+    _max: MedicalExamMaxAggregateOutputType | null
   }
 
-  type GetExamGroupByPayload<T extends ExamGroupByArgs> = Prisma.PrismaPromise<
+  type GetMedicalExamGroupByPayload<T extends MedicalExamGroupByArgs> = Prisma.PrismaPromise<
     Array<
-      PickEnumerable<ExamGroupByOutputType, T['by']> &
+      PickEnumerable<MedicalExamGroupByOutputType, T['by']> &
         {
-          [P in ((keyof T) & (keyof ExamGroupByOutputType))]: P extends '_count'
+          [P in ((keyof T) & (keyof MedicalExamGroupByOutputType))]: P extends '_count'
             ? T[P] extends boolean
               ? number
-              : GetScalarType<T[P], ExamGroupByOutputType[P]>
-            : GetScalarType<T[P], ExamGroupByOutputType[P]>
+              : GetScalarType<T[P], MedicalExamGroupByOutputType[P]>
+            : GetScalarType<T[P], MedicalExamGroupByOutputType[P]>
         }
       >
     >
 
 
-  export type ExamSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+  export type MedicalExamSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
-    name?: boolean
-    description?: boolean
+    date?: boolean
     type?: boolean
+    result?: boolean
+    expiration?: boolean
+    employeeId?: boolean
     createdAt?: boolean
     updatedAt?: boolean
-    employees?: boolean | Exam$employeesArgs<ExtArgs>
-    _count?: boolean | ExamCountOutputTypeDefaultArgs<ExtArgs>
-  }, ExtArgs["result"]["exam"]>
+    employee?: boolean | EmployeeDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["medicalExam"]>
 
-  export type ExamSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+  export type MedicalExamSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
-    name?: boolean
-    description?: boolean
+    date?: boolean
     type?: boolean
+    result?: boolean
+    expiration?: boolean
+    employeeId?: boolean
     createdAt?: boolean
     updatedAt?: boolean
-  }, ExtArgs["result"]["exam"]>
+    employee?: boolean | EmployeeDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["medicalExam"]>
 
-  export type ExamSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+  export type MedicalExamSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
-    name?: boolean
-    description?: boolean
+    date?: boolean
     type?: boolean
+    result?: boolean
+    expiration?: boolean
+    employeeId?: boolean
     createdAt?: boolean
     updatedAt?: boolean
-  }, ExtArgs["result"]["exam"]>
+    employee?: boolean | EmployeeDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["medicalExam"]>
 
-  export type ExamSelectScalar = {
+  export type MedicalExamSelectScalar = {
     id?: boolean
-    name?: boolean
-    description?: boolean
+    date?: boolean
     type?: boolean
-    createdAt?: boolean
-    updatedAt?: boolean
-  }
-
-  export type ExamOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "name" | "description" | "type" | "createdAt" | "updatedAt", ExtArgs["result"]["exam"]>
-  export type ExamInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    employees?: boolean | Exam$employeesArgs<ExtArgs>
-    _count?: boolean | ExamCountOutputTypeDefaultArgs<ExtArgs>
-  }
-  export type ExamIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {}
-  export type ExamIncludeUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {}
-
-  export type $ExamPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    name: "Exam"
-    objects: {
-      employees: Prisma.$ExamEmployeePayload<ExtArgs>[]
-    }
-    scalars: $Extensions.GetPayloadResult<{
-      id: number
-      name: string
-      description: string
-      type: string
-      createdAt: Date
-      updatedAt: Date
-    }, ExtArgs["result"]["exam"]>
-    composites: {}
-  }
-
-  type ExamGetPayload<S extends boolean | null | undefined | ExamDefaultArgs> = $Result.GetResult<Prisma.$ExamPayload, S>
-
-  type ExamCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
-    Omit<ExamFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
-      select?: ExamCountAggregateInputType | true
-    }
-
-  export interface ExamDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> {
-    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['Exam'], meta: { name: 'Exam' } }
-    /**
-     * Find zero or one Exam that matches the filter.
-     * @param {ExamFindUniqueArgs} args - Arguments to find a Exam
-     * @example
-     * // Get one Exam
-     * const exam = await prisma.exam.findUnique({
-     *   where: {
-     *     // ... provide filter here
-     *   }
-     * })
-     */
-    findUnique<T extends ExamFindUniqueArgs>(args: SelectSubset<T, ExamFindUniqueArgs<ExtArgs>>): Prisma__ExamClient<$Result.GetResult<Prisma.$ExamPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
-
-    /**
-     * Find one Exam that matches the filter or throw an error with `error.code='P2025'`
-     * if no matches were found.
-     * @param {ExamFindUniqueOrThrowArgs} args - Arguments to find a Exam
-     * @example
-     * // Get one Exam
-     * const exam = await prisma.exam.findUniqueOrThrow({
-     *   where: {
-     *     // ... provide filter here
-     *   }
-     * })
-     */
-    findUniqueOrThrow<T extends ExamFindUniqueOrThrowArgs>(args: SelectSubset<T, ExamFindUniqueOrThrowArgs<ExtArgs>>): Prisma__ExamClient<$Result.GetResult<Prisma.$ExamPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
-
-    /**
-     * Find the first Exam that matches the filter.
-     * Note, that providing `undefined` is treated as the value not being there.
-     * Read more here: https://pris.ly/d/null-undefined
-     * @param {ExamFindFirstArgs} args - Arguments to find a Exam
-     * @example
-     * // Get one Exam
-     * const exam = await prisma.exam.findFirst({
-     *   where: {
-     *     // ... provide filter here
-     *   }
-     * })
-     */
-    findFirst<T extends ExamFindFirstArgs>(args?: SelectSubset<T, ExamFindFirstArgs<ExtArgs>>): Prisma__ExamClient<$Result.GetResult<Prisma.$ExamPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
-
-    /**
-     * Find the first Exam that matches the filter or
-     * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
-     * Note, that providing `undefined` is treated as the value not being there.
-     * Read more here: https://pris.ly/d/null-undefined
-     * @param {ExamFindFirstOrThrowArgs} args - Arguments to find a Exam
-     * @example
-     * // Get one Exam
-     * const exam = await prisma.exam.findFirstOrThrow({
-     *   where: {
-     *     // ... provide filter here
-     *   }
-     * })
-     */
-    findFirstOrThrow<T extends ExamFindFirstOrThrowArgs>(args?: SelectSubset<T, ExamFindFirstOrThrowArgs<ExtArgs>>): Prisma__ExamClient<$Result.GetResult<Prisma.$ExamPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
-
-    /**
-     * Find zero or more Exams that matches the filter.
-     * Note, that providing `undefined` is treated as the value not being there.
-     * Read more here: https://pris.ly/d/null-undefined
-     * @param {ExamFindManyArgs} args - Arguments to filter and select certain fields only.
-     * @example
-     * // Get all Exams
-     * const exams = await prisma.exam.findMany()
-     * 
-     * // Get first 10 Exams
-     * const exams = await prisma.exam.findMany({ take: 10 })
-     * 
-     * // Only select the `id`
-     * const examWithIdOnly = await prisma.exam.findMany({ select: { id: true } })
-     * 
-     */
-    findMany<T extends ExamFindManyArgs>(args?: SelectSubset<T, ExamFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$ExamPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
-
-    /**
-     * Create a Exam.
-     * @param {ExamCreateArgs} args - Arguments to create a Exam.
-     * @example
-     * // Create one Exam
-     * const Exam = await prisma.exam.create({
-     *   data: {
-     *     // ... data to create a Exam
-     *   }
-     * })
-     * 
-     */
-    create<T extends ExamCreateArgs>(args: SelectSubset<T, ExamCreateArgs<ExtArgs>>): Prisma__ExamClient<$Result.GetResult<Prisma.$ExamPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
-
-    /**
-     * Create many Exams.
-     * @param {ExamCreateManyArgs} args - Arguments to create many Exams.
-     * @example
-     * // Create many Exams
-     * const exam = await prisma.exam.createMany({
-     *   data: [
-     *     // ... provide data here
-     *   ]
-     * })
-     *     
-     */
-    createMany<T extends ExamCreateManyArgs>(args?: SelectSubset<T, ExamCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
-
-    /**
-     * Create many Exams and returns the data saved in the database.
-     * @param {ExamCreateManyAndReturnArgs} args - Arguments to create many Exams.
-     * @example
-     * // Create many Exams
-     * const exam = await prisma.exam.createManyAndReturn({
-     *   data: [
-     *     // ... provide data here
-     *   ]
-     * })
-     * 
-     * // Create many Exams and only return the `id`
-     * const examWithIdOnly = await prisma.exam.createManyAndReturn({
-     *   select: { id: true },
-     *   data: [
-     *     // ... provide data here
-     *   ]
-     * })
-     * Note, that providing `undefined` is treated as the value not being there.
-     * Read more here: https://pris.ly/d/null-undefined
-     * 
-     */
-    createManyAndReturn<T extends ExamCreateManyAndReturnArgs>(args?: SelectSubset<T, ExamCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$ExamPayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>
-
-    /**
-     * Delete a Exam.
-     * @param {ExamDeleteArgs} args - Arguments to delete one Exam.
-     * @example
-     * // Delete one Exam
-     * const Exam = await prisma.exam.delete({
-     *   where: {
-     *     // ... filter to delete one Exam
-     *   }
-     * })
-     * 
-     */
-    delete<T extends ExamDeleteArgs>(args: SelectSubset<T, ExamDeleteArgs<ExtArgs>>): Prisma__ExamClient<$Result.GetResult<Prisma.$ExamPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
-
-    /**
-     * Update one Exam.
-     * @param {ExamUpdateArgs} args - Arguments to update one Exam.
-     * @example
-     * // Update one Exam
-     * const exam = await prisma.exam.update({
-     *   where: {
-     *     // ... provide filter here
-     *   },
-     *   data: {
-     *     // ... provide data here
-     *   }
-     * })
-     * 
-     */
-    update<T extends ExamUpdateArgs>(args: SelectSubset<T, ExamUpdateArgs<ExtArgs>>): Prisma__ExamClient<$Result.GetResult<Prisma.$ExamPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
-
-    /**
-     * Delete zero or more Exams.
-     * @param {ExamDeleteManyArgs} args - Arguments to filter Exams to delete.
-     * @example
-     * // Delete a few Exams
-     * const { count } = await prisma.exam.deleteMany({
-     *   where: {
-     *     // ... provide filter here
-     *   }
-     * })
-     * 
-     */
-    deleteMany<T extends ExamDeleteManyArgs>(args?: SelectSubset<T, ExamDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
-
-    /**
-     * Update zero or more Exams.
-     * Note, that providing `undefined` is treated as the value not being there.
-     * Read more here: https://pris.ly/d/null-undefined
-     * @param {ExamUpdateManyArgs} args - Arguments to update one or more rows.
-     * @example
-     * // Update many Exams
-     * const exam = await prisma.exam.updateMany({
-     *   where: {
-     *     // ... provide filter here
-     *   },
-     *   data: {
-     *     // ... provide data here
-     *   }
-     * })
-     * 
-     */
-    updateMany<T extends ExamUpdateManyArgs>(args: SelectSubset<T, ExamUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
-
-    /**
-     * Update zero or more Exams and returns the data updated in the database.
-     * @param {ExamUpdateManyAndReturnArgs} args - Arguments to update many Exams.
-     * @example
-     * // Update many Exams
-     * const exam = await prisma.exam.updateManyAndReturn({
-     *   where: {
-     *     // ... provide filter here
-     *   },
-     *   data: [
-     *     // ... provide data here
-     *   ]
-     * })
-     * 
-     * // Update zero or more Exams and only return the `id`
-     * const examWithIdOnly = await prisma.exam.updateManyAndReturn({
-     *   select: { id: true },
-     *   where: {
-     *     // ... provide filter here
-     *   },
-     *   data: [
-     *     // ... provide data here
-     *   ]
-     * })
-     * Note, that providing `undefined` is treated as the value not being there.
-     * Read more here: https://pris.ly/d/null-undefined
-     * 
-     */
-    updateManyAndReturn<T extends ExamUpdateManyAndReturnArgs>(args: SelectSubset<T, ExamUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$ExamPayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>
-
-    /**
-     * Create or update one Exam.
-     * @param {ExamUpsertArgs} args - Arguments to update or create a Exam.
-     * @example
-     * // Update or create a Exam
-     * const exam = await prisma.exam.upsert({
-     *   create: {
-     *     // ... data to create a Exam
-     *   },
-     *   update: {
-     *     // ... in case it already exists, update
-     *   },
-     *   where: {
-     *     // ... the filter for the Exam we want to update
-     *   }
-     * })
-     */
-    upsert<T extends ExamUpsertArgs>(args: SelectSubset<T, ExamUpsertArgs<ExtArgs>>): Prisma__ExamClient<$Result.GetResult<Prisma.$ExamPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
-
-
-    /**
-     * Count the number of Exams.
-     * Note, that providing `undefined` is treated as the value not being there.
-     * Read more here: https://pris.ly/d/null-undefined
-     * @param {ExamCountArgs} args - Arguments to filter Exams to count.
-     * @example
-     * // Count the number of Exams
-     * const count = await prisma.exam.count({
-     *   where: {
-     *     // ... the filter for the Exams we want to count
-     *   }
-     * })
-    **/
-    count<T extends ExamCountArgs>(
-      args?: Subset<T, ExamCountArgs>,
-    ): Prisma.PrismaPromise<
-      T extends $Utils.Record<'select', any>
-        ? T['select'] extends true
-          ? number
-          : GetScalarType<T['select'], ExamCountAggregateOutputType>
-        : number
-    >
-
-    /**
-     * Allows you to perform aggregations operations on a Exam.
-     * Note, that providing `undefined` is treated as the value not being there.
-     * Read more here: https://pris.ly/d/null-undefined
-     * @param {ExamAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
-     * @example
-     * // Ordered by age ascending
-     * // Where email contains prisma.io
-     * // Limited to the 10 users
-     * const aggregations = await prisma.user.aggregate({
-     *   _avg: {
-     *     age: true,
-     *   },
-     *   where: {
-     *     email: {
-     *       contains: "prisma.io",
-     *     },
-     *   },
-     *   orderBy: {
-     *     age: "asc",
-     *   },
-     *   take: 10,
-     * })
-    **/
-    aggregate<T extends ExamAggregateArgs>(args: Subset<T, ExamAggregateArgs>): Prisma.PrismaPromise<GetExamAggregateType<T>>
-
-    /**
-     * Group by Exam.
-     * Note, that providing `undefined` is treated as the value not being there.
-     * Read more here: https://pris.ly/d/null-undefined
-     * @param {ExamGroupByArgs} args - Group by arguments.
-     * @example
-     * // Group by city, order by createdAt, get count
-     * const result = await prisma.user.groupBy({
-     *   by: ['city', 'createdAt'],
-     *   orderBy: {
-     *     createdAt: true
-     *   },
-     *   _count: {
-     *     _all: true
-     *   },
-     * })
-     * 
-    **/
-    groupBy<
-      T extends ExamGroupByArgs,
-      HasSelectOrTake extends Or<
-        Extends<'skip', Keys<T>>,
-        Extends<'take', Keys<T>>
-      >,
-      OrderByArg extends True extends HasSelectOrTake
-        ? { orderBy: ExamGroupByArgs['orderBy'] }
-        : { orderBy?: ExamGroupByArgs['orderBy'] },
-      OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
-      ByFields extends MaybeTupleToUnion<T['by']>,
-      ByValid extends Has<ByFields, OrderFields>,
-      HavingFields extends GetHavingFields<T['having']>,
-      HavingValid extends Has<ByFields, HavingFields>,
-      ByEmpty extends T['by'] extends never[] ? True : False,
-      InputErrors extends ByEmpty extends True
-      ? `Error: "by" must not be empty.`
-      : HavingValid extends False
-      ? {
-          [P in HavingFields]: P extends ByFields
-            ? never
-            : P extends string
-            ? `Error: Field "${P}" used in "having" needs to be provided in "by".`
-            : [
-                Error,
-                'Field ',
-                P,
-                ` in "having" needs to be provided in "by"`,
-              ]
-        }[HavingFields]
-      : 'take' extends Keys<T>
-      ? 'orderBy' extends Keys<T>
-        ? ByValid extends True
-          ? {}
-          : {
-              [P in OrderFields]: P extends ByFields
-                ? never
-                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
-            }[OrderFields]
-        : 'Error: If you provide "take", you also need to provide "orderBy"'
-      : 'skip' extends Keys<T>
-      ? 'orderBy' extends Keys<T>
-        ? ByValid extends True
-          ? {}
-          : {
-              [P in OrderFields]: P extends ByFields
-                ? never
-                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
-            }[OrderFields]
-        : 'Error: If you provide "skip", you also need to provide "orderBy"'
-      : ByValid extends True
-      ? {}
-      : {
-          [P in OrderFields]: P extends ByFields
-            ? never
-            : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
-        }[OrderFields]
-    >(args: SubsetIntersection<T, ExamGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetExamGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
-  /**
-   * Fields of the Exam model
-   */
-  readonly fields: ExamFieldRefs;
-  }
-
-  /**
-   * The delegate class that acts as a "Promise-like" for Exam.
-   * Why is this prefixed with `Prisma__`?
-   * Because we want to prevent naming conflicts as mentioned in
-   * https://github.com/prisma/prisma-client-js/issues/707
-   */
-  export interface Prisma__ExamClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
-    readonly [Symbol.toStringTag]: "PrismaPromise"
-    employees<T extends Exam$employeesArgs<ExtArgs> = {}>(args?: Subset<T, Exam$employeesArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$ExamEmployeePayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
-    /**
-     * Attaches callbacks for the resolution and/or rejection of the Promise.
-     * @param onfulfilled The callback to execute when the Promise is resolved.
-     * @param onrejected The callback to execute when the Promise is rejected.
-     * @returns A Promise for the completion of which ever callback is executed.
-     */
-    then<TResult1 = T, TResult2 = never>(onfulfilled?: ((value: T) => TResult1 | PromiseLike<TResult1>) | undefined | null, onrejected?: ((reason: any) => TResult2 | PromiseLike<TResult2>) | undefined | null): $Utils.JsPromise<TResult1 | TResult2>
-    /**
-     * Attaches a callback for only the rejection of the Promise.
-     * @param onrejected The callback to execute when the Promise is rejected.
-     * @returns A Promise for the completion of the callback.
-     */
-    catch<TResult = never>(onrejected?: ((reason: any) => TResult | PromiseLike<TResult>) | undefined | null): $Utils.JsPromise<T | TResult>
-    /**
-     * Attaches a callback that is invoked when the Promise is settled (fulfilled or rejected). The
-     * resolved value cannot be modified from the callback.
-     * @param onfinally The callback to execute when the Promise is settled (fulfilled or rejected).
-     * @returns A Promise for the completion of the callback.
-     */
-    finally(onfinally?: (() => void) | undefined | null): $Utils.JsPromise<T>
-  }
-
-
-
-
-  /**
-   * Fields of the Exam model
-   */ 
-  interface ExamFieldRefs {
-    readonly id: FieldRef<"Exam", 'Int'>
-    readonly name: FieldRef<"Exam", 'String'>
-    readonly description: FieldRef<"Exam", 'String'>
-    readonly type: FieldRef<"Exam", 'String'>
-    readonly createdAt: FieldRef<"Exam", 'DateTime'>
-    readonly updatedAt: FieldRef<"Exam", 'DateTime'>
-  }
-    
-
-  // Custom InputTypes
-  /**
-   * Exam findUnique
-   */
-  export type ExamFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the Exam
-     */
-    select?: ExamSelect<ExtArgs> | null
-    /**
-     * Omit specific fields from the Exam
-     */
-    omit?: ExamOmit<ExtArgs> | null
-    /**
-     * Choose, which related nodes to fetch as well
-     */
-    include?: ExamInclude<ExtArgs> | null
-    /**
-     * Filter, which Exam to fetch.
-     */
-    where: ExamWhereUniqueInput
-  }
-
-  /**
-   * Exam findUniqueOrThrow
-   */
-  export type ExamFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the Exam
-     */
-    select?: ExamSelect<ExtArgs> | null
-    /**
-     * Omit specific fields from the Exam
-     */
-    omit?: ExamOmit<ExtArgs> | null
-    /**
-     * Choose, which related nodes to fetch as well
-     */
-    include?: ExamInclude<ExtArgs> | null
-    /**
-     * Filter, which Exam to fetch.
-     */
-    where: ExamWhereUniqueInput
-  }
-
-  /**
-   * Exam findFirst
-   */
-  export type ExamFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the Exam
-     */
-    select?: ExamSelect<ExtArgs> | null
-    /**
-     * Omit specific fields from the Exam
-     */
-    omit?: ExamOmit<ExtArgs> | null
-    /**
-     * Choose, which related nodes to fetch as well
-     */
-    include?: ExamInclude<ExtArgs> | null
-    /**
-     * Filter, which Exam to fetch.
-     */
-    where?: ExamWhereInput
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
-     * 
-     * Determine the order of Exams to fetch.
-     */
-    orderBy?: ExamOrderByWithRelationInput | ExamOrderByWithRelationInput[]
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
-     * 
-     * Sets the position for searching for Exams.
-     */
-    cursor?: ExamWhereUniqueInput
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
-     * 
-     * Take `±n` Exams from the position of the cursor.
-     */
-    take?: number
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
-     * 
-     * Skip the first `n` Exams.
-     */
-    skip?: number
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
-     * 
-     * Filter by unique combinations of Exams.
-     */
-    distinct?: ExamScalarFieldEnum | ExamScalarFieldEnum[]
-  }
-
-  /**
-   * Exam findFirstOrThrow
-   */
-  export type ExamFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the Exam
-     */
-    select?: ExamSelect<ExtArgs> | null
-    /**
-     * Omit specific fields from the Exam
-     */
-    omit?: ExamOmit<ExtArgs> | null
-    /**
-     * Choose, which related nodes to fetch as well
-     */
-    include?: ExamInclude<ExtArgs> | null
-    /**
-     * Filter, which Exam to fetch.
-     */
-    where?: ExamWhereInput
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
-     * 
-     * Determine the order of Exams to fetch.
-     */
-    orderBy?: ExamOrderByWithRelationInput | ExamOrderByWithRelationInput[]
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
-     * 
-     * Sets the position for searching for Exams.
-     */
-    cursor?: ExamWhereUniqueInput
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
-     * 
-     * Take `±n` Exams from the position of the cursor.
-     */
-    take?: number
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
-     * 
-     * Skip the first `n` Exams.
-     */
-    skip?: number
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
-     * 
-     * Filter by unique combinations of Exams.
-     */
-    distinct?: ExamScalarFieldEnum | ExamScalarFieldEnum[]
-  }
-
-  /**
-   * Exam findMany
-   */
-  export type ExamFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the Exam
-     */
-    select?: ExamSelect<ExtArgs> | null
-    /**
-     * Omit specific fields from the Exam
-     */
-    omit?: ExamOmit<ExtArgs> | null
-    /**
-     * Choose, which related nodes to fetch as well
-     */
-    include?: ExamInclude<ExtArgs> | null
-    /**
-     * Filter, which Exams to fetch.
-     */
-    where?: ExamWhereInput
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
-     * 
-     * Determine the order of Exams to fetch.
-     */
-    orderBy?: ExamOrderByWithRelationInput | ExamOrderByWithRelationInput[]
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
-     * 
-     * Sets the position for listing Exams.
-     */
-    cursor?: ExamWhereUniqueInput
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
-     * 
-     * Take `±n` Exams from the position of the cursor.
-     */
-    take?: number
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
-     * 
-     * Skip the first `n` Exams.
-     */
-    skip?: number
-    distinct?: ExamScalarFieldEnum | ExamScalarFieldEnum[]
-  }
-
-  /**
-   * Exam create
-   */
-  export type ExamCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the Exam
-     */
-    select?: ExamSelect<ExtArgs> | null
-    /**
-     * Omit specific fields from the Exam
-     */
-    omit?: ExamOmit<ExtArgs> | null
-    /**
-     * Choose, which related nodes to fetch as well
-     */
-    include?: ExamInclude<ExtArgs> | null
-    /**
-     * The data needed to create a Exam.
-     */
-    data: XOR<ExamCreateInput, ExamUncheckedCreateInput>
-  }
-
-  /**
-   * Exam createMany
-   */
-  export type ExamCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * The data used to create many Exams.
-     */
-    data: ExamCreateManyInput | ExamCreateManyInput[]
-    skipDuplicates?: boolean
-  }
-
-  /**
-   * Exam createManyAndReturn
-   */
-  export type ExamCreateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the Exam
-     */
-    select?: ExamSelectCreateManyAndReturn<ExtArgs> | null
-    /**
-     * Omit specific fields from the Exam
-     */
-    omit?: ExamOmit<ExtArgs> | null
-    /**
-     * The data used to create many Exams.
-     */
-    data: ExamCreateManyInput | ExamCreateManyInput[]
-    skipDuplicates?: boolean
-  }
-
-  /**
-   * Exam update
-   */
-  export type ExamUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the Exam
-     */
-    select?: ExamSelect<ExtArgs> | null
-    /**
-     * Omit specific fields from the Exam
-     */
-    omit?: ExamOmit<ExtArgs> | null
-    /**
-     * Choose, which related nodes to fetch as well
-     */
-    include?: ExamInclude<ExtArgs> | null
-    /**
-     * The data needed to update a Exam.
-     */
-    data: XOR<ExamUpdateInput, ExamUncheckedUpdateInput>
-    /**
-     * Choose, which Exam to update.
-     */
-    where: ExamWhereUniqueInput
-  }
-
-  /**
-   * Exam updateMany
-   */
-  export type ExamUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * The data used to update Exams.
-     */
-    data: XOR<ExamUpdateManyMutationInput, ExamUncheckedUpdateManyInput>
-    /**
-     * Filter which Exams to update
-     */
-    where?: ExamWhereInput
-    /**
-     * Limit how many Exams to update.
-     */
-    limit?: number
-  }
-
-  /**
-   * Exam updateManyAndReturn
-   */
-  export type ExamUpdateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the Exam
-     */
-    select?: ExamSelectUpdateManyAndReturn<ExtArgs> | null
-    /**
-     * Omit specific fields from the Exam
-     */
-    omit?: ExamOmit<ExtArgs> | null
-    /**
-     * The data used to update Exams.
-     */
-    data: XOR<ExamUpdateManyMutationInput, ExamUncheckedUpdateManyInput>
-    /**
-     * Filter which Exams to update
-     */
-    where?: ExamWhereInput
-    /**
-     * Limit how many Exams to update.
-     */
-    limit?: number
-  }
-
-  /**
-   * Exam upsert
-   */
-  export type ExamUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the Exam
-     */
-    select?: ExamSelect<ExtArgs> | null
-    /**
-     * Omit specific fields from the Exam
-     */
-    omit?: ExamOmit<ExtArgs> | null
-    /**
-     * Choose, which related nodes to fetch as well
-     */
-    include?: ExamInclude<ExtArgs> | null
-    /**
-     * The filter to search for the Exam to update in case it exists.
-     */
-    where: ExamWhereUniqueInput
-    /**
-     * In case the Exam found by the `where` argument doesn't exist, create a new Exam with this data.
-     */
-    create: XOR<ExamCreateInput, ExamUncheckedCreateInput>
-    /**
-     * In case the Exam was found with the provided `where` argument, update it with this data.
-     */
-    update: XOR<ExamUpdateInput, ExamUncheckedUpdateInput>
-  }
-
-  /**
-   * Exam delete
-   */
-  export type ExamDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the Exam
-     */
-    select?: ExamSelect<ExtArgs> | null
-    /**
-     * Omit specific fields from the Exam
-     */
-    omit?: ExamOmit<ExtArgs> | null
-    /**
-     * Choose, which related nodes to fetch as well
-     */
-    include?: ExamInclude<ExtArgs> | null
-    /**
-     * Filter which Exam to delete.
-     */
-    where: ExamWhereUniqueInput
-  }
-
-  /**
-   * Exam deleteMany
-   */
-  export type ExamDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Filter which Exams to delete
-     */
-    where?: ExamWhereInput
-    /**
-     * Limit how many Exams to delete.
-     */
-    limit?: number
-  }
-
-  /**
-   * Exam.employees
-   */
-  export type Exam$employeesArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the ExamEmployee
-     */
-    select?: ExamEmployeeSelect<ExtArgs> | null
-    /**
-     * Omit specific fields from the ExamEmployee
-     */
-    omit?: ExamEmployeeOmit<ExtArgs> | null
-    /**
-     * Choose, which related nodes to fetch as well
-     */
-    include?: ExamEmployeeInclude<ExtArgs> | null
-    where?: ExamEmployeeWhereInput
-    orderBy?: ExamEmployeeOrderByWithRelationInput | ExamEmployeeOrderByWithRelationInput[]
-    cursor?: ExamEmployeeWhereUniqueInput
-    take?: number
-    skip?: number
-    distinct?: ExamEmployeeScalarFieldEnum | ExamEmployeeScalarFieldEnum[]
-  }
-
-  /**
-   * Exam without action
-   */
-  export type ExamDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the Exam
-     */
-    select?: ExamSelect<ExtArgs> | null
-    /**
-     * Omit specific fields from the Exam
-     */
-    omit?: ExamOmit<ExtArgs> | null
-    /**
-     * Choose, which related nodes to fetch as well
-     */
-    include?: ExamInclude<ExtArgs> | null
-  }
-
-
-  /**
-   * Model ExamEmployee
-   */
-
-  export type AggregateExamEmployee = {
-    _count: ExamEmployeeCountAggregateOutputType | null
-    _avg: ExamEmployeeAvgAggregateOutputType | null
-    _sum: ExamEmployeeSumAggregateOutputType | null
-    _min: ExamEmployeeMinAggregateOutputType | null
-    _max: ExamEmployeeMaxAggregateOutputType | null
-  }
-
-  export type ExamEmployeeAvgAggregateOutputType = {
-    id: number | null
-    employeeId: number | null
-    examId: number | null
-  }
-
-  export type ExamEmployeeSumAggregateOutputType = {
-    id: number | null
-    employeeId: number | null
-    examId: number | null
-  }
-
-  export type ExamEmployeeMinAggregateOutputType = {
-    id: number | null
-    employeeId: number | null
-    examId: number | null
-    createdAt: Date | null
-    updatedAt: Date | null
-  }
-
-  export type ExamEmployeeMaxAggregateOutputType = {
-    id: number | null
-    employeeId: number | null
-    examId: number | null
-    createdAt: Date | null
-    updatedAt: Date | null
-  }
-
-  export type ExamEmployeeCountAggregateOutputType = {
-    id: number
-    employeeId: number
-    examId: number
-    createdAt: number
-    updatedAt: number
-    _all: number
-  }
-
-
-  export type ExamEmployeeAvgAggregateInputType = {
-    id?: true
-    employeeId?: true
-    examId?: true
-  }
-
-  export type ExamEmployeeSumAggregateInputType = {
-    id?: true
-    employeeId?: true
-    examId?: true
-  }
-
-  export type ExamEmployeeMinAggregateInputType = {
-    id?: true
-    employeeId?: true
-    examId?: true
-    createdAt?: true
-    updatedAt?: true
-  }
-
-  export type ExamEmployeeMaxAggregateInputType = {
-    id?: true
-    employeeId?: true
-    examId?: true
-    createdAt?: true
-    updatedAt?: true
-  }
-
-  export type ExamEmployeeCountAggregateInputType = {
-    id?: true
-    employeeId?: true
-    examId?: true
-    createdAt?: true
-    updatedAt?: true
-    _all?: true
-  }
-
-  export type ExamEmployeeAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Filter which ExamEmployee to aggregate.
-     */
-    where?: ExamEmployeeWhereInput
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
-     * 
-     * Determine the order of ExamEmployees to fetch.
-     */
-    orderBy?: ExamEmployeeOrderByWithRelationInput | ExamEmployeeOrderByWithRelationInput[]
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
-     * 
-     * Sets the start position
-     */
-    cursor?: ExamEmployeeWhereUniqueInput
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
-     * 
-     * Take `±n` ExamEmployees from the position of the cursor.
-     */
-    take?: number
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
-     * 
-     * Skip the first `n` ExamEmployees.
-     */
-    skip?: number
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
-     * 
-     * Count returned ExamEmployees
-    **/
-    _count?: true | ExamEmployeeCountAggregateInputType
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
-     * 
-     * Select which fields to average
-    **/
-    _avg?: ExamEmployeeAvgAggregateInputType
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
-     * 
-     * Select which fields to sum
-    **/
-    _sum?: ExamEmployeeSumAggregateInputType
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
-     * 
-     * Select which fields to find the minimum value
-    **/
-    _min?: ExamEmployeeMinAggregateInputType
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
-     * 
-     * Select which fields to find the maximum value
-    **/
-    _max?: ExamEmployeeMaxAggregateInputType
-  }
-
-  export type GetExamEmployeeAggregateType<T extends ExamEmployeeAggregateArgs> = {
-        [P in keyof T & keyof AggregateExamEmployee]: P extends '_count' | 'count'
-      ? T[P] extends true
-        ? number
-        : GetScalarType<T[P], AggregateExamEmployee[P]>
-      : GetScalarType<T[P], AggregateExamEmployee[P]>
-  }
-
-
-
-
-  export type ExamEmployeeGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    where?: ExamEmployeeWhereInput
-    orderBy?: ExamEmployeeOrderByWithAggregationInput | ExamEmployeeOrderByWithAggregationInput[]
-    by: ExamEmployeeScalarFieldEnum[] | ExamEmployeeScalarFieldEnum
-    having?: ExamEmployeeScalarWhereWithAggregatesInput
-    take?: number
-    skip?: number
-    _count?: ExamEmployeeCountAggregateInputType | true
-    _avg?: ExamEmployeeAvgAggregateInputType
-    _sum?: ExamEmployeeSumAggregateInputType
-    _min?: ExamEmployeeMinAggregateInputType
-    _max?: ExamEmployeeMaxAggregateInputType
-  }
-
-  export type ExamEmployeeGroupByOutputType = {
-    id: number
-    employeeId: number
-    examId: number
-    createdAt: Date
-    updatedAt: Date
-    _count: ExamEmployeeCountAggregateOutputType | null
-    _avg: ExamEmployeeAvgAggregateOutputType | null
-    _sum: ExamEmployeeSumAggregateOutputType | null
-    _min: ExamEmployeeMinAggregateOutputType | null
-    _max: ExamEmployeeMaxAggregateOutputType | null
-  }
-
-  type GetExamEmployeeGroupByPayload<T extends ExamEmployeeGroupByArgs> = Prisma.PrismaPromise<
-    Array<
-      PickEnumerable<ExamEmployeeGroupByOutputType, T['by']> &
-        {
-          [P in ((keyof T) & (keyof ExamEmployeeGroupByOutputType))]: P extends '_count'
-            ? T[P] extends boolean
-              ? number
-              : GetScalarType<T[P], ExamEmployeeGroupByOutputType[P]>
-            : GetScalarType<T[P], ExamEmployeeGroupByOutputType[P]>
-        }
-      >
-    >
-
-
-  export type ExamEmployeeSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
-    id?: boolean
+    result?: boolean
+    expiration?: boolean
     employeeId?: boolean
-    examId?: boolean
-    createdAt?: boolean
-    updatedAt?: boolean
-    employee?: boolean | EmployeeDefaultArgs<ExtArgs>
-    exam?: boolean | ExamDefaultArgs<ExtArgs>
-  }, ExtArgs["result"]["examEmployee"]>
-
-  export type ExamEmployeeSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
-    id?: boolean
-    employeeId?: boolean
-    examId?: boolean
-    createdAt?: boolean
-    updatedAt?: boolean
-    employee?: boolean | EmployeeDefaultArgs<ExtArgs>
-    exam?: boolean | ExamDefaultArgs<ExtArgs>
-  }, ExtArgs["result"]["examEmployee"]>
-
-  export type ExamEmployeeSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
-    id?: boolean
-    employeeId?: boolean
-    examId?: boolean
-    createdAt?: boolean
-    updatedAt?: boolean
-    employee?: boolean | EmployeeDefaultArgs<ExtArgs>
-    exam?: boolean | ExamDefaultArgs<ExtArgs>
-  }, ExtArgs["result"]["examEmployee"]>
-
-  export type ExamEmployeeSelectScalar = {
-    id?: boolean
-    employeeId?: boolean
-    examId?: boolean
     createdAt?: boolean
     updatedAt?: boolean
   }
 
-  export type ExamEmployeeOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "employeeId" | "examId" | "createdAt" | "updatedAt", ExtArgs["result"]["examEmployee"]>
-  export type ExamEmployeeInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type MedicalExamOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "date" | "type" | "result" | "expiration" | "employeeId" | "createdAt" | "updatedAt", ExtArgs["result"]["medicalExam"]>
+  export type MedicalExamInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     employee?: boolean | EmployeeDefaultArgs<ExtArgs>
-    exam?: boolean | ExamDefaultArgs<ExtArgs>
   }
-  export type ExamEmployeeIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type MedicalExamIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     employee?: boolean | EmployeeDefaultArgs<ExtArgs>
-    exam?: boolean | ExamDefaultArgs<ExtArgs>
   }
-  export type ExamEmployeeIncludeUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type MedicalExamIncludeUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     employee?: boolean | EmployeeDefaultArgs<ExtArgs>
-    exam?: boolean | ExamDefaultArgs<ExtArgs>
   }
 
-  export type $ExamEmployeePayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    name: "ExamEmployee"
+  export type $MedicalExamPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    name: "MedicalExam"
     objects: {
       employee: Prisma.$EmployeePayload<ExtArgs>
-      exam: Prisma.$ExamPayload<ExtArgs>
     }
     scalars: $Extensions.GetPayloadResult<{
       id: number
+      date: Date
+      type: string
+      result: string | null
+      expiration: Date
       employeeId: number
-      examId: number
       createdAt: Date
       updatedAt: Date
-    }, ExtArgs["result"]["examEmployee"]>
+    }, ExtArgs["result"]["medicalExam"]>
     composites: {}
   }
 
-  type ExamEmployeeGetPayload<S extends boolean | null | undefined | ExamEmployeeDefaultArgs> = $Result.GetResult<Prisma.$ExamEmployeePayload, S>
+  type MedicalExamGetPayload<S extends boolean | null | undefined | MedicalExamDefaultArgs> = $Result.GetResult<Prisma.$MedicalExamPayload, S>
 
-  type ExamEmployeeCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
-    Omit<ExamEmployeeFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
-      select?: ExamEmployeeCountAggregateInputType | true
+  type MedicalExamCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
+    Omit<MedicalExamFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
+      select?: MedicalExamCountAggregateInputType | true
     }
 
-  export interface ExamEmployeeDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> {
-    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['ExamEmployee'], meta: { name: 'ExamEmployee' } }
+  export interface MedicalExamDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> {
+    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['MedicalExam'], meta: { name: 'MedicalExam' } }
     /**
-     * Find zero or one ExamEmployee that matches the filter.
-     * @param {ExamEmployeeFindUniqueArgs} args - Arguments to find a ExamEmployee
+     * Find zero or one MedicalExam that matches the filter.
+     * @param {MedicalExamFindUniqueArgs} args - Arguments to find a MedicalExam
      * @example
-     * // Get one ExamEmployee
-     * const examEmployee = await prisma.examEmployee.findUnique({
+     * // Get one MedicalExam
+     * const medicalExam = await prisma.medicalExam.findUnique({
      *   where: {
      *     // ... provide filter here
      *   }
      * })
      */
-    findUnique<T extends ExamEmployeeFindUniqueArgs>(args: SelectSubset<T, ExamEmployeeFindUniqueArgs<ExtArgs>>): Prisma__ExamEmployeeClient<$Result.GetResult<Prisma.$ExamEmployeePayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+    findUnique<T extends MedicalExamFindUniqueArgs>(args: SelectSubset<T, MedicalExamFindUniqueArgs<ExtArgs>>): Prisma__MedicalExamClient<$Result.GetResult<Prisma.$MedicalExamPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
 
     /**
-     * Find one ExamEmployee that matches the filter or throw an error with `error.code='P2025'`
+     * Find one MedicalExam that matches the filter or throw an error with `error.code='P2025'`
      * if no matches were found.
-     * @param {ExamEmployeeFindUniqueOrThrowArgs} args - Arguments to find a ExamEmployee
+     * @param {MedicalExamFindUniqueOrThrowArgs} args - Arguments to find a MedicalExam
      * @example
-     * // Get one ExamEmployee
-     * const examEmployee = await prisma.examEmployee.findUniqueOrThrow({
+     * // Get one MedicalExam
+     * const medicalExam = await prisma.medicalExam.findUniqueOrThrow({
      *   where: {
      *     // ... provide filter here
      *   }
      * })
      */
-    findUniqueOrThrow<T extends ExamEmployeeFindUniqueOrThrowArgs>(args: SelectSubset<T, ExamEmployeeFindUniqueOrThrowArgs<ExtArgs>>): Prisma__ExamEmployeeClient<$Result.GetResult<Prisma.$ExamEmployeePayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+    findUniqueOrThrow<T extends MedicalExamFindUniqueOrThrowArgs>(args: SelectSubset<T, MedicalExamFindUniqueOrThrowArgs<ExtArgs>>): Prisma__MedicalExamClient<$Result.GetResult<Prisma.$MedicalExamPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
     /**
-     * Find the first ExamEmployee that matches the filter.
+     * Find the first MedicalExam that matches the filter.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {ExamEmployeeFindFirstArgs} args - Arguments to find a ExamEmployee
+     * @param {MedicalExamFindFirstArgs} args - Arguments to find a MedicalExam
      * @example
-     * // Get one ExamEmployee
-     * const examEmployee = await prisma.examEmployee.findFirst({
+     * // Get one MedicalExam
+     * const medicalExam = await prisma.medicalExam.findFirst({
      *   where: {
      *     // ... provide filter here
      *   }
      * })
      */
-    findFirst<T extends ExamEmployeeFindFirstArgs>(args?: SelectSubset<T, ExamEmployeeFindFirstArgs<ExtArgs>>): Prisma__ExamEmployeeClient<$Result.GetResult<Prisma.$ExamEmployeePayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+    findFirst<T extends MedicalExamFindFirstArgs>(args?: SelectSubset<T, MedicalExamFindFirstArgs<ExtArgs>>): Prisma__MedicalExamClient<$Result.GetResult<Prisma.$MedicalExamPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
 
     /**
-     * Find the first ExamEmployee that matches the filter or
+     * Find the first MedicalExam that matches the filter or
      * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {ExamEmployeeFindFirstOrThrowArgs} args - Arguments to find a ExamEmployee
+     * @param {MedicalExamFindFirstOrThrowArgs} args - Arguments to find a MedicalExam
      * @example
-     * // Get one ExamEmployee
-     * const examEmployee = await prisma.examEmployee.findFirstOrThrow({
+     * // Get one MedicalExam
+     * const medicalExam = await prisma.medicalExam.findFirstOrThrow({
      *   where: {
      *     // ... provide filter here
      *   }
      * })
      */
-    findFirstOrThrow<T extends ExamEmployeeFindFirstOrThrowArgs>(args?: SelectSubset<T, ExamEmployeeFindFirstOrThrowArgs<ExtArgs>>): Prisma__ExamEmployeeClient<$Result.GetResult<Prisma.$ExamEmployeePayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+    findFirstOrThrow<T extends MedicalExamFindFirstOrThrowArgs>(args?: SelectSubset<T, MedicalExamFindFirstOrThrowArgs<ExtArgs>>): Prisma__MedicalExamClient<$Result.GetResult<Prisma.$MedicalExamPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
     /**
-     * Find zero or more ExamEmployees that matches the filter.
+     * Find zero or more MedicalExams that matches the filter.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {ExamEmployeeFindManyArgs} args - Arguments to filter and select certain fields only.
+     * @param {MedicalExamFindManyArgs} args - Arguments to filter and select certain fields only.
      * @example
-     * // Get all ExamEmployees
-     * const examEmployees = await prisma.examEmployee.findMany()
+     * // Get all MedicalExams
+     * const medicalExams = await prisma.medicalExam.findMany()
      * 
-     * // Get first 10 ExamEmployees
-     * const examEmployees = await prisma.examEmployee.findMany({ take: 10 })
+     * // Get first 10 MedicalExams
+     * const medicalExams = await prisma.medicalExam.findMany({ take: 10 })
      * 
      * // Only select the `id`
-     * const examEmployeeWithIdOnly = await prisma.examEmployee.findMany({ select: { id: true } })
+     * const medicalExamWithIdOnly = await prisma.medicalExam.findMany({ select: { id: true } })
      * 
      */
-    findMany<T extends ExamEmployeeFindManyArgs>(args?: SelectSubset<T, ExamEmployeeFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$ExamEmployeePayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
+    findMany<T extends MedicalExamFindManyArgs>(args?: SelectSubset<T, MedicalExamFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$MedicalExamPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
 
     /**
-     * Create a ExamEmployee.
-     * @param {ExamEmployeeCreateArgs} args - Arguments to create a ExamEmployee.
+     * Create a MedicalExam.
+     * @param {MedicalExamCreateArgs} args - Arguments to create a MedicalExam.
      * @example
-     * // Create one ExamEmployee
-     * const ExamEmployee = await prisma.examEmployee.create({
+     * // Create one MedicalExam
+     * const MedicalExam = await prisma.medicalExam.create({
      *   data: {
-     *     // ... data to create a ExamEmployee
+     *     // ... data to create a MedicalExam
      *   }
      * })
      * 
      */
-    create<T extends ExamEmployeeCreateArgs>(args: SelectSubset<T, ExamEmployeeCreateArgs<ExtArgs>>): Prisma__ExamEmployeeClient<$Result.GetResult<Prisma.$ExamEmployeePayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+    create<T extends MedicalExamCreateArgs>(args: SelectSubset<T, MedicalExamCreateArgs<ExtArgs>>): Prisma__MedicalExamClient<$Result.GetResult<Prisma.$MedicalExamPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
     /**
-     * Create many ExamEmployees.
-     * @param {ExamEmployeeCreateManyArgs} args - Arguments to create many ExamEmployees.
+     * Create many MedicalExams.
+     * @param {MedicalExamCreateManyArgs} args - Arguments to create many MedicalExams.
      * @example
-     * // Create many ExamEmployees
-     * const examEmployee = await prisma.examEmployee.createMany({
+     * // Create many MedicalExams
+     * const medicalExam = await prisma.medicalExam.createMany({
      *   data: [
      *     // ... provide data here
      *   ]
      * })
      *     
      */
-    createMany<T extends ExamEmployeeCreateManyArgs>(args?: SelectSubset<T, ExamEmployeeCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+    createMany<T extends MedicalExamCreateManyArgs>(args?: SelectSubset<T, MedicalExamCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
 
     /**
-     * Create many ExamEmployees and returns the data saved in the database.
-     * @param {ExamEmployeeCreateManyAndReturnArgs} args - Arguments to create many ExamEmployees.
+     * Create many MedicalExams and returns the data saved in the database.
+     * @param {MedicalExamCreateManyAndReturnArgs} args - Arguments to create many MedicalExams.
      * @example
-     * // Create many ExamEmployees
-     * const examEmployee = await prisma.examEmployee.createManyAndReturn({
+     * // Create many MedicalExams
+     * const medicalExam = await prisma.medicalExam.createManyAndReturn({
      *   data: [
      *     // ... provide data here
      *   ]
      * })
      * 
-     * // Create many ExamEmployees and only return the `id`
-     * const examEmployeeWithIdOnly = await prisma.examEmployee.createManyAndReturn({
+     * // Create many MedicalExams and only return the `id`
+     * const medicalExamWithIdOnly = await prisma.medicalExam.createManyAndReturn({
      *   select: { id: true },
      *   data: [
      *     // ... provide data here
@@ -9018,28 +7804,28 @@ export namespace Prisma {
      * Read more here: https://pris.ly/d/null-undefined
      * 
      */
-    createManyAndReturn<T extends ExamEmployeeCreateManyAndReturnArgs>(args?: SelectSubset<T, ExamEmployeeCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$ExamEmployeePayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>
+    createManyAndReturn<T extends MedicalExamCreateManyAndReturnArgs>(args?: SelectSubset<T, MedicalExamCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$MedicalExamPayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>
 
     /**
-     * Delete a ExamEmployee.
-     * @param {ExamEmployeeDeleteArgs} args - Arguments to delete one ExamEmployee.
+     * Delete a MedicalExam.
+     * @param {MedicalExamDeleteArgs} args - Arguments to delete one MedicalExam.
      * @example
-     * // Delete one ExamEmployee
-     * const ExamEmployee = await prisma.examEmployee.delete({
+     * // Delete one MedicalExam
+     * const MedicalExam = await prisma.medicalExam.delete({
      *   where: {
-     *     // ... filter to delete one ExamEmployee
+     *     // ... filter to delete one MedicalExam
      *   }
      * })
      * 
      */
-    delete<T extends ExamEmployeeDeleteArgs>(args: SelectSubset<T, ExamEmployeeDeleteArgs<ExtArgs>>): Prisma__ExamEmployeeClient<$Result.GetResult<Prisma.$ExamEmployeePayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+    delete<T extends MedicalExamDeleteArgs>(args: SelectSubset<T, MedicalExamDeleteArgs<ExtArgs>>): Prisma__MedicalExamClient<$Result.GetResult<Prisma.$MedicalExamPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
     /**
-     * Update one ExamEmployee.
-     * @param {ExamEmployeeUpdateArgs} args - Arguments to update one ExamEmployee.
+     * Update one MedicalExam.
+     * @param {MedicalExamUpdateArgs} args - Arguments to update one MedicalExam.
      * @example
-     * // Update one ExamEmployee
-     * const examEmployee = await prisma.examEmployee.update({
+     * // Update one MedicalExam
+     * const medicalExam = await prisma.medicalExam.update({
      *   where: {
      *     // ... provide filter here
      *   },
@@ -9049,30 +7835,30 @@ export namespace Prisma {
      * })
      * 
      */
-    update<T extends ExamEmployeeUpdateArgs>(args: SelectSubset<T, ExamEmployeeUpdateArgs<ExtArgs>>): Prisma__ExamEmployeeClient<$Result.GetResult<Prisma.$ExamEmployeePayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+    update<T extends MedicalExamUpdateArgs>(args: SelectSubset<T, MedicalExamUpdateArgs<ExtArgs>>): Prisma__MedicalExamClient<$Result.GetResult<Prisma.$MedicalExamPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
     /**
-     * Delete zero or more ExamEmployees.
-     * @param {ExamEmployeeDeleteManyArgs} args - Arguments to filter ExamEmployees to delete.
+     * Delete zero or more MedicalExams.
+     * @param {MedicalExamDeleteManyArgs} args - Arguments to filter MedicalExams to delete.
      * @example
-     * // Delete a few ExamEmployees
-     * const { count } = await prisma.examEmployee.deleteMany({
+     * // Delete a few MedicalExams
+     * const { count } = await prisma.medicalExam.deleteMany({
      *   where: {
      *     // ... provide filter here
      *   }
      * })
      * 
      */
-    deleteMany<T extends ExamEmployeeDeleteManyArgs>(args?: SelectSubset<T, ExamEmployeeDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+    deleteMany<T extends MedicalExamDeleteManyArgs>(args?: SelectSubset<T, MedicalExamDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
 
     /**
-     * Update zero or more ExamEmployees.
+     * Update zero or more MedicalExams.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {ExamEmployeeUpdateManyArgs} args - Arguments to update one or more rows.
+     * @param {MedicalExamUpdateManyArgs} args - Arguments to update one or more rows.
      * @example
-     * // Update many ExamEmployees
-     * const examEmployee = await prisma.examEmployee.updateMany({
+     * // Update many MedicalExams
+     * const medicalExam = await prisma.medicalExam.updateMany({
      *   where: {
      *     // ... provide filter here
      *   },
@@ -9082,14 +7868,14 @@ export namespace Prisma {
      * })
      * 
      */
-    updateMany<T extends ExamEmployeeUpdateManyArgs>(args: SelectSubset<T, ExamEmployeeUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+    updateMany<T extends MedicalExamUpdateManyArgs>(args: SelectSubset<T, MedicalExamUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
 
     /**
-     * Update zero or more ExamEmployees and returns the data updated in the database.
-     * @param {ExamEmployeeUpdateManyAndReturnArgs} args - Arguments to update many ExamEmployees.
+     * Update zero or more MedicalExams and returns the data updated in the database.
+     * @param {MedicalExamUpdateManyAndReturnArgs} args - Arguments to update many MedicalExams.
      * @example
-     * // Update many ExamEmployees
-     * const examEmployee = await prisma.examEmployee.updateManyAndReturn({
+     * // Update many MedicalExams
+     * const medicalExam = await prisma.medicalExam.updateManyAndReturn({
      *   where: {
      *     // ... provide filter here
      *   },
@@ -9098,8 +7884,8 @@ export namespace Prisma {
      *   ]
      * })
      * 
-     * // Update zero or more ExamEmployees and only return the `id`
-     * const examEmployeeWithIdOnly = await prisma.examEmployee.updateManyAndReturn({
+     * // Update zero or more MedicalExams and only return the `id`
+     * const medicalExamWithIdOnly = await prisma.medicalExam.updateManyAndReturn({
      *   select: { id: true },
      *   where: {
      *     // ... provide filter here
@@ -9112,56 +7898,56 @@ export namespace Prisma {
      * Read more here: https://pris.ly/d/null-undefined
      * 
      */
-    updateManyAndReturn<T extends ExamEmployeeUpdateManyAndReturnArgs>(args: SelectSubset<T, ExamEmployeeUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$ExamEmployeePayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>
+    updateManyAndReturn<T extends MedicalExamUpdateManyAndReturnArgs>(args: SelectSubset<T, MedicalExamUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$MedicalExamPayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>
 
     /**
-     * Create or update one ExamEmployee.
-     * @param {ExamEmployeeUpsertArgs} args - Arguments to update or create a ExamEmployee.
+     * Create or update one MedicalExam.
+     * @param {MedicalExamUpsertArgs} args - Arguments to update or create a MedicalExam.
      * @example
-     * // Update or create a ExamEmployee
-     * const examEmployee = await prisma.examEmployee.upsert({
+     * // Update or create a MedicalExam
+     * const medicalExam = await prisma.medicalExam.upsert({
      *   create: {
-     *     // ... data to create a ExamEmployee
+     *     // ... data to create a MedicalExam
      *   },
      *   update: {
      *     // ... in case it already exists, update
      *   },
      *   where: {
-     *     // ... the filter for the ExamEmployee we want to update
+     *     // ... the filter for the MedicalExam we want to update
      *   }
      * })
      */
-    upsert<T extends ExamEmployeeUpsertArgs>(args: SelectSubset<T, ExamEmployeeUpsertArgs<ExtArgs>>): Prisma__ExamEmployeeClient<$Result.GetResult<Prisma.$ExamEmployeePayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+    upsert<T extends MedicalExamUpsertArgs>(args: SelectSubset<T, MedicalExamUpsertArgs<ExtArgs>>): Prisma__MedicalExamClient<$Result.GetResult<Prisma.$MedicalExamPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
 
     /**
-     * Count the number of ExamEmployees.
+     * Count the number of MedicalExams.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {ExamEmployeeCountArgs} args - Arguments to filter ExamEmployees to count.
+     * @param {MedicalExamCountArgs} args - Arguments to filter MedicalExams to count.
      * @example
-     * // Count the number of ExamEmployees
-     * const count = await prisma.examEmployee.count({
+     * // Count the number of MedicalExams
+     * const count = await prisma.medicalExam.count({
      *   where: {
-     *     // ... the filter for the ExamEmployees we want to count
+     *     // ... the filter for the MedicalExams we want to count
      *   }
      * })
     **/
-    count<T extends ExamEmployeeCountArgs>(
-      args?: Subset<T, ExamEmployeeCountArgs>,
+    count<T extends MedicalExamCountArgs>(
+      args?: Subset<T, MedicalExamCountArgs>,
     ): Prisma.PrismaPromise<
       T extends $Utils.Record<'select', any>
         ? T['select'] extends true
           ? number
-          : GetScalarType<T['select'], ExamEmployeeCountAggregateOutputType>
+          : GetScalarType<T['select'], MedicalExamCountAggregateOutputType>
         : number
     >
 
     /**
-     * Allows you to perform aggregations operations on a ExamEmployee.
+     * Allows you to perform aggregations operations on a MedicalExam.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {ExamEmployeeAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+     * @param {MedicalExamAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
      * @example
      * // Ordered by age ascending
      * // Where email contains prisma.io
@@ -9181,13 +7967,13 @@ export namespace Prisma {
      *   take: 10,
      * })
     **/
-    aggregate<T extends ExamEmployeeAggregateArgs>(args: Subset<T, ExamEmployeeAggregateArgs>): Prisma.PrismaPromise<GetExamEmployeeAggregateType<T>>
+    aggregate<T extends MedicalExamAggregateArgs>(args: Subset<T, MedicalExamAggregateArgs>): Prisma.PrismaPromise<GetMedicalExamAggregateType<T>>
 
     /**
-     * Group by ExamEmployee.
+     * Group by MedicalExam.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {ExamEmployeeGroupByArgs} args - Group by arguments.
+     * @param {MedicalExamGroupByArgs} args - Group by arguments.
      * @example
      * // Group by city, order by createdAt, get count
      * const result = await prisma.user.groupBy({
@@ -9202,14 +7988,14 @@ export namespace Prisma {
      * 
     **/
     groupBy<
-      T extends ExamEmployeeGroupByArgs,
+      T extends MedicalExamGroupByArgs,
       HasSelectOrTake extends Or<
         Extends<'skip', Keys<T>>,
         Extends<'take', Keys<T>>
       >,
       OrderByArg extends True extends HasSelectOrTake
-        ? { orderBy: ExamEmployeeGroupByArgs['orderBy'] }
-        : { orderBy?: ExamEmployeeGroupByArgs['orderBy'] },
+        ? { orderBy: MedicalExamGroupByArgs['orderBy'] }
+        : { orderBy?: MedicalExamGroupByArgs['orderBy'] },
       OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
       ByFields extends MaybeTupleToUnion<T['by']>,
       ByValid extends Has<ByFields, OrderFields>,
@@ -9258,23 +8044,22 @@ export namespace Prisma {
             ? never
             : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
         }[OrderFields]
-    >(args: SubsetIntersection<T, ExamEmployeeGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetExamEmployeeGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+    >(args: SubsetIntersection<T, MedicalExamGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetMedicalExamGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
   /**
-   * Fields of the ExamEmployee model
+   * Fields of the MedicalExam model
    */
-  readonly fields: ExamEmployeeFieldRefs;
+  readonly fields: MedicalExamFieldRefs;
   }
 
   /**
-   * The delegate class that acts as a "Promise-like" for ExamEmployee.
+   * The delegate class that acts as a "Promise-like" for MedicalExam.
    * Why is this prefixed with `Prisma__`?
    * Because we want to prevent naming conflicts as mentioned in
    * https://github.com/prisma/prisma-client-js/issues/707
    */
-  export interface Prisma__ExamEmployeeClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
+  export interface Prisma__MedicalExamClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
     readonly [Symbol.toStringTag]: "PrismaPromise"
     employee<T extends EmployeeDefaultArgs<ExtArgs> = {}>(args?: Subset<T, EmployeeDefaultArgs<ExtArgs>>): Prisma__EmployeeClient<$Result.GetResult<Prisma.$EmployeePayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
-    exam<T extends ExamDefaultArgs<ExtArgs> = {}>(args?: Subset<T, ExamDefaultArgs<ExtArgs>>): Prisma__ExamClient<$Result.GetResult<Prisma.$ExamPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
     /**
      * Attaches callbacks for the resolution and/or rejection of the Promise.
      * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -9301,425 +8086,428 @@ export namespace Prisma {
 
 
   /**
-   * Fields of the ExamEmployee model
+   * Fields of the MedicalExam model
    */ 
-  interface ExamEmployeeFieldRefs {
-    readonly id: FieldRef<"ExamEmployee", 'Int'>
-    readonly employeeId: FieldRef<"ExamEmployee", 'Int'>
-    readonly examId: FieldRef<"ExamEmployee", 'Int'>
-    readonly createdAt: FieldRef<"ExamEmployee", 'DateTime'>
-    readonly updatedAt: FieldRef<"ExamEmployee", 'DateTime'>
+  interface MedicalExamFieldRefs {
+    readonly id: FieldRef<"MedicalExam", 'Int'>
+    readonly date: FieldRef<"MedicalExam", 'DateTime'>
+    readonly type: FieldRef<"MedicalExam", 'String'>
+    readonly result: FieldRef<"MedicalExam", 'String'>
+    readonly expiration: FieldRef<"MedicalExam", 'DateTime'>
+    readonly employeeId: FieldRef<"MedicalExam", 'Int'>
+    readonly createdAt: FieldRef<"MedicalExam", 'DateTime'>
+    readonly updatedAt: FieldRef<"MedicalExam", 'DateTime'>
   }
     
 
   // Custom InputTypes
   /**
-   * ExamEmployee findUnique
+   * MedicalExam findUnique
    */
-  export type ExamEmployeeFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type MedicalExamFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the ExamEmployee
+     * Select specific fields to fetch from the MedicalExam
      */
-    select?: ExamEmployeeSelect<ExtArgs> | null
+    select?: MedicalExamSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the ExamEmployee
+     * Omit specific fields from the MedicalExam
      */
-    omit?: ExamEmployeeOmit<ExtArgs> | null
+    omit?: MedicalExamOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: ExamEmployeeInclude<ExtArgs> | null
+    include?: MedicalExamInclude<ExtArgs> | null
     /**
-     * Filter, which ExamEmployee to fetch.
+     * Filter, which MedicalExam to fetch.
      */
-    where: ExamEmployeeWhereUniqueInput
+    where: MedicalExamWhereUniqueInput
   }
 
   /**
-   * ExamEmployee findUniqueOrThrow
+   * MedicalExam findUniqueOrThrow
    */
-  export type ExamEmployeeFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type MedicalExamFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the ExamEmployee
+     * Select specific fields to fetch from the MedicalExam
      */
-    select?: ExamEmployeeSelect<ExtArgs> | null
+    select?: MedicalExamSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the ExamEmployee
+     * Omit specific fields from the MedicalExam
      */
-    omit?: ExamEmployeeOmit<ExtArgs> | null
+    omit?: MedicalExamOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: ExamEmployeeInclude<ExtArgs> | null
+    include?: MedicalExamInclude<ExtArgs> | null
     /**
-     * Filter, which ExamEmployee to fetch.
+     * Filter, which MedicalExam to fetch.
      */
-    where: ExamEmployeeWhereUniqueInput
+    where: MedicalExamWhereUniqueInput
   }
 
   /**
-   * ExamEmployee findFirst
+   * MedicalExam findFirst
    */
-  export type ExamEmployeeFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type MedicalExamFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the ExamEmployee
+     * Select specific fields to fetch from the MedicalExam
      */
-    select?: ExamEmployeeSelect<ExtArgs> | null
+    select?: MedicalExamSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the ExamEmployee
+     * Omit specific fields from the MedicalExam
      */
-    omit?: ExamEmployeeOmit<ExtArgs> | null
+    omit?: MedicalExamOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: ExamEmployeeInclude<ExtArgs> | null
+    include?: MedicalExamInclude<ExtArgs> | null
     /**
-     * Filter, which ExamEmployee to fetch.
+     * Filter, which MedicalExam to fetch.
      */
-    where?: ExamEmployeeWhereInput
+    where?: MedicalExamWhereInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
      * 
-     * Determine the order of ExamEmployees to fetch.
+     * Determine the order of MedicalExams to fetch.
      */
-    orderBy?: ExamEmployeeOrderByWithRelationInput | ExamEmployeeOrderByWithRelationInput[]
+    orderBy?: MedicalExamOrderByWithRelationInput | MedicalExamOrderByWithRelationInput[]
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
      * 
-     * Sets the position for searching for ExamEmployees.
+     * Sets the position for searching for MedicalExams.
      */
-    cursor?: ExamEmployeeWhereUniqueInput
+    cursor?: MedicalExamWhereUniqueInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Take `±n` ExamEmployees from the position of the cursor.
+     * Take `±n` MedicalExams from the position of the cursor.
      */
     take?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Skip the first `n` ExamEmployees.
+     * Skip the first `n` MedicalExams.
      */
     skip?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
      * 
-     * Filter by unique combinations of ExamEmployees.
+     * Filter by unique combinations of MedicalExams.
      */
-    distinct?: ExamEmployeeScalarFieldEnum | ExamEmployeeScalarFieldEnum[]
+    distinct?: MedicalExamScalarFieldEnum | MedicalExamScalarFieldEnum[]
   }
 
   /**
-   * ExamEmployee findFirstOrThrow
+   * MedicalExam findFirstOrThrow
    */
-  export type ExamEmployeeFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type MedicalExamFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the ExamEmployee
+     * Select specific fields to fetch from the MedicalExam
      */
-    select?: ExamEmployeeSelect<ExtArgs> | null
+    select?: MedicalExamSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the ExamEmployee
+     * Omit specific fields from the MedicalExam
      */
-    omit?: ExamEmployeeOmit<ExtArgs> | null
+    omit?: MedicalExamOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: ExamEmployeeInclude<ExtArgs> | null
+    include?: MedicalExamInclude<ExtArgs> | null
     /**
-     * Filter, which ExamEmployee to fetch.
+     * Filter, which MedicalExam to fetch.
      */
-    where?: ExamEmployeeWhereInput
+    where?: MedicalExamWhereInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
      * 
-     * Determine the order of ExamEmployees to fetch.
+     * Determine the order of MedicalExams to fetch.
      */
-    orderBy?: ExamEmployeeOrderByWithRelationInput | ExamEmployeeOrderByWithRelationInput[]
+    orderBy?: MedicalExamOrderByWithRelationInput | MedicalExamOrderByWithRelationInput[]
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
      * 
-     * Sets the position for searching for ExamEmployees.
+     * Sets the position for searching for MedicalExams.
      */
-    cursor?: ExamEmployeeWhereUniqueInput
+    cursor?: MedicalExamWhereUniqueInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Take `±n` ExamEmployees from the position of the cursor.
+     * Take `±n` MedicalExams from the position of the cursor.
      */
     take?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Skip the first `n` ExamEmployees.
+     * Skip the first `n` MedicalExams.
      */
     skip?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
      * 
-     * Filter by unique combinations of ExamEmployees.
+     * Filter by unique combinations of MedicalExams.
      */
-    distinct?: ExamEmployeeScalarFieldEnum | ExamEmployeeScalarFieldEnum[]
+    distinct?: MedicalExamScalarFieldEnum | MedicalExamScalarFieldEnum[]
   }
 
   /**
-   * ExamEmployee findMany
+   * MedicalExam findMany
    */
-  export type ExamEmployeeFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type MedicalExamFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the ExamEmployee
+     * Select specific fields to fetch from the MedicalExam
      */
-    select?: ExamEmployeeSelect<ExtArgs> | null
+    select?: MedicalExamSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the ExamEmployee
+     * Omit specific fields from the MedicalExam
      */
-    omit?: ExamEmployeeOmit<ExtArgs> | null
+    omit?: MedicalExamOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: ExamEmployeeInclude<ExtArgs> | null
+    include?: MedicalExamInclude<ExtArgs> | null
     /**
-     * Filter, which ExamEmployees to fetch.
+     * Filter, which MedicalExams to fetch.
      */
-    where?: ExamEmployeeWhereInput
+    where?: MedicalExamWhereInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
      * 
-     * Determine the order of ExamEmployees to fetch.
+     * Determine the order of MedicalExams to fetch.
      */
-    orderBy?: ExamEmployeeOrderByWithRelationInput | ExamEmployeeOrderByWithRelationInput[]
+    orderBy?: MedicalExamOrderByWithRelationInput | MedicalExamOrderByWithRelationInput[]
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
      * 
-     * Sets the position for listing ExamEmployees.
+     * Sets the position for listing MedicalExams.
      */
-    cursor?: ExamEmployeeWhereUniqueInput
+    cursor?: MedicalExamWhereUniqueInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Take `±n` ExamEmployees from the position of the cursor.
+     * Take `±n` MedicalExams from the position of the cursor.
      */
     take?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Skip the first `n` ExamEmployees.
+     * Skip the first `n` MedicalExams.
      */
     skip?: number
-    distinct?: ExamEmployeeScalarFieldEnum | ExamEmployeeScalarFieldEnum[]
+    distinct?: MedicalExamScalarFieldEnum | MedicalExamScalarFieldEnum[]
   }
 
   /**
-   * ExamEmployee create
+   * MedicalExam create
    */
-  export type ExamEmployeeCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type MedicalExamCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the ExamEmployee
+     * Select specific fields to fetch from the MedicalExam
      */
-    select?: ExamEmployeeSelect<ExtArgs> | null
+    select?: MedicalExamSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the ExamEmployee
+     * Omit specific fields from the MedicalExam
      */
-    omit?: ExamEmployeeOmit<ExtArgs> | null
+    omit?: MedicalExamOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: ExamEmployeeInclude<ExtArgs> | null
+    include?: MedicalExamInclude<ExtArgs> | null
     /**
-     * The data needed to create a ExamEmployee.
+     * The data needed to create a MedicalExam.
      */
-    data: XOR<ExamEmployeeCreateInput, ExamEmployeeUncheckedCreateInput>
+    data: XOR<MedicalExamCreateInput, MedicalExamUncheckedCreateInput>
   }
 
   /**
-   * ExamEmployee createMany
+   * MedicalExam createMany
    */
-  export type ExamEmployeeCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type MedicalExamCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * The data used to create many ExamEmployees.
+     * The data used to create many MedicalExams.
      */
-    data: ExamEmployeeCreateManyInput | ExamEmployeeCreateManyInput[]
+    data: MedicalExamCreateManyInput | MedicalExamCreateManyInput[]
     skipDuplicates?: boolean
   }
 
   /**
-   * ExamEmployee createManyAndReturn
+   * MedicalExam createManyAndReturn
    */
-  export type ExamEmployeeCreateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type MedicalExamCreateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the ExamEmployee
+     * Select specific fields to fetch from the MedicalExam
      */
-    select?: ExamEmployeeSelectCreateManyAndReturn<ExtArgs> | null
+    select?: MedicalExamSelectCreateManyAndReturn<ExtArgs> | null
     /**
-     * Omit specific fields from the ExamEmployee
+     * Omit specific fields from the MedicalExam
      */
-    omit?: ExamEmployeeOmit<ExtArgs> | null
+    omit?: MedicalExamOmit<ExtArgs> | null
     /**
-     * The data used to create many ExamEmployees.
+     * The data used to create many MedicalExams.
      */
-    data: ExamEmployeeCreateManyInput | ExamEmployeeCreateManyInput[]
+    data: MedicalExamCreateManyInput | MedicalExamCreateManyInput[]
     skipDuplicates?: boolean
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: ExamEmployeeIncludeCreateManyAndReturn<ExtArgs> | null
+    include?: MedicalExamIncludeCreateManyAndReturn<ExtArgs> | null
   }
 
   /**
-   * ExamEmployee update
+   * MedicalExam update
    */
-  export type ExamEmployeeUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type MedicalExamUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the ExamEmployee
+     * Select specific fields to fetch from the MedicalExam
      */
-    select?: ExamEmployeeSelect<ExtArgs> | null
+    select?: MedicalExamSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the ExamEmployee
+     * Omit specific fields from the MedicalExam
      */
-    omit?: ExamEmployeeOmit<ExtArgs> | null
+    omit?: MedicalExamOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: ExamEmployeeInclude<ExtArgs> | null
+    include?: MedicalExamInclude<ExtArgs> | null
     /**
-     * The data needed to update a ExamEmployee.
+     * The data needed to update a MedicalExam.
      */
-    data: XOR<ExamEmployeeUpdateInput, ExamEmployeeUncheckedUpdateInput>
+    data: XOR<MedicalExamUpdateInput, MedicalExamUncheckedUpdateInput>
     /**
-     * Choose, which ExamEmployee to update.
+     * Choose, which MedicalExam to update.
      */
-    where: ExamEmployeeWhereUniqueInput
+    where: MedicalExamWhereUniqueInput
   }
 
   /**
-   * ExamEmployee updateMany
+   * MedicalExam updateMany
    */
-  export type ExamEmployeeUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type MedicalExamUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * The data used to update ExamEmployees.
+     * The data used to update MedicalExams.
      */
-    data: XOR<ExamEmployeeUpdateManyMutationInput, ExamEmployeeUncheckedUpdateManyInput>
+    data: XOR<MedicalExamUpdateManyMutationInput, MedicalExamUncheckedUpdateManyInput>
     /**
-     * Filter which ExamEmployees to update
+     * Filter which MedicalExams to update
      */
-    where?: ExamEmployeeWhereInput
+    where?: MedicalExamWhereInput
     /**
-     * Limit how many ExamEmployees to update.
+     * Limit how many MedicalExams to update.
      */
     limit?: number
   }
 
   /**
-   * ExamEmployee updateManyAndReturn
+   * MedicalExam updateManyAndReturn
    */
-  export type ExamEmployeeUpdateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type MedicalExamUpdateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the ExamEmployee
+     * Select specific fields to fetch from the MedicalExam
      */
-    select?: ExamEmployeeSelectUpdateManyAndReturn<ExtArgs> | null
+    select?: MedicalExamSelectUpdateManyAndReturn<ExtArgs> | null
     /**
-     * Omit specific fields from the ExamEmployee
+     * Omit specific fields from the MedicalExam
      */
-    omit?: ExamEmployeeOmit<ExtArgs> | null
+    omit?: MedicalExamOmit<ExtArgs> | null
     /**
-     * The data used to update ExamEmployees.
+     * The data used to update MedicalExams.
      */
-    data: XOR<ExamEmployeeUpdateManyMutationInput, ExamEmployeeUncheckedUpdateManyInput>
+    data: XOR<MedicalExamUpdateManyMutationInput, MedicalExamUncheckedUpdateManyInput>
     /**
-     * Filter which ExamEmployees to update
+     * Filter which MedicalExams to update
      */
-    where?: ExamEmployeeWhereInput
+    where?: MedicalExamWhereInput
     /**
-     * Limit how many ExamEmployees to update.
+     * Limit how many MedicalExams to update.
      */
     limit?: number
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: ExamEmployeeIncludeUpdateManyAndReturn<ExtArgs> | null
+    include?: MedicalExamIncludeUpdateManyAndReturn<ExtArgs> | null
   }
 
   /**
-   * ExamEmployee upsert
+   * MedicalExam upsert
    */
-  export type ExamEmployeeUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type MedicalExamUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the ExamEmployee
+     * Select specific fields to fetch from the MedicalExam
      */
-    select?: ExamEmployeeSelect<ExtArgs> | null
+    select?: MedicalExamSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the ExamEmployee
+     * Omit specific fields from the MedicalExam
      */
-    omit?: ExamEmployeeOmit<ExtArgs> | null
+    omit?: MedicalExamOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: ExamEmployeeInclude<ExtArgs> | null
+    include?: MedicalExamInclude<ExtArgs> | null
     /**
-     * The filter to search for the ExamEmployee to update in case it exists.
+     * The filter to search for the MedicalExam to update in case it exists.
      */
-    where: ExamEmployeeWhereUniqueInput
+    where: MedicalExamWhereUniqueInput
     /**
-     * In case the ExamEmployee found by the `where` argument doesn't exist, create a new ExamEmployee with this data.
+     * In case the MedicalExam found by the `where` argument doesn't exist, create a new MedicalExam with this data.
      */
-    create: XOR<ExamEmployeeCreateInput, ExamEmployeeUncheckedCreateInput>
+    create: XOR<MedicalExamCreateInput, MedicalExamUncheckedCreateInput>
     /**
-     * In case the ExamEmployee was found with the provided `where` argument, update it with this data.
+     * In case the MedicalExam was found with the provided `where` argument, update it with this data.
      */
-    update: XOR<ExamEmployeeUpdateInput, ExamEmployeeUncheckedUpdateInput>
+    update: XOR<MedicalExamUpdateInput, MedicalExamUncheckedUpdateInput>
   }
 
   /**
-   * ExamEmployee delete
+   * MedicalExam delete
    */
-  export type ExamEmployeeDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type MedicalExamDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the ExamEmployee
+     * Select specific fields to fetch from the MedicalExam
      */
-    select?: ExamEmployeeSelect<ExtArgs> | null
+    select?: MedicalExamSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the ExamEmployee
+     * Omit specific fields from the MedicalExam
      */
-    omit?: ExamEmployeeOmit<ExtArgs> | null
+    omit?: MedicalExamOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: ExamEmployeeInclude<ExtArgs> | null
+    include?: MedicalExamInclude<ExtArgs> | null
     /**
-     * Filter which ExamEmployee to delete.
+     * Filter which MedicalExam to delete.
      */
-    where: ExamEmployeeWhereUniqueInput
+    where: MedicalExamWhereUniqueInput
   }
 
   /**
-   * ExamEmployee deleteMany
+   * MedicalExam deleteMany
    */
-  export type ExamEmployeeDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type MedicalExamDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Filter which ExamEmployees to delete
+     * Filter which MedicalExams to delete
      */
-    where?: ExamEmployeeWhereInput
+    where?: MedicalExamWhereInput
     /**
-     * Limit how many ExamEmployees to delete.
+     * Limit how many MedicalExams to delete.
      */
     limit?: number
   }
 
   /**
-   * ExamEmployee without action
+   * MedicalExam without action
    */
-  export type ExamEmployeeDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type MedicalExamDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the ExamEmployee
+     * Select specific fields to fetch from the MedicalExam
      */
-    select?: ExamEmployeeSelect<ExtArgs> | null
+    select?: MedicalExamSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the ExamEmployee
+     * Omit specific fields from the MedicalExam
      */
-    omit?: ExamEmployeeOmit<ExtArgs> | null
+    omit?: MedicalExamOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: ExamEmployeeInclude<ExtArgs> | null
+    include?: MedicalExamInclude<ExtArgs> | null
   }
 
 
@@ -9811,27 +8599,18 @@ export namespace Prisma {
   export type EpiExitScalarFieldEnum = (typeof EpiExitScalarFieldEnum)[keyof typeof EpiExitScalarFieldEnum]
 
 
-  export const ExamScalarFieldEnum: {
+  export const MedicalExamScalarFieldEnum: {
     id: 'id',
-    name: 'name',
-    description: 'description',
+    date: 'date',
     type: 'type',
-    createdAt: 'createdAt',
-    updatedAt: 'updatedAt'
-  };
-
-  export type ExamScalarFieldEnum = (typeof ExamScalarFieldEnum)[keyof typeof ExamScalarFieldEnum]
-
-
-  export const ExamEmployeeScalarFieldEnum: {
-    id: 'id',
+    result: 'result',
+    expiration: 'expiration',
     employeeId: 'employeeId',
-    examId: 'examId',
     createdAt: 'createdAt',
     updatedAt: 'updatedAt'
   };
 
-  export type ExamEmployeeScalarFieldEnum = (typeof ExamEmployeeScalarFieldEnum)[keyof typeof ExamEmployeeScalarFieldEnum]
+  export type MedicalExamScalarFieldEnum = (typeof MedicalExamScalarFieldEnum)[keyof typeof MedicalExamScalarFieldEnum]
 
 
   export const SortOrder: {
@@ -9999,8 +8778,8 @@ export namespace Prisma {
     createdAt?: DateTimeFilter<"Employee"> | Date | string
     updatedAt?: DateTimeFilter<"Employee"> | Date | string
     epies?: EpiEmployeeListRelationFilter
-    exams?: ExamEmployeeListRelationFilter
     exits?: EpiExitListRelationFilter
+    medicalExams?: MedicalExamListRelationFilter
   }
 
   export type EmployeeOrderByWithRelationInput = {
@@ -10021,8 +8800,8 @@ export namespace Prisma {
     createdAt?: SortOrder
     updatedAt?: SortOrder
     epies?: EpiEmployeeOrderByRelationAggregateInput
-    exams?: ExamEmployeeOrderByRelationAggregateInput
     exits?: EpiExitOrderByRelationAggregateInput
+    medicalExams?: MedicalExamOrderByRelationAggregateInput
   }
 
   export type EmployeeWhereUniqueInput = Prisma.AtLeast<{
@@ -10046,8 +8825,8 @@ export namespace Prisma {
     createdAt?: DateTimeFilter<"Employee"> | Date | string
     updatedAt?: DateTimeFilter<"Employee"> | Date | string
     epies?: EpiEmployeeListRelationFilter
-    exams?: ExamEmployeeListRelationFilter
     exits?: EpiExitListRelationFilter
+    medicalExams?: MedicalExamListRelationFilter
   }, "id" | "email" | "phone" | "cpf" | "rg">
 
   export type EmployeeOrderByWithAggregationInput = {
@@ -10376,126 +9155,76 @@ export namespace Prisma {
     createdAt?: DateTimeWithAggregatesFilter<"EpiExit"> | Date | string
   }
 
-  export type ExamWhereInput = {
-    AND?: ExamWhereInput | ExamWhereInput[]
-    OR?: ExamWhereInput[]
-    NOT?: ExamWhereInput | ExamWhereInput[]
-    id?: IntFilter<"Exam"> | number
-    name?: StringFilter<"Exam"> | string
-    description?: StringFilter<"Exam"> | string
-    type?: StringFilter<"Exam"> | string
-    createdAt?: DateTimeFilter<"Exam"> | Date | string
-    updatedAt?: DateTimeFilter<"Exam"> | Date | string
-    employees?: ExamEmployeeListRelationFilter
-  }
-
-  export type ExamOrderByWithRelationInput = {
-    id?: SortOrder
-    name?: SortOrder
-    description?: SortOrder
-    type?: SortOrder
-    createdAt?: SortOrder
-    updatedAt?: SortOrder
-    employees?: ExamEmployeeOrderByRelationAggregateInput
-  }
-
-  export type ExamWhereUniqueInput = Prisma.AtLeast<{
-    id?: number
-    AND?: ExamWhereInput | ExamWhereInput[]
-    OR?: ExamWhereInput[]
-    NOT?: ExamWhereInput | ExamWhereInput[]
-    name?: StringFilter<"Exam"> | string
-    description?: StringFilter<"Exam"> | string
-    type?: StringFilter<"Exam"> | string
-    createdAt?: DateTimeFilter<"Exam"> | Date | string
-    updatedAt?: DateTimeFilter<"Exam"> | Date | string
-    employees?: ExamEmployeeListRelationFilter
-  }, "id">
-
-  export type ExamOrderByWithAggregationInput = {
-    id?: SortOrder
-    name?: SortOrder
-    description?: SortOrder
-    type?: SortOrder
-    createdAt?: SortOrder
-    updatedAt?: SortOrder
-    _count?: ExamCountOrderByAggregateInput
-    _avg?: ExamAvgOrderByAggregateInput
-    _max?: ExamMaxOrderByAggregateInput
-    _min?: ExamMinOrderByAggregateInput
-    _sum?: ExamSumOrderByAggregateInput
-  }
-
-  export type ExamScalarWhereWithAggregatesInput = {
-    AND?: ExamScalarWhereWithAggregatesInput | ExamScalarWhereWithAggregatesInput[]
-    OR?: ExamScalarWhereWithAggregatesInput[]
-    NOT?: ExamScalarWhereWithAggregatesInput | ExamScalarWhereWithAggregatesInput[]
-    id?: IntWithAggregatesFilter<"Exam"> | number
-    name?: StringWithAggregatesFilter<"Exam"> | string
-    description?: StringWithAggregatesFilter<"Exam"> | string
-    type?: StringWithAggregatesFilter<"Exam"> | string
-    createdAt?: DateTimeWithAggregatesFilter<"Exam"> | Date | string
-    updatedAt?: DateTimeWithAggregatesFilter<"Exam"> | Date | string
-  }
-
-  export type ExamEmployeeWhereInput = {
-    AND?: ExamEmployeeWhereInput | ExamEmployeeWhereInput[]
-    OR?: ExamEmployeeWhereInput[]
-    NOT?: ExamEmployeeWhereInput | ExamEmployeeWhereInput[]
-    id?: IntFilter<"ExamEmployee"> | number
-    employeeId?: IntFilter<"ExamEmployee"> | number
-    examId?: IntFilter<"ExamEmployee"> | number
-    createdAt?: DateTimeFilter<"ExamEmployee"> | Date | string
-    updatedAt?: DateTimeFilter<"ExamEmployee"> | Date | string
+  export type MedicalExamWhereInput = {
+    AND?: MedicalExamWhereInput | MedicalExamWhereInput[]
+    OR?: MedicalExamWhereInput[]
+    NOT?: MedicalExamWhereInput | MedicalExamWhereInput[]
+    id?: IntFilter<"MedicalExam"> | number
+    date?: DateTimeFilter<"MedicalExam"> | Date | string
+    type?: StringFilter<"MedicalExam"> | string
+    result?: StringNullableFilter<"MedicalExam"> | string | null
+    expiration?: DateTimeFilter<"MedicalExam"> | Date | string
+    employeeId?: IntFilter<"MedicalExam"> | number
+    createdAt?: DateTimeFilter<"MedicalExam"> | Date | string
+    updatedAt?: DateTimeFilter<"MedicalExam"> | Date | string
     employee?: XOR<EmployeeScalarRelationFilter, EmployeeWhereInput>
-    exam?: XOR<ExamScalarRelationFilter, ExamWhereInput>
   }
 
-  export type ExamEmployeeOrderByWithRelationInput = {
+  export type MedicalExamOrderByWithRelationInput = {
     id?: SortOrder
+    date?: SortOrder
+    type?: SortOrder
+    result?: SortOrderInput | SortOrder
+    expiration?: SortOrder
     employeeId?: SortOrder
-    examId?: SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
     employee?: EmployeeOrderByWithRelationInput
-    exam?: ExamOrderByWithRelationInput
   }
 
-  export type ExamEmployeeWhereUniqueInput = Prisma.AtLeast<{
+  export type MedicalExamWhereUniqueInput = Prisma.AtLeast<{
     id?: number
-    AND?: ExamEmployeeWhereInput | ExamEmployeeWhereInput[]
-    OR?: ExamEmployeeWhereInput[]
-    NOT?: ExamEmployeeWhereInput | ExamEmployeeWhereInput[]
-    employeeId?: IntFilter<"ExamEmployee"> | number
-    examId?: IntFilter<"ExamEmployee"> | number
-    createdAt?: DateTimeFilter<"ExamEmployee"> | Date | string
-    updatedAt?: DateTimeFilter<"ExamEmployee"> | Date | string
+    AND?: MedicalExamWhereInput | MedicalExamWhereInput[]
+    OR?: MedicalExamWhereInput[]
+    NOT?: MedicalExamWhereInput | MedicalExamWhereInput[]
+    date?: DateTimeFilter<"MedicalExam"> | Date | string
+    type?: StringFilter<"MedicalExam"> | string
+    result?: StringNullableFilter<"MedicalExam"> | string | null
+    expiration?: DateTimeFilter<"MedicalExam"> | Date | string
+    employeeId?: IntFilter<"MedicalExam"> | number
+    createdAt?: DateTimeFilter<"MedicalExam"> | Date | string
+    updatedAt?: DateTimeFilter<"MedicalExam"> | Date | string
     employee?: XOR<EmployeeScalarRelationFilter, EmployeeWhereInput>
-    exam?: XOR<ExamScalarRelationFilter, ExamWhereInput>
   }, "id">
 
-  export type ExamEmployeeOrderByWithAggregationInput = {
+  export type MedicalExamOrderByWithAggregationInput = {
     id?: SortOrder
+    date?: SortOrder
+    type?: SortOrder
+    result?: SortOrderInput | SortOrder
+    expiration?: SortOrder
     employeeId?: SortOrder
-    examId?: SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
-    _count?: ExamEmployeeCountOrderByAggregateInput
-    _avg?: ExamEmployeeAvgOrderByAggregateInput
-    _max?: ExamEmployeeMaxOrderByAggregateInput
-    _min?: ExamEmployeeMinOrderByAggregateInput
-    _sum?: ExamEmployeeSumOrderByAggregateInput
+    _count?: MedicalExamCountOrderByAggregateInput
+    _avg?: MedicalExamAvgOrderByAggregateInput
+    _max?: MedicalExamMaxOrderByAggregateInput
+    _min?: MedicalExamMinOrderByAggregateInput
+    _sum?: MedicalExamSumOrderByAggregateInput
   }
 
-  export type ExamEmployeeScalarWhereWithAggregatesInput = {
-    AND?: ExamEmployeeScalarWhereWithAggregatesInput | ExamEmployeeScalarWhereWithAggregatesInput[]
-    OR?: ExamEmployeeScalarWhereWithAggregatesInput[]
-    NOT?: ExamEmployeeScalarWhereWithAggregatesInput | ExamEmployeeScalarWhereWithAggregatesInput[]
-    id?: IntWithAggregatesFilter<"ExamEmployee"> | number
-    employeeId?: IntWithAggregatesFilter<"ExamEmployee"> | number
-    examId?: IntWithAggregatesFilter<"ExamEmployee"> | number
-    createdAt?: DateTimeWithAggregatesFilter<"ExamEmployee"> | Date | string
-    updatedAt?: DateTimeWithAggregatesFilter<"ExamEmployee"> | Date | string
+  export type MedicalExamScalarWhereWithAggregatesInput = {
+    AND?: MedicalExamScalarWhereWithAggregatesInput | MedicalExamScalarWhereWithAggregatesInput[]
+    OR?: MedicalExamScalarWhereWithAggregatesInput[]
+    NOT?: MedicalExamScalarWhereWithAggregatesInput | MedicalExamScalarWhereWithAggregatesInput[]
+    id?: IntWithAggregatesFilter<"MedicalExam"> | number
+    date?: DateTimeWithAggregatesFilter<"MedicalExam"> | Date | string
+    type?: StringWithAggregatesFilter<"MedicalExam"> | string
+    result?: StringNullableWithAggregatesFilter<"MedicalExam"> | string | null
+    expiration?: DateTimeWithAggregatesFilter<"MedicalExam"> | Date | string
+    employeeId?: IntWithAggregatesFilter<"MedicalExam"> | number
+    createdAt?: DateTimeWithAggregatesFilter<"MedicalExam"> | Date | string
+    updatedAt?: DateTimeWithAggregatesFilter<"MedicalExam"> | Date | string
   }
 
   export type EmployeeCreateInput = {
@@ -10515,8 +9244,8 @@ export namespace Prisma {
     createdAt?: Date | string
     updatedAt?: Date | string
     epies?: EpiEmployeeCreateNestedManyWithoutEmployeeInput
-    exams?: ExamEmployeeCreateNestedManyWithoutEmployeeInput
     exits?: EpiExitCreateNestedManyWithoutEmployeeInput
+    medicalExams?: MedicalExamCreateNestedManyWithoutEmployeeInput
   }
 
   export type EmployeeUncheckedCreateInput = {
@@ -10537,8 +9266,8 @@ export namespace Prisma {
     createdAt?: Date | string
     updatedAt?: Date | string
     epies?: EpiEmployeeUncheckedCreateNestedManyWithoutEmployeeInput
-    exams?: ExamEmployeeUncheckedCreateNestedManyWithoutEmployeeInput
     exits?: EpiExitUncheckedCreateNestedManyWithoutEmployeeInput
+    medicalExams?: MedicalExamUncheckedCreateNestedManyWithoutEmployeeInput
   }
 
   export type EmployeeUpdateInput = {
@@ -10558,8 +9287,8 @@ export namespace Prisma {
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     epies?: EpiEmployeeUpdateManyWithoutEmployeeNestedInput
-    exams?: ExamEmployeeUpdateManyWithoutEmployeeNestedInput
     exits?: EpiExitUpdateManyWithoutEmployeeNestedInput
+    medicalExams?: MedicalExamUpdateManyWithoutEmployeeNestedInput
   }
 
   export type EmployeeUncheckedUpdateInput = {
@@ -10580,8 +9309,8 @@ export namespace Prisma {
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     epies?: EpiEmployeeUncheckedUpdateManyWithoutEmployeeNestedInput
-    exams?: ExamEmployeeUncheckedUpdateManyWithoutEmployeeNestedInput
     exits?: EpiExitUncheckedUpdateManyWithoutEmployeeNestedInput
+    medicalExams?: MedicalExamUncheckedUpdateManyWithoutEmployeeNestedInput
   }
 
   export type EmployeeCreateManyInput = {
@@ -10915,117 +9644,75 @@ export namespace Prisma {
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
-  export type ExamCreateInput = {
-    name: string
-    description: string
+  export type MedicalExamCreateInput = {
+    date: Date | string
     type: string
+    result?: string | null
+    expiration: Date | string
     createdAt?: Date | string
     updatedAt?: Date | string
-    employees?: ExamEmployeeCreateNestedManyWithoutExamInput
+    employee: EmployeeCreateNestedOneWithoutMedicalExamsInput
   }
 
-  export type ExamUncheckedCreateInput = {
+  export type MedicalExamUncheckedCreateInput = {
     id?: number
-    name: string
-    description: string
+    date: Date | string
     type: string
-    createdAt?: Date | string
-    updatedAt?: Date | string
-    employees?: ExamEmployeeUncheckedCreateNestedManyWithoutExamInput
-  }
-
-  export type ExamUpdateInput = {
-    name?: StringFieldUpdateOperationsInput | string
-    description?: StringFieldUpdateOperationsInput | string
-    type?: StringFieldUpdateOperationsInput | string
-    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    employees?: ExamEmployeeUpdateManyWithoutExamNestedInput
-  }
-
-  export type ExamUncheckedUpdateInput = {
-    id?: IntFieldUpdateOperationsInput | number
-    name?: StringFieldUpdateOperationsInput | string
-    description?: StringFieldUpdateOperationsInput | string
-    type?: StringFieldUpdateOperationsInput | string
-    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    employees?: ExamEmployeeUncheckedUpdateManyWithoutExamNestedInput
-  }
-
-  export type ExamCreateManyInput = {
-    id?: number
-    name: string
-    description: string
-    type: string
-    createdAt?: Date | string
-    updatedAt?: Date | string
-  }
-
-  export type ExamUpdateManyMutationInput = {
-    name?: StringFieldUpdateOperationsInput | string
-    description?: StringFieldUpdateOperationsInput | string
-    type?: StringFieldUpdateOperationsInput | string
-    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-  }
-
-  export type ExamUncheckedUpdateManyInput = {
-    id?: IntFieldUpdateOperationsInput | number
-    name?: StringFieldUpdateOperationsInput | string
-    description?: StringFieldUpdateOperationsInput | string
-    type?: StringFieldUpdateOperationsInput | string
-    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-  }
-
-  export type ExamEmployeeCreateInput = {
-    createdAt?: Date | string
-    updatedAt?: Date | string
-    employee: EmployeeCreateNestedOneWithoutExamsInput
-    exam: ExamCreateNestedOneWithoutEmployeesInput
-  }
-
-  export type ExamEmployeeUncheckedCreateInput = {
-    id?: number
+    result?: string | null
+    expiration: Date | string
     employeeId: number
-    examId: number
     createdAt?: Date | string
     updatedAt?: Date | string
   }
 
-  export type ExamEmployeeUpdateInput = {
+  export type MedicalExamUpdateInput = {
+    date?: DateTimeFieldUpdateOperationsInput | Date | string
+    type?: StringFieldUpdateOperationsInput | string
+    result?: NullableStringFieldUpdateOperationsInput | string | null
+    expiration?: DateTimeFieldUpdateOperationsInput | Date | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    employee?: EmployeeUpdateOneRequiredWithoutExamsNestedInput
-    exam?: ExamUpdateOneRequiredWithoutEmployeesNestedInput
+    employee?: EmployeeUpdateOneRequiredWithoutMedicalExamsNestedInput
   }
 
-  export type ExamEmployeeUncheckedUpdateInput = {
+  export type MedicalExamUncheckedUpdateInput = {
     id?: IntFieldUpdateOperationsInput | number
+    date?: DateTimeFieldUpdateOperationsInput | Date | string
+    type?: StringFieldUpdateOperationsInput | string
+    result?: NullableStringFieldUpdateOperationsInput | string | null
+    expiration?: DateTimeFieldUpdateOperationsInput | Date | string
     employeeId?: IntFieldUpdateOperationsInput | number
-    examId?: IntFieldUpdateOperationsInput | number
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
-  export type ExamEmployeeCreateManyInput = {
+  export type MedicalExamCreateManyInput = {
     id?: number
+    date: Date | string
+    type: string
+    result?: string | null
+    expiration: Date | string
     employeeId: number
-    examId: number
     createdAt?: Date | string
     updatedAt?: Date | string
   }
 
-  export type ExamEmployeeUpdateManyMutationInput = {
+  export type MedicalExamUpdateManyMutationInput = {
+    date?: DateTimeFieldUpdateOperationsInput | Date | string
+    type?: StringFieldUpdateOperationsInput | string
+    result?: NullableStringFieldUpdateOperationsInput | string | null
+    expiration?: DateTimeFieldUpdateOperationsInput | Date | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
-  export type ExamEmployeeUncheckedUpdateManyInput = {
+  export type MedicalExamUncheckedUpdateManyInput = {
     id?: IntFieldUpdateOperationsInput | number
+    date?: DateTimeFieldUpdateOperationsInput | Date | string
+    type?: StringFieldUpdateOperationsInput | string
+    result?: NullableStringFieldUpdateOperationsInput | string | null
+    expiration?: DateTimeFieldUpdateOperationsInput | Date | string
     employeeId?: IntFieldUpdateOperationsInput | number
-    examId?: IntFieldUpdateOperationsInput | number
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
@@ -11101,27 +9788,27 @@ export namespace Prisma {
     none?: EpiEmployeeWhereInput
   }
 
-  export type ExamEmployeeListRelationFilter = {
-    every?: ExamEmployeeWhereInput
-    some?: ExamEmployeeWhereInput
-    none?: ExamEmployeeWhereInput
-  }
-
   export type EpiExitListRelationFilter = {
     every?: EpiExitWhereInput
     some?: EpiExitWhereInput
     none?: EpiExitWhereInput
   }
 
+  export type MedicalExamListRelationFilter = {
+    every?: MedicalExamWhereInput
+    some?: MedicalExamWhereInput
+    none?: MedicalExamWhereInput
+  }
+
   export type EpiEmployeeOrderByRelationAggregateInput = {
     _count?: SortOrder
   }
 
-  export type ExamEmployeeOrderByRelationAggregateInput = {
+  export type EpiExitOrderByRelationAggregateInput = {
     _count?: SortOrder
   }
 
-  export type EpiExitOrderByRelationAggregateInput = {
+  export type MedicalExamOrderByRelationAggregateInput = {
     _count?: SortOrder
   }
 
@@ -11506,80 +10193,47 @@ export namespace Prisma {
     quantity?: SortOrder
   }
 
-  export type ExamCountOrderByAggregateInput = {
+  export type MedicalExamCountOrderByAggregateInput = {
     id?: SortOrder
-    name?: SortOrder
-    description?: SortOrder
+    date?: SortOrder
     type?: SortOrder
+    result?: SortOrder
+    expiration?: SortOrder
+    employeeId?: SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
   }
 
-  export type ExamAvgOrderByAggregateInput = {
+  export type MedicalExamAvgOrderByAggregateInput = {
     id?: SortOrder
+    employeeId?: SortOrder
   }
 
-  export type ExamMaxOrderByAggregateInput = {
+  export type MedicalExamMaxOrderByAggregateInput = {
     id?: SortOrder
-    name?: SortOrder
-    description?: SortOrder
+    date?: SortOrder
     type?: SortOrder
+    result?: SortOrder
+    expiration?: SortOrder
+    employeeId?: SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
   }
 
-  export type ExamMinOrderByAggregateInput = {
+  export type MedicalExamMinOrderByAggregateInput = {
     id?: SortOrder
-    name?: SortOrder
-    description?: SortOrder
+    date?: SortOrder
     type?: SortOrder
+    result?: SortOrder
+    expiration?: SortOrder
+    employeeId?: SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
   }
 
-  export type ExamSumOrderByAggregateInput = {
-    id?: SortOrder
-  }
-
-  export type ExamScalarRelationFilter = {
-    is?: ExamWhereInput
-    isNot?: ExamWhereInput
-  }
-
-  export type ExamEmployeeCountOrderByAggregateInput = {
+  export type MedicalExamSumOrderByAggregateInput = {
     id?: SortOrder
     employeeId?: SortOrder
-    examId?: SortOrder
-    createdAt?: SortOrder
-    updatedAt?: SortOrder
-  }
-
-  export type ExamEmployeeAvgOrderByAggregateInput = {
-    id?: SortOrder
-    employeeId?: SortOrder
-    examId?: SortOrder
-  }
-
-  export type ExamEmployeeMaxOrderByAggregateInput = {
-    id?: SortOrder
-    employeeId?: SortOrder
-    examId?: SortOrder
-    createdAt?: SortOrder
-    updatedAt?: SortOrder
-  }
-
-  export type ExamEmployeeMinOrderByAggregateInput = {
-    id?: SortOrder
-    employeeId?: SortOrder
-    examId?: SortOrder
-    createdAt?: SortOrder
-    updatedAt?: SortOrder
-  }
-
-  export type ExamEmployeeSumOrderByAggregateInput = {
-    id?: SortOrder
-    employeeId?: SortOrder
-    examId?: SortOrder
   }
 
   export type EpiEmployeeCreateNestedManyWithoutEmployeeInput = {
@@ -11589,18 +10243,18 @@ export namespace Prisma {
     connect?: EpiEmployeeWhereUniqueInput | EpiEmployeeWhereUniqueInput[]
   }
 
-  export type ExamEmployeeCreateNestedManyWithoutEmployeeInput = {
-    create?: XOR<ExamEmployeeCreateWithoutEmployeeInput, ExamEmployeeUncheckedCreateWithoutEmployeeInput> | ExamEmployeeCreateWithoutEmployeeInput[] | ExamEmployeeUncheckedCreateWithoutEmployeeInput[]
-    connectOrCreate?: ExamEmployeeCreateOrConnectWithoutEmployeeInput | ExamEmployeeCreateOrConnectWithoutEmployeeInput[]
-    createMany?: ExamEmployeeCreateManyEmployeeInputEnvelope
-    connect?: ExamEmployeeWhereUniqueInput | ExamEmployeeWhereUniqueInput[]
-  }
-
   export type EpiExitCreateNestedManyWithoutEmployeeInput = {
     create?: XOR<EpiExitCreateWithoutEmployeeInput, EpiExitUncheckedCreateWithoutEmployeeInput> | EpiExitCreateWithoutEmployeeInput[] | EpiExitUncheckedCreateWithoutEmployeeInput[]
     connectOrCreate?: EpiExitCreateOrConnectWithoutEmployeeInput | EpiExitCreateOrConnectWithoutEmployeeInput[]
     createMany?: EpiExitCreateManyEmployeeInputEnvelope
     connect?: EpiExitWhereUniqueInput | EpiExitWhereUniqueInput[]
+  }
+
+  export type MedicalExamCreateNestedManyWithoutEmployeeInput = {
+    create?: XOR<MedicalExamCreateWithoutEmployeeInput, MedicalExamUncheckedCreateWithoutEmployeeInput> | MedicalExamCreateWithoutEmployeeInput[] | MedicalExamUncheckedCreateWithoutEmployeeInput[]
+    connectOrCreate?: MedicalExamCreateOrConnectWithoutEmployeeInput | MedicalExamCreateOrConnectWithoutEmployeeInput[]
+    createMany?: MedicalExamCreateManyEmployeeInputEnvelope
+    connect?: MedicalExamWhereUniqueInput | MedicalExamWhereUniqueInput[]
   }
 
   export type EpiEmployeeUncheckedCreateNestedManyWithoutEmployeeInput = {
@@ -11610,18 +10264,18 @@ export namespace Prisma {
     connect?: EpiEmployeeWhereUniqueInput | EpiEmployeeWhereUniqueInput[]
   }
 
-  export type ExamEmployeeUncheckedCreateNestedManyWithoutEmployeeInput = {
-    create?: XOR<ExamEmployeeCreateWithoutEmployeeInput, ExamEmployeeUncheckedCreateWithoutEmployeeInput> | ExamEmployeeCreateWithoutEmployeeInput[] | ExamEmployeeUncheckedCreateWithoutEmployeeInput[]
-    connectOrCreate?: ExamEmployeeCreateOrConnectWithoutEmployeeInput | ExamEmployeeCreateOrConnectWithoutEmployeeInput[]
-    createMany?: ExamEmployeeCreateManyEmployeeInputEnvelope
-    connect?: ExamEmployeeWhereUniqueInput | ExamEmployeeWhereUniqueInput[]
-  }
-
   export type EpiExitUncheckedCreateNestedManyWithoutEmployeeInput = {
     create?: XOR<EpiExitCreateWithoutEmployeeInput, EpiExitUncheckedCreateWithoutEmployeeInput> | EpiExitCreateWithoutEmployeeInput[] | EpiExitUncheckedCreateWithoutEmployeeInput[]
     connectOrCreate?: EpiExitCreateOrConnectWithoutEmployeeInput | EpiExitCreateOrConnectWithoutEmployeeInput[]
     createMany?: EpiExitCreateManyEmployeeInputEnvelope
     connect?: EpiExitWhereUniqueInput | EpiExitWhereUniqueInput[]
+  }
+
+  export type MedicalExamUncheckedCreateNestedManyWithoutEmployeeInput = {
+    create?: XOR<MedicalExamCreateWithoutEmployeeInput, MedicalExamUncheckedCreateWithoutEmployeeInput> | MedicalExamCreateWithoutEmployeeInput[] | MedicalExamUncheckedCreateWithoutEmployeeInput[]
+    connectOrCreate?: MedicalExamCreateOrConnectWithoutEmployeeInput | MedicalExamCreateOrConnectWithoutEmployeeInput[]
+    createMany?: MedicalExamCreateManyEmployeeInputEnvelope
+    connect?: MedicalExamWhereUniqueInput | MedicalExamWhereUniqueInput[]
   }
 
   export type StringFieldUpdateOperationsInput = {
@@ -11662,20 +10316,6 @@ export namespace Prisma {
     deleteMany?: EpiEmployeeScalarWhereInput | EpiEmployeeScalarWhereInput[]
   }
 
-  export type ExamEmployeeUpdateManyWithoutEmployeeNestedInput = {
-    create?: XOR<ExamEmployeeCreateWithoutEmployeeInput, ExamEmployeeUncheckedCreateWithoutEmployeeInput> | ExamEmployeeCreateWithoutEmployeeInput[] | ExamEmployeeUncheckedCreateWithoutEmployeeInput[]
-    connectOrCreate?: ExamEmployeeCreateOrConnectWithoutEmployeeInput | ExamEmployeeCreateOrConnectWithoutEmployeeInput[]
-    upsert?: ExamEmployeeUpsertWithWhereUniqueWithoutEmployeeInput | ExamEmployeeUpsertWithWhereUniqueWithoutEmployeeInput[]
-    createMany?: ExamEmployeeCreateManyEmployeeInputEnvelope
-    set?: ExamEmployeeWhereUniqueInput | ExamEmployeeWhereUniqueInput[]
-    disconnect?: ExamEmployeeWhereUniqueInput | ExamEmployeeWhereUniqueInput[]
-    delete?: ExamEmployeeWhereUniqueInput | ExamEmployeeWhereUniqueInput[]
-    connect?: ExamEmployeeWhereUniqueInput | ExamEmployeeWhereUniqueInput[]
-    update?: ExamEmployeeUpdateWithWhereUniqueWithoutEmployeeInput | ExamEmployeeUpdateWithWhereUniqueWithoutEmployeeInput[]
-    updateMany?: ExamEmployeeUpdateManyWithWhereWithoutEmployeeInput | ExamEmployeeUpdateManyWithWhereWithoutEmployeeInput[]
-    deleteMany?: ExamEmployeeScalarWhereInput | ExamEmployeeScalarWhereInput[]
-  }
-
   export type EpiExitUpdateManyWithoutEmployeeNestedInput = {
     create?: XOR<EpiExitCreateWithoutEmployeeInput, EpiExitUncheckedCreateWithoutEmployeeInput> | EpiExitCreateWithoutEmployeeInput[] | EpiExitUncheckedCreateWithoutEmployeeInput[]
     connectOrCreate?: EpiExitCreateOrConnectWithoutEmployeeInput | EpiExitCreateOrConnectWithoutEmployeeInput[]
@@ -11688,6 +10328,20 @@ export namespace Prisma {
     update?: EpiExitUpdateWithWhereUniqueWithoutEmployeeInput | EpiExitUpdateWithWhereUniqueWithoutEmployeeInput[]
     updateMany?: EpiExitUpdateManyWithWhereWithoutEmployeeInput | EpiExitUpdateManyWithWhereWithoutEmployeeInput[]
     deleteMany?: EpiExitScalarWhereInput | EpiExitScalarWhereInput[]
+  }
+
+  export type MedicalExamUpdateManyWithoutEmployeeNestedInput = {
+    create?: XOR<MedicalExamCreateWithoutEmployeeInput, MedicalExamUncheckedCreateWithoutEmployeeInput> | MedicalExamCreateWithoutEmployeeInput[] | MedicalExamUncheckedCreateWithoutEmployeeInput[]
+    connectOrCreate?: MedicalExamCreateOrConnectWithoutEmployeeInput | MedicalExamCreateOrConnectWithoutEmployeeInput[]
+    upsert?: MedicalExamUpsertWithWhereUniqueWithoutEmployeeInput | MedicalExamUpsertWithWhereUniqueWithoutEmployeeInput[]
+    createMany?: MedicalExamCreateManyEmployeeInputEnvelope
+    set?: MedicalExamWhereUniqueInput | MedicalExamWhereUniqueInput[]
+    disconnect?: MedicalExamWhereUniqueInput | MedicalExamWhereUniqueInput[]
+    delete?: MedicalExamWhereUniqueInput | MedicalExamWhereUniqueInput[]
+    connect?: MedicalExamWhereUniqueInput | MedicalExamWhereUniqueInput[]
+    update?: MedicalExamUpdateWithWhereUniqueWithoutEmployeeInput | MedicalExamUpdateWithWhereUniqueWithoutEmployeeInput[]
+    updateMany?: MedicalExamUpdateManyWithWhereWithoutEmployeeInput | MedicalExamUpdateManyWithWhereWithoutEmployeeInput[]
+    deleteMany?: MedicalExamScalarWhereInput | MedicalExamScalarWhereInput[]
   }
 
   export type IntFieldUpdateOperationsInput = {
@@ -11712,20 +10366,6 @@ export namespace Prisma {
     deleteMany?: EpiEmployeeScalarWhereInput | EpiEmployeeScalarWhereInput[]
   }
 
-  export type ExamEmployeeUncheckedUpdateManyWithoutEmployeeNestedInput = {
-    create?: XOR<ExamEmployeeCreateWithoutEmployeeInput, ExamEmployeeUncheckedCreateWithoutEmployeeInput> | ExamEmployeeCreateWithoutEmployeeInput[] | ExamEmployeeUncheckedCreateWithoutEmployeeInput[]
-    connectOrCreate?: ExamEmployeeCreateOrConnectWithoutEmployeeInput | ExamEmployeeCreateOrConnectWithoutEmployeeInput[]
-    upsert?: ExamEmployeeUpsertWithWhereUniqueWithoutEmployeeInput | ExamEmployeeUpsertWithWhereUniqueWithoutEmployeeInput[]
-    createMany?: ExamEmployeeCreateManyEmployeeInputEnvelope
-    set?: ExamEmployeeWhereUniqueInput | ExamEmployeeWhereUniqueInput[]
-    disconnect?: ExamEmployeeWhereUniqueInput | ExamEmployeeWhereUniqueInput[]
-    delete?: ExamEmployeeWhereUniqueInput | ExamEmployeeWhereUniqueInput[]
-    connect?: ExamEmployeeWhereUniqueInput | ExamEmployeeWhereUniqueInput[]
-    update?: ExamEmployeeUpdateWithWhereUniqueWithoutEmployeeInput | ExamEmployeeUpdateWithWhereUniqueWithoutEmployeeInput[]
-    updateMany?: ExamEmployeeUpdateManyWithWhereWithoutEmployeeInput | ExamEmployeeUpdateManyWithWhereWithoutEmployeeInput[]
-    deleteMany?: ExamEmployeeScalarWhereInput | ExamEmployeeScalarWhereInput[]
-  }
-
   export type EpiExitUncheckedUpdateManyWithoutEmployeeNestedInput = {
     create?: XOR<EpiExitCreateWithoutEmployeeInput, EpiExitUncheckedCreateWithoutEmployeeInput> | EpiExitCreateWithoutEmployeeInput[] | EpiExitUncheckedCreateWithoutEmployeeInput[]
     connectOrCreate?: EpiExitCreateOrConnectWithoutEmployeeInput | EpiExitCreateOrConnectWithoutEmployeeInput[]
@@ -11738,6 +10378,20 @@ export namespace Prisma {
     update?: EpiExitUpdateWithWhereUniqueWithoutEmployeeInput | EpiExitUpdateWithWhereUniqueWithoutEmployeeInput[]
     updateMany?: EpiExitUpdateManyWithWhereWithoutEmployeeInput | EpiExitUpdateManyWithWhereWithoutEmployeeInput[]
     deleteMany?: EpiExitScalarWhereInput | EpiExitScalarWhereInput[]
+  }
+
+  export type MedicalExamUncheckedUpdateManyWithoutEmployeeNestedInput = {
+    create?: XOR<MedicalExamCreateWithoutEmployeeInput, MedicalExamUncheckedCreateWithoutEmployeeInput> | MedicalExamCreateWithoutEmployeeInput[] | MedicalExamUncheckedCreateWithoutEmployeeInput[]
+    connectOrCreate?: MedicalExamCreateOrConnectWithoutEmployeeInput | MedicalExamCreateOrConnectWithoutEmployeeInput[]
+    upsert?: MedicalExamUpsertWithWhereUniqueWithoutEmployeeInput | MedicalExamUpsertWithWhereUniqueWithoutEmployeeInput[]
+    createMany?: MedicalExamCreateManyEmployeeInputEnvelope
+    set?: MedicalExamWhereUniqueInput | MedicalExamWhereUniqueInput[]
+    disconnect?: MedicalExamWhereUniqueInput | MedicalExamWhereUniqueInput[]
+    delete?: MedicalExamWhereUniqueInput | MedicalExamWhereUniqueInput[]
+    connect?: MedicalExamWhereUniqueInput | MedicalExamWhereUniqueInput[]
+    update?: MedicalExamUpdateWithWhereUniqueWithoutEmployeeInput | MedicalExamUpdateWithWhereUniqueWithoutEmployeeInput[]
+    updateMany?: MedicalExamUpdateManyWithWhereWithoutEmployeeInput | MedicalExamUpdateManyWithWhereWithoutEmployeeInput[]
+    deleteMany?: MedicalExamScalarWhereInput | MedicalExamScalarWhereInput[]
   }
 
   export type EpiEmployeeCreateNestedManyWithoutEpiInput = {
@@ -11940,74 +10594,18 @@ export namespace Prisma {
     update?: XOR<XOR<EmployeeUpdateToOneWithWhereWithoutExitsInput, EmployeeUpdateWithoutExitsInput>, EmployeeUncheckedUpdateWithoutExitsInput>
   }
 
-  export type ExamEmployeeCreateNestedManyWithoutExamInput = {
-    create?: XOR<ExamEmployeeCreateWithoutExamInput, ExamEmployeeUncheckedCreateWithoutExamInput> | ExamEmployeeCreateWithoutExamInput[] | ExamEmployeeUncheckedCreateWithoutExamInput[]
-    connectOrCreate?: ExamEmployeeCreateOrConnectWithoutExamInput | ExamEmployeeCreateOrConnectWithoutExamInput[]
-    createMany?: ExamEmployeeCreateManyExamInputEnvelope
-    connect?: ExamEmployeeWhereUniqueInput | ExamEmployeeWhereUniqueInput[]
-  }
-
-  export type ExamEmployeeUncheckedCreateNestedManyWithoutExamInput = {
-    create?: XOR<ExamEmployeeCreateWithoutExamInput, ExamEmployeeUncheckedCreateWithoutExamInput> | ExamEmployeeCreateWithoutExamInput[] | ExamEmployeeUncheckedCreateWithoutExamInput[]
-    connectOrCreate?: ExamEmployeeCreateOrConnectWithoutExamInput | ExamEmployeeCreateOrConnectWithoutExamInput[]
-    createMany?: ExamEmployeeCreateManyExamInputEnvelope
-    connect?: ExamEmployeeWhereUniqueInput | ExamEmployeeWhereUniqueInput[]
-  }
-
-  export type ExamEmployeeUpdateManyWithoutExamNestedInput = {
-    create?: XOR<ExamEmployeeCreateWithoutExamInput, ExamEmployeeUncheckedCreateWithoutExamInput> | ExamEmployeeCreateWithoutExamInput[] | ExamEmployeeUncheckedCreateWithoutExamInput[]
-    connectOrCreate?: ExamEmployeeCreateOrConnectWithoutExamInput | ExamEmployeeCreateOrConnectWithoutExamInput[]
-    upsert?: ExamEmployeeUpsertWithWhereUniqueWithoutExamInput | ExamEmployeeUpsertWithWhereUniqueWithoutExamInput[]
-    createMany?: ExamEmployeeCreateManyExamInputEnvelope
-    set?: ExamEmployeeWhereUniqueInput | ExamEmployeeWhereUniqueInput[]
-    disconnect?: ExamEmployeeWhereUniqueInput | ExamEmployeeWhereUniqueInput[]
-    delete?: ExamEmployeeWhereUniqueInput | ExamEmployeeWhereUniqueInput[]
-    connect?: ExamEmployeeWhereUniqueInput | ExamEmployeeWhereUniqueInput[]
-    update?: ExamEmployeeUpdateWithWhereUniqueWithoutExamInput | ExamEmployeeUpdateWithWhereUniqueWithoutExamInput[]
-    updateMany?: ExamEmployeeUpdateManyWithWhereWithoutExamInput | ExamEmployeeUpdateManyWithWhereWithoutExamInput[]
-    deleteMany?: ExamEmployeeScalarWhereInput | ExamEmployeeScalarWhereInput[]
-  }
-
-  export type ExamEmployeeUncheckedUpdateManyWithoutExamNestedInput = {
-    create?: XOR<ExamEmployeeCreateWithoutExamInput, ExamEmployeeUncheckedCreateWithoutExamInput> | ExamEmployeeCreateWithoutExamInput[] | ExamEmployeeUncheckedCreateWithoutExamInput[]
-    connectOrCreate?: ExamEmployeeCreateOrConnectWithoutExamInput | ExamEmployeeCreateOrConnectWithoutExamInput[]
-    upsert?: ExamEmployeeUpsertWithWhereUniqueWithoutExamInput | ExamEmployeeUpsertWithWhereUniqueWithoutExamInput[]
-    createMany?: ExamEmployeeCreateManyExamInputEnvelope
-    set?: ExamEmployeeWhereUniqueInput | ExamEmployeeWhereUniqueInput[]
-    disconnect?: ExamEmployeeWhereUniqueInput | ExamEmployeeWhereUniqueInput[]
-    delete?: ExamEmployeeWhereUniqueInput | ExamEmployeeWhereUniqueInput[]
-    connect?: ExamEmployeeWhereUniqueInput | ExamEmployeeWhereUniqueInput[]
-    update?: ExamEmployeeUpdateWithWhereUniqueWithoutExamInput | ExamEmployeeUpdateWithWhereUniqueWithoutExamInput[]
-    updateMany?: ExamEmployeeUpdateManyWithWhereWithoutExamInput | ExamEmployeeUpdateManyWithWhereWithoutExamInput[]
-    deleteMany?: ExamEmployeeScalarWhereInput | ExamEmployeeScalarWhereInput[]
-  }
-
-  export type EmployeeCreateNestedOneWithoutExamsInput = {
-    create?: XOR<EmployeeCreateWithoutExamsInput, EmployeeUncheckedCreateWithoutExamsInput>
-    connectOrCreate?: EmployeeCreateOrConnectWithoutExamsInput
+  export type EmployeeCreateNestedOneWithoutMedicalExamsInput = {
+    create?: XOR<EmployeeCreateWithoutMedicalExamsInput, EmployeeUncheckedCreateWithoutMedicalExamsInput>
+    connectOrCreate?: EmployeeCreateOrConnectWithoutMedicalExamsInput
     connect?: EmployeeWhereUniqueInput
   }
 
-  export type ExamCreateNestedOneWithoutEmployeesInput = {
-    create?: XOR<ExamCreateWithoutEmployeesInput, ExamUncheckedCreateWithoutEmployeesInput>
-    connectOrCreate?: ExamCreateOrConnectWithoutEmployeesInput
-    connect?: ExamWhereUniqueInput
-  }
-
-  export type EmployeeUpdateOneRequiredWithoutExamsNestedInput = {
-    create?: XOR<EmployeeCreateWithoutExamsInput, EmployeeUncheckedCreateWithoutExamsInput>
-    connectOrCreate?: EmployeeCreateOrConnectWithoutExamsInput
-    upsert?: EmployeeUpsertWithoutExamsInput
+  export type EmployeeUpdateOneRequiredWithoutMedicalExamsNestedInput = {
+    create?: XOR<EmployeeCreateWithoutMedicalExamsInput, EmployeeUncheckedCreateWithoutMedicalExamsInput>
+    connectOrCreate?: EmployeeCreateOrConnectWithoutMedicalExamsInput
+    upsert?: EmployeeUpsertWithoutMedicalExamsInput
     connect?: EmployeeWhereUniqueInput
-    update?: XOR<XOR<EmployeeUpdateToOneWithWhereWithoutExamsInput, EmployeeUpdateWithoutExamsInput>, EmployeeUncheckedUpdateWithoutExamsInput>
-  }
-
-  export type ExamUpdateOneRequiredWithoutEmployeesNestedInput = {
-    create?: XOR<ExamCreateWithoutEmployeesInput, ExamUncheckedCreateWithoutEmployeesInput>
-    connectOrCreate?: ExamCreateOrConnectWithoutEmployeesInput
-    upsert?: ExamUpsertWithoutEmployeesInput
-    connect?: ExamWhereUniqueInput
-    update?: XOR<XOR<ExamUpdateToOneWithWhereWithoutEmployeesInput, ExamUpdateWithoutEmployeesInput>, ExamUncheckedUpdateWithoutEmployeesInput>
+    update?: XOR<XOR<EmployeeUpdateToOneWithWhereWithoutMedicalExamsInput, EmployeeUpdateWithoutMedicalExamsInput>, EmployeeUncheckedUpdateWithoutMedicalExamsInput>
   }
 
   export type NestedIntFilter<$PrismaModel = never> = {
@@ -12237,29 +10835,6 @@ export namespace Prisma {
     skipDuplicates?: boolean
   }
 
-  export type ExamEmployeeCreateWithoutEmployeeInput = {
-    createdAt?: Date | string
-    updatedAt?: Date | string
-    exam: ExamCreateNestedOneWithoutEmployeesInput
-  }
-
-  export type ExamEmployeeUncheckedCreateWithoutEmployeeInput = {
-    id?: number
-    examId: number
-    createdAt?: Date | string
-    updatedAt?: Date | string
-  }
-
-  export type ExamEmployeeCreateOrConnectWithoutEmployeeInput = {
-    where: ExamEmployeeWhereUniqueInput
-    create: XOR<ExamEmployeeCreateWithoutEmployeeInput, ExamEmployeeUncheckedCreateWithoutEmployeeInput>
-  }
-
-  export type ExamEmployeeCreateManyEmployeeInputEnvelope = {
-    data: ExamEmployeeCreateManyEmployeeInput | ExamEmployeeCreateManyEmployeeInput[]
-    skipDuplicates?: boolean
-  }
-
   export type EpiExitCreateWithoutEmployeeInput = {
     quantity: number
     date?: Date | string
@@ -12282,6 +10857,35 @@ export namespace Prisma {
 
   export type EpiExitCreateManyEmployeeInputEnvelope = {
     data: EpiExitCreateManyEmployeeInput | EpiExitCreateManyEmployeeInput[]
+    skipDuplicates?: boolean
+  }
+
+  export type MedicalExamCreateWithoutEmployeeInput = {
+    date: Date | string
+    type: string
+    result?: string | null
+    expiration: Date | string
+    createdAt?: Date | string
+    updatedAt?: Date | string
+  }
+
+  export type MedicalExamUncheckedCreateWithoutEmployeeInput = {
+    id?: number
+    date: Date | string
+    type: string
+    result?: string | null
+    expiration: Date | string
+    createdAt?: Date | string
+    updatedAt?: Date | string
+  }
+
+  export type MedicalExamCreateOrConnectWithoutEmployeeInput = {
+    where: MedicalExamWhereUniqueInput
+    create: XOR<MedicalExamCreateWithoutEmployeeInput, MedicalExamUncheckedCreateWithoutEmployeeInput>
+  }
+
+  export type MedicalExamCreateManyEmployeeInputEnvelope = {
+    data: MedicalExamCreateManyEmployeeInput | MedicalExamCreateManyEmployeeInput[]
     skipDuplicates?: boolean
   }
 
@@ -12312,33 +10916,6 @@ export namespace Prisma {
     deliveryDate?: DateTimeFilter<"EpiEmployee"> | Date | string
   }
 
-  export type ExamEmployeeUpsertWithWhereUniqueWithoutEmployeeInput = {
-    where: ExamEmployeeWhereUniqueInput
-    update: XOR<ExamEmployeeUpdateWithoutEmployeeInput, ExamEmployeeUncheckedUpdateWithoutEmployeeInput>
-    create: XOR<ExamEmployeeCreateWithoutEmployeeInput, ExamEmployeeUncheckedCreateWithoutEmployeeInput>
-  }
-
-  export type ExamEmployeeUpdateWithWhereUniqueWithoutEmployeeInput = {
-    where: ExamEmployeeWhereUniqueInput
-    data: XOR<ExamEmployeeUpdateWithoutEmployeeInput, ExamEmployeeUncheckedUpdateWithoutEmployeeInput>
-  }
-
-  export type ExamEmployeeUpdateManyWithWhereWithoutEmployeeInput = {
-    where: ExamEmployeeScalarWhereInput
-    data: XOR<ExamEmployeeUpdateManyMutationInput, ExamEmployeeUncheckedUpdateManyWithoutEmployeeInput>
-  }
-
-  export type ExamEmployeeScalarWhereInput = {
-    AND?: ExamEmployeeScalarWhereInput | ExamEmployeeScalarWhereInput[]
-    OR?: ExamEmployeeScalarWhereInput[]
-    NOT?: ExamEmployeeScalarWhereInput | ExamEmployeeScalarWhereInput[]
-    id?: IntFilter<"ExamEmployee"> | number
-    employeeId?: IntFilter<"ExamEmployee"> | number
-    examId?: IntFilter<"ExamEmployee"> | number
-    createdAt?: DateTimeFilter<"ExamEmployee"> | Date | string
-    updatedAt?: DateTimeFilter<"ExamEmployee"> | Date | string
-  }
-
   export type EpiExitUpsertWithWhereUniqueWithoutEmployeeInput = {
     where: EpiExitWhereUniqueInput
     update: XOR<EpiExitUpdateWithoutEmployeeInput, EpiExitUncheckedUpdateWithoutEmployeeInput>
@@ -12365,6 +10942,36 @@ export namespace Prisma {
     quantity?: IntFilter<"EpiExit"> | number
     date?: DateTimeFilter<"EpiExit"> | Date | string
     createdAt?: DateTimeFilter<"EpiExit"> | Date | string
+  }
+
+  export type MedicalExamUpsertWithWhereUniqueWithoutEmployeeInput = {
+    where: MedicalExamWhereUniqueInput
+    update: XOR<MedicalExamUpdateWithoutEmployeeInput, MedicalExamUncheckedUpdateWithoutEmployeeInput>
+    create: XOR<MedicalExamCreateWithoutEmployeeInput, MedicalExamUncheckedCreateWithoutEmployeeInput>
+  }
+
+  export type MedicalExamUpdateWithWhereUniqueWithoutEmployeeInput = {
+    where: MedicalExamWhereUniqueInput
+    data: XOR<MedicalExamUpdateWithoutEmployeeInput, MedicalExamUncheckedUpdateWithoutEmployeeInput>
+  }
+
+  export type MedicalExamUpdateManyWithWhereWithoutEmployeeInput = {
+    where: MedicalExamScalarWhereInput
+    data: XOR<MedicalExamUpdateManyMutationInput, MedicalExamUncheckedUpdateManyWithoutEmployeeInput>
+  }
+
+  export type MedicalExamScalarWhereInput = {
+    AND?: MedicalExamScalarWhereInput | MedicalExamScalarWhereInput[]
+    OR?: MedicalExamScalarWhereInput[]
+    NOT?: MedicalExamScalarWhereInput | MedicalExamScalarWhereInput[]
+    id?: IntFilter<"MedicalExam"> | number
+    date?: DateTimeFilter<"MedicalExam"> | Date | string
+    type?: StringFilter<"MedicalExam"> | string
+    result?: StringNullableFilter<"MedicalExam"> | string | null
+    expiration?: DateTimeFilter<"MedicalExam"> | Date | string
+    employeeId?: IntFilter<"MedicalExam"> | number
+    createdAt?: DateTimeFilter<"MedicalExam"> | Date | string
+    updatedAt?: DateTimeFilter<"MedicalExam"> | Date | string
   }
 
   export type EpiEmployeeCreateWithoutEpiInput = {
@@ -12554,8 +11161,8 @@ export namespace Prisma {
     status: $Enums.Status
     createdAt?: Date | string
     updatedAt?: Date | string
-    exams?: ExamEmployeeCreateNestedManyWithoutEmployeeInput
     exits?: EpiExitCreateNestedManyWithoutEmployeeInput
+    medicalExams?: MedicalExamCreateNestedManyWithoutEmployeeInput
   }
 
   export type EmployeeUncheckedCreateWithoutEpiesInput = {
@@ -12575,8 +11182,8 @@ export namespace Prisma {
     status: $Enums.Status
     createdAt?: Date | string
     updatedAt?: Date | string
-    exams?: ExamEmployeeUncheckedCreateNestedManyWithoutEmployeeInput
     exits?: EpiExitUncheckedCreateNestedManyWithoutEmployeeInput
+    medicalExams?: MedicalExamUncheckedCreateNestedManyWithoutEmployeeInput
   }
 
   export type EmployeeCreateOrConnectWithoutEpiesInput = {
@@ -12649,8 +11256,8 @@ export namespace Prisma {
     status?: EnumStatusFieldUpdateOperationsInput | $Enums.Status
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    exams?: ExamEmployeeUpdateManyWithoutEmployeeNestedInput
     exits?: EpiExitUpdateManyWithoutEmployeeNestedInput
+    medicalExams?: MedicalExamUpdateManyWithoutEmployeeNestedInput
   }
 
   export type EmployeeUncheckedUpdateWithoutEpiesInput = {
@@ -12670,8 +11277,8 @@ export namespace Prisma {
     status?: EnumStatusFieldUpdateOperationsInput | $Enums.Status
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    exams?: ExamEmployeeUncheckedUpdateManyWithoutEmployeeNestedInput
     exits?: EpiExitUncheckedUpdateManyWithoutEmployeeNestedInput
+    medicalExams?: MedicalExamUncheckedUpdateManyWithoutEmployeeNestedInput
   }
 
   export type EpiCreateWithoutEntriesInput = {
@@ -12793,7 +11400,7 @@ export namespace Prisma {
     createdAt?: Date | string
     updatedAt?: Date | string
     epies?: EpiEmployeeCreateNestedManyWithoutEmployeeInput
-    exams?: ExamEmployeeCreateNestedManyWithoutEmployeeInput
+    medicalExams?: MedicalExamCreateNestedManyWithoutEmployeeInput
   }
 
   export type EmployeeUncheckedCreateWithoutExitsInput = {
@@ -12814,7 +11421,7 @@ export namespace Prisma {
     createdAt?: Date | string
     updatedAt?: Date | string
     epies?: EpiEmployeeUncheckedCreateNestedManyWithoutEmployeeInput
-    exams?: ExamEmployeeUncheckedCreateNestedManyWithoutEmployeeInput
+    medicalExams?: MedicalExamUncheckedCreateNestedManyWithoutEmployeeInput
   }
 
   export type EmployeeCreateOrConnectWithoutExitsInput = {
@@ -12888,7 +11495,7 @@ export namespace Prisma {
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     epies?: EpiEmployeeUpdateManyWithoutEmployeeNestedInput
-    exams?: ExamEmployeeUpdateManyWithoutEmployeeNestedInput
+    medicalExams?: MedicalExamUpdateManyWithoutEmployeeNestedInput
   }
 
   export type EmployeeUncheckedUpdateWithoutExitsInput = {
@@ -12909,49 +11516,10 @@ export namespace Prisma {
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     epies?: EpiEmployeeUncheckedUpdateManyWithoutEmployeeNestedInput
-    exams?: ExamEmployeeUncheckedUpdateManyWithoutEmployeeNestedInput
+    medicalExams?: MedicalExamUncheckedUpdateManyWithoutEmployeeNestedInput
   }
 
-  export type ExamEmployeeCreateWithoutExamInput = {
-    createdAt?: Date | string
-    updatedAt?: Date | string
-    employee: EmployeeCreateNestedOneWithoutExamsInput
-  }
-
-  export type ExamEmployeeUncheckedCreateWithoutExamInput = {
-    id?: number
-    employeeId: number
-    createdAt?: Date | string
-    updatedAt?: Date | string
-  }
-
-  export type ExamEmployeeCreateOrConnectWithoutExamInput = {
-    where: ExamEmployeeWhereUniqueInput
-    create: XOR<ExamEmployeeCreateWithoutExamInput, ExamEmployeeUncheckedCreateWithoutExamInput>
-  }
-
-  export type ExamEmployeeCreateManyExamInputEnvelope = {
-    data: ExamEmployeeCreateManyExamInput | ExamEmployeeCreateManyExamInput[]
-    skipDuplicates?: boolean
-  }
-
-  export type ExamEmployeeUpsertWithWhereUniqueWithoutExamInput = {
-    where: ExamEmployeeWhereUniqueInput
-    update: XOR<ExamEmployeeUpdateWithoutExamInput, ExamEmployeeUncheckedUpdateWithoutExamInput>
-    create: XOR<ExamEmployeeCreateWithoutExamInput, ExamEmployeeUncheckedCreateWithoutExamInput>
-  }
-
-  export type ExamEmployeeUpdateWithWhereUniqueWithoutExamInput = {
-    where: ExamEmployeeWhereUniqueInput
-    data: XOR<ExamEmployeeUpdateWithoutExamInput, ExamEmployeeUncheckedUpdateWithoutExamInput>
-  }
-
-  export type ExamEmployeeUpdateManyWithWhereWithoutExamInput = {
-    where: ExamEmployeeScalarWhereInput
-    data: XOR<ExamEmployeeUpdateManyMutationInput, ExamEmployeeUncheckedUpdateManyWithoutExamInput>
-  }
-
-  export type EmployeeCreateWithoutExamsInput = {
+  export type EmployeeCreateWithoutMedicalExamsInput = {
     name: string
     adress: string
     city: string
@@ -12971,7 +11539,7 @@ export namespace Prisma {
     exits?: EpiExitCreateNestedManyWithoutEmployeeInput
   }
 
-  export type EmployeeUncheckedCreateWithoutExamsInput = {
+  export type EmployeeUncheckedCreateWithoutMedicalExamsInput = {
     id?: number
     name: string
     adress: string
@@ -12992,45 +11560,23 @@ export namespace Prisma {
     exits?: EpiExitUncheckedCreateNestedManyWithoutEmployeeInput
   }
 
-  export type EmployeeCreateOrConnectWithoutExamsInput = {
+  export type EmployeeCreateOrConnectWithoutMedicalExamsInput = {
     where: EmployeeWhereUniqueInput
-    create: XOR<EmployeeCreateWithoutExamsInput, EmployeeUncheckedCreateWithoutExamsInput>
+    create: XOR<EmployeeCreateWithoutMedicalExamsInput, EmployeeUncheckedCreateWithoutMedicalExamsInput>
   }
 
-  export type ExamCreateWithoutEmployeesInput = {
-    name: string
-    description: string
-    type: string
-    createdAt?: Date | string
-    updatedAt?: Date | string
-  }
-
-  export type ExamUncheckedCreateWithoutEmployeesInput = {
-    id?: number
-    name: string
-    description: string
-    type: string
-    createdAt?: Date | string
-    updatedAt?: Date | string
-  }
-
-  export type ExamCreateOrConnectWithoutEmployeesInput = {
-    where: ExamWhereUniqueInput
-    create: XOR<ExamCreateWithoutEmployeesInput, ExamUncheckedCreateWithoutEmployeesInput>
-  }
-
-  export type EmployeeUpsertWithoutExamsInput = {
-    update: XOR<EmployeeUpdateWithoutExamsInput, EmployeeUncheckedUpdateWithoutExamsInput>
-    create: XOR<EmployeeCreateWithoutExamsInput, EmployeeUncheckedCreateWithoutExamsInput>
+  export type EmployeeUpsertWithoutMedicalExamsInput = {
+    update: XOR<EmployeeUpdateWithoutMedicalExamsInput, EmployeeUncheckedUpdateWithoutMedicalExamsInput>
+    create: XOR<EmployeeCreateWithoutMedicalExamsInput, EmployeeUncheckedCreateWithoutMedicalExamsInput>
     where?: EmployeeWhereInput
   }
 
-  export type EmployeeUpdateToOneWithWhereWithoutExamsInput = {
+  export type EmployeeUpdateToOneWithWhereWithoutMedicalExamsInput = {
     where?: EmployeeWhereInput
-    data: XOR<EmployeeUpdateWithoutExamsInput, EmployeeUncheckedUpdateWithoutExamsInput>
+    data: XOR<EmployeeUpdateWithoutMedicalExamsInput, EmployeeUncheckedUpdateWithoutMedicalExamsInput>
   }
 
-  export type EmployeeUpdateWithoutExamsInput = {
+  export type EmployeeUpdateWithoutMedicalExamsInput = {
     name?: StringFieldUpdateOperationsInput | string
     adress?: StringFieldUpdateOperationsInput | string
     city?: StringFieldUpdateOperationsInput | string
@@ -13050,7 +11596,7 @@ export namespace Prisma {
     exits?: EpiExitUpdateManyWithoutEmployeeNestedInput
   }
 
-  export type EmployeeUncheckedUpdateWithoutExamsInput = {
+  export type EmployeeUncheckedUpdateWithoutMedicalExamsInput = {
     id?: IntFieldUpdateOperationsInput | number
     name?: StringFieldUpdateOperationsInput | string
     adress?: StringFieldUpdateOperationsInput | string
@@ -13071,46 +11617,11 @@ export namespace Prisma {
     exits?: EpiExitUncheckedUpdateManyWithoutEmployeeNestedInput
   }
 
-  export type ExamUpsertWithoutEmployeesInput = {
-    update: XOR<ExamUpdateWithoutEmployeesInput, ExamUncheckedUpdateWithoutEmployeesInput>
-    create: XOR<ExamCreateWithoutEmployeesInput, ExamUncheckedCreateWithoutEmployeesInput>
-    where?: ExamWhereInput
-  }
-
-  export type ExamUpdateToOneWithWhereWithoutEmployeesInput = {
-    where?: ExamWhereInput
-    data: XOR<ExamUpdateWithoutEmployeesInput, ExamUncheckedUpdateWithoutEmployeesInput>
-  }
-
-  export type ExamUpdateWithoutEmployeesInput = {
-    name?: StringFieldUpdateOperationsInput | string
-    description?: StringFieldUpdateOperationsInput | string
-    type?: StringFieldUpdateOperationsInput | string
-    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-  }
-
-  export type ExamUncheckedUpdateWithoutEmployeesInput = {
-    id?: IntFieldUpdateOperationsInput | number
-    name?: StringFieldUpdateOperationsInput | string
-    description?: StringFieldUpdateOperationsInput | string
-    type?: StringFieldUpdateOperationsInput | string
-    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-  }
-
   export type EpiEmployeeCreateManyEmployeeInput = {
     id?: number
     epiId: number
     quantity: number
     deliveryDate?: Date | string
-  }
-
-  export type ExamEmployeeCreateManyEmployeeInput = {
-    id?: number
-    examId: number
-    createdAt?: Date | string
-    updatedAt?: Date | string
   }
 
   export type EpiExitCreateManyEmployeeInput = {
@@ -13119,6 +11630,16 @@ export namespace Prisma {
     quantity: number
     date?: Date | string
     createdAt?: Date | string
+  }
+
+  export type MedicalExamCreateManyEmployeeInput = {
+    id?: number
+    date: Date | string
+    type: string
+    result?: string | null
+    expiration: Date | string
+    createdAt?: Date | string
+    updatedAt?: Date | string
   }
 
   export type EpiEmployeeUpdateWithoutEmployeeInput = {
@@ -13139,26 +11660,6 @@ export namespace Prisma {
     epiId?: IntFieldUpdateOperationsInput | number
     quantity?: IntFieldUpdateOperationsInput | number
     deliveryDate?: DateTimeFieldUpdateOperationsInput | Date | string
-  }
-
-  export type ExamEmployeeUpdateWithoutEmployeeInput = {
-    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    exam?: ExamUpdateOneRequiredWithoutEmployeesNestedInput
-  }
-
-  export type ExamEmployeeUncheckedUpdateWithoutEmployeeInput = {
-    id?: IntFieldUpdateOperationsInput | number
-    examId?: IntFieldUpdateOperationsInput | number
-    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-  }
-
-  export type ExamEmployeeUncheckedUpdateManyWithoutEmployeeInput = {
-    id?: IntFieldUpdateOperationsInput | number
-    examId?: IntFieldUpdateOperationsInput | number
-    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type EpiExitUpdateWithoutEmployeeInput = {
@@ -13182,6 +11683,35 @@ export namespace Prisma {
     quantity?: IntFieldUpdateOperationsInput | number
     date?: DateTimeFieldUpdateOperationsInput | Date | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type MedicalExamUpdateWithoutEmployeeInput = {
+    date?: DateTimeFieldUpdateOperationsInput | Date | string
+    type?: StringFieldUpdateOperationsInput | string
+    result?: NullableStringFieldUpdateOperationsInput | string | null
+    expiration?: DateTimeFieldUpdateOperationsInput | Date | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type MedicalExamUncheckedUpdateWithoutEmployeeInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    date?: DateTimeFieldUpdateOperationsInput | Date | string
+    type?: StringFieldUpdateOperationsInput | string
+    result?: NullableStringFieldUpdateOperationsInput | string | null
+    expiration?: DateTimeFieldUpdateOperationsInput | Date | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type MedicalExamUncheckedUpdateManyWithoutEmployeeInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    date?: DateTimeFieldUpdateOperationsInput | Date | string
+    type?: StringFieldUpdateOperationsInput | string
+    result?: NullableStringFieldUpdateOperationsInput | string | null
+    expiration?: DateTimeFieldUpdateOperationsInput | Date | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type EpiEmployeeCreateManyEpiInput = {
@@ -13279,33 +11809,6 @@ export namespace Prisma {
     quantity?: IntFieldUpdateOperationsInput | number
     date?: DateTimeFieldUpdateOperationsInput | Date | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-  }
-
-  export type ExamEmployeeCreateManyExamInput = {
-    id?: number
-    employeeId: number
-    createdAt?: Date | string
-    updatedAt?: Date | string
-  }
-
-  export type ExamEmployeeUpdateWithoutExamInput = {
-    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    employee?: EmployeeUpdateOneRequiredWithoutExamsNestedInput
-  }
-
-  export type ExamEmployeeUncheckedUpdateWithoutExamInput = {
-    id?: IntFieldUpdateOperationsInput | number
-    employeeId?: IntFieldUpdateOperationsInput | number
-    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-  }
-
-  export type ExamEmployeeUncheckedUpdateManyWithoutExamInput = {
-    id?: IntFieldUpdateOperationsInput | number
-    employeeId?: IntFieldUpdateOperationsInput | number
-    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
 

@@ -24,7 +24,13 @@ export function EntryEpiModal({ isOpen, onClose, epi, onEntryAdded }: AddEpiEntr
 
   const handleSave = async () => {
     if (!entryQuantity || isNaN(Number(entryQuantity))) {
-      toast.error("Informe uma quantidade válida.");
+      toast("Informe uma quantidade válida.", {
+        style: {
+          backgroundColor: "#f87171",
+          color: "white",
+        },
+        icon: "❌",
+      });
       return;
     }
   
@@ -38,12 +44,24 @@ export function EntryEpiModal({ isOpen, onClose, epi, onEntryAdded }: AddEpiEntr
     });
   
     if (response.ok) {
-      toast("Parabéns! Entrada registrada com sucesso.");
+      toast("Parabéns! Entrada registrada com sucesso.", {
+        style: {
+          backgroundColor: "#78b49a",
+          color: "white",
+        },
+        icon: "✅",
+      });
       onEntryAdded();
       onClose();
       setEntryQuantity(0);
     } else {
-      toast.error("Erro ao registrar entrada de EPI.");
+      toast("Erro ao registrar entrada de EPI.", {
+        style: {
+          backgroundColor: "#f87171",
+          color: "white",
+        },
+        icon: "❌",
+      });
     }
   };
   
@@ -80,7 +98,7 @@ export function EntryEpiModal({ isOpen, onClose, epi, onEntryAdded }: AddEpiEntr
         </div>
 
         <div className="flex justify-end mt-4">
-          <Button onClick={handleSave} className="bg-blue-600 text-white">
+          <Button onClick={handleSave} className="bg-[#78b49a] text-white hover:bg-[#78b49a]/80">
             Salvar entrada
           </Button>
         </div>

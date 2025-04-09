@@ -37,7 +37,13 @@ export default function EpiForm() {
       });
   
       if (response.ok) {
-        toast.success("EPI cadastrado com sucesso!");
+        toast("EPI cadastrado com sucesso!", {
+          style: {
+            background: "#78b49a",
+            color: "white",
+          }, 
+          icon: "✅",
+        });
         setForm({
           name: "",
           description: "",
@@ -47,10 +53,22 @@ export default function EpiForm() {
           quantity: 0,
         });
       } else {
-        toast.error("Erro ao cadastrar EPI. Tente novamente.");
+        toast("Erro ao cadastrar EPI. Tente novamente.", {
+          style: {
+              backgroundColor: "#f87171",
+              color: "white",
+            },
+          icon: "❌",
+      });
       }
     } catch (error) {
-      toast.error("Erro inesperado. Tente novamente.");
+      toast("Erro inesperado. Tente novamente.", {
+        style: {
+            backgroundColor: "#f87171",
+            color: "white",
+          },
+        icon: "❌",
+    });
     } finally {
       setIsSubmitting(false);
     }

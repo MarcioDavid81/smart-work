@@ -1,19 +1,15 @@
 import type { Metadata } from "next";
-import localFont from "next/font/local";
+import { Nunito } from "next/font/google";
 import "../globals.css";
 import { ClerkProvider } from "@clerk/nextjs";
-import { dark, neobrutalism } from "@clerk/themes";
+import { dark } from "@clerk/themes";
 import { Toaster } from "sonner";
 
-const geistSans = localFont({
-  src: "../fonts/GeistVF.woff",
-  variable: "--font-geist-sans",
-  weight: "100 900",
-});
-const geistMono = localFont({
-  src: "../fonts/GeistMonoVF.woff",
-  variable: "--font-geist-mono",
-  weight: "100 900",
+const nunito = Nunito({
+  weight: ["400", "700"],
+  style: "normal",
+  display: "swap",
+  subsets: ["latin-ext"],
 });
 
 export const metadata: Metadata = {
@@ -36,7 +32,7 @@ export default function RootLayout({
           }}
         >
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${nunito.className} antialiased`}
       >
         {children}
         <Toaster />

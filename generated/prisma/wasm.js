@@ -176,19 +176,13 @@ exports.Prisma.EpiExitScalarFieldEnum = {
   createdAt: 'createdAt'
 };
 
-exports.Prisma.ExamScalarFieldEnum = {
+exports.Prisma.MedicalExamScalarFieldEnum = {
   id: 'id',
-  name: 'name',
-  description: 'description',
+  date: 'date',
   type: 'type',
-  createdAt: 'createdAt',
-  updatedAt: 'updatedAt'
-};
-
-exports.Prisma.ExamEmployeeScalarFieldEnum = {
-  id: 'id',
+  result: 'result',
+  expiration: 'expiration',
   employeeId: 'employeeId',
-  examId: 'examId',
   createdAt: 'createdAt',
   updatedAt: 'updatedAt'
 };
@@ -240,8 +234,7 @@ exports.Prisma.ModelName = {
   EpiEmployee: 'EpiEmployee',
   EpiEntry: 'EpiEntry',
   EpiExit: 'EpiExit',
-  Exam: 'Exam',
-  ExamEmployee: 'ExamEmployee'
+  MedicalExam: 'MedicalExam'
 };
 
 /**

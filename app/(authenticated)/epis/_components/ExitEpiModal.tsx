@@ -32,11 +32,23 @@ export function ExitEpiModal({ isOpen, onClose, epi, employees, onSaved }: EpiEx
 
   const handleSave = async () => {
     if (!employeeId) {
-      toast.error("Selecione um funcionário.");
+      toast("Selecione um funcionário.", {
+        style: {
+            backgroundColor: "#f87171",
+            color: "white",
+          },
+        icon: "❌",
+    });
       return;
     }
     if (!exitQuantity || isNaN(Number(exitQuantity))) {
-      toast.error("Informe uma quantidade válida.");
+      toast("Informe uma quantidade válida.", {
+        style: {
+            backgroundColor: "#f87171",
+            color: "white",
+          },
+        icon: "❌",
+    });
       return;
     }
 
@@ -50,13 +62,25 @@ export function ExitEpiModal({ isOpen, onClose, epi, employees, onSaved }: EpiEx
       }),
       });
       if (response.ok) {
-        toast("Parabéns! Saída registrada com sucesso.");
+        toast("Parabéns! Saída registrada com sucesso.", {
+          style: {
+              backgroundColor: "#78b49a",
+              color: "white",
+          },
+          icon: "✅",
+      });
         onSaved();
         onClose();
         setExitQuantity(0);
       } else {
         const data = await response.json();
-        toast.error(data.message || "Erro ao registrar saída de EPI.");
+        toast(data.message || "Erro ao registrar saída de EPI.", {
+          style: {
+              backgroundColor: "#f87171",
+              color: "white",
+            },
+          icon: "❌",
+      });
       }
   };
 
@@ -97,7 +121,7 @@ export function ExitEpiModal({ isOpen, onClose, epi, employees, onSaved }: EpiEx
         </div>
 
         <div className="flex justify-end mt-4">
-          <Button onClick={handleSave} className="bg-blue-600 text-white">
+          <Button onClick={handleSave} className="bg-[#78b49a] text-white hover:bg-[#78b49a]/80">
             Registrar saída
           </Button>
         </div>

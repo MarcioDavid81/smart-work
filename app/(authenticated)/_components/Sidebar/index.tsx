@@ -47,7 +47,7 @@ const Sidebar = () => {
   const [isOpen, setIsOpen] = useState(true);
 
   return (
-    <aside
+    <div
       className={`${
         isOpen ? "w-64" : "w-20"
       } bg-zinc-600 text-white flex flex-col justify-between p-6 space-y-6 sticky top-0 min-h-screen transition-all duration-300 ease-in-out`}
@@ -63,14 +63,11 @@ const Sidebar = () => {
         onClick={() => setIsOpen(!isOpen)}
       />
       <div>
-        <div className="text-2xl font-bold border-b-2 border-zinc-500">
+        <div className="text-2xl font-bold border-b-2 pb-4 border-zinc-500">
           {isOpen ? (
-            <Image src="/logo.png" alt="Logo" width={200} height={50} />
+            <Image src="/logo2.png" alt="Logo" width={200} height={50} />
           ) : (
-            <h1 className="text-2xl font-bold text-[#78b49a]">
-              <span className="text-[#78b49a]">S</span>
-              <span className="text-[#FF7401]">W</span>
-            </h1>
+            <Image src="/logo3.png" alt="Logo" width={50} height={50} />
           )}
         </div>
         <nav className="space-y-4 mt-4 flex flex-col border-b-2 border-zinc-500 pb-4">
@@ -101,7 +98,7 @@ const Sidebar = () => {
       <div className="flex flex-col items-start justify-items-end pt-4">
         {isOpen ? <UserButton showName /> : <UserButton />}
       </div>
-    </aside>
+    </div>
   );
 };
 
