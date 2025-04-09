@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button";
 import { IoExit } from "react-icons/io5";
 import { auth } from "@clerk/nextjs/server";
 import { redirect } from "next/navigation";
+import Navbar from "../_components/Navbar";
 
 
 const Epis = async () => {
@@ -16,6 +17,9 @@ const Epis = async () => {
       }
 
   return (
+    <div className="flex flex-col min-h-screen bg-gray-50">
+      {/* Navbar */}
+      <Navbar />
     <div className="min-h-screen flex bg-gray-50">
       <Sidebar />
       {/* Conteúdo principal */}
@@ -40,6 +44,7 @@ const Epis = async () => {
         {/* Tabela de epis */}
         <EpisListTable />
       </main>
+    </div>
     </div>
   );
 };

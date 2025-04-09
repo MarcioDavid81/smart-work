@@ -4,9 +4,13 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { GrReturn } from "react-icons/gr";
 import ExamForm from "../_components/ExamForm";
+import Navbar from "../../_components/Navbar";
 
 export default function NewEpiPage() {
   return (
+    <div className="flex flex-col min-h-screen bg-gray-50">
+      {/* Navbar */}
+      <Navbar />
     <div className="min-h-screen flex bg-gray-50">
       <Sidebar />
       {/* Conteúdo principal */}
@@ -29,6 +33,7 @@ export default function NewEpiPage() {
           <ExamForm />
         </div>
       </main>
+    </div>
     </div>
   );
 }

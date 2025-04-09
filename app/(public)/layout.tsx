@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import { Nunito } from "next/font/google";
-import localFont from "next/font/local";
 import "../globals.css";
 import { ClerkProvider } from "@clerk/nextjs";
 import { Toaster } from "sonner";
@@ -14,7 +13,9 @@ const nunito = Nunito({
 
 export const metadata: Metadata = {
   title: "Smart Work - Saúde Ocupacional",
+  keywords: ["saúde ocupacional", "gestão de saúde", "segurança no trabalho"],
   description: "O seu sistema de gestão da saúde ocupacional",
+  authors: [{ name: "Marcio David", url: "https://md-webdeveloper.vercel.app" }],
 };
 
 export default function RootLayout({

@@ -13,7 +13,7 @@ const nunito = Nunito({
 });
 
 export const metadata: Metadata = {
-  title: "Smart Work",
+  title: "Smart Work - Saúde Ocupacional",
   keywords: ["saúde ocupacional", "gestão de saúde", "segurança no trabalho"],
   description: "O seu sistema de gestão da saúde ocupacional",
   authors: [{ name: "Marcio David", url: "https://md-webdeveloper.vercel.app" }],

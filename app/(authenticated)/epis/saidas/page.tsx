@@ -11,6 +11,7 @@ import autoTable from "jspdf-autotable";
 import { EpiExit } from "@/app/types";
 import { toast } from "sonner";
 import { FileText } from "lucide-react";
+import Navbar from "../../_components/Navbar";
 
 interface EpiExitHistoryProps {
   onDataChange?: (data: EpiExit[]) => void;
@@ -123,6 +124,9 @@ export default function ExitsEpiPage({ onDataChange }: EpiExitHistoryProps) {
   };
 
   return (
+    <div className="flex flex-col min-h-screen bg-gray-50">
+      {/* Navbar */}
+      <Navbar />
     <div className="min-h-screen flex bg-gray-50">
       <Sidebar />
       {/* Conteúdo principal */}
@@ -154,6 +158,7 @@ export default function ExitsEpiPage({ onDataChange }: EpiExitHistoryProps) {
           <EpiExitHistory onDataChange={setLocalExits} />
         </div>
       </main>
+    </div>
     </div>
   );
 }

@@ -3,6 +3,7 @@ import Sidebar from "../_components/Sidebar";
 import { redirect } from "next/navigation";
 import CreateExamButton from "./_components/CreateExamButton";
 import ExamListTable from "./_components/ExamListTable";
+import Navbar from "../_components/Navbar";
 
 const Exames = async () => {
 
@@ -12,6 +13,9 @@ const Exames = async () => {
       }
 
   return (
+    <div className="flex flex-col min-h-screen bg-gray-50">
+      {/* Navbar */}
+      <Navbar />
     <div className="min-h-screen flex bg-gray-50">
       <Sidebar />
       {/* Conteúdo principal */}
@@ -24,6 +28,7 @@ const Exames = async () => {
         {/* Tabela de exames */}
         <ExamListTable />
       </main>
+    </div>
     </div>
   );
 };
