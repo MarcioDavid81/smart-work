@@ -1516,6 +1516,7 @@ export namespace Prisma {
     department: $Enums.Department | null
     function: $Enums.Function | null
     status: $Enums.Status | null
+    userId: string | null
     createdAt: Date | null
     updatedAt: Date | null
   }
@@ -1535,6 +1536,7 @@ export namespace Prisma {
     department: $Enums.Department | null
     function: $Enums.Function | null
     status: $Enums.Status | null
+    userId: string | null
     createdAt: Date | null
     updatedAt: Date | null
   }
@@ -1554,6 +1556,7 @@ export namespace Prisma {
     department: number
     function: number
     status: number
+    userId: number
     createdAt: number
     updatedAt: number
     _all: number
@@ -1583,6 +1586,7 @@ export namespace Prisma {
     department?: true
     function?: true
     status?: true
+    userId?: true
     createdAt?: true
     updatedAt?: true
   }
@@ -1602,6 +1606,7 @@ export namespace Prisma {
     department?: true
     function?: true
     status?: true
+    userId?: true
     createdAt?: true
     updatedAt?: true
   }
@@ -1621,6 +1626,7 @@ export namespace Prisma {
     department?: true
     function?: true
     status?: true
+    userId?: true
     createdAt?: true
     updatedAt?: true
     _all?: true
@@ -1727,6 +1733,7 @@ export namespace Prisma {
     department: $Enums.Department
     function: $Enums.Function
     status: $Enums.Status
+    userId: string
     createdAt: Date
     updatedAt: Date
     _count: EmployeeCountAggregateOutputType | null
@@ -1765,6 +1772,7 @@ export namespace Prisma {
     department?: boolean
     function?: boolean
     status?: boolean
+    userId?: boolean
     createdAt?: boolean
     updatedAt?: boolean
     epies?: boolean | Employee$epiesArgs<ExtArgs>
@@ -1788,6 +1796,7 @@ export namespace Prisma {
     department?: boolean
     function?: boolean
     status?: boolean
+    userId?: boolean
     createdAt?: boolean
     updatedAt?: boolean
   }, ExtArgs["result"]["employee"]>
@@ -1807,6 +1816,7 @@ export namespace Prisma {
     department?: boolean
     function?: boolean
     status?: boolean
+    userId?: boolean
     createdAt?: boolean
     updatedAt?: boolean
   }, ExtArgs["result"]["employee"]>
@@ -1826,11 +1836,12 @@ export namespace Prisma {
     department?: boolean
     function?: boolean
     status?: boolean
+    userId?: boolean
     createdAt?: boolean
     updatedAt?: boolean
   }
 
-  export type EmployeeOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "name" | "adress" | "city" | "email" | "phone" | "birthDate" | "admission" | "cpf" | "rg" | "employer" | "department" | "function" | "status" | "createdAt" | "updatedAt", ExtArgs["result"]["employee"]>
+  export type EmployeeOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "name" | "adress" | "city" | "email" | "phone" | "birthDate" | "admission" | "cpf" | "rg" | "employer" | "department" | "function" | "status" | "userId" | "createdAt" | "updatedAt", ExtArgs["result"]["employee"]>
   export type EmployeeInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     epies?: boolean | Employee$epiesArgs<ExtArgs>
     exits?: boolean | Employee$exitsArgs<ExtArgs>
@@ -1862,6 +1873,7 @@ export namespace Prisma {
       department: $Enums.Department
       function: $Enums.Function
       status: $Enums.Status
+      userId: string
       createdAt: Date
       updatedAt: Date
     }, ExtArgs["result"]["employee"]>
@@ -2304,6 +2316,7 @@ export namespace Prisma {
     readonly department: FieldRef<"Employee", 'Department'>
     readonly function: FieldRef<"Employee", 'Function'>
     readonly status: FieldRef<"Employee", 'Status'>
+    readonly userId: FieldRef<"Employee", 'String'>
     readonly createdAt: FieldRef<"Employee", 'DateTime'>
     readonly updatedAt: FieldRef<"Employee", 'DateTime'>
   }
@@ -2814,6 +2827,7 @@ export namespace Prisma {
     supplier: string | null
     expiration: Date | null
     quantity: number | null
+    userId: string | null
     createdAt: Date | null
     updatedAt: Date | null
   }
@@ -2826,6 +2840,7 @@ export namespace Prisma {
     supplier: string | null
     expiration: Date | null
     quantity: number | null
+    userId: string | null
     createdAt: Date | null
     updatedAt: Date | null
   }
@@ -2838,6 +2853,7 @@ export namespace Prisma {
     supplier: number
     expiration: number
     quantity: number
+    userId: number
     createdAt: number
     updatedAt: number
     _all: number
@@ -2862,6 +2878,7 @@ export namespace Prisma {
     supplier?: true
     expiration?: true
     quantity?: true
+    userId?: true
     createdAt?: true
     updatedAt?: true
   }
@@ -2874,6 +2891,7 @@ export namespace Prisma {
     supplier?: true
     expiration?: true
     quantity?: true
+    userId?: true
     createdAt?: true
     updatedAt?: true
   }
@@ -2886,6 +2904,7 @@ export namespace Prisma {
     supplier?: true
     expiration?: true
     quantity?: true
+    userId?: true
     createdAt?: true
     updatedAt?: true
     _all?: true
@@ -2985,6 +3004,7 @@ export namespace Prisma {
     supplier: string
     expiration: Date
     quantity: number
+    userId: string
     createdAt: Date
     updatedAt: Date
     _count: EpiCountAggregateOutputType | null
@@ -3016,6 +3036,7 @@ export namespace Prisma {
     supplier?: boolean
     expiration?: boolean
     quantity?: boolean
+    userId?: boolean
     createdAt?: boolean
     updatedAt?: boolean
     employees?: boolean | Epi$employeesArgs<ExtArgs>
@@ -3032,6 +3053,7 @@ export namespace Prisma {
     supplier?: boolean
     expiration?: boolean
     quantity?: boolean
+    userId?: boolean
     createdAt?: boolean
     updatedAt?: boolean
   }, ExtArgs["result"]["epi"]>
@@ -3044,6 +3066,7 @@ export namespace Prisma {
     supplier?: boolean
     expiration?: boolean
     quantity?: boolean
+    userId?: boolean
     createdAt?: boolean
     updatedAt?: boolean
   }, ExtArgs["result"]["epi"]>
@@ -3056,11 +3079,12 @@ export namespace Prisma {
     supplier?: boolean
     expiration?: boolean
     quantity?: boolean
+    userId?: boolean
     createdAt?: boolean
     updatedAt?: boolean
   }
 
-  export type EpiOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "name" | "description" | "certification" | "supplier" | "expiration" | "quantity" | "createdAt" | "updatedAt", ExtArgs["result"]["epi"]>
+  export type EpiOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "name" | "description" | "certification" | "supplier" | "expiration" | "quantity" | "userId" | "createdAt" | "updatedAt", ExtArgs["result"]["epi"]>
   export type EpiInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     employees?: boolean | Epi$employeesArgs<ExtArgs>
     entries?: boolean | Epi$entriesArgs<ExtArgs>
@@ -3085,6 +3109,7 @@ export namespace Prisma {
       supplier: string
       expiration: Date
       quantity: number
+      userId: string
       createdAt: Date
       updatedAt: Date
     }, ExtArgs["result"]["epi"]>
@@ -3520,6 +3545,7 @@ export namespace Prisma {
     readonly supplier: FieldRef<"Epi", 'String'>
     readonly expiration: FieldRef<"Epi", 'DateTime'>
     readonly quantity: FieldRef<"Epi", 'Int'>
+    readonly userId: FieldRef<"Epi", 'String'>
     readonly createdAt: FieldRef<"Epi", 'DateTime'>
     readonly updatedAt: FieldRef<"Epi", 'DateTime'>
   }
@@ -4032,6 +4058,7 @@ export namespace Prisma {
     employeeId: number | null
     quantity: number | null
     deliveryDate: Date | null
+    userId: string | null
   }
 
   export type EpiEmployeeMaxAggregateOutputType = {
@@ -4040,6 +4067,7 @@ export namespace Prisma {
     employeeId: number | null
     quantity: number | null
     deliveryDate: Date | null
+    userId: string | null
   }
 
   export type EpiEmployeeCountAggregateOutputType = {
@@ -4048,6 +4076,7 @@ export namespace Prisma {
     employeeId: number
     quantity: number
     deliveryDate: number
+    userId: number
     _all: number
   }
 
@@ -4072,6 +4101,7 @@ export namespace Prisma {
     employeeId?: true
     quantity?: true
     deliveryDate?: true
+    userId?: true
   }
 
   export type EpiEmployeeMaxAggregateInputType = {
@@ -4080,6 +4110,7 @@ export namespace Prisma {
     employeeId?: true
     quantity?: true
     deliveryDate?: true
+    userId?: true
   }
 
   export type EpiEmployeeCountAggregateInputType = {
@@ -4088,6 +4119,7 @@ export namespace Prisma {
     employeeId?: true
     quantity?: true
     deliveryDate?: true
+    userId?: true
     _all?: true
   }
 
@@ -4183,6 +4215,7 @@ export namespace Prisma {
     employeeId: number
     quantity: number
     deliveryDate: Date
+    userId: string
     _count: EpiEmployeeCountAggregateOutputType | null
     _avg: EpiEmployeeAvgAggregateOutputType | null
     _sum: EpiEmployeeSumAggregateOutputType | null
@@ -4210,6 +4243,7 @@ export namespace Prisma {
     employeeId?: boolean
     quantity?: boolean
     deliveryDate?: boolean
+    userId?: boolean
     epi?: boolean | EpiDefaultArgs<ExtArgs>
     employee?: boolean | EmployeeDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["epiEmployee"]>
@@ -4220,6 +4254,7 @@ export namespace Prisma {
     employeeId?: boolean
     quantity?: boolean
     deliveryDate?: boolean
+    userId?: boolean
     epi?: boolean | EpiDefaultArgs<ExtArgs>
     employee?: boolean | EmployeeDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["epiEmployee"]>
@@ -4230,6 +4265,7 @@ export namespace Prisma {
     employeeId?: boolean
     quantity?: boolean
     deliveryDate?: boolean
+    userId?: boolean
     epi?: boolean | EpiDefaultArgs<ExtArgs>
     employee?: boolean | EmployeeDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["epiEmployee"]>
@@ -4240,9 +4276,10 @@ export namespace Prisma {
     employeeId?: boolean
     quantity?: boolean
     deliveryDate?: boolean
+    userId?: boolean
   }
 
-  export type EpiEmployeeOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "epiId" | "employeeId" | "quantity" | "deliveryDate", ExtArgs["result"]["epiEmployee"]>
+  export type EpiEmployeeOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "epiId" | "employeeId" | "quantity" | "deliveryDate" | "userId", ExtArgs["result"]["epiEmployee"]>
   export type EpiEmployeeInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     epi?: boolean | EpiDefaultArgs<ExtArgs>
     employee?: boolean | EmployeeDefaultArgs<ExtArgs>
@@ -4268,6 +4305,7 @@ export namespace Prisma {
       employeeId: number
       quantity: number
       deliveryDate: Date
+      userId: string
     }, ExtArgs["result"]["epiEmployee"]>
     composites: {}
   }
@@ -4698,6 +4736,7 @@ export namespace Prisma {
     readonly employeeId: FieldRef<"EpiEmployee", 'Int'>
     readonly quantity: FieldRef<"EpiEmployee", 'Int'>
     readonly deliveryDate: FieldRef<"EpiEmployee", 'DateTime'>
+    readonly userId: FieldRef<"EpiEmployee", 'String'>
   }
     
 
@@ -5143,6 +5182,7 @@ export namespace Prisma {
     date: Date | null
     note: string | null
     supplier: string | null
+    userId: string | null
     createdAt: Date | null
     updatedAt: Date | null
   }
@@ -5154,6 +5194,7 @@ export namespace Prisma {
     date: Date | null
     note: string | null
     supplier: string | null
+    userId: string | null
     createdAt: Date | null
     updatedAt: Date | null
   }
@@ -5165,6 +5206,7 @@ export namespace Prisma {
     date: number
     note: number
     supplier: number
+    userId: number
     createdAt: number
     updatedAt: number
     _all: number
@@ -5190,6 +5232,7 @@ export namespace Prisma {
     date?: true
     note?: true
     supplier?: true
+    userId?: true
     createdAt?: true
     updatedAt?: true
   }
@@ -5201,6 +5244,7 @@ export namespace Prisma {
     date?: true
     note?: true
     supplier?: true
+    userId?: true
     createdAt?: true
     updatedAt?: true
   }
@@ -5212,6 +5256,7 @@ export namespace Prisma {
     date?: true
     note?: true
     supplier?: true
+    userId?: true
     createdAt?: true
     updatedAt?: true
     _all?: true
@@ -5310,6 +5355,7 @@ export namespace Prisma {
     date: Date
     note: string | null
     supplier: string | null
+    userId: string
     createdAt: Date
     updatedAt: Date
     _count: EpiEntryCountAggregateOutputType | null
@@ -5340,6 +5386,7 @@ export namespace Prisma {
     date?: boolean
     note?: boolean
     supplier?: boolean
+    userId?: boolean
     createdAt?: boolean
     updatedAt?: boolean
     epi?: boolean | EpiDefaultArgs<ExtArgs>
@@ -5352,6 +5399,7 @@ export namespace Prisma {
     date?: boolean
     note?: boolean
     supplier?: boolean
+    userId?: boolean
     createdAt?: boolean
     updatedAt?: boolean
     epi?: boolean | EpiDefaultArgs<ExtArgs>
@@ -5364,6 +5412,7 @@ export namespace Prisma {
     date?: boolean
     note?: boolean
     supplier?: boolean
+    userId?: boolean
     createdAt?: boolean
     updatedAt?: boolean
     epi?: boolean | EpiDefaultArgs<ExtArgs>
@@ -5376,11 +5425,12 @@ export namespace Prisma {
     date?: boolean
     note?: boolean
     supplier?: boolean
+    userId?: boolean
     createdAt?: boolean
     updatedAt?: boolean
   }
 
-  export type EpiEntryOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "epiId" | "quantity" | "date" | "note" | "supplier" | "createdAt" | "updatedAt", ExtArgs["result"]["epiEntry"]>
+  export type EpiEntryOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "epiId" | "quantity" | "date" | "note" | "supplier" | "userId" | "createdAt" | "updatedAt", ExtArgs["result"]["epiEntry"]>
   export type EpiEntryInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     epi?: boolean | EpiDefaultArgs<ExtArgs>
   }
@@ -5403,6 +5453,7 @@ export namespace Prisma {
       date: Date
       note: string | null
       supplier: string | null
+      userId: string
       createdAt: Date
       updatedAt: Date
     }, ExtArgs["result"]["epiEntry"]>
@@ -5835,6 +5886,7 @@ export namespace Prisma {
     readonly date: FieldRef<"EpiEntry", 'DateTime'>
     readonly note: FieldRef<"EpiEntry", 'String'>
     readonly supplier: FieldRef<"EpiEntry", 'String'>
+    readonly userId: FieldRef<"EpiEntry", 'String'>
     readonly createdAt: FieldRef<"EpiEntry", 'DateTime'>
     readonly updatedAt: FieldRef<"EpiEntry", 'DateTime'>
   }
@@ -6282,6 +6334,7 @@ export namespace Prisma {
     epiId: number | null
     employeeId: number | null
     quantity: number | null
+    userId: string | null
     date: Date | null
     createdAt: Date | null
   }
@@ -6291,6 +6344,7 @@ export namespace Prisma {
     epiId: number | null
     employeeId: number | null
     quantity: number | null
+    userId: string | null
     date: Date | null
     createdAt: Date | null
   }
@@ -6300,6 +6354,7 @@ export namespace Prisma {
     epiId: number
     employeeId: number
     quantity: number
+    userId: number
     date: number
     createdAt: number
     _all: number
@@ -6325,6 +6380,7 @@ export namespace Prisma {
     epiId?: true
     employeeId?: true
     quantity?: true
+    userId?: true
     date?: true
     createdAt?: true
   }
@@ -6334,6 +6390,7 @@ export namespace Prisma {
     epiId?: true
     employeeId?: true
     quantity?: true
+    userId?: true
     date?: true
     createdAt?: true
   }
@@ -6343,6 +6400,7 @@ export namespace Prisma {
     epiId?: true
     employeeId?: true
     quantity?: true
+    userId?: true
     date?: true
     createdAt?: true
     _all?: true
@@ -6439,6 +6497,7 @@ export namespace Prisma {
     epiId: number
     employeeId: number
     quantity: number
+    userId: string
     date: Date
     createdAt: Date
     _count: EpiExitCountAggregateOutputType | null
@@ -6467,6 +6526,7 @@ export namespace Prisma {
     epiId?: boolean
     employeeId?: boolean
     quantity?: boolean
+    userId?: boolean
     date?: boolean
     createdAt?: boolean
     epi?: boolean | EpiDefaultArgs<ExtArgs>
@@ -6478,6 +6538,7 @@ export namespace Prisma {
     epiId?: boolean
     employeeId?: boolean
     quantity?: boolean
+    userId?: boolean
     date?: boolean
     createdAt?: boolean
     epi?: boolean | EpiDefaultArgs<ExtArgs>
@@ -6489,6 +6550,7 @@ export namespace Prisma {
     epiId?: boolean
     employeeId?: boolean
     quantity?: boolean
+    userId?: boolean
     date?: boolean
     createdAt?: boolean
     epi?: boolean | EpiDefaultArgs<ExtArgs>
@@ -6500,11 +6562,12 @@ export namespace Prisma {
     epiId?: boolean
     employeeId?: boolean
     quantity?: boolean
+    userId?: boolean
     date?: boolean
     createdAt?: boolean
   }
 
-  export type EpiExitOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "epiId" | "employeeId" | "quantity" | "date" | "createdAt", ExtArgs["result"]["epiExit"]>
+  export type EpiExitOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "epiId" | "employeeId" | "quantity" | "userId" | "date" | "createdAt", ExtArgs["result"]["epiExit"]>
   export type EpiExitInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     epi?: boolean | EpiDefaultArgs<ExtArgs>
     employee?: boolean | EmployeeDefaultArgs<ExtArgs>
@@ -6529,6 +6592,7 @@ export namespace Prisma {
       epiId: number
       employeeId: number
       quantity: number
+      userId: string
       date: Date
       createdAt: Date
     }, ExtArgs["result"]["epiExit"]>
@@ -6960,6 +7024,7 @@ export namespace Prisma {
     readonly epiId: FieldRef<"EpiExit", 'Int'>
     readonly employeeId: FieldRef<"EpiExit", 'Int'>
     readonly quantity: FieldRef<"EpiExit", 'Int'>
+    readonly userId: FieldRef<"EpiExit", 'String'>
     readonly date: FieldRef<"EpiExit", 'DateTime'>
     readonly createdAt: FieldRef<"EpiExit", 'DateTime'>
   }
@@ -7405,6 +7470,7 @@ export namespace Prisma {
     result: string | null
     expiration: Date | null
     employeeId: number | null
+    userId: string | null
     createdAt: Date | null
     updatedAt: Date | null
   }
@@ -7416,6 +7482,7 @@ export namespace Prisma {
     result: string | null
     expiration: Date | null
     employeeId: number | null
+    userId: string | null
     createdAt: Date | null
     updatedAt: Date | null
   }
@@ -7427,6 +7494,7 @@ export namespace Prisma {
     result: number
     expiration: number
     employeeId: number
+    userId: number
     createdAt: number
     updatedAt: number
     _all: number
@@ -7450,6 +7518,7 @@ export namespace Prisma {
     result?: true
     expiration?: true
     employeeId?: true
+    userId?: true
     createdAt?: true
     updatedAt?: true
   }
@@ -7461,6 +7530,7 @@ export namespace Prisma {
     result?: true
     expiration?: true
     employeeId?: true
+    userId?: true
     createdAt?: true
     updatedAt?: true
   }
@@ -7472,6 +7542,7 @@ export namespace Prisma {
     result?: true
     expiration?: true
     employeeId?: true
+    userId?: true
     createdAt?: true
     updatedAt?: true
     _all?: true
@@ -7570,6 +7641,7 @@ export namespace Prisma {
     result: string | null
     expiration: Date
     employeeId: number
+    userId: string
     createdAt: Date
     updatedAt: Date
     _count: MedicalExamCountAggregateOutputType | null
@@ -7600,6 +7672,7 @@ export namespace Prisma {
     result?: boolean
     expiration?: boolean
     employeeId?: boolean
+    userId?: boolean
     createdAt?: boolean
     updatedAt?: boolean
     employee?: boolean | EmployeeDefaultArgs<ExtArgs>
@@ -7612,6 +7685,7 @@ export namespace Prisma {
     result?: boolean
     expiration?: boolean
     employeeId?: boolean
+    userId?: boolean
     createdAt?: boolean
     updatedAt?: boolean
     employee?: boolean | EmployeeDefaultArgs<ExtArgs>
@@ -7624,6 +7698,7 @@ export namespace Prisma {
     result?: boolean
     expiration?: boolean
     employeeId?: boolean
+    userId?: boolean
     createdAt?: boolean
     updatedAt?: boolean
     employee?: boolean | EmployeeDefaultArgs<ExtArgs>
@@ -7636,11 +7711,12 @@ export namespace Prisma {
     result?: boolean
     expiration?: boolean
     employeeId?: boolean
+    userId?: boolean
     createdAt?: boolean
     updatedAt?: boolean
   }
 
-  export type MedicalExamOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "date" | "type" | "result" | "expiration" | "employeeId" | "createdAt" | "updatedAt", ExtArgs["result"]["medicalExam"]>
+  export type MedicalExamOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "date" | "type" | "result" | "expiration" | "employeeId" | "userId" | "createdAt" | "updatedAt", ExtArgs["result"]["medicalExam"]>
   export type MedicalExamInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     employee?: boolean | EmployeeDefaultArgs<ExtArgs>
   }
@@ -7663,6 +7739,7 @@ export namespace Prisma {
       result: string | null
       expiration: Date
       employeeId: number
+      userId: string
       createdAt: Date
       updatedAt: Date
     }, ExtArgs["result"]["medicalExam"]>
@@ -8095,6 +8172,7 @@ export namespace Prisma {
     readonly result: FieldRef<"MedicalExam", 'String'>
     readonly expiration: FieldRef<"MedicalExam", 'DateTime'>
     readonly employeeId: FieldRef<"MedicalExam", 'Int'>
+    readonly userId: FieldRef<"MedicalExam", 'String'>
     readonly createdAt: FieldRef<"MedicalExam", 'DateTime'>
     readonly updatedAt: FieldRef<"MedicalExam", 'DateTime'>
   }
@@ -8540,6 +8618,7 @@ export namespace Prisma {
     department: 'department',
     function: 'function',
     status: 'status',
+    userId: 'userId',
     createdAt: 'createdAt',
     updatedAt: 'updatedAt'
   };
@@ -8555,6 +8634,7 @@ export namespace Prisma {
     supplier: 'supplier',
     expiration: 'expiration',
     quantity: 'quantity',
+    userId: 'userId',
     createdAt: 'createdAt',
     updatedAt: 'updatedAt'
   };
@@ -8567,7 +8647,8 @@ export namespace Prisma {
     epiId: 'epiId',
     employeeId: 'employeeId',
     quantity: 'quantity',
-    deliveryDate: 'deliveryDate'
+    deliveryDate: 'deliveryDate',
+    userId: 'userId'
   };
 
   export type EpiEmployeeScalarFieldEnum = (typeof EpiEmployeeScalarFieldEnum)[keyof typeof EpiEmployeeScalarFieldEnum]
@@ -8580,6 +8661,7 @@ export namespace Prisma {
     date: 'date',
     note: 'note',
     supplier: 'supplier',
+    userId: 'userId',
     createdAt: 'createdAt',
     updatedAt: 'updatedAt'
   };
@@ -8592,6 +8674,7 @@ export namespace Prisma {
     epiId: 'epiId',
     employeeId: 'employeeId',
     quantity: 'quantity',
+    userId: 'userId',
     date: 'date',
     createdAt: 'createdAt'
   };
@@ -8606,6 +8689,7 @@ export namespace Prisma {
     result: 'result',
     expiration: 'expiration',
     employeeId: 'employeeId',
+    userId: 'userId',
     createdAt: 'createdAt',
     updatedAt: 'updatedAt'
   };
@@ -8775,6 +8859,7 @@ export namespace Prisma {
     department?: EnumDepartmentFilter<"Employee"> | $Enums.Department
     function?: EnumFunctionFilter<"Employee"> | $Enums.Function
     status?: EnumStatusFilter<"Employee"> | $Enums.Status
+    userId?: StringFilter<"Employee"> | string
     createdAt?: DateTimeFilter<"Employee"> | Date | string
     updatedAt?: DateTimeFilter<"Employee"> | Date | string
     epies?: EpiEmployeeListRelationFilter
@@ -8797,6 +8882,7 @@ export namespace Prisma {
     department?: SortOrder
     function?: SortOrder
     status?: SortOrder
+    userId?: SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
     epies?: EpiEmployeeOrderByRelationAggregateInput
@@ -8822,6 +8908,7 @@ export namespace Prisma {
     department?: EnumDepartmentFilter<"Employee"> | $Enums.Department
     function?: EnumFunctionFilter<"Employee"> | $Enums.Function
     status?: EnumStatusFilter<"Employee"> | $Enums.Status
+    userId?: StringFilter<"Employee"> | string
     createdAt?: DateTimeFilter<"Employee"> | Date | string
     updatedAt?: DateTimeFilter<"Employee"> | Date | string
     epies?: EpiEmployeeListRelationFilter
@@ -8844,6 +8931,7 @@ export namespace Prisma {
     department?: SortOrder
     function?: SortOrder
     status?: SortOrder
+    userId?: SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
     _count?: EmployeeCountOrderByAggregateInput
@@ -8871,6 +8959,7 @@ export namespace Prisma {
     department?: EnumDepartmentWithAggregatesFilter<"Employee"> | $Enums.Department
     function?: EnumFunctionWithAggregatesFilter<"Employee"> | $Enums.Function
     status?: EnumStatusWithAggregatesFilter<"Employee"> | $Enums.Status
+    userId?: StringWithAggregatesFilter<"Employee"> | string
     createdAt?: DateTimeWithAggregatesFilter<"Employee"> | Date | string
     updatedAt?: DateTimeWithAggregatesFilter<"Employee"> | Date | string
   }
@@ -8886,6 +8975,7 @@ export namespace Prisma {
     supplier?: StringFilter<"Epi"> | string
     expiration?: DateTimeFilter<"Epi"> | Date | string
     quantity?: IntFilter<"Epi"> | number
+    userId?: StringFilter<"Epi"> | string
     createdAt?: DateTimeFilter<"Epi"> | Date | string
     updatedAt?: DateTimeFilter<"Epi"> | Date | string
     employees?: EpiEmployeeListRelationFilter
@@ -8901,6 +8991,7 @@ export namespace Prisma {
     supplier?: SortOrder
     expiration?: SortOrder
     quantity?: SortOrder
+    userId?: SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
     employees?: EpiEmployeeOrderByRelationAggregateInput
@@ -8919,6 +9010,7 @@ export namespace Prisma {
     supplier?: StringFilter<"Epi"> | string
     expiration?: DateTimeFilter<"Epi"> | Date | string
     quantity?: IntFilter<"Epi"> | number
+    userId?: StringFilter<"Epi"> | string
     createdAt?: DateTimeFilter<"Epi"> | Date | string
     updatedAt?: DateTimeFilter<"Epi"> | Date | string
     employees?: EpiEmployeeListRelationFilter
@@ -8934,6 +9026,7 @@ export namespace Prisma {
     supplier?: SortOrder
     expiration?: SortOrder
     quantity?: SortOrder
+    userId?: SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
     _count?: EpiCountOrderByAggregateInput
@@ -8954,6 +9047,7 @@ export namespace Prisma {
     supplier?: StringWithAggregatesFilter<"Epi"> | string
     expiration?: DateTimeWithAggregatesFilter<"Epi"> | Date | string
     quantity?: IntWithAggregatesFilter<"Epi"> | number
+    userId?: StringWithAggregatesFilter<"Epi"> | string
     createdAt?: DateTimeWithAggregatesFilter<"Epi"> | Date | string
     updatedAt?: DateTimeWithAggregatesFilter<"Epi"> | Date | string
   }
@@ -8967,6 +9061,7 @@ export namespace Prisma {
     employeeId?: IntFilter<"EpiEmployee"> | number
     quantity?: IntFilter<"EpiEmployee"> | number
     deliveryDate?: DateTimeFilter<"EpiEmployee"> | Date | string
+    userId?: StringFilter<"EpiEmployee"> | string
     epi?: XOR<EpiScalarRelationFilter, EpiWhereInput>
     employee?: XOR<EmployeeScalarRelationFilter, EmployeeWhereInput>
   }
@@ -8977,6 +9072,7 @@ export namespace Prisma {
     employeeId?: SortOrder
     quantity?: SortOrder
     deliveryDate?: SortOrder
+    userId?: SortOrder
     epi?: EpiOrderByWithRelationInput
     employee?: EmployeeOrderByWithRelationInput
   }
@@ -8990,6 +9086,7 @@ export namespace Prisma {
     employeeId?: IntFilter<"EpiEmployee"> | number
     quantity?: IntFilter<"EpiEmployee"> | number
     deliveryDate?: DateTimeFilter<"EpiEmployee"> | Date | string
+    userId?: StringFilter<"EpiEmployee"> | string
     epi?: XOR<EpiScalarRelationFilter, EpiWhereInput>
     employee?: XOR<EmployeeScalarRelationFilter, EmployeeWhereInput>
   }, "id">
@@ -9000,6 +9097,7 @@ export namespace Prisma {
     employeeId?: SortOrder
     quantity?: SortOrder
     deliveryDate?: SortOrder
+    userId?: SortOrder
     _count?: EpiEmployeeCountOrderByAggregateInput
     _avg?: EpiEmployeeAvgOrderByAggregateInput
     _max?: EpiEmployeeMaxOrderByAggregateInput
@@ -9016,6 +9114,7 @@ export namespace Prisma {
     employeeId?: IntWithAggregatesFilter<"EpiEmployee"> | number
     quantity?: IntWithAggregatesFilter<"EpiEmployee"> | number
     deliveryDate?: DateTimeWithAggregatesFilter<"EpiEmployee"> | Date | string
+    userId?: StringWithAggregatesFilter<"EpiEmployee"> | string
   }
 
   export type EpiEntryWhereInput = {
@@ -9028,6 +9127,7 @@ export namespace Prisma {
     date?: DateTimeFilter<"EpiEntry"> | Date | string
     note?: StringNullableFilter<"EpiEntry"> | string | null
     supplier?: StringNullableFilter<"EpiEntry"> | string | null
+    userId?: StringFilter<"EpiEntry"> | string
     createdAt?: DateTimeFilter<"EpiEntry"> | Date | string
     updatedAt?: DateTimeFilter<"EpiEntry"> | Date | string
     epi?: XOR<EpiScalarRelationFilter, EpiWhereInput>
@@ -9040,6 +9140,7 @@ export namespace Prisma {
     date?: SortOrder
     note?: SortOrderInput | SortOrder
     supplier?: SortOrderInput | SortOrder
+    userId?: SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
     epi?: EpiOrderByWithRelationInput
@@ -9055,6 +9156,7 @@ export namespace Prisma {
     date?: DateTimeFilter<"EpiEntry"> | Date | string
     note?: StringNullableFilter<"EpiEntry"> | string | null
     supplier?: StringNullableFilter<"EpiEntry"> | string | null
+    userId?: StringFilter<"EpiEntry"> | string
     createdAt?: DateTimeFilter<"EpiEntry"> | Date | string
     updatedAt?: DateTimeFilter<"EpiEntry"> | Date | string
     epi?: XOR<EpiScalarRelationFilter, EpiWhereInput>
@@ -9067,6 +9169,7 @@ export namespace Prisma {
     date?: SortOrder
     note?: SortOrderInput | SortOrder
     supplier?: SortOrderInput | SortOrder
+    userId?: SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
     _count?: EpiEntryCountOrderByAggregateInput
@@ -9086,6 +9189,7 @@ export namespace Prisma {
     date?: DateTimeWithAggregatesFilter<"EpiEntry"> | Date | string
     note?: StringNullableWithAggregatesFilter<"EpiEntry"> | string | null
     supplier?: StringNullableWithAggregatesFilter<"EpiEntry"> | string | null
+    userId?: StringWithAggregatesFilter<"EpiEntry"> | string
     createdAt?: DateTimeWithAggregatesFilter<"EpiEntry"> | Date | string
     updatedAt?: DateTimeWithAggregatesFilter<"EpiEntry"> | Date | string
   }
@@ -9098,6 +9202,7 @@ export namespace Prisma {
     epiId?: IntFilter<"EpiExit"> | number
     employeeId?: IntFilter<"EpiExit"> | number
     quantity?: IntFilter<"EpiExit"> | number
+    userId?: StringFilter<"EpiExit"> | string
     date?: DateTimeFilter<"EpiExit"> | Date | string
     createdAt?: DateTimeFilter<"EpiExit"> | Date | string
     epi?: XOR<EpiScalarRelationFilter, EpiWhereInput>
@@ -9109,6 +9214,7 @@ export namespace Prisma {
     epiId?: SortOrder
     employeeId?: SortOrder
     quantity?: SortOrder
+    userId?: SortOrder
     date?: SortOrder
     createdAt?: SortOrder
     epi?: EpiOrderByWithRelationInput
@@ -9123,6 +9229,7 @@ export namespace Prisma {
     epiId?: IntFilter<"EpiExit"> | number
     employeeId?: IntFilter<"EpiExit"> | number
     quantity?: IntFilter<"EpiExit"> | number
+    userId?: StringFilter<"EpiExit"> | string
     date?: DateTimeFilter<"EpiExit"> | Date | string
     createdAt?: DateTimeFilter<"EpiExit"> | Date | string
     epi?: XOR<EpiScalarRelationFilter, EpiWhereInput>
@@ -9134,6 +9241,7 @@ export namespace Prisma {
     epiId?: SortOrder
     employeeId?: SortOrder
     quantity?: SortOrder
+    userId?: SortOrder
     date?: SortOrder
     createdAt?: SortOrder
     _count?: EpiExitCountOrderByAggregateInput
@@ -9151,6 +9259,7 @@ export namespace Prisma {
     epiId?: IntWithAggregatesFilter<"EpiExit"> | number
     employeeId?: IntWithAggregatesFilter<"EpiExit"> | number
     quantity?: IntWithAggregatesFilter<"EpiExit"> | number
+    userId?: StringWithAggregatesFilter<"EpiExit"> | string
     date?: DateTimeWithAggregatesFilter<"EpiExit"> | Date | string
     createdAt?: DateTimeWithAggregatesFilter<"EpiExit"> | Date | string
   }
@@ -9165,6 +9274,7 @@ export namespace Prisma {
     result?: StringNullableFilter<"MedicalExam"> | string | null
     expiration?: DateTimeFilter<"MedicalExam"> | Date | string
     employeeId?: IntFilter<"MedicalExam"> | number
+    userId?: StringFilter<"MedicalExam"> | string
     createdAt?: DateTimeFilter<"MedicalExam"> | Date | string
     updatedAt?: DateTimeFilter<"MedicalExam"> | Date | string
     employee?: XOR<EmployeeScalarRelationFilter, EmployeeWhereInput>
@@ -9177,6 +9287,7 @@ export namespace Prisma {
     result?: SortOrderInput | SortOrder
     expiration?: SortOrder
     employeeId?: SortOrder
+    userId?: SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
     employee?: EmployeeOrderByWithRelationInput
@@ -9192,6 +9303,7 @@ export namespace Prisma {
     result?: StringNullableFilter<"MedicalExam"> | string | null
     expiration?: DateTimeFilter<"MedicalExam"> | Date | string
     employeeId?: IntFilter<"MedicalExam"> | number
+    userId?: StringFilter<"MedicalExam"> | string
     createdAt?: DateTimeFilter<"MedicalExam"> | Date | string
     updatedAt?: DateTimeFilter<"MedicalExam"> | Date | string
     employee?: XOR<EmployeeScalarRelationFilter, EmployeeWhereInput>
@@ -9204,6 +9316,7 @@ export namespace Prisma {
     result?: SortOrderInput | SortOrder
     expiration?: SortOrder
     employeeId?: SortOrder
+    userId?: SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
     _count?: MedicalExamCountOrderByAggregateInput
@@ -9223,6 +9336,7 @@ export namespace Prisma {
     result?: StringNullableWithAggregatesFilter<"MedicalExam"> | string | null
     expiration?: DateTimeWithAggregatesFilter<"MedicalExam"> | Date | string
     employeeId?: IntWithAggregatesFilter<"MedicalExam"> | number
+    userId?: StringWithAggregatesFilter<"MedicalExam"> | string
     createdAt?: DateTimeWithAggregatesFilter<"MedicalExam"> | Date | string
     updatedAt?: DateTimeWithAggregatesFilter<"MedicalExam"> | Date | string
   }
@@ -9241,6 +9355,7 @@ export namespace Prisma {
     department: $Enums.Department
     function: $Enums.Function
     status: $Enums.Status
+    userId: string
     createdAt?: Date | string
     updatedAt?: Date | string
     epies?: EpiEmployeeCreateNestedManyWithoutEmployeeInput
@@ -9263,6 +9378,7 @@ export namespace Prisma {
     department: $Enums.Department
     function: $Enums.Function
     status: $Enums.Status
+    userId: string
     createdAt?: Date | string
     updatedAt?: Date | string
     epies?: EpiEmployeeUncheckedCreateNestedManyWithoutEmployeeInput
@@ -9284,6 +9400,7 @@ export namespace Prisma {
     department?: EnumDepartmentFieldUpdateOperationsInput | $Enums.Department
     function?: EnumFunctionFieldUpdateOperationsInput | $Enums.Function
     status?: EnumStatusFieldUpdateOperationsInput | $Enums.Status
+    userId?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     epies?: EpiEmployeeUpdateManyWithoutEmployeeNestedInput
@@ -9306,6 +9423,7 @@ export namespace Prisma {
     department?: EnumDepartmentFieldUpdateOperationsInput | $Enums.Department
     function?: EnumFunctionFieldUpdateOperationsInput | $Enums.Function
     status?: EnumStatusFieldUpdateOperationsInput | $Enums.Status
+    userId?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     epies?: EpiEmployeeUncheckedUpdateManyWithoutEmployeeNestedInput
@@ -9328,6 +9446,7 @@ export namespace Prisma {
     department: $Enums.Department
     function: $Enums.Function
     status: $Enums.Status
+    userId: string
     createdAt?: Date | string
     updatedAt?: Date | string
   }
@@ -9346,6 +9465,7 @@ export namespace Prisma {
     department?: EnumDepartmentFieldUpdateOperationsInput | $Enums.Department
     function?: EnumFunctionFieldUpdateOperationsInput | $Enums.Function
     status?: EnumStatusFieldUpdateOperationsInput | $Enums.Status
+    userId?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
@@ -9365,6 +9485,7 @@ export namespace Prisma {
     department?: EnumDepartmentFieldUpdateOperationsInput | $Enums.Department
     function?: EnumFunctionFieldUpdateOperationsInput | $Enums.Function
     status?: EnumStatusFieldUpdateOperationsInput | $Enums.Status
+    userId?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
@@ -9376,6 +9497,7 @@ export namespace Prisma {
     supplier: string
     expiration: Date | string
     quantity: number
+    userId: string
     createdAt?: Date | string
     updatedAt?: Date | string
     employees?: EpiEmployeeCreateNestedManyWithoutEpiInput
@@ -9391,6 +9513,7 @@ export namespace Prisma {
     supplier: string
     expiration: Date | string
     quantity: number
+    userId: string
     createdAt?: Date | string
     updatedAt?: Date | string
     employees?: EpiEmployeeUncheckedCreateNestedManyWithoutEpiInput
@@ -9405,6 +9528,7 @@ export namespace Prisma {
     supplier?: StringFieldUpdateOperationsInput | string
     expiration?: DateTimeFieldUpdateOperationsInput | Date | string
     quantity?: IntFieldUpdateOperationsInput | number
+    userId?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     employees?: EpiEmployeeUpdateManyWithoutEpiNestedInput
@@ -9420,6 +9544,7 @@ export namespace Prisma {
     supplier?: StringFieldUpdateOperationsInput | string
     expiration?: DateTimeFieldUpdateOperationsInput | Date | string
     quantity?: IntFieldUpdateOperationsInput | number
+    userId?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     employees?: EpiEmployeeUncheckedUpdateManyWithoutEpiNestedInput
@@ -9435,6 +9560,7 @@ export namespace Prisma {
     supplier: string
     expiration: Date | string
     quantity: number
+    userId: string
     createdAt?: Date | string
     updatedAt?: Date | string
   }
@@ -9446,6 +9572,7 @@ export namespace Prisma {
     supplier?: StringFieldUpdateOperationsInput | string
     expiration?: DateTimeFieldUpdateOperationsInput | Date | string
     quantity?: IntFieldUpdateOperationsInput | number
+    userId?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
@@ -9458,6 +9585,7 @@ export namespace Prisma {
     supplier?: StringFieldUpdateOperationsInput | string
     expiration?: DateTimeFieldUpdateOperationsInput | Date | string
     quantity?: IntFieldUpdateOperationsInput | number
+    userId?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
@@ -9465,6 +9593,7 @@ export namespace Prisma {
   export type EpiEmployeeCreateInput = {
     quantity: number
     deliveryDate?: Date | string
+    userId: string
     epi: EpiCreateNestedOneWithoutEmployeesInput
     employee: EmployeeCreateNestedOneWithoutEpiesInput
   }
@@ -9475,11 +9604,13 @@ export namespace Prisma {
     employeeId: number
     quantity: number
     deliveryDate?: Date | string
+    userId: string
   }
 
   export type EpiEmployeeUpdateInput = {
     quantity?: IntFieldUpdateOperationsInput | number
     deliveryDate?: DateTimeFieldUpdateOperationsInput | Date | string
+    userId?: StringFieldUpdateOperationsInput | string
     epi?: EpiUpdateOneRequiredWithoutEmployeesNestedInput
     employee?: EmployeeUpdateOneRequiredWithoutEpiesNestedInput
   }
@@ -9490,6 +9621,7 @@ export namespace Prisma {
     employeeId?: IntFieldUpdateOperationsInput | number
     quantity?: IntFieldUpdateOperationsInput | number
     deliveryDate?: DateTimeFieldUpdateOperationsInput | Date | string
+    userId?: StringFieldUpdateOperationsInput | string
   }
 
   export type EpiEmployeeCreateManyInput = {
@@ -9498,11 +9630,13 @@ export namespace Prisma {
     employeeId: number
     quantity: number
     deliveryDate?: Date | string
+    userId: string
   }
 
   export type EpiEmployeeUpdateManyMutationInput = {
     quantity?: IntFieldUpdateOperationsInput | number
     deliveryDate?: DateTimeFieldUpdateOperationsInput | Date | string
+    userId?: StringFieldUpdateOperationsInput | string
   }
 
   export type EpiEmployeeUncheckedUpdateManyInput = {
@@ -9511,6 +9645,7 @@ export namespace Prisma {
     employeeId?: IntFieldUpdateOperationsInput | number
     quantity?: IntFieldUpdateOperationsInput | number
     deliveryDate?: DateTimeFieldUpdateOperationsInput | Date | string
+    userId?: StringFieldUpdateOperationsInput | string
   }
 
   export type EpiEntryCreateInput = {
@@ -9518,6 +9653,7 @@ export namespace Prisma {
     date?: Date | string
     note?: string | null
     supplier?: string | null
+    userId: string
     createdAt?: Date | string
     updatedAt?: Date | string
     epi: EpiCreateNestedOneWithoutEntriesInput
@@ -9530,6 +9666,7 @@ export namespace Prisma {
     date?: Date | string
     note?: string | null
     supplier?: string | null
+    userId: string
     createdAt?: Date | string
     updatedAt?: Date | string
   }
@@ -9539,6 +9676,7 @@ export namespace Prisma {
     date?: DateTimeFieldUpdateOperationsInput | Date | string
     note?: NullableStringFieldUpdateOperationsInput | string | null
     supplier?: NullableStringFieldUpdateOperationsInput | string | null
+    userId?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     epi?: EpiUpdateOneRequiredWithoutEntriesNestedInput
@@ -9551,6 +9689,7 @@ export namespace Prisma {
     date?: DateTimeFieldUpdateOperationsInput | Date | string
     note?: NullableStringFieldUpdateOperationsInput | string | null
     supplier?: NullableStringFieldUpdateOperationsInput | string | null
+    userId?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
@@ -9562,6 +9701,7 @@ export namespace Prisma {
     date?: Date | string
     note?: string | null
     supplier?: string | null
+    userId: string
     createdAt?: Date | string
     updatedAt?: Date | string
   }
@@ -9571,6 +9711,7 @@ export namespace Prisma {
     date?: DateTimeFieldUpdateOperationsInput | Date | string
     note?: NullableStringFieldUpdateOperationsInput | string | null
     supplier?: NullableStringFieldUpdateOperationsInput | string | null
+    userId?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
@@ -9582,12 +9723,14 @@ export namespace Prisma {
     date?: DateTimeFieldUpdateOperationsInput | Date | string
     note?: NullableStringFieldUpdateOperationsInput | string | null
     supplier?: NullableStringFieldUpdateOperationsInput | string | null
+    userId?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type EpiExitCreateInput = {
     quantity: number
+    userId: string
     date?: Date | string
     createdAt?: Date | string
     epi: EpiCreateNestedOneWithoutExitsInput
@@ -9599,12 +9742,14 @@ export namespace Prisma {
     epiId: number
     employeeId: number
     quantity: number
+    userId: string
     date?: Date | string
     createdAt?: Date | string
   }
 
   export type EpiExitUpdateInput = {
     quantity?: IntFieldUpdateOperationsInput | number
+    userId?: StringFieldUpdateOperationsInput | string
     date?: DateTimeFieldUpdateOperationsInput | Date | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     epi?: EpiUpdateOneRequiredWithoutExitsNestedInput
@@ -9616,6 +9761,7 @@ export namespace Prisma {
     epiId?: IntFieldUpdateOperationsInput | number
     employeeId?: IntFieldUpdateOperationsInput | number
     quantity?: IntFieldUpdateOperationsInput | number
+    userId?: StringFieldUpdateOperationsInput | string
     date?: DateTimeFieldUpdateOperationsInput | Date | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
@@ -9625,12 +9771,14 @@ export namespace Prisma {
     epiId: number
     employeeId: number
     quantity: number
+    userId: string
     date?: Date | string
     createdAt?: Date | string
   }
 
   export type EpiExitUpdateManyMutationInput = {
     quantity?: IntFieldUpdateOperationsInput | number
+    userId?: StringFieldUpdateOperationsInput | string
     date?: DateTimeFieldUpdateOperationsInput | Date | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
@@ -9640,6 +9788,7 @@ export namespace Prisma {
     epiId?: IntFieldUpdateOperationsInput | number
     employeeId?: IntFieldUpdateOperationsInput | number
     quantity?: IntFieldUpdateOperationsInput | number
+    userId?: StringFieldUpdateOperationsInput | string
     date?: DateTimeFieldUpdateOperationsInput | Date | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
@@ -9649,6 +9798,7 @@ export namespace Prisma {
     type: string
     result?: string | null
     expiration: Date | string
+    userId: string
     createdAt?: Date | string
     updatedAt?: Date | string
     employee: EmployeeCreateNestedOneWithoutMedicalExamsInput
@@ -9661,6 +9811,7 @@ export namespace Prisma {
     result?: string | null
     expiration: Date | string
     employeeId: number
+    userId: string
     createdAt?: Date | string
     updatedAt?: Date | string
   }
@@ -9670,6 +9821,7 @@ export namespace Prisma {
     type?: StringFieldUpdateOperationsInput | string
     result?: NullableStringFieldUpdateOperationsInput | string | null
     expiration?: DateTimeFieldUpdateOperationsInput | Date | string
+    userId?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     employee?: EmployeeUpdateOneRequiredWithoutMedicalExamsNestedInput
@@ -9682,6 +9834,7 @@ export namespace Prisma {
     result?: NullableStringFieldUpdateOperationsInput | string | null
     expiration?: DateTimeFieldUpdateOperationsInput | Date | string
     employeeId?: IntFieldUpdateOperationsInput | number
+    userId?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
@@ -9693,6 +9846,7 @@ export namespace Prisma {
     result?: string | null
     expiration: Date | string
     employeeId: number
+    userId: string
     createdAt?: Date | string
     updatedAt?: Date | string
   }
@@ -9702,6 +9856,7 @@ export namespace Prisma {
     type?: StringFieldUpdateOperationsInput | string
     result?: NullableStringFieldUpdateOperationsInput | string | null
     expiration?: DateTimeFieldUpdateOperationsInput | Date | string
+    userId?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
@@ -9713,6 +9868,7 @@ export namespace Prisma {
     result?: NullableStringFieldUpdateOperationsInput | string | null
     expiration?: DateTimeFieldUpdateOperationsInput | Date | string
     employeeId?: IntFieldUpdateOperationsInput | number
+    userId?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
@@ -9827,6 +9983,7 @@ export namespace Prisma {
     department?: SortOrder
     function?: SortOrder
     status?: SortOrder
+    userId?: SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
   }
@@ -9850,6 +10007,7 @@ export namespace Prisma {
     department?: SortOrder
     function?: SortOrder
     status?: SortOrder
+    userId?: SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
   }
@@ -9869,6 +10027,7 @@ export namespace Prisma {
     department?: SortOrder
     function?: SortOrder
     status?: SortOrder
+    userId?: SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
   }
@@ -9983,6 +10142,7 @@ export namespace Prisma {
     supplier?: SortOrder
     expiration?: SortOrder
     quantity?: SortOrder
+    userId?: SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
   }
@@ -10000,6 +10160,7 @@ export namespace Prisma {
     supplier?: SortOrder
     expiration?: SortOrder
     quantity?: SortOrder
+    userId?: SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
   }
@@ -10012,6 +10173,7 @@ export namespace Prisma {
     supplier?: SortOrder
     expiration?: SortOrder
     quantity?: SortOrder
+    userId?: SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
   }
@@ -10037,6 +10199,7 @@ export namespace Prisma {
     employeeId?: SortOrder
     quantity?: SortOrder
     deliveryDate?: SortOrder
+    userId?: SortOrder
   }
 
   export type EpiEmployeeAvgOrderByAggregateInput = {
@@ -10052,6 +10215,7 @@ export namespace Prisma {
     employeeId?: SortOrder
     quantity?: SortOrder
     deliveryDate?: SortOrder
+    userId?: SortOrder
   }
 
   export type EpiEmployeeMinOrderByAggregateInput = {
@@ -10060,6 +10224,7 @@ export namespace Prisma {
     employeeId?: SortOrder
     quantity?: SortOrder
     deliveryDate?: SortOrder
+    userId?: SortOrder
   }
 
   export type EpiEmployeeSumOrderByAggregateInput = {
@@ -10096,6 +10261,7 @@ export namespace Prisma {
     date?: SortOrder
     note?: SortOrder
     supplier?: SortOrder
+    userId?: SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
   }
@@ -10113,6 +10279,7 @@ export namespace Prisma {
     date?: SortOrder
     note?: SortOrder
     supplier?: SortOrder
+    userId?: SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
   }
@@ -10124,6 +10291,7 @@ export namespace Prisma {
     date?: SortOrder
     note?: SortOrder
     supplier?: SortOrder
+    userId?: SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
   }
@@ -10157,6 +10325,7 @@ export namespace Prisma {
     epiId?: SortOrder
     employeeId?: SortOrder
     quantity?: SortOrder
+    userId?: SortOrder
     date?: SortOrder
     createdAt?: SortOrder
   }
@@ -10173,6 +10342,7 @@ export namespace Prisma {
     epiId?: SortOrder
     employeeId?: SortOrder
     quantity?: SortOrder
+    userId?: SortOrder
     date?: SortOrder
     createdAt?: SortOrder
   }
@@ -10182,6 +10352,7 @@ export namespace Prisma {
     epiId?: SortOrder
     employeeId?: SortOrder
     quantity?: SortOrder
+    userId?: SortOrder
     date?: SortOrder
     createdAt?: SortOrder
   }
@@ -10200,6 +10371,7 @@ export namespace Prisma {
     result?: SortOrder
     expiration?: SortOrder
     employeeId?: SortOrder
+    userId?: SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
   }
@@ -10216,6 +10388,7 @@ export namespace Prisma {
     result?: SortOrder
     expiration?: SortOrder
     employeeId?: SortOrder
+    userId?: SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
   }
@@ -10227,6 +10400,7 @@ export namespace Prisma {
     result?: SortOrder
     expiration?: SortOrder
     employeeId?: SortOrder
+    userId?: SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
   }
@@ -10815,6 +10989,7 @@ export namespace Prisma {
   export type EpiEmployeeCreateWithoutEmployeeInput = {
     quantity: number
     deliveryDate?: Date | string
+    userId: string
     epi: EpiCreateNestedOneWithoutEmployeesInput
   }
 
@@ -10823,6 +10998,7 @@ export namespace Prisma {
     epiId: number
     quantity: number
     deliveryDate?: Date | string
+    userId: string
   }
 
   export type EpiEmployeeCreateOrConnectWithoutEmployeeInput = {
@@ -10837,6 +11013,7 @@ export namespace Prisma {
 
   export type EpiExitCreateWithoutEmployeeInput = {
     quantity: number
+    userId: string
     date?: Date | string
     createdAt?: Date | string
     epi: EpiCreateNestedOneWithoutExitsInput
@@ -10846,6 +11023,7 @@ export namespace Prisma {
     id?: number
     epiId: number
     quantity: number
+    userId: string
     date?: Date | string
     createdAt?: Date | string
   }
@@ -10865,6 +11043,7 @@ export namespace Prisma {
     type: string
     result?: string | null
     expiration: Date | string
+    userId: string
     createdAt?: Date | string
     updatedAt?: Date | string
   }
@@ -10875,6 +11054,7 @@ export namespace Prisma {
     type: string
     result?: string | null
     expiration: Date | string
+    userId: string
     createdAt?: Date | string
     updatedAt?: Date | string
   }
@@ -10914,6 +11094,7 @@ export namespace Prisma {
     employeeId?: IntFilter<"EpiEmployee"> | number
     quantity?: IntFilter<"EpiEmployee"> | number
     deliveryDate?: DateTimeFilter<"EpiEmployee"> | Date | string
+    userId?: StringFilter<"EpiEmployee"> | string
   }
 
   export type EpiExitUpsertWithWhereUniqueWithoutEmployeeInput = {
@@ -10940,6 +11121,7 @@ export namespace Prisma {
     epiId?: IntFilter<"EpiExit"> | number
     employeeId?: IntFilter<"EpiExit"> | number
     quantity?: IntFilter<"EpiExit"> | number
+    userId?: StringFilter<"EpiExit"> | string
     date?: DateTimeFilter<"EpiExit"> | Date | string
     createdAt?: DateTimeFilter<"EpiExit"> | Date | string
   }
@@ -10970,6 +11152,7 @@ export namespace Prisma {
     result?: StringNullableFilter<"MedicalExam"> | string | null
     expiration?: DateTimeFilter<"MedicalExam"> | Date | string
     employeeId?: IntFilter<"MedicalExam"> | number
+    userId?: StringFilter<"MedicalExam"> | string
     createdAt?: DateTimeFilter<"MedicalExam"> | Date | string
     updatedAt?: DateTimeFilter<"MedicalExam"> | Date | string
   }
@@ -10977,6 +11160,7 @@ export namespace Prisma {
   export type EpiEmployeeCreateWithoutEpiInput = {
     quantity: number
     deliveryDate?: Date | string
+    userId: string
     employee: EmployeeCreateNestedOneWithoutEpiesInput
   }
 
@@ -10985,6 +11169,7 @@ export namespace Prisma {
     employeeId: number
     quantity: number
     deliveryDate?: Date | string
+    userId: string
   }
 
   export type EpiEmployeeCreateOrConnectWithoutEpiInput = {
@@ -11002,6 +11187,7 @@ export namespace Prisma {
     date?: Date | string
     note?: string | null
     supplier?: string | null
+    userId: string
     createdAt?: Date | string
     updatedAt?: Date | string
   }
@@ -11012,6 +11198,7 @@ export namespace Prisma {
     date?: Date | string
     note?: string | null
     supplier?: string | null
+    userId: string
     createdAt?: Date | string
     updatedAt?: Date | string
   }
@@ -11028,6 +11215,7 @@ export namespace Prisma {
 
   export type EpiExitCreateWithoutEpiInput = {
     quantity: number
+    userId: string
     date?: Date | string
     createdAt?: Date | string
     employee: EmployeeCreateNestedOneWithoutExitsInput
@@ -11037,6 +11225,7 @@ export namespace Prisma {
     id?: number
     employeeId: number
     quantity: number
+    userId: string
     date?: Date | string
     createdAt?: Date | string
   }
@@ -11093,6 +11282,7 @@ export namespace Prisma {
     date?: DateTimeFilter<"EpiEntry"> | Date | string
     note?: StringNullableFilter<"EpiEntry"> | string | null
     supplier?: StringNullableFilter<"EpiEntry"> | string | null
+    userId?: StringFilter<"EpiEntry"> | string
     createdAt?: DateTimeFilter<"EpiEntry"> | Date | string
     updatedAt?: DateTimeFilter<"EpiEntry"> | Date | string
   }
@@ -11120,6 +11310,7 @@ export namespace Prisma {
     supplier: string
     expiration: Date | string
     quantity: number
+    userId: string
     createdAt?: Date | string
     updatedAt?: Date | string
     entries?: EpiEntryCreateNestedManyWithoutEpiInput
@@ -11134,6 +11325,7 @@ export namespace Prisma {
     supplier: string
     expiration: Date | string
     quantity: number
+    userId: string
     createdAt?: Date | string
     updatedAt?: Date | string
     entries?: EpiEntryUncheckedCreateNestedManyWithoutEpiInput
@@ -11159,6 +11351,7 @@ export namespace Prisma {
     department: $Enums.Department
     function: $Enums.Function
     status: $Enums.Status
+    userId: string
     createdAt?: Date | string
     updatedAt?: Date | string
     exits?: EpiExitCreateNestedManyWithoutEmployeeInput
@@ -11180,6 +11373,7 @@ export namespace Prisma {
     department: $Enums.Department
     function: $Enums.Function
     status: $Enums.Status
+    userId: string
     createdAt?: Date | string
     updatedAt?: Date | string
     exits?: EpiExitUncheckedCreateNestedManyWithoutEmployeeInput
@@ -11209,6 +11403,7 @@ export namespace Prisma {
     supplier?: StringFieldUpdateOperationsInput | string
     expiration?: DateTimeFieldUpdateOperationsInput | Date | string
     quantity?: IntFieldUpdateOperationsInput | number
+    userId?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     entries?: EpiEntryUpdateManyWithoutEpiNestedInput
@@ -11223,6 +11418,7 @@ export namespace Prisma {
     supplier?: StringFieldUpdateOperationsInput | string
     expiration?: DateTimeFieldUpdateOperationsInput | Date | string
     quantity?: IntFieldUpdateOperationsInput | number
+    userId?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     entries?: EpiEntryUncheckedUpdateManyWithoutEpiNestedInput
@@ -11254,6 +11450,7 @@ export namespace Prisma {
     department?: EnumDepartmentFieldUpdateOperationsInput | $Enums.Department
     function?: EnumFunctionFieldUpdateOperationsInput | $Enums.Function
     status?: EnumStatusFieldUpdateOperationsInput | $Enums.Status
+    userId?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     exits?: EpiExitUpdateManyWithoutEmployeeNestedInput
@@ -11275,6 +11472,7 @@ export namespace Prisma {
     department?: EnumDepartmentFieldUpdateOperationsInput | $Enums.Department
     function?: EnumFunctionFieldUpdateOperationsInput | $Enums.Function
     status?: EnumStatusFieldUpdateOperationsInput | $Enums.Status
+    userId?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     exits?: EpiExitUncheckedUpdateManyWithoutEmployeeNestedInput
@@ -11288,6 +11486,7 @@ export namespace Prisma {
     supplier: string
     expiration: Date | string
     quantity: number
+    userId: string
     createdAt?: Date | string
     updatedAt?: Date | string
     employees?: EpiEmployeeCreateNestedManyWithoutEpiInput
@@ -11302,6 +11501,7 @@ export namespace Prisma {
     supplier: string
     expiration: Date | string
     quantity: number
+    userId: string
     createdAt?: Date | string
     updatedAt?: Date | string
     employees?: EpiEmployeeUncheckedCreateNestedManyWithoutEpiInput
@@ -11331,6 +11531,7 @@ export namespace Prisma {
     supplier?: StringFieldUpdateOperationsInput | string
     expiration?: DateTimeFieldUpdateOperationsInput | Date | string
     quantity?: IntFieldUpdateOperationsInput | number
+    userId?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     employees?: EpiEmployeeUpdateManyWithoutEpiNestedInput
@@ -11345,6 +11546,7 @@ export namespace Prisma {
     supplier?: StringFieldUpdateOperationsInput | string
     expiration?: DateTimeFieldUpdateOperationsInput | Date | string
     quantity?: IntFieldUpdateOperationsInput | number
+    userId?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     employees?: EpiEmployeeUncheckedUpdateManyWithoutEpiNestedInput
@@ -11358,6 +11560,7 @@ export namespace Prisma {
     supplier: string
     expiration: Date | string
     quantity: number
+    userId: string
     createdAt?: Date | string
     updatedAt?: Date | string
     employees?: EpiEmployeeCreateNestedManyWithoutEpiInput
@@ -11372,6 +11575,7 @@ export namespace Prisma {
     supplier: string
     expiration: Date | string
     quantity: number
+    userId: string
     createdAt?: Date | string
     updatedAt?: Date | string
     employees?: EpiEmployeeUncheckedCreateNestedManyWithoutEpiInput
@@ -11397,6 +11601,7 @@ export namespace Prisma {
     department: $Enums.Department
     function: $Enums.Function
     status: $Enums.Status
+    userId: string
     createdAt?: Date | string
     updatedAt?: Date | string
     epies?: EpiEmployeeCreateNestedManyWithoutEmployeeInput
@@ -11418,6 +11623,7 @@ export namespace Prisma {
     department: $Enums.Department
     function: $Enums.Function
     status: $Enums.Status
+    userId: string
     createdAt?: Date | string
     updatedAt?: Date | string
     epies?: EpiEmployeeUncheckedCreateNestedManyWithoutEmployeeInput
@@ -11447,6 +11653,7 @@ export namespace Prisma {
     supplier?: StringFieldUpdateOperationsInput | string
     expiration?: DateTimeFieldUpdateOperationsInput | Date | string
     quantity?: IntFieldUpdateOperationsInput | number
+    userId?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     employees?: EpiEmployeeUpdateManyWithoutEpiNestedInput
@@ -11461,6 +11668,7 @@ export namespace Prisma {
     supplier?: StringFieldUpdateOperationsInput | string
     expiration?: DateTimeFieldUpdateOperationsInput | Date | string
     quantity?: IntFieldUpdateOperationsInput | number
+    userId?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     employees?: EpiEmployeeUncheckedUpdateManyWithoutEpiNestedInput
@@ -11492,6 +11700,7 @@ export namespace Prisma {
     department?: EnumDepartmentFieldUpdateOperationsInput | $Enums.Department
     function?: EnumFunctionFieldUpdateOperationsInput | $Enums.Function
     status?: EnumStatusFieldUpdateOperationsInput | $Enums.Status
+    userId?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     epies?: EpiEmployeeUpdateManyWithoutEmployeeNestedInput
@@ -11513,6 +11722,7 @@ export namespace Prisma {
     department?: EnumDepartmentFieldUpdateOperationsInput | $Enums.Department
     function?: EnumFunctionFieldUpdateOperationsInput | $Enums.Function
     status?: EnumStatusFieldUpdateOperationsInput | $Enums.Status
+    userId?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     epies?: EpiEmployeeUncheckedUpdateManyWithoutEmployeeNestedInput
@@ -11533,6 +11743,7 @@ export namespace Prisma {
     department: $Enums.Department
     function: $Enums.Function
     status: $Enums.Status
+    userId: string
     createdAt?: Date | string
     updatedAt?: Date | string
     epies?: EpiEmployeeCreateNestedManyWithoutEmployeeInput
@@ -11554,6 +11765,7 @@ export namespace Prisma {
     department: $Enums.Department
     function: $Enums.Function
     status: $Enums.Status
+    userId: string
     createdAt?: Date | string
     updatedAt?: Date | string
     epies?: EpiEmployeeUncheckedCreateNestedManyWithoutEmployeeInput
@@ -11590,6 +11802,7 @@ export namespace Prisma {
     department?: EnumDepartmentFieldUpdateOperationsInput | $Enums.Department
     function?: EnumFunctionFieldUpdateOperationsInput | $Enums.Function
     status?: EnumStatusFieldUpdateOperationsInput | $Enums.Status
+    userId?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     epies?: EpiEmployeeUpdateManyWithoutEmployeeNestedInput
@@ -11611,6 +11824,7 @@ export namespace Prisma {
     department?: EnumDepartmentFieldUpdateOperationsInput | $Enums.Department
     function?: EnumFunctionFieldUpdateOperationsInput | $Enums.Function
     status?: EnumStatusFieldUpdateOperationsInput | $Enums.Status
+    userId?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     epies?: EpiEmployeeUncheckedUpdateManyWithoutEmployeeNestedInput
@@ -11622,12 +11836,14 @@ export namespace Prisma {
     epiId: number
     quantity: number
     deliveryDate?: Date | string
+    userId: string
   }
 
   export type EpiExitCreateManyEmployeeInput = {
     id?: number
     epiId: number
     quantity: number
+    userId: string
     date?: Date | string
     createdAt?: Date | string
   }
@@ -11638,6 +11854,7 @@ export namespace Prisma {
     type: string
     result?: string | null
     expiration: Date | string
+    userId: string
     createdAt?: Date | string
     updatedAt?: Date | string
   }
@@ -11645,6 +11862,7 @@ export namespace Prisma {
   export type EpiEmployeeUpdateWithoutEmployeeInput = {
     quantity?: IntFieldUpdateOperationsInput | number
     deliveryDate?: DateTimeFieldUpdateOperationsInput | Date | string
+    userId?: StringFieldUpdateOperationsInput | string
     epi?: EpiUpdateOneRequiredWithoutEmployeesNestedInput
   }
 
@@ -11653,6 +11871,7 @@ export namespace Prisma {
     epiId?: IntFieldUpdateOperationsInput | number
     quantity?: IntFieldUpdateOperationsInput | number
     deliveryDate?: DateTimeFieldUpdateOperationsInput | Date | string
+    userId?: StringFieldUpdateOperationsInput | string
   }
 
   export type EpiEmployeeUncheckedUpdateManyWithoutEmployeeInput = {
@@ -11660,10 +11879,12 @@ export namespace Prisma {
     epiId?: IntFieldUpdateOperationsInput | number
     quantity?: IntFieldUpdateOperationsInput | number
     deliveryDate?: DateTimeFieldUpdateOperationsInput | Date | string
+    userId?: StringFieldUpdateOperationsInput | string
   }
 
   export type EpiExitUpdateWithoutEmployeeInput = {
     quantity?: IntFieldUpdateOperationsInput | number
+    userId?: StringFieldUpdateOperationsInput | string
     date?: DateTimeFieldUpdateOperationsInput | Date | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     epi?: EpiUpdateOneRequiredWithoutExitsNestedInput
@@ -11673,6 +11894,7 @@ export namespace Prisma {
     id?: IntFieldUpdateOperationsInput | number
     epiId?: IntFieldUpdateOperationsInput | number
     quantity?: IntFieldUpdateOperationsInput | number
+    userId?: StringFieldUpdateOperationsInput | string
     date?: DateTimeFieldUpdateOperationsInput | Date | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
@@ -11681,6 +11903,7 @@ export namespace Prisma {
     id?: IntFieldUpdateOperationsInput | number
     epiId?: IntFieldUpdateOperationsInput | number
     quantity?: IntFieldUpdateOperationsInput | number
+    userId?: StringFieldUpdateOperationsInput | string
     date?: DateTimeFieldUpdateOperationsInput | Date | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
@@ -11690,6 +11913,7 @@ export namespace Prisma {
     type?: StringFieldUpdateOperationsInput | string
     result?: NullableStringFieldUpdateOperationsInput | string | null
     expiration?: DateTimeFieldUpdateOperationsInput | Date | string
+    userId?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
@@ -11700,6 +11924,7 @@ export namespace Prisma {
     type?: StringFieldUpdateOperationsInput | string
     result?: NullableStringFieldUpdateOperationsInput | string | null
     expiration?: DateTimeFieldUpdateOperationsInput | Date | string
+    userId?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
@@ -11710,6 +11935,7 @@ export namespace Prisma {
     type?: StringFieldUpdateOperationsInput | string
     result?: NullableStringFieldUpdateOperationsInput | string | null
     expiration?: DateTimeFieldUpdateOperationsInput | Date | string
+    userId?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
@@ -11719,6 +11945,7 @@ export namespace Prisma {
     employeeId: number
     quantity: number
     deliveryDate?: Date | string
+    userId: string
   }
 
   export type EpiEntryCreateManyEpiInput = {
@@ -11727,6 +11954,7 @@ export namespace Prisma {
     date?: Date | string
     note?: string | null
     supplier?: string | null
+    userId: string
     createdAt?: Date | string
     updatedAt?: Date | string
   }
@@ -11735,6 +11963,7 @@ export namespace Prisma {
     id?: number
     employeeId: number
     quantity: number
+    userId: string
     date?: Date | string
     createdAt?: Date | string
   }
@@ -11742,6 +11971,7 @@ export namespace Prisma {
   export type EpiEmployeeUpdateWithoutEpiInput = {
     quantity?: IntFieldUpdateOperationsInput | number
     deliveryDate?: DateTimeFieldUpdateOperationsInput | Date | string
+    userId?: StringFieldUpdateOperationsInput | string
     employee?: EmployeeUpdateOneRequiredWithoutEpiesNestedInput
   }
 
@@ -11750,6 +11980,7 @@ export namespace Prisma {
     employeeId?: IntFieldUpdateOperationsInput | number
     quantity?: IntFieldUpdateOperationsInput | number
     deliveryDate?: DateTimeFieldUpdateOperationsInput | Date | string
+    userId?: StringFieldUpdateOperationsInput | string
   }
 
   export type EpiEmployeeUncheckedUpdateManyWithoutEpiInput = {
@@ -11757,6 +11988,7 @@ export namespace Prisma {
     employeeId?: IntFieldUpdateOperationsInput | number
     quantity?: IntFieldUpdateOperationsInput | number
     deliveryDate?: DateTimeFieldUpdateOperationsInput | Date | string
+    userId?: StringFieldUpdateOperationsInput | string
   }
 
   export type EpiEntryUpdateWithoutEpiInput = {
@@ -11764,6 +11996,7 @@ export namespace Prisma {
     date?: DateTimeFieldUpdateOperationsInput | Date | string
     note?: NullableStringFieldUpdateOperationsInput | string | null
     supplier?: NullableStringFieldUpdateOperationsInput | string | null
+    userId?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
@@ -11774,6 +12007,7 @@ export namespace Prisma {
     date?: DateTimeFieldUpdateOperationsInput | Date | string
     note?: NullableStringFieldUpdateOperationsInput | string | null
     supplier?: NullableStringFieldUpdateOperationsInput | string | null
+    userId?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
@@ -11784,12 +12018,14 @@ export namespace Prisma {
     date?: DateTimeFieldUpdateOperationsInput | Date | string
     note?: NullableStringFieldUpdateOperationsInput | string | null
     supplier?: NullableStringFieldUpdateOperationsInput | string | null
+    userId?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type EpiExitUpdateWithoutEpiInput = {
     quantity?: IntFieldUpdateOperationsInput | number
+    userId?: StringFieldUpdateOperationsInput | string
     date?: DateTimeFieldUpdateOperationsInput | Date | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     employee?: EmployeeUpdateOneRequiredWithoutExitsNestedInput
@@ -11799,6 +12035,7 @@ export namespace Prisma {
     id?: IntFieldUpdateOperationsInput | number
     employeeId?: IntFieldUpdateOperationsInput | number
     quantity?: IntFieldUpdateOperationsInput | number
+    userId?: StringFieldUpdateOperationsInput | string
     date?: DateTimeFieldUpdateOperationsInput | Date | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
@@ -11807,6 +12044,7 @@ export namespace Prisma {
     id?: IntFieldUpdateOperationsInput | number
     employeeId?: IntFieldUpdateOperationsInput | number
     quantity?: IntFieldUpdateOperationsInput | number
+    userId?: StringFieldUpdateOperationsInput | string
     date?: DateTimeFieldUpdateOperationsInput | Date | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }

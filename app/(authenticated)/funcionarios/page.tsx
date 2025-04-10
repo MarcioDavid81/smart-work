@@ -3,6 +3,7 @@ import CreateEmployeeButton from "./_components/createEmployee";
 import EmployeesListTable from "./_components/employeesListTable";
 import { redirect } from "next/navigation";
 import { Title } from "../_components/Title";
+import { db } from "@/lib/prisma";
 
 const Funcionarios = async () => {
 
@@ -10,6 +11,7 @@ const Funcionarios = async () => {
       if (!userId) {
         redirect("/");
       }
+
 
   return (
     <div className="flex flex-col w-full min-h-screen bg-gray-50">

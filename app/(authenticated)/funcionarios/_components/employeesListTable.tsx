@@ -16,8 +16,6 @@ import { Button } from "@/components/ui/button";
 import { generateEmployeeReport } from "@/lib/pdfGenerator";
 import { Label } from "@/components/ui/label";
 import { Switch } from "@/components/ui/switch";
-import { Title } from "../../_components/Title";
-import { Sub } from "@radix-ui/react-dropdown-menu";
 import { Subtitle } from "../../_components/Subtitle";
 
 interface Employee {
