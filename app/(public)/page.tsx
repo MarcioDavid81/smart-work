@@ -2,8 +2,9 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { Navbar } from "./_components/Navbar";
 import { Footer } from "./_components/Footer";
+import Hero from "./_components/Hero";
+import Navbar from "./_components/Navbar";
 
 const Card = ({ title, description, imageUrl, delay = 0 }: any) => {
   return (
@@ -33,19 +34,7 @@ export default function Home() {
     <>
       <Navbar />
       <div className="min-h-screen bg-white text-gray-800">
-        <header className="bg-[#78b49a] text-white py-10 px-6 text-center">
-          <h1 className="text-4xl font-bold">Smart Work</h1>
-          <p className="mt-2 text-lg">
-            Saúde e segurança no trabalho começam com informação e tecnologia.
-          </p>
-          <a
-            href="/login"
-            className="mt-4 inline-block bg-white text-[#78b49a] px-6 py-2 rounded-full font-semibold hover:bg-gray-200 transition"
-          >
-            Acessar Sistema
-          </a>
-        </header>
-
+        <Hero />
         <main className="px-6 py-12 max-w-4xl mx-auto space-y-16">
           <section className="space-y-8">
             <Card
