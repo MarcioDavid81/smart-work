@@ -7,7 +7,7 @@ import { FaHome, FaClipboardList, FaHardHat } from "react-icons/fa";
 import { AiOutlineDashboard } from "react-icons/ai";
 import { GrUserWorker } from "react-icons/gr";
 import { UserButton } from "@clerk/nextjs";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import {
   Tooltip,
   TooltipContent,
@@ -47,7 +47,8 @@ const routes = [
 
 const Sidebar = () => {
   const pathname = usePathname();
-  const [isOpen, setIsOpen] = useState(true);
+  const [isOpen, setIsOpen] = useState(false);
+
 
   return (
     <div
