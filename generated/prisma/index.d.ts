@@ -1733,7 +1733,11 @@ export namespace Prisma {
     department: $Enums.Department
     function: $Enums.Function
     status: $Enums.Status
+<<<<<<< HEAD
     userId: string | null
+=======
+    userId: string
+>>>>>>> 39f46933376edd41bb41cc3ea56efec59c8f6f1a
     createdAt: Date
     updatedAt: Date
     _count: EmployeeCountAggregateOutputType | null
@@ -1873,7 +1877,11 @@ export namespace Prisma {
       department: $Enums.Department
       function: $Enums.Function
       status: $Enums.Status
+<<<<<<< HEAD
       userId: string | null
+=======
+      userId: string
+>>>>>>> 39f46933376edd41bb41cc3ea56efec59c8f6f1a
       createdAt: Date
       updatedAt: Date
     }, ExtArgs["result"]["employee"]>
@@ -3004,7 +3012,11 @@ export namespace Prisma {
     supplier: string
     expiration: Date
     quantity: number
+<<<<<<< HEAD
     userId: string | null
+=======
+    userId: string
+>>>>>>> 39f46933376edd41bb41cc3ea56efec59c8f6f1a
     createdAt: Date
     updatedAt: Date
     _count: EpiCountAggregateOutputType | null
@@ -3109,7 +3121,11 @@ export namespace Prisma {
       supplier: string
       expiration: Date
       quantity: number
+<<<<<<< HEAD
       userId: string | null
+=======
+      userId: string
+>>>>>>> 39f46933376edd41bb41cc3ea56efec59c8f6f1a
       createdAt: Date
       updatedAt: Date
     }, ExtArgs["result"]["epi"]>
@@ -4215,7 +4231,11 @@ export namespace Prisma {
     employeeId: number
     quantity: number
     deliveryDate: Date
+<<<<<<< HEAD
     userId: string | null
+=======
+    userId: string
+>>>>>>> 39f46933376edd41bb41cc3ea56efec59c8f6f1a
     _count: EpiEmployeeCountAggregateOutputType | null
     _avg: EpiEmployeeAvgAggregateOutputType | null
     _sum: EpiEmployeeSumAggregateOutputType | null
@@ -4305,7 +4325,11 @@ export namespace Prisma {
       employeeId: number
       quantity: number
       deliveryDate: Date
+<<<<<<< HEAD
       userId: string | null
+=======
+      userId: string
+>>>>>>> 39f46933376edd41bb41cc3ea56efec59c8f6f1a
     }, ExtArgs["result"]["epiEmployee"]>
     composites: {}
   }
@@ -5355,7 +5379,11 @@ export namespace Prisma {
     date: Date
     note: string | null
     supplier: string | null
+<<<<<<< HEAD
     userId: string | null
+=======
+    userId: string
+>>>>>>> 39f46933376edd41bb41cc3ea56efec59c8f6f1a
     createdAt: Date
     updatedAt: Date
     _count: EpiEntryCountAggregateOutputType | null
@@ -5453,7 +5481,11 @@ export namespace Prisma {
       date: Date
       note: string | null
       supplier: string | null
+<<<<<<< HEAD
       userId: string | null
+=======
+      userId: string
+>>>>>>> 39f46933376edd41bb41cc3ea56efec59c8f6f1a
       createdAt: Date
       updatedAt: Date
     }, ExtArgs["result"]["epiEntry"]>
@@ -6497,7 +6529,11 @@ export namespace Prisma {
     epiId: number
     employeeId: number
     quantity: number
+<<<<<<< HEAD
     userId: string | null
+=======
+    userId: string
+>>>>>>> 39f46933376edd41bb41cc3ea56efec59c8f6f1a
     date: Date
     createdAt: Date
     _count: EpiExitCountAggregateOutputType | null
@@ -6592,7 +6628,11 @@ export namespace Prisma {
       epiId: number
       employeeId: number
       quantity: number
+<<<<<<< HEAD
       userId: string | null
+=======
+      userId: string
+>>>>>>> 39f46933376edd41bb41cc3ea56efec59c8f6f1a
       date: Date
       createdAt: Date
     }, ExtArgs["result"]["epiExit"]>
@@ -7641,7 +7681,11 @@ export namespace Prisma {
     result: string | null
     expiration: Date
     employeeId: number
+<<<<<<< HEAD
     userId: string | null
+=======
+    userId: string
+>>>>>>> 39f46933376edd41bb41cc3ea56efec59c8f6f1a
     createdAt: Date
     updatedAt: Date
     _count: MedicalExamCountAggregateOutputType | null
@@ -7739,7 +7783,11 @@ export namespace Prisma {
       result: string | null
       expiration: Date
       employeeId: number
+<<<<<<< HEAD
       userId: string | null
+=======
+      userId: string
+>>>>>>> 39f46933376edd41bb41cc3ea56efec59c8f6f1a
       createdAt: Date
       updatedAt: Date
     }, ExtArgs["result"]["medicalExam"]>
@@ -8859,7 +8907,11 @@ export namespace Prisma {
     department?: EnumDepartmentFilter<"Employee"> | $Enums.Department
     function?: EnumFunctionFilter<"Employee"> | $Enums.Function
     status?: EnumStatusFilter<"Employee"> | $Enums.Status
+<<<<<<< HEAD
     userId?: StringNullableFilter<"Employee"> | string | null
+=======
+    userId?: StringFilter<"Employee"> | string
+>>>>>>> 39f46933376edd41bb41cc3ea56efec59c8f6f1a
     createdAt?: DateTimeFilter<"Employee"> | Date | string
     updatedAt?: DateTimeFilter<"Employee"> | Date | string
     epies?: EpiEmployeeListRelationFilter
@@ -8882,7 +8934,11 @@ export namespace Prisma {
     department?: SortOrder
     function?: SortOrder
     status?: SortOrder
+<<<<<<< HEAD
     userId?: SortOrderInput | SortOrder
+=======
+    userId?: SortOrder
+>>>>>>> 39f46933376edd41bb41cc3ea56efec59c8f6f1a
     createdAt?: SortOrder
     updatedAt?: SortOrder
     epies?: EpiEmployeeOrderByRelationAggregateInput
@@ -8908,7 +8964,11 @@ export namespace Prisma {
     department?: EnumDepartmentFilter<"Employee"> | $Enums.Department
     function?: EnumFunctionFilter<"Employee"> | $Enums.Function
     status?: EnumStatusFilter<"Employee"> | $Enums.Status
+<<<<<<< HEAD
     userId?: StringNullableFilter<"Employee"> | string | null
+=======
+    userId?: StringFilter<"Employee"> | string
+>>>>>>> 39f46933376edd41bb41cc3ea56efec59c8f6f1a
     createdAt?: DateTimeFilter<"Employee"> | Date | string
     updatedAt?: DateTimeFilter<"Employee"> | Date | string
     epies?: EpiEmployeeListRelationFilter
@@ -8931,7 +8991,11 @@ export namespace Prisma {
     department?: SortOrder
     function?: SortOrder
     status?: SortOrder
+<<<<<<< HEAD
     userId?: SortOrderInput | SortOrder
+=======
+    userId?: SortOrder
+>>>>>>> 39f46933376edd41bb41cc3ea56efec59c8f6f1a
     createdAt?: SortOrder
     updatedAt?: SortOrder
     _count?: EmployeeCountOrderByAggregateInput
@@ -8959,7 +9023,11 @@ export namespace Prisma {
     department?: EnumDepartmentWithAggregatesFilter<"Employee"> | $Enums.Department
     function?: EnumFunctionWithAggregatesFilter<"Employee"> | $Enums.Function
     status?: EnumStatusWithAggregatesFilter<"Employee"> | $Enums.Status
+<<<<<<< HEAD
     userId?: StringNullableWithAggregatesFilter<"Employee"> | string | null
+=======
+    userId?: StringWithAggregatesFilter<"Employee"> | string
+>>>>>>> 39f46933376edd41bb41cc3ea56efec59c8f6f1a
     createdAt?: DateTimeWithAggregatesFilter<"Employee"> | Date | string
     updatedAt?: DateTimeWithAggregatesFilter<"Employee"> | Date | string
   }
@@ -8975,7 +9043,11 @@ export namespace Prisma {
     supplier?: StringFilter<"Epi"> | string
     expiration?: DateTimeFilter<"Epi"> | Date | string
     quantity?: IntFilter<"Epi"> | number
+<<<<<<< HEAD
     userId?: StringNullableFilter<"Epi"> | string | null
+=======
+    userId?: StringFilter<"Epi"> | string
+>>>>>>> 39f46933376edd41bb41cc3ea56efec59c8f6f1a
     createdAt?: DateTimeFilter<"Epi"> | Date | string
     updatedAt?: DateTimeFilter<"Epi"> | Date | string
     employees?: EpiEmployeeListRelationFilter
@@ -8991,7 +9063,11 @@ export namespace Prisma {
     supplier?: SortOrder
     expiration?: SortOrder
     quantity?: SortOrder
+<<<<<<< HEAD
     userId?: SortOrderInput | SortOrder
+=======
+    userId?: SortOrder
+>>>>>>> 39f46933376edd41bb41cc3ea56efec59c8f6f1a
     createdAt?: SortOrder
     updatedAt?: SortOrder
     employees?: EpiEmployeeOrderByRelationAggregateInput
@@ -9010,7 +9086,11 @@ export namespace Prisma {
     supplier?: StringFilter<"Epi"> | string
     expiration?: DateTimeFilter<"Epi"> | Date | string
     quantity?: IntFilter<"Epi"> | number
+<<<<<<< HEAD
     userId?: StringNullableFilter<"Epi"> | string | null
+=======
+    userId?: StringFilter<"Epi"> | string
+>>>>>>> 39f46933376edd41bb41cc3ea56efec59c8f6f1a
     createdAt?: DateTimeFilter<"Epi"> | Date | string
     updatedAt?: DateTimeFilter<"Epi"> | Date | string
     employees?: EpiEmployeeListRelationFilter
@@ -9026,7 +9106,11 @@ export namespace Prisma {
     supplier?: SortOrder
     expiration?: SortOrder
     quantity?: SortOrder
+<<<<<<< HEAD
     userId?: SortOrderInput | SortOrder
+=======
+    userId?: SortOrder
+>>>>>>> 39f46933376edd41bb41cc3ea56efec59c8f6f1a
     createdAt?: SortOrder
     updatedAt?: SortOrder
     _count?: EpiCountOrderByAggregateInput
@@ -9047,7 +9131,11 @@ export namespace Prisma {
     supplier?: StringWithAggregatesFilter<"Epi"> | string
     expiration?: DateTimeWithAggregatesFilter<"Epi"> | Date | string
     quantity?: IntWithAggregatesFilter<"Epi"> | number
+<<<<<<< HEAD
     userId?: StringNullableWithAggregatesFilter<"Epi"> | string | null
+=======
+    userId?: StringWithAggregatesFilter<"Epi"> | string
+>>>>>>> 39f46933376edd41bb41cc3ea56efec59c8f6f1a
     createdAt?: DateTimeWithAggregatesFilter<"Epi"> | Date | string
     updatedAt?: DateTimeWithAggregatesFilter<"Epi"> | Date | string
   }
@@ -9061,7 +9149,11 @@ export namespace Prisma {
     employeeId?: IntFilter<"EpiEmployee"> | number
     quantity?: IntFilter<"EpiEmployee"> | number
     deliveryDate?: DateTimeFilter<"EpiEmployee"> | Date | string
+<<<<<<< HEAD
     userId?: StringNullableFilter<"EpiEmployee"> | string | null
+=======
+    userId?: StringFilter<"EpiEmployee"> | string
+>>>>>>> 39f46933376edd41bb41cc3ea56efec59c8f6f1a
     epi?: XOR<EpiScalarRelationFilter, EpiWhereInput>
     employee?: XOR<EmployeeScalarRelationFilter, EmployeeWhereInput>
   }
@@ -9072,7 +9164,11 @@ export namespace Prisma {
     employeeId?: SortOrder
     quantity?: SortOrder
     deliveryDate?: SortOrder
+<<<<<<< HEAD
     userId?: SortOrderInput | SortOrder
+=======
+    userId?: SortOrder
+>>>>>>> 39f46933376edd41bb41cc3ea56efec59c8f6f1a
     epi?: EpiOrderByWithRelationInput
     employee?: EmployeeOrderByWithRelationInput
   }
@@ -9086,7 +9182,11 @@ export namespace Prisma {
     employeeId?: IntFilter<"EpiEmployee"> | number
     quantity?: IntFilter<"EpiEmployee"> | number
     deliveryDate?: DateTimeFilter<"EpiEmployee"> | Date | string
+<<<<<<< HEAD
     userId?: StringNullableFilter<"EpiEmployee"> | string | null
+=======
+    userId?: StringFilter<"EpiEmployee"> | string
+>>>>>>> 39f46933376edd41bb41cc3ea56efec59c8f6f1a
     epi?: XOR<EpiScalarRelationFilter, EpiWhereInput>
     employee?: XOR<EmployeeScalarRelationFilter, EmployeeWhereInput>
   }, "id">
@@ -9097,7 +9197,11 @@ export namespace Prisma {
     employeeId?: SortOrder
     quantity?: SortOrder
     deliveryDate?: SortOrder
+<<<<<<< HEAD
     userId?: SortOrderInput | SortOrder
+=======
+    userId?: SortOrder
+>>>>>>> 39f46933376edd41bb41cc3ea56efec59c8f6f1a
     _count?: EpiEmployeeCountOrderByAggregateInput
     _avg?: EpiEmployeeAvgOrderByAggregateInput
     _max?: EpiEmployeeMaxOrderByAggregateInput
@@ -9114,7 +9218,11 @@ export namespace Prisma {
     employeeId?: IntWithAggregatesFilter<"EpiEmployee"> | number
     quantity?: IntWithAggregatesFilter<"EpiEmployee"> | number
     deliveryDate?: DateTimeWithAggregatesFilter<"EpiEmployee"> | Date | string
+<<<<<<< HEAD
     userId?: StringNullableWithAggregatesFilter<"EpiEmployee"> | string | null
+=======
+    userId?: StringWithAggregatesFilter<"EpiEmployee"> | string
+>>>>>>> 39f46933376edd41bb41cc3ea56efec59c8f6f1a
   }
 
   export type EpiEntryWhereInput = {
@@ -9127,7 +9235,11 @@ export namespace Prisma {
     date?: DateTimeFilter<"EpiEntry"> | Date | string
     note?: StringNullableFilter<"EpiEntry"> | string | null
     supplier?: StringNullableFilter<"EpiEntry"> | string | null
+<<<<<<< HEAD
     userId?: StringNullableFilter<"EpiEntry"> | string | null
+=======
+    userId?: StringFilter<"EpiEntry"> | string
+>>>>>>> 39f46933376edd41bb41cc3ea56efec59c8f6f1a
     createdAt?: DateTimeFilter<"EpiEntry"> | Date | string
     updatedAt?: DateTimeFilter<"EpiEntry"> | Date | string
     epi?: XOR<EpiScalarRelationFilter, EpiWhereInput>
@@ -9140,7 +9252,11 @@ export namespace Prisma {
     date?: SortOrder
     note?: SortOrderInput | SortOrder
     supplier?: SortOrderInput | SortOrder
+<<<<<<< HEAD
     userId?: SortOrderInput | SortOrder
+=======
+    userId?: SortOrder
+>>>>>>> 39f46933376edd41bb41cc3ea56efec59c8f6f1a
     createdAt?: SortOrder
     updatedAt?: SortOrder
     epi?: EpiOrderByWithRelationInput
@@ -9156,7 +9272,11 @@ export namespace Prisma {
     date?: DateTimeFilter<"EpiEntry"> | Date | string
     note?: StringNullableFilter<"EpiEntry"> | string | null
     supplier?: StringNullableFilter<"EpiEntry"> | string | null
+<<<<<<< HEAD
     userId?: StringNullableFilter<"EpiEntry"> | string | null
+=======
+    userId?: StringFilter<"EpiEntry"> | string
+>>>>>>> 39f46933376edd41bb41cc3ea56efec59c8f6f1a
     createdAt?: DateTimeFilter<"EpiEntry"> | Date | string
     updatedAt?: DateTimeFilter<"EpiEntry"> | Date | string
     epi?: XOR<EpiScalarRelationFilter, EpiWhereInput>
@@ -9169,7 +9289,11 @@ export namespace Prisma {
     date?: SortOrder
     note?: SortOrderInput | SortOrder
     supplier?: SortOrderInput | SortOrder
+<<<<<<< HEAD
     userId?: SortOrderInput | SortOrder
+=======
+    userId?: SortOrder
+>>>>>>> 39f46933376edd41bb41cc3ea56efec59c8f6f1a
     createdAt?: SortOrder
     updatedAt?: SortOrder
     _count?: EpiEntryCountOrderByAggregateInput
@@ -9189,7 +9313,11 @@ export namespace Prisma {
     date?: DateTimeWithAggregatesFilter<"EpiEntry"> | Date | string
     note?: StringNullableWithAggregatesFilter<"EpiEntry"> | string | null
     supplier?: StringNullableWithAggregatesFilter<"EpiEntry"> | string | null
+<<<<<<< HEAD
     userId?: StringNullableWithAggregatesFilter<"EpiEntry"> | string | null
+=======
+    userId?: StringWithAggregatesFilter<"EpiEntry"> | string
+>>>>>>> 39f46933376edd41bb41cc3ea56efec59c8f6f1a
     createdAt?: DateTimeWithAggregatesFilter<"EpiEntry"> | Date | string
     updatedAt?: DateTimeWithAggregatesFilter<"EpiEntry"> | Date | string
   }
@@ -9202,7 +9330,11 @@ export namespace Prisma {
     epiId?: IntFilter<"EpiExit"> | number
     employeeId?: IntFilter<"EpiExit"> | number
     quantity?: IntFilter<"EpiExit"> | number
+<<<<<<< HEAD
     userId?: StringNullableFilter<"EpiExit"> | string | null
+=======
+    userId?: StringFilter<"EpiExit"> | string
+>>>>>>> 39f46933376edd41bb41cc3ea56efec59c8f6f1a
     date?: DateTimeFilter<"EpiExit"> | Date | string
     createdAt?: DateTimeFilter<"EpiExit"> | Date | string
     epi?: XOR<EpiScalarRelationFilter, EpiWhereInput>
@@ -9214,7 +9346,11 @@ export namespace Prisma {
     epiId?: SortOrder
     employeeId?: SortOrder
     quantity?: SortOrder
+<<<<<<< HEAD
     userId?: SortOrderInput | SortOrder
+=======
+    userId?: SortOrder
+>>>>>>> 39f46933376edd41bb41cc3ea56efec59c8f6f1a
     date?: SortOrder
     createdAt?: SortOrder
     epi?: EpiOrderByWithRelationInput
@@ -9229,7 +9365,11 @@ export namespace Prisma {
     epiId?: IntFilter<"EpiExit"> | number
     employeeId?: IntFilter<"EpiExit"> | number
     quantity?: IntFilter<"EpiExit"> | number
+<<<<<<< HEAD
     userId?: StringNullableFilter<"EpiExit"> | string | null
+=======
+    userId?: StringFilter<"EpiExit"> | string
+>>>>>>> 39f46933376edd41bb41cc3ea56efec59c8f6f1a
     date?: DateTimeFilter<"EpiExit"> | Date | string
     createdAt?: DateTimeFilter<"EpiExit"> | Date | string
     epi?: XOR<EpiScalarRelationFilter, EpiWhereInput>
@@ -9241,7 +9381,11 @@ export namespace Prisma {
     epiId?: SortOrder
     employeeId?: SortOrder
     quantity?: SortOrder
+<<<<<<< HEAD
     userId?: SortOrderInput | SortOrder
+=======
+    userId?: SortOrder
+>>>>>>> 39f46933376edd41bb41cc3ea56efec59c8f6f1a
     date?: SortOrder
     createdAt?: SortOrder
     _count?: EpiExitCountOrderByAggregateInput
@@ -9259,7 +9403,11 @@ export namespace Prisma {
     epiId?: IntWithAggregatesFilter<"EpiExit"> | number
     employeeId?: IntWithAggregatesFilter<"EpiExit"> | number
     quantity?: IntWithAggregatesFilter<"EpiExit"> | number
+<<<<<<< HEAD
     userId?: StringNullableWithAggregatesFilter<"EpiExit"> | string | null
+=======
+    userId?: StringWithAggregatesFilter<"EpiExit"> | string
+>>>>>>> 39f46933376edd41bb41cc3ea56efec59c8f6f1a
     date?: DateTimeWithAggregatesFilter<"EpiExit"> | Date | string
     createdAt?: DateTimeWithAggregatesFilter<"EpiExit"> | Date | string
   }
@@ -9274,7 +9422,11 @@ export namespace Prisma {
     result?: StringNullableFilter<"MedicalExam"> | string | null
     expiration?: DateTimeFilter<"MedicalExam"> | Date | string
     employeeId?: IntFilter<"MedicalExam"> | number
+<<<<<<< HEAD
     userId?: StringNullableFilter<"MedicalExam"> | string | null
+=======
+    userId?: StringFilter<"MedicalExam"> | string
+>>>>>>> 39f46933376edd41bb41cc3ea56efec59c8f6f1a
     createdAt?: DateTimeFilter<"MedicalExam"> | Date | string
     updatedAt?: DateTimeFilter<"MedicalExam"> | Date | string
     employee?: XOR<EmployeeScalarRelationFilter, EmployeeWhereInput>
@@ -9287,7 +9439,11 @@ export namespace Prisma {
     result?: SortOrderInput | SortOrder
     expiration?: SortOrder
     employeeId?: SortOrder
+<<<<<<< HEAD
     userId?: SortOrderInput | SortOrder
+=======
+    userId?: SortOrder
+>>>>>>> 39f46933376edd41bb41cc3ea56efec59c8f6f1a
     createdAt?: SortOrder
     updatedAt?: SortOrder
     employee?: EmployeeOrderByWithRelationInput
@@ -9303,7 +9459,11 @@ export namespace Prisma {
     result?: StringNullableFilter<"MedicalExam"> | string | null
     expiration?: DateTimeFilter<"MedicalExam"> | Date | string
     employeeId?: IntFilter<"MedicalExam"> | number
+<<<<<<< HEAD
     userId?: StringNullableFilter<"MedicalExam"> | string | null
+=======
+    userId?: StringFilter<"MedicalExam"> | string
+>>>>>>> 39f46933376edd41bb41cc3ea56efec59c8f6f1a
     createdAt?: DateTimeFilter<"MedicalExam"> | Date | string
     updatedAt?: DateTimeFilter<"MedicalExam"> | Date | string
     employee?: XOR<EmployeeScalarRelationFilter, EmployeeWhereInput>
@@ -9316,7 +9476,11 @@ export namespace Prisma {
     result?: SortOrderInput | SortOrder
     expiration?: SortOrder
     employeeId?: SortOrder
+<<<<<<< HEAD
     userId?: SortOrderInput | SortOrder
+=======
+    userId?: SortOrder
+>>>>>>> 39f46933376edd41bb41cc3ea56efec59c8f6f1a
     createdAt?: SortOrder
     updatedAt?: SortOrder
     _count?: MedicalExamCountOrderByAggregateInput
@@ -9336,7 +9500,11 @@ export namespace Prisma {
     result?: StringNullableWithAggregatesFilter<"MedicalExam"> | string | null
     expiration?: DateTimeWithAggregatesFilter<"MedicalExam"> | Date | string
     employeeId?: IntWithAggregatesFilter<"MedicalExam"> | number
+<<<<<<< HEAD
     userId?: StringNullableWithAggregatesFilter<"MedicalExam"> | string | null
+=======
+    userId?: StringWithAggregatesFilter<"MedicalExam"> | string
+>>>>>>> 39f46933376edd41bb41cc3ea56efec59c8f6f1a
     createdAt?: DateTimeWithAggregatesFilter<"MedicalExam"> | Date | string
     updatedAt?: DateTimeWithAggregatesFilter<"MedicalExam"> | Date | string
   }
@@ -9355,7 +9523,11 @@ export namespace Prisma {
     department: $Enums.Department
     function: $Enums.Function
     status: $Enums.Status
+<<<<<<< HEAD
     userId?: string | null
+=======
+    userId: string
+>>>>>>> 39f46933376edd41bb41cc3ea56efec59c8f6f1a
     createdAt?: Date | string
     updatedAt?: Date | string
     epies?: EpiEmployeeCreateNestedManyWithoutEmployeeInput
@@ -9378,7 +9550,11 @@ export namespace Prisma {
     department: $Enums.Department
     function: $Enums.Function
     status: $Enums.Status
+<<<<<<< HEAD
     userId?: string | null
+=======
+    userId: string
+>>>>>>> 39f46933376edd41bb41cc3ea56efec59c8f6f1a
     createdAt?: Date | string
     updatedAt?: Date | string
     epies?: EpiEmployeeUncheckedCreateNestedManyWithoutEmployeeInput
@@ -9400,7 +9576,11 @@ export namespace Prisma {
     department?: EnumDepartmentFieldUpdateOperationsInput | $Enums.Department
     function?: EnumFunctionFieldUpdateOperationsInput | $Enums.Function
     status?: EnumStatusFieldUpdateOperationsInput | $Enums.Status
+<<<<<<< HEAD
     userId?: NullableStringFieldUpdateOperationsInput | string | null
+=======
+    userId?: StringFieldUpdateOperationsInput | string
+>>>>>>> 39f46933376edd41bb41cc3ea56efec59c8f6f1a
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     epies?: EpiEmployeeUpdateManyWithoutEmployeeNestedInput
@@ -9423,7 +9603,11 @@ export namespace Prisma {
     department?: EnumDepartmentFieldUpdateOperationsInput | $Enums.Department
     function?: EnumFunctionFieldUpdateOperationsInput | $Enums.Function
     status?: EnumStatusFieldUpdateOperationsInput | $Enums.Status
+<<<<<<< HEAD
     userId?: NullableStringFieldUpdateOperationsInput | string | null
+=======
+    userId?: StringFieldUpdateOperationsInput | string
+>>>>>>> 39f46933376edd41bb41cc3ea56efec59c8f6f1a
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     epies?: EpiEmployeeUncheckedUpdateManyWithoutEmployeeNestedInput
@@ -9446,7 +9630,11 @@ export namespace Prisma {
     department: $Enums.Department
     function: $Enums.Function
     status: $Enums.Status
+<<<<<<< HEAD
     userId?: string | null
+=======
+    userId: string
+>>>>>>> 39f46933376edd41bb41cc3ea56efec59c8f6f1a
     createdAt?: Date | string
     updatedAt?: Date | string
   }
@@ -9465,7 +9653,11 @@ export namespace Prisma {
     department?: EnumDepartmentFieldUpdateOperationsInput | $Enums.Department
     function?: EnumFunctionFieldUpdateOperationsInput | $Enums.Function
     status?: EnumStatusFieldUpdateOperationsInput | $Enums.Status
+<<<<<<< HEAD
     userId?: NullableStringFieldUpdateOperationsInput | string | null
+=======
+    userId?: StringFieldUpdateOperationsInput | string
+>>>>>>> 39f46933376edd41bb41cc3ea56efec59c8f6f1a
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
@@ -9485,7 +9677,11 @@ export namespace Prisma {
     department?: EnumDepartmentFieldUpdateOperationsInput | $Enums.Department
     function?: EnumFunctionFieldUpdateOperationsInput | $Enums.Function
     status?: EnumStatusFieldUpdateOperationsInput | $Enums.Status
+<<<<<<< HEAD
     userId?: NullableStringFieldUpdateOperationsInput | string | null
+=======
+    userId?: StringFieldUpdateOperationsInput | string
+>>>>>>> 39f46933376edd41bb41cc3ea56efec59c8f6f1a
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
@@ -9497,7 +9693,11 @@ export namespace Prisma {
     supplier: string
     expiration: Date | string
     quantity: number
+<<<<<<< HEAD
     userId?: string | null
+=======
+    userId: string
+>>>>>>> 39f46933376edd41bb41cc3ea56efec59c8f6f1a
     createdAt?: Date | string
     updatedAt?: Date | string
     employees?: EpiEmployeeCreateNestedManyWithoutEpiInput
@@ -9513,7 +9713,11 @@ export namespace Prisma {
     supplier: string
     expiration: Date | string
     quantity: number
+<<<<<<< HEAD
     userId?: string | null
+=======
+    userId: string
+>>>>>>> 39f46933376edd41bb41cc3ea56efec59c8f6f1a
     createdAt?: Date | string
     updatedAt?: Date | string
     employees?: EpiEmployeeUncheckedCreateNestedManyWithoutEpiInput
@@ -9528,7 +9732,11 @@ export namespace Prisma {
     supplier?: StringFieldUpdateOperationsInput | string
     expiration?: DateTimeFieldUpdateOperationsInput | Date | string
     quantity?: IntFieldUpdateOperationsInput | number
+<<<<<<< HEAD
     userId?: NullableStringFieldUpdateOperationsInput | string | null
+=======
+    userId?: StringFieldUpdateOperationsInput | string
+>>>>>>> 39f46933376edd41bb41cc3ea56efec59c8f6f1a
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     employees?: EpiEmployeeUpdateManyWithoutEpiNestedInput
@@ -9544,7 +9752,11 @@ export namespace Prisma {
     supplier?: StringFieldUpdateOperationsInput | string
     expiration?: DateTimeFieldUpdateOperationsInput | Date | string
     quantity?: IntFieldUpdateOperationsInput | number
+<<<<<<< HEAD
     userId?: NullableStringFieldUpdateOperationsInput | string | null
+=======
+    userId?: StringFieldUpdateOperationsInput | string
+>>>>>>> 39f46933376edd41bb41cc3ea56efec59c8f6f1a
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     employees?: EpiEmployeeUncheckedUpdateManyWithoutEpiNestedInput
@@ -9560,7 +9772,11 @@ export namespace Prisma {
     supplier: string
     expiration: Date | string
     quantity: number
+<<<<<<< HEAD
     userId?: string | null
+=======
+    userId: string
+>>>>>>> 39f46933376edd41bb41cc3ea56efec59c8f6f1a
     createdAt?: Date | string
     updatedAt?: Date | string
   }
@@ -9572,7 +9788,11 @@ export namespace Prisma {
     supplier?: StringFieldUpdateOperationsInput | string
     expiration?: DateTimeFieldUpdateOperationsInput | Date | string
     quantity?: IntFieldUpdateOperationsInput | number
+<<<<<<< HEAD
     userId?: NullableStringFieldUpdateOperationsInput | string | null
+=======
+    userId?: StringFieldUpdateOperationsInput | string
+>>>>>>> 39f46933376edd41bb41cc3ea56efec59c8f6f1a
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
@@ -9585,7 +9805,11 @@ export namespace Prisma {
     supplier?: StringFieldUpdateOperationsInput | string
     expiration?: DateTimeFieldUpdateOperationsInput | Date | string
     quantity?: IntFieldUpdateOperationsInput | number
+<<<<<<< HEAD
     userId?: NullableStringFieldUpdateOperationsInput | string | null
+=======
+    userId?: StringFieldUpdateOperationsInput | string
+>>>>>>> 39f46933376edd41bb41cc3ea56efec59c8f6f1a
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
@@ -9593,7 +9817,11 @@ export namespace Prisma {
   export type EpiEmployeeCreateInput = {
     quantity: number
     deliveryDate?: Date | string
+<<<<<<< HEAD
     userId?: string | null
+=======
+    userId: string
+>>>>>>> 39f46933376edd41bb41cc3ea56efec59c8f6f1a
     epi: EpiCreateNestedOneWithoutEmployeesInput
     employee: EmployeeCreateNestedOneWithoutEpiesInput
   }
@@ -9604,13 +9832,21 @@ export namespace Prisma {
     employeeId: number
     quantity: number
     deliveryDate?: Date | string
+<<<<<<< HEAD
     userId?: string | null
+=======
+    userId: string
+>>>>>>> 39f46933376edd41bb41cc3ea56efec59c8f6f1a
   }
 
   export type EpiEmployeeUpdateInput = {
     quantity?: IntFieldUpdateOperationsInput | number
     deliveryDate?: DateTimeFieldUpdateOperationsInput | Date | string
+<<<<<<< HEAD
     userId?: NullableStringFieldUpdateOperationsInput | string | null
+=======
+    userId?: StringFieldUpdateOperationsInput | string
+>>>>>>> 39f46933376edd41bb41cc3ea56efec59c8f6f1a
     epi?: EpiUpdateOneRequiredWithoutEmployeesNestedInput
     employee?: EmployeeUpdateOneRequiredWithoutEpiesNestedInput
   }
@@ -9621,7 +9857,11 @@ export namespace Prisma {
     employeeId?: IntFieldUpdateOperationsInput | number
     quantity?: IntFieldUpdateOperationsInput | number
     deliveryDate?: DateTimeFieldUpdateOperationsInput | Date | string
+<<<<<<< HEAD
     userId?: NullableStringFieldUpdateOperationsInput | string | null
+=======
+    userId?: StringFieldUpdateOperationsInput | string
+>>>>>>> 39f46933376edd41bb41cc3ea56efec59c8f6f1a
   }
 
   export type EpiEmployeeCreateManyInput = {
@@ -9630,13 +9870,21 @@ export namespace Prisma {
     employeeId: number
     quantity: number
     deliveryDate?: Date | string
+<<<<<<< HEAD
     userId?: string | null
+=======
+    userId: string
+>>>>>>> 39f46933376edd41bb41cc3ea56efec59c8f6f1a
   }
 
   export type EpiEmployeeUpdateManyMutationInput = {
     quantity?: IntFieldUpdateOperationsInput | number
     deliveryDate?: DateTimeFieldUpdateOperationsInput | Date | string
+<<<<<<< HEAD
     userId?: NullableStringFieldUpdateOperationsInput | string | null
+=======
+    userId?: StringFieldUpdateOperationsInput | string
+>>>>>>> 39f46933376edd41bb41cc3ea56efec59c8f6f1a
   }
 
   export type EpiEmployeeUncheckedUpdateManyInput = {
@@ -9645,7 +9893,11 @@ export namespace Prisma {
     employeeId?: IntFieldUpdateOperationsInput | number
     quantity?: IntFieldUpdateOperationsInput | number
     deliveryDate?: DateTimeFieldUpdateOperationsInput | Date | string
+<<<<<<< HEAD
     userId?: NullableStringFieldUpdateOperationsInput | string | null
+=======
+    userId?: StringFieldUpdateOperationsInput | string
+>>>>>>> 39f46933376edd41bb41cc3ea56efec59c8f6f1a
   }
 
   export type EpiEntryCreateInput = {
@@ -9653,7 +9905,11 @@ export namespace Prisma {
     date?: Date | string
     note?: string | null
     supplier?: string | null
+<<<<<<< HEAD
     userId?: string | null
+=======
+    userId: string
+>>>>>>> 39f46933376edd41bb41cc3ea56efec59c8f6f1a
     createdAt?: Date | string
     updatedAt?: Date | string
     epi: EpiCreateNestedOneWithoutEntriesInput
@@ -9666,7 +9922,11 @@ export namespace Prisma {
     date?: Date | string
     note?: string | null
     supplier?: string | null
+<<<<<<< HEAD
     userId?: string | null
+=======
+    userId: string
+>>>>>>> 39f46933376edd41bb41cc3ea56efec59c8f6f1a
     createdAt?: Date | string
     updatedAt?: Date | string
   }
@@ -9676,7 +9936,11 @@ export namespace Prisma {
     date?: DateTimeFieldUpdateOperationsInput | Date | string
     note?: NullableStringFieldUpdateOperationsInput | string | null
     supplier?: NullableStringFieldUpdateOperationsInput | string | null
+<<<<<<< HEAD
     userId?: NullableStringFieldUpdateOperationsInput | string | null
+=======
+    userId?: StringFieldUpdateOperationsInput | string
+>>>>>>> 39f46933376edd41bb41cc3ea56efec59c8f6f1a
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     epi?: EpiUpdateOneRequiredWithoutEntriesNestedInput
@@ -9689,7 +9953,11 @@ export namespace Prisma {
     date?: DateTimeFieldUpdateOperationsInput | Date | string
     note?: NullableStringFieldUpdateOperationsInput | string | null
     supplier?: NullableStringFieldUpdateOperationsInput | string | null
+<<<<<<< HEAD
     userId?: NullableStringFieldUpdateOperationsInput | string | null
+=======
+    userId?: StringFieldUpdateOperationsInput | string
+>>>>>>> 39f46933376edd41bb41cc3ea56efec59c8f6f1a
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
@@ -9701,7 +9969,11 @@ export namespace Prisma {
     date?: Date | string
     note?: string | null
     supplier?: string | null
+<<<<<<< HEAD
     userId?: string | null
+=======
+    userId: string
+>>>>>>> 39f46933376edd41bb41cc3ea56efec59c8f6f1a
     createdAt?: Date | string
     updatedAt?: Date | string
   }
@@ -9711,7 +9983,11 @@ export namespace Prisma {
     date?: DateTimeFieldUpdateOperationsInput | Date | string
     note?: NullableStringFieldUpdateOperationsInput | string | null
     supplier?: NullableStringFieldUpdateOperationsInput | string | null
+<<<<<<< HEAD
     userId?: NullableStringFieldUpdateOperationsInput | string | null
+=======
+    userId?: StringFieldUpdateOperationsInput | string
+>>>>>>> 39f46933376edd41bb41cc3ea56efec59c8f6f1a
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
@@ -9723,14 +9999,22 @@ export namespace Prisma {
     date?: DateTimeFieldUpdateOperationsInput | Date | string
     note?: NullableStringFieldUpdateOperationsInput | string | null
     supplier?: NullableStringFieldUpdateOperationsInput | string | null
+<<<<<<< HEAD
     userId?: NullableStringFieldUpdateOperationsInput | string | null
+=======
+    userId?: StringFieldUpdateOperationsInput | string
+>>>>>>> 39f46933376edd41bb41cc3ea56efec59c8f6f1a
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type EpiExitCreateInput = {
     quantity: number
+<<<<<<< HEAD
     userId?: string | null
+=======
+    userId: string
+>>>>>>> 39f46933376edd41bb41cc3ea56efec59c8f6f1a
     date?: Date | string
     createdAt?: Date | string
     epi: EpiCreateNestedOneWithoutExitsInput
@@ -9742,14 +10026,22 @@ export namespace Prisma {
     epiId: number
     employeeId: number
     quantity: number
+<<<<<<< HEAD
     userId?: string | null
+=======
+    userId: string
+>>>>>>> 39f46933376edd41bb41cc3ea56efec59c8f6f1a
     date?: Date | string
     createdAt?: Date | string
   }
 
   export type EpiExitUpdateInput = {
     quantity?: IntFieldUpdateOperationsInput | number
+<<<<<<< HEAD
     userId?: NullableStringFieldUpdateOperationsInput | string | null
+=======
+    userId?: StringFieldUpdateOperationsInput | string
+>>>>>>> 39f46933376edd41bb41cc3ea56efec59c8f6f1a
     date?: DateTimeFieldUpdateOperationsInput | Date | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     epi?: EpiUpdateOneRequiredWithoutExitsNestedInput
@@ -9761,7 +10053,11 @@ export namespace Prisma {
     epiId?: IntFieldUpdateOperationsInput | number
     employeeId?: IntFieldUpdateOperationsInput | number
     quantity?: IntFieldUpdateOperationsInput | number
+<<<<<<< HEAD
     userId?: NullableStringFieldUpdateOperationsInput | string | null
+=======
+    userId?: StringFieldUpdateOperationsInput | string
+>>>>>>> 39f46933376edd41bb41cc3ea56efec59c8f6f1a
     date?: DateTimeFieldUpdateOperationsInput | Date | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
@@ -9771,14 +10067,22 @@ export namespace Prisma {
     epiId: number
     employeeId: number
     quantity: number
+<<<<<<< HEAD
     userId?: string | null
+=======
+    userId: string
+>>>>>>> 39f46933376edd41bb41cc3ea56efec59c8f6f1a
     date?: Date | string
     createdAt?: Date | string
   }
 
   export type EpiExitUpdateManyMutationInput = {
     quantity?: IntFieldUpdateOperationsInput | number
+<<<<<<< HEAD
     userId?: NullableStringFieldUpdateOperationsInput | string | null
+=======
+    userId?: StringFieldUpdateOperationsInput | string
+>>>>>>> 39f46933376edd41bb41cc3ea56efec59c8f6f1a
     date?: DateTimeFieldUpdateOperationsInput | Date | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
@@ -9788,7 +10092,11 @@ export namespace Prisma {
     epiId?: IntFieldUpdateOperationsInput | number
     employeeId?: IntFieldUpdateOperationsInput | number
     quantity?: IntFieldUpdateOperationsInput | number
+<<<<<<< HEAD
     userId?: NullableStringFieldUpdateOperationsInput | string | null
+=======
+    userId?: StringFieldUpdateOperationsInput | string
+>>>>>>> 39f46933376edd41bb41cc3ea56efec59c8f6f1a
     date?: DateTimeFieldUpdateOperationsInput | Date | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
@@ -9798,7 +10106,11 @@ export namespace Prisma {
     type: string
     result?: string | null
     expiration: Date | string
+<<<<<<< HEAD
     userId?: string | null
+=======
+    userId: string
+>>>>>>> 39f46933376edd41bb41cc3ea56efec59c8f6f1a
     createdAt?: Date | string
     updatedAt?: Date | string
     employee: EmployeeCreateNestedOneWithoutMedicalExamsInput
@@ -9811,7 +10123,11 @@ export namespace Prisma {
     result?: string | null
     expiration: Date | string
     employeeId: number
+<<<<<<< HEAD
     userId?: string | null
+=======
+    userId: string
+>>>>>>> 39f46933376edd41bb41cc3ea56efec59c8f6f1a
     createdAt?: Date | string
     updatedAt?: Date | string
   }
@@ -9821,7 +10137,11 @@ export namespace Prisma {
     type?: StringFieldUpdateOperationsInput | string
     result?: NullableStringFieldUpdateOperationsInput | string | null
     expiration?: DateTimeFieldUpdateOperationsInput | Date | string
+<<<<<<< HEAD
     userId?: NullableStringFieldUpdateOperationsInput | string | null
+=======
+    userId?: StringFieldUpdateOperationsInput | string
+>>>>>>> 39f46933376edd41bb41cc3ea56efec59c8f6f1a
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     employee?: EmployeeUpdateOneRequiredWithoutMedicalExamsNestedInput
@@ -9834,7 +10154,11 @@ export namespace Prisma {
     result?: NullableStringFieldUpdateOperationsInput | string | null
     expiration?: DateTimeFieldUpdateOperationsInput | Date | string
     employeeId?: IntFieldUpdateOperationsInput | number
+<<<<<<< HEAD
     userId?: NullableStringFieldUpdateOperationsInput | string | null
+=======
+    userId?: StringFieldUpdateOperationsInput | string
+>>>>>>> 39f46933376edd41bb41cc3ea56efec59c8f6f1a
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
@@ -9846,7 +10170,11 @@ export namespace Prisma {
     result?: string | null
     expiration: Date | string
     employeeId: number
+<<<<<<< HEAD
     userId?: string | null
+=======
+    userId: string
+>>>>>>> 39f46933376edd41bb41cc3ea56efec59c8f6f1a
     createdAt?: Date | string
     updatedAt?: Date | string
   }
@@ -9856,7 +10184,11 @@ export namespace Prisma {
     type?: StringFieldUpdateOperationsInput | string
     result?: NullableStringFieldUpdateOperationsInput | string | null
     expiration?: DateTimeFieldUpdateOperationsInput | Date | string
+<<<<<<< HEAD
     userId?: NullableStringFieldUpdateOperationsInput | string | null
+=======
+    userId?: StringFieldUpdateOperationsInput | string
+>>>>>>> 39f46933376edd41bb41cc3ea56efec59c8f6f1a
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
@@ -9868,7 +10200,11 @@ export namespace Prisma {
     result?: NullableStringFieldUpdateOperationsInput | string | null
     expiration?: DateTimeFieldUpdateOperationsInput | Date | string
     employeeId?: IntFieldUpdateOperationsInput | number
+<<<<<<< HEAD
     userId?: NullableStringFieldUpdateOperationsInput | string | null
+=======
+    userId?: StringFieldUpdateOperationsInput | string
+>>>>>>> 39f46933376edd41bb41cc3ea56efec59c8f6f1a
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
@@ -10989,7 +11325,11 @@ export namespace Prisma {
   export type EpiEmployeeCreateWithoutEmployeeInput = {
     quantity: number
     deliveryDate?: Date | string
+<<<<<<< HEAD
     userId?: string | null
+=======
+    userId: string
+>>>>>>> 39f46933376edd41bb41cc3ea56efec59c8f6f1a
     epi: EpiCreateNestedOneWithoutEmployeesInput
   }
 
@@ -10998,7 +11338,11 @@ export namespace Prisma {
     epiId: number
     quantity: number
     deliveryDate?: Date | string
+<<<<<<< HEAD
     userId?: string | null
+=======
+    userId: string
+>>>>>>> 39f46933376edd41bb41cc3ea56efec59c8f6f1a
   }
 
   export type EpiEmployeeCreateOrConnectWithoutEmployeeInput = {
@@ -11013,7 +11357,11 @@ export namespace Prisma {
 
   export type EpiExitCreateWithoutEmployeeInput = {
     quantity: number
+<<<<<<< HEAD
     userId?: string | null
+=======
+    userId: string
+>>>>>>> 39f46933376edd41bb41cc3ea56efec59c8f6f1a
     date?: Date | string
     createdAt?: Date | string
     epi: EpiCreateNestedOneWithoutExitsInput
@@ -11023,7 +11371,11 @@ export namespace Prisma {
     id?: number
     epiId: number
     quantity: number
+<<<<<<< HEAD
     userId?: string | null
+=======
+    userId: string
+>>>>>>> 39f46933376edd41bb41cc3ea56efec59c8f6f1a
     date?: Date | string
     createdAt?: Date | string
   }
@@ -11043,7 +11395,11 @@ export namespace Prisma {
     type: string
     result?: string | null
     expiration: Date | string
+<<<<<<< HEAD
     userId?: string | null
+=======
+    userId: string
+>>>>>>> 39f46933376edd41bb41cc3ea56efec59c8f6f1a
     createdAt?: Date | string
     updatedAt?: Date | string
   }
@@ -11054,7 +11410,11 @@ export namespace Prisma {
     type: string
     result?: string | null
     expiration: Date | string
+<<<<<<< HEAD
     userId?: string | null
+=======
+    userId: string
+>>>>>>> 39f46933376edd41bb41cc3ea56efec59c8f6f1a
     createdAt?: Date | string
     updatedAt?: Date | string
   }
@@ -11094,7 +11454,11 @@ export namespace Prisma {
     employeeId?: IntFilter<"EpiEmployee"> | number
     quantity?: IntFilter<"EpiEmployee"> | number
     deliveryDate?: DateTimeFilter<"EpiEmployee"> | Date | string
+<<<<<<< HEAD
     userId?: StringNullableFilter<"EpiEmployee"> | string | null
+=======
+    userId?: StringFilter<"EpiEmployee"> | string
+>>>>>>> 39f46933376edd41bb41cc3ea56efec59c8f6f1a
   }
 
   export type EpiExitUpsertWithWhereUniqueWithoutEmployeeInput = {
@@ -11121,7 +11485,11 @@ export namespace Prisma {
     epiId?: IntFilter<"EpiExit"> | number
     employeeId?: IntFilter<"EpiExit"> | number
     quantity?: IntFilter<"EpiExit"> | number
+<<<<<<< HEAD
     userId?: StringNullableFilter<"EpiExit"> | string | null
+=======
+    userId?: StringFilter<"EpiExit"> | string
+>>>>>>> 39f46933376edd41bb41cc3ea56efec59c8f6f1a
     date?: DateTimeFilter<"EpiExit"> | Date | string
     createdAt?: DateTimeFilter<"EpiExit"> | Date | string
   }
@@ -11152,7 +11520,11 @@ export namespace Prisma {
     result?: StringNullableFilter<"MedicalExam"> | string | null
     expiration?: DateTimeFilter<"MedicalExam"> | Date | string
     employeeId?: IntFilter<"MedicalExam"> | number
+<<<<<<< HEAD
     userId?: StringNullableFilter<"MedicalExam"> | string | null
+=======
+    userId?: StringFilter<"MedicalExam"> | string
+>>>>>>> 39f46933376edd41bb41cc3ea56efec59c8f6f1a
     createdAt?: DateTimeFilter<"MedicalExam"> | Date | string
     updatedAt?: DateTimeFilter<"MedicalExam"> | Date | string
   }
@@ -11160,7 +11532,11 @@ export namespace Prisma {
   export type EpiEmployeeCreateWithoutEpiInput = {
     quantity: number
     deliveryDate?: Date | string
+<<<<<<< HEAD
     userId?: string | null
+=======
+    userId: string
+>>>>>>> 39f46933376edd41bb41cc3ea56efec59c8f6f1a
     employee: EmployeeCreateNestedOneWithoutEpiesInput
   }
 
@@ -11169,7 +11545,11 @@ export namespace Prisma {
     employeeId: number
     quantity: number
     deliveryDate?: Date | string
+<<<<<<< HEAD
     userId?: string | null
+=======
+    userId: string
+>>>>>>> 39f46933376edd41bb41cc3ea56efec59c8f6f1a
   }
 
   export type EpiEmployeeCreateOrConnectWithoutEpiInput = {
@@ -11187,7 +11567,11 @@ export namespace Prisma {
     date?: Date | string
     note?: string | null
     supplier?: string | null
+<<<<<<< HEAD
     userId?: string | null
+=======
+    userId: string
+>>>>>>> 39f46933376edd41bb41cc3ea56efec59c8f6f1a
     createdAt?: Date | string
     updatedAt?: Date | string
   }
@@ -11198,7 +11582,11 @@ export namespace Prisma {
     date?: Date | string
     note?: string | null
     supplier?: string | null
+<<<<<<< HEAD
     userId?: string | null
+=======
+    userId: string
+>>>>>>> 39f46933376edd41bb41cc3ea56efec59c8f6f1a
     createdAt?: Date | string
     updatedAt?: Date | string
   }
@@ -11215,7 +11603,11 @@ export namespace Prisma {
 
   export type EpiExitCreateWithoutEpiInput = {
     quantity: number
+<<<<<<< HEAD
     userId?: string | null
+=======
+    userId: string
+>>>>>>> 39f46933376edd41bb41cc3ea56efec59c8f6f1a
     date?: Date | string
     createdAt?: Date | string
     employee: EmployeeCreateNestedOneWithoutExitsInput
@@ -11225,7 +11617,11 @@ export namespace Prisma {
     id?: number
     employeeId: number
     quantity: number
+<<<<<<< HEAD
     userId?: string | null
+=======
+    userId: string
+>>>>>>> 39f46933376edd41bb41cc3ea56efec59c8f6f1a
     date?: Date | string
     createdAt?: Date | string
   }
@@ -11282,7 +11678,11 @@ export namespace Prisma {
     date?: DateTimeFilter<"EpiEntry"> | Date | string
     note?: StringNullableFilter<"EpiEntry"> | string | null
     supplier?: StringNullableFilter<"EpiEntry"> | string | null
+<<<<<<< HEAD
     userId?: StringNullableFilter<"EpiEntry"> | string | null
+=======
+    userId?: StringFilter<"EpiEntry"> | string
+>>>>>>> 39f46933376edd41bb41cc3ea56efec59c8f6f1a
     createdAt?: DateTimeFilter<"EpiEntry"> | Date | string
     updatedAt?: DateTimeFilter<"EpiEntry"> | Date | string
   }
@@ -11310,7 +11710,11 @@ export namespace Prisma {
     supplier: string
     expiration: Date | string
     quantity: number
+<<<<<<< HEAD
     userId?: string | null
+=======
+    userId: string
+>>>>>>> 39f46933376edd41bb41cc3ea56efec59c8f6f1a
     createdAt?: Date | string
     updatedAt?: Date | string
     entries?: EpiEntryCreateNestedManyWithoutEpiInput
@@ -11325,7 +11729,11 @@ export namespace Prisma {
     supplier: string
     expiration: Date | string
     quantity: number
+<<<<<<< HEAD
     userId?: string | null
+=======
+    userId: string
+>>>>>>> 39f46933376edd41bb41cc3ea56efec59c8f6f1a
     createdAt?: Date | string
     updatedAt?: Date | string
     entries?: EpiEntryUncheckedCreateNestedManyWithoutEpiInput
@@ -11351,7 +11759,11 @@ export namespace Prisma {
     department: $Enums.Department
     function: $Enums.Function
     status: $Enums.Status
+<<<<<<< HEAD
     userId?: string | null
+=======
+    userId: string
+>>>>>>> 39f46933376edd41bb41cc3ea56efec59c8f6f1a
     createdAt?: Date | string
     updatedAt?: Date | string
     exits?: EpiExitCreateNestedManyWithoutEmployeeInput
@@ -11373,7 +11785,11 @@ export namespace Prisma {
     department: $Enums.Department
     function: $Enums.Function
     status: $Enums.Status
+<<<<<<< HEAD
     userId?: string | null
+=======
+    userId: string
+>>>>>>> 39f46933376edd41bb41cc3ea56efec59c8f6f1a
     createdAt?: Date | string
     updatedAt?: Date | string
     exits?: EpiExitUncheckedCreateNestedManyWithoutEmployeeInput
@@ -11403,7 +11819,11 @@ export namespace Prisma {
     supplier?: StringFieldUpdateOperationsInput | string
     expiration?: DateTimeFieldUpdateOperationsInput | Date | string
     quantity?: IntFieldUpdateOperationsInput | number
+<<<<<<< HEAD
     userId?: NullableStringFieldUpdateOperationsInput | string | null
+=======
+    userId?: StringFieldUpdateOperationsInput | string
+>>>>>>> 39f46933376edd41bb41cc3ea56efec59c8f6f1a
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     entries?: EpiEntryUpdateManyWithoutEpiNestedInput
@@ -11418,7 +11838,11 @@ export namespace Prisma {
     supplier?: StringFieldUpdateOperationsInput | string
     expiration?: DateTimeFieldUpdateOperationsInput | Date | string
     quantity?: IntFieldUpdateOperationsInput | number
+<<<<<<< HEAD
     userId?: NullableStringFieldUpdateOperationsInput | string | null
+=======
+    userId?: StringFieldUpdateOperationsInput | string
+>>>>>>> 39f46933376edd41bb41cc3ea56efec59c8f6f1a
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     entries?: EpiEntryUncheckedUpdateManyWithoutEpiNestedInput
@@ -11450,7 +11874,11 @@ export namespace Prisma {
     department?: EnumDepartmentFieldUpdateOperationsInput | $Enums.Department
     function?: EnumFunctionFieldUpdateOperationsInput | $Enums.Function
     status?: EnumStatusFieldUpdateOperationsInput | $Enums.Status
+<<<<<<< HEAD
     userId?: NullableStringFieldUpdateOperationsInput | string | null
+=======
+    userId?: StringFieldUpdateOperationsInput | string
+>>>>>>> 39f46933376edd41bb41cc3ea56efec59c8f6f1a
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     exits?: EpiExitUpdateManyWithoutEmployeeNestedInput
@@ -11472,7 +11900,11 @@ export namespace Prisma {
     department?: EnumDepartmentFieldUpdateOperationsInput | $Enums.Department
     function?: EnumFunctionFieldUpdateOperationsInput | $Enums.Function
     status?: EnumStatusFieldUpdateOperationsInput | $Enums.Status
+<<<<<<< HEAD
     userId?: NullableStringFieldUpdateOperationsInput | string | null
+=======
+    userId?: StringFieldUpdateOperationsInput | string
+>>>>>>> 39f46933376edd41bb41cc3ea56efec59c8f6f1a
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     exits?: EpiExitUncheckedUpdateManyWithoutEmployeeNestedInput
@@ -11486,7 +11918,11 @@ export namespace Prisma {
     supplier: string
     expiration: Date | string
     quantity: number
+<<<<<<< HEAD
     userId?: string | null
+=======
+    userId: string
+>>>>>>> 39f46933376edd41bb41cc3ea56efec59c8f6f1a
     createdAt?: Date | string
     updatedAt?: Date | string
     employees?: EpiEmployeeCreateNestedManyWithoutEpiInput
@@ -11501,7 +11937,11 @@ export namespace Prisma {
     supplier: string
     expiration: Date | string
     quantity: number
+<<<<<<< HEAD
     userId?: string | null
+=======
+    userId: string
+>>>>>>> 39f46933376edd41bb41cc3ea56efec59c8f6f1a
     createdAt?: Date | string
     updatedAt?: Date | string
     employees?: EpiEmployeeUncheckedCreateNestedManyWithoutEpiInput
@@ -11531,7 +11971,11 @@ export namespace Prisma {
     supplier?: StringFieldUpdateOperationsInput | string
     expiration?: DateTimeFieldUpdateOperationsInput | Date | string
     quantity?: IntFieldUpdateOperationsInput | number
+<<<<<<< HEAD
     userId?: NullableStringFieldUpdateOperationsInput | string | null
+=======
+    userId?: StringFieldUpdateOperationsInput | string
+>>>>>>> 39f46933376edd41bb41cc3ea56efec59c8f6f1a
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     employees?: EpiEmployeeUpdateManyWithoutEpiNestedInput
@@ -11546,7 +11990,11 @@ export namespace Prisma {
     supplier?: StringFieldUpdateOperationsInput | string
     expiration?: DateTimeFieldUpdateOperationsInput | Date | string
     quantity?: IntFieldUpdateOperationsInput | number
+<<<<<<< HEAD
     userId?: NullableStringFieldUpdateOperationsInput | string | null
+=======
+    userId?: StringFieldUpdateOperationsInput | string
+>>>>>>> 39f46933376edd41bb41cc3ea56efec59c8f6f1a
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     employees?: EpiEmployeeUncheckedUpdateManyWithoutEpiNestedInput
@@ -11560,7 +12008,11 @@ export namespace Prisma {
     supplier: string
     expiration: Date | string
     quantity: number
+<<<<<<< HEAD
     userId?: string | null
+=======
+    userId: string
+>>>>>>> 39f46933376edd41bb41cc3ea56efec59c8f6f1a
     createdAt?: Date | string
     updatedAt?: Date | string
     employees?: EpiEmployeeCreateNestedManyWithoutEpiInput
@@ -11575,7 +12027,11 @@ export namespace Prisma {
     supplier: string
     expiration: Date | string
     quantity: number
+<<<<<<< HEAD
     userId?: string | null
+=======
+    userId: string
+>>>>>>> 39f46933376edd41bb41cc3ea56efec59c8f6f1a
     createdAt?: Date | string
     updatedAt?: Date | string
     employees?: EpiEmployeeUncheckedCreateNestedManyWithoutEpiInput
@@ -11601,7 +12057,11 @@ export namespace Prisma {
     department: $Enums.Department
     function: $Enums.Function
     status: $Enums.Status
+<<<<<<< HEAD
     userId?: string | null
+=======
+    userId: string
+>>>>>>> 39f46933376edd41bb41cc3ea56efec59c8f6f1a
     createdAt?: Date | string
     updatedAt?: Date | string
     epies?: EpiEmployeeCreateNestedManyWithoutEmployeeInput
@@ -11623,7 +12083,11 @@ export namespace Prisma {
     department: $Enums.Department
     function: $Enums.Function
     status: $Enums.Status
+<<<<<<< HEAD
     userId?: string | null
+=======
+    userId: string
+>>>>>>> 39f46933376edd41bb41cc3ea56efec59c8f6f1a
     createdAt?: Date | string
     updatedAt?: Date | string
     epies?: EpiEmployeeUncheckedCreateNestedManyWithoutEmployeeInput
@@ -11653,7 +12117,11 @@ export namespace Prisma {
     supplier?: StringFieldUpdateOperationsInput | string
     expiration?: DateTimeFieldUpdateOperationsInput | Date | string
     quantity?: IntFieldUpdateOperationsInput | number
+<<<<<<< HEAD
     userId?: NullableStringFieldUpdateOperationsInput | string | null
+=======
+    userId?: StringFieldUpdateOperationsInput | string
+>>>>>>> 39f46933376edd41bb41cc3ea56efec59c8f6f1a
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     employees?: EpiEmployeeUpdateManyWithoutEpiNestedInput
@@ -11668,7 +12136,11 @@ export namespace Prisma {
     supplier?: StringFieldUpdateOperationsInput | string
     expiration?: DateTimeFieldUpdateOperationsInput | Date | string
     quantity?: IntFieldUpdateOperationsInput | number
+<<<<<<< HEAD
     userId?: NullableStringFieldUpdateOperationsInput | string | null
+=======
+    userId?: StringFieldUpdateOperationsInput | string
+>>>>>>> 39f46933376edd41bb41cc3ea56efec59c8f6f1a
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     employees?: EpiEmployeeUncheckedUpdateManyWithoutEpiNestedInput
@@ -11700,7 +12172,11 @@ export namespace Prisma {
     department?: EnumDepartmentFieldUpdateOperationsInput | $Enums.Department
     function?: EnumFunctionFieldUpdateOperationsInput | $Enums.Function
     status?: EnumStatusFieldUpdateOperationsInput | $Enums.Status
+<<<<<<< HEAD
     userId?: NullableStringFieldUpdateOperationsInput | string | null
+=======
+    userId?: StringFieldUpdateOperationsInput | string
+>>>>>>> 39f46933376edd41bb41cc3ea56efec59c8f6f1a
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     epies?: EpiEmployeeUpdateManyWithoutEmployeeNestedInput
@@ -11722,7 +12198,11 @@ export namespace Prisma {
     department?: EnumDepartmentFieldUpdateOperationsInput | $Enums.Department
     function?: EnumFunctionFieldUpdateOperationsInput | $Enums.Function
     status?: EnumStatusFieldUpdateOperationsInput | $Enums.Status
+<<<<<<< HEAD
     userId?: NullableStringFieldUpdateOperationsInput | string | null
+=======
+    userId?: StringFieldUpdateOperationsInput | string
+>>>>>>> 39f46933376edd41bb41cc3ea56efec59c8f6f1a
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     epies?: EpiEmployeeUncheckedUpdateManyWithoutEmployeeNestedInput
@@ -11743,7 +12223,11 @@ export namespace Prisma {
     department: $Enums.Department
     function: $Enums.Function
     status: $Enums.Status
+<<<<<<< HEAD
     userId?: string | null
+=======
+    userId: string
+>>>>>>> 39f46933376edd41bb41cc3ea56efec59c8f6f1a
     createdAt?: Date | string
     updatedAt?: Date | string
     epies?: EpiEmployeeCreateNestedManyWithoutEmployeeInput
@@ -11765,7 +12249,11 @@ export namespace Prisma {
     department: $Enums.Department
     function: $Enums.Function
     status: $Enums.Status
+<<<<<<< HEAD
     userId?: string | null
+=======
+    userId: string
+>>>>>>> 39f46933376edd41bb41cc3ea56efec59c8f6f1a
     createdAt?: Date | string
     updatedAt?: Date | string
     epies?: EpiEmployeeUncheckedCreateNestedManyWithoutEmployeeInput
@@ -11802,7 +12290,11 @@ export namespace Prisma {
     department?: EnumDepartmentFieldUpdateOperationsInput | $Enums.Department
     function?: EnumFunctionFieldUpdateOperationsInput | $Enums.Function
     status?: EnumStatusFieldUpdateOperationsInput | $Enums.Status
+<<<<<<< HEAD
     userId?: NullableStringFieldUpdateOperationsInput | string | null
+=======
+    userId?: StringFieldUpdateOperationsInput | string
+>>>>>>> 39f46933376edd41bb41cc3ea56efec59c8f6f1a
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     epies?: EpiEmployeeUpdateManyWithoutEmployeeNestedInput
@@ -11824,7 +12316,11 @@ export namespace Prisma {
     department?: EnumDepartmentFieldUpdateOperationsInput | $Enums.Department
     function?: EnumFunctionFieldUpdateOperationsInput | $Enums.Function
     status?: EnumStatusFieldUpdateOperationsInput | $Enums.Status
+<<<<<<< HEAD
     userId?: NullableStringFieldUpdateOperationsInput | string | null
+=======
+    userId?: StringFieldUpdateOperationsInput | string
+>>>>>>> 39f46933376edd41bb41cc3ea56efec59c8f6f1a
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     epies?: EpiEmployeeUncheckedUpdateManyWithoutEmployeeNestedInput
@@ -11836,14 +12332,22 @@ export namespace Prisma {
     epiId: number
     quantity: number
     deliveryDate?: Date | string
+<<<<<<< HEAD
     userId?: string | null
+=======
+    userId: string
+>>>>>>> 39f46933376edd41bb41cc3ea56efec59c8f6f1a
   }
 
   export type EpiExitCreateManyEmployeeInput = {
     id?: number
     epiId: number
     quantity: number
+<<<<<<< HEAD
     userId?: string | null
+=======
+    userId: string
+>>>>>>> 39f46933376edd41bb41cc3ea56efec59c8f6f1a
     date?: Date | string
     createdAt?: Date | string
   }
@@ -11854,7 +12358,11 @@ export namespace Prisma {
     type: string
     result?: string | null
     expiration: Date | string
+<<<<<<< HEAD
     userId?: string | null
+=======
+    userId: string
+>>>>>>> 39f46933376edd41bb41cc3ea56efec59c8f6f1a
     createdAt?: Date | string
     updatedAt?: Date | string
   }
@@ -11862,7 +12370,11 @@ export namespace Prisma {
   export type EpiEmployeeUpdateWithoutEmployeeInput = {
     quantity?: IntFieldUpdateOperationsInput | number
     deliveryDate?: DateTimeFieldUpdateOperationsInput | Date | string
+<<<<<<< HEAD
     userId?: NullableStringFieldUpdateOperationsInput | string | null
+=======
+    userId?: StringFieldUpdateOperationsInput | string
+>>>>>>> 39f46933376edd41bb41cc3ea56efec59c8f6f1a
     epi?: EpiUpdateOneRequiredWithoutEmployeesNestedInput
   }
 
@@ -11871,7 +12383,11 @@ export namespace Prisma {
     epiId?: IntFieldUpdateOperationsInput | number
     quantity?: IntFieldUpdateOperationsInput | number
     deliveryDate?: DateTimeFieldUpdateOperationsInput | Date | string
+<<<<<<< HEAD
     userId?: NullableStringFieldUpdateOperationsInput | string | null
+=======
+    userId?: StringFieldUpdateOperationsInput | string
+>>>>>>> 39f46933376edd41bb41cc3ea56efec59c8f6f1a
   }
 
   export type EpiEmployeeUncheckedUpdateManyWithoutEmployeeInput = {
@@ -11879,12 +12395,20 @@ export namespace Prisma {
     epiId?: IntFieldUpdateOperationsInput | number
     quantity?: IntFieldUpdateOperationsInput | number
     deliveryDate?: DateTimeFieldUpdateOperationsInput | Date | string
+<<<<<<< HEAD
     userId?: NullableStringFieldUpdateOperationsInput | string | null
+=======
+    userId?: StringFieldUpdateOperationsInput | string
+>>>>>>> 39f46933376edd41bb41cc3ea56efec59c8f6f1a
   }
 
   export type EpiExitUpdateWithoutEmployeeInput = {
     quantity?: IntFieldUpdateOperationsInput | number
+<<<<<<< HEAD
     userId?: NullableStringFieldUpdateOperationsInput | string | null
+=======
+    userId?: StringFieldUpdateOperationsInput | string
+>>>>>>> 39f46933376edd41bb41cc3ea56efec59c8f6f1a
     date?: DateTimeFieldUpdateOperationsInput | Date | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     epi?: EpiUpdateOneRequiredWithoutExitsNestedInput
@@ -11894,7 +12418,11 @@ export namespace Prisma {
     id?: IntFieldUpdateOperationsInput | number
     epiId?: IntFieldUpdateOperationsInput | number
     quantity?: IntFieldUpdateOperationsInput | number
+<<<<<<< HEAD
     userId?: NullableStringFieldUpdateOperationsInput | string | null
+=======
+    userId?: StringFieldUpdateOperationsInput | string
+>>>>>>> 39f46933376edd41bb41cc3ea56efec59c8f6f1a
     date?: DateTimeFieldUpdateOperationsInput | Date | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
@@ -11903,7 +12431,11 @@ export namespace Prisma {
     id?: IntFieldUpdateOperationsInput | number
     epiId?: IntFieldUpdateOperationsInput | number
     quantity?: IntFieldUpdateOperationsInput | number
+<<<<<<< HEAD
     userId?: NullableStringFieldUpdateOperationsInput | string | null
+=======
+    userId?: StringFieldUpdateOperationsInput | string
+>>>>>>> 39f46933376edd41bb41cc3ea56efec59c8f6f1a
     date?: DateTimeFieldUpdateOperationsInput | Date | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
@@ -11913,7 +12445,11 @@ export namespace Prisma {
     type?: StringFieldUpdateOperationsInput | string
     result?: NullableStringFieldUpdateOperationsInput | string | null
     expiration?: DateTimeFieldUpdateOperationsInput | Date | string
+<<<<<<< HEAD
     userId?: NullableStringFieldUpdateOperationsInput | string | null
+=======
+    userId?: StringFieldUpdateOperationsInput | string
+>>>>>>> 39f46933376edd41bb41cc3ea56efec59c8f6f1a
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
@@ -11924,7 +12460,11 @@ export namespace Prisma {
     type?: StringFieldUpdateOperationsInput | string
     result?: NullableStringFieldUpdateOperationsInput | string | null
     expiration?: DateTimeFieldUpdateOperationsInput | Date | string
+<<<<<<< HEAD
     userId?: NullableStringFieldUpdateOperationsInput | string | null
+=======
+    userId?: StringFieldUpdateOperationsInput | string
+>>>>>>> 39f46933376edd41bb41cc3ea56efec59c8f6f1a
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
@@ -11935,7 +12475,11 @@ export namespace Prisma {
     type?: StringFieldUpdateOperationsInput | string
     result?: NullableStringFieldUpdateOperationsInput | string | null
     expiration?: DateTimeFieldUpdateOperationsInput | Date | string
+<<<<<<< HEAD
     userId?: NullableStringFieldUpdateOperationsInput | string | null
+=======
+    userId?: StringFieldUpdateOperationsInput | string
+>>>>>>> 39f46933376edd41bb41cc3ea56efec59c8f6f1a
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
@@ -11945,7 +12489,11 @@ export namespace Prisma {
     employeeId: number
     quantity: number
     deliveryDate?: Date | string
+<<<<<<< HEAD
     userId?: string | null
+=======
+    userId: string
+>>>>>>> 39f46933376edd41bb41cc3ea56efec59c8f6f1a
   }
 
   export type EpiEntryCreateManyEpiInput = {
@@ -11954,7 +12502,11 @@ export namespace Prisma {
     date?: Date | string
     note?: string | null
     supplier?: string | null
+<<<<<<< HEAD
     userId?: string | null
+=======
+    userId: string
+>>>>>>> 39f46933376edd41bb41cc3ea56efec59c8f6f1a
     createdAt?: Date | string
     updatedAt?: Date | string
   }
@@ -11963,7 +12515,11 @@ export namespace Prisma {
     id?: number
     employeeId: number
     quantity: number
+<<<<<<< HEAD
     userId?: string | null
+=======
+    userId: string
+>>>>>>> 39f46933376edd41bb41cc3ea56efec59c8f6f1a
     date?: Date | string
     createdAt?: Date | string
   }
@@ -11971,7 +12527,11 @@ export namespace Prisma {
   export type EpiEmployeeUpdateWithoutEpiInput = {
     quantity?: IntFieldUpdateOperationsInput | number
     deliveryDate?: DateTimeFieldUpdateOperationsInput | Date | string
+<<<<<<< HEAD
     userId?: NullableStringFieldUpdateOperationsInput | string | null
+=======
+    userId?: StringFieldUpdateOperationsInput | string
+>>>>>>> 39f46933376edd41bb41cc3ea56efec59c8f6f1a
     employee?: EmployeeUpdateOneRequiredWithoutEpiesNestedInput
   }
 
@@ -11980,7 +12540,11 @@ export namespace Prisma {
     employeeId?: IntFieldUpdateOperationsInput | number
     quantity?: IntFieldUpdateOperationsInput | number
     deliveryDate?: DateTimeFieldUpdateOperationsInput | Date | string
+<<<<<<< HEAD
     userId?: NullableStringFieldUpdateOperationsInput | string | null
+=======
+    userId?: StringFieldUpdateOperationsInput | string
+>>>>>>> 39f46933376edd41bb41cc3ea56efec59c8f6f1a
   }
 
   export type EpiEmployeeUncheckedUpdateManyWithoutEpiInput = {
@@ -11988,7 +12552,11 @@ export namespace Prisma {
     employeeId?: IntFieldUpdateOperationsInput | number
     quantity?: IntFieldUpdateOperationsInput | number
     deliveryDate?: DateTimeFieldUpdateOperationsInput | Date | string
+<<<<<<< HEAD
     userId?: NullableStringFieldUpdateOperationsInput | string | null
+=======
+    userId?: StringFieldUpdateOperationsInput | string
+>>>>>>> 39f46933376edd41bb41cc3ea56efec59c8f6f1a
   }
 
   export type EpiEntryUpdateWithoutEpiInput = {
@@ -11996,7 +12564,11 @@ export namespace Prisma {
     date?: DateTimeFieldUpdateOperationsInput | Date | string
     note?: NullableStringFieldUpdateOperationsInput | string | null
     supplier?: NullableStringFieldUpdateOperationsInput | string | null
+<<<<<<< HEAD
     userId?: NullableStringFieldUpdateOperationsInput | string | null
+=======
+    userId?: StringFieldUpdateOperationsInput | string
+>>>>>>> 39f46933376edd41bb41cc3ea56efec59c8f6f1a
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
@@ -12007,7 +12579,11 @@ export namespace Prisma {
     date?: DateTimeFieldUpdateOperationsInput | Date | string
     note?: NullableStringFieldUpdateOperationsInput | string | null
     supplier?: NullableStringFieldUpdateOperationsInput | string | null
+<<<<<<< HEAD
     userId?: NullableStringFieldUpdateOperationsInput | string | null
+=======
+    userId?: StringFieldUpdateOperationsInput | string
+>>>>>>> 39f46933376edd41bb41cc3ea56efec59c8f6f1a
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
@@ -12018,14 +12594,22 @@ export namespace Prisma {
     date?: DateTimeFieldUpdateOperationsInput | Date | string
     note?: NullableStringFieldUpdateOperationsInput | string | null
     supplier?: NullableStringFieldUpdateOperationsInput | string | null
+<<<<<<< HEAD
     userId?: NullableStringFieldUpdateOperationsInput | string | null
+=======
+    userId?: StringFieldUpdateOperationsInput | string
+>>>>>>> 39f46933376edd41bb41cc3ea56efec59c8f6f1a
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type EpiExitUpdateWithoutEpiInput = {
     quantity?: IntFieldUpdateOperationsInput | number
+<<<<<<< HEAD
     userId?: NullableStringFieldUpdateOperationsInput | string | null
+=======
+    userId?: StringFieldUpdateOperationsInput | string
+>>>>>>> 39f46933376edd41bb41cc3ea56efec59c8f6f1a
     date?: DateTimeFieldUpdateOperationsInput | Date | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     employee?: EmployeeUpdateOneRequiredWithoutExitsNestedInput
@@ -12035,7 +12619,11 @@ export namespace Prisma {
     id?: IntFieldUpdateOperationsInput | number
     employeeId?: IntFieldUpdateOperationsInput | number
     quantity?: IntFieldUpdateOperationsInput | number
+<<<<<<< HEAD
     userId?: NullableStringFieldUpdateOperationsInput | string | null
+=======
+    userId?: StringFieldUpdateOperationsInput | string
+>>>>>>> 39f46933376edd41bb41cc3ea56efec59c8f6f1a
     date?: DateTimeFieldUpdateOperationsInput | Date | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
@@ -12044,7 +12632,11 @@ export namespace Prisma {
     id?: IntFieldUpdateOperationsInput | number
     employeeId?: IntFieldUpdateOperationsInput | number
     quantity?: IntFieldUpdateOperationsInput | number
+<<<<<<< HEAD
     userId?: NullableStringFieldUpdateOperationsInput | string | null
+=======
+    userId?: StringFieldUpdateOperationsInput | string
+>>>>>>> 39f46933376edd41bb41cc3ea56efec59c8f6f1a
     date?: DateTimeFieldUpdateOperationsInput | Date | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
