@@ -15,25 +15,26 @@ datasource db {
 }
 
 model Employee {
-  id         Int            @id @default(autoincrement())
-  name       String
-  adress     String
-  city       String
-  email      String         @unique
-  phone      String         @unique
-  birthDate  DateTime
-  admission  DateTime
-  cpf        String         @unique
-  rg         String         @unique
-  employer   Employer
-  department Department
-  function   Function
-  status     Status
-  createdAt  DateTime       @default(now())
-  updatedAt  DateTime       @updatedAt
-  epies      EpiEmployee[]
-  exams      ExamEmployee[]
-  exits      EpiExit[]
+  id           Int           @id @default(autoincrement())
+  name         String
+  adress       String
+  city         String
+  email        String        @unique
+  phone        String        @unique
+  birthDate    DateTime
+  admission    DateTime
+  cpf          String        @unique
+  rg           String        @unique
+  employer     Employer
+  department   Department
+  function     Function
+  status       Status
+  userId       String?
+  createdAt    DateTime      @default(now())
+  updatedAt    DateTime      @updatedAt
+  epies        EpiEmployee[]
+  exits        EpiExit[]
+  medicalExams MedicalExam[]
 }
 
 model Epi {
@@ -44,6 +45,7 @@ model Epi {
   supplier      String
   expiration    DateTime
   quantity      Int
+  userId        String?
   createdAt     DateTime      @default(now())
   updatedAt     DateTime      @updatedAt
   employees     EpiEmployee[]
@@ -59,6 +61,7 @@ model EpiEmployee {
   employeeId   Int
   quantity     Int
   deliveryDate DateTime @default(now())
+  userId       String?
 }
 
 model EpiEntry {
@@ -69,6 +72,7 @@ model EpiEntry {
   date      DateTime @default(now())
   note      String?
   supplier  String?
+  userId    String?
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 }
@@ -80,26 +84,20 @@ model EpiExit {
   employee   Employee @relation(fields: [employeeId], references: [id])
   employeeId Int
   quantity   Int
+  userId     String?
   date       DateTime @default(now())
   createdAt  DateTime @default(now())
 }
 
-model Exam {
-  id          Int            @id @default(autoincrement())
-  name        String
-  description String
-  type        String
-  createdAt   DateTime       @default(now())
-  updatedAt   DateTime       @updatedAt
-  employees   ExamEmployee[]
-}
-
-model ExamEmployee {
+model MedicalExam {
   id         Int      @id @default(autoincrement())
+  date       DateTime
+  type       String
+  result     String?
+  expiration DateTime
   employee   Employee @relation(fields: [employeeId], references: [id])
   employeeId Int
-  exam       Exam     @relation(fields: [examId], references: [id])
-  examId     Int
+  userId     String?
   createdAt  DateTime @default(now())
   updatedAt  DateTime @updatedAt
 }

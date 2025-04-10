@@ -29,6 +29,7 @@ model Employee {
   department   Department
   function     Function
   status       Status
+  userId       String?
   createdAt    DateTime      @default(now())
   updatedAt    DateTime      @updatedAt
   epies        EpiEmployee[]
@@ -44,6 +45,7 @@ model Epi {
   supplier      String
   expiration    DateTime
   quantity      Int
+  userId        String?
   createdAt     DateTime      @default(now())
   updatedAt     DateTime      @updatedAt
   employees     EpiEmployee[]
@@ -59,6 +61,7 @@ model EpiEmployee {
   employeeId   Int
   quantity     Int
   deliveryDate DateTime @default(now())
+  userId       String?
 }
 
 model EpiEntry {
@@ -69,6 +72,7 @@ model EpiEntry {
   date      DateTime @default(now())
   note      String?
   supplier  String?
+  userId    String?
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 }
@@ -80,6 +84,7 @@ model EpiExit {
   employee   Employee @relation(fields: [employeeId], references: [id])
   employeeId Int
   quantity   Int
+  userId     String?
   date       DateTime @default(now())
   createdAt  DateTime @default(now())
 }
@@ -92,6 +97,7 @@ model MedicalExam {
   expiration DateTime
   employee   Employee @relation(fields: [employeeId], references: [id])
   employeeId Int
+  userId     String?
   createdAt  DateTime @default(now())
   updatedAt  DateTime @updatedAt
 }

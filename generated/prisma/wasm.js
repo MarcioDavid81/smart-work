@@ -132,6 +132,7 @@ exports.Prisma.EmployeeScalarFieldEnum = {
   department: 'department',
   function: 'function',
   status: 'status',
+  userId: 'userId',
   createdAt: 'createdAt',
   updatedAt: 'updatedAt'
 };
@@ -144,6 +145,7 @@ exports.Prisma.EpiScalarFieldEnum = {
   supplier: 'supplier',
   expiration: 'expiration',
   quantity: 'quantity',
+  userId: 'userId',
   createdAt: 'createdAt',
   updatedAt: 'updatedAt'
 };
@@ -153,7 +155,8 @@ exports.Prisma.EpiEmployeeScalarFieldEnum = {
   epiId: 'epiId',
   employeeId: 'employeeId',
   quantity: 'quantity',
-  deliveryDate: 'deliveryDate'
+  deliveryDate: 'deliveryDate',
+  userId: 'userId'
 };
 
 exports.Prisma.EpiEntryScalarFieldEnum = {
@@ -163,6 +166,7 @@ exports.Prisma.EpiEntryScalarFieldEnum = {
   date: 'date',
   note: 'note',
   supplier: 'supplier',
+  userId: 'userId',
   createdAt: 'createdAt',
   updatedAt: 'updatedAt'
 };
@@ -172,6 +176,7 @@ exports.Prisma.EpiExitScalarFieldEnum = {
   epiId: 'epiId',
   employeeId: 'employeeId',
   quantity: 'quantity',
+  userId: 'userId',
   date: 'date',
   createdAt: 'createdAt'
 };
@@ -183,6 +188,7 @@ exports.Prisma.MedicalExamScalarFieldEnum = {
   result: 'result',
   expiration: 'expiration',
   employeeId: 'employeeId',
+  userId: 'userId',
   createdAt: 'createdAt',
   updatedAt: 'updatedAt'
 };
