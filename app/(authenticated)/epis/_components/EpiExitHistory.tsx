@@ -89,8 +89,8 @@ export default function EpiExitHistory({ onDataChange }: EpiExitHistoryProps) {
 
   return (
     <div className="space-y-4">
-      <div className="flex gap-4 w-full flex-col md:flex-row justify-between items-start md:items-center mb-6">
-        <div className="w-full">
+      <div className="flex gap-4 w-full flex-col md:flex-row justify-between md:justify-center items-start md:items-center mb-6">
+        <div className="w-full ">
           <Label>Funcionário</Label>
           <Select value={employeeId} onValueChange={setEmployeeId}>
             <SelectTrigger>
@@ -122,7 +122,8 @@ export default function EpiExitHistory({ onDataChange }: EpiExitHistoryProps) {
             </SelectContent>
           </Select>
         </div>
-        <div className="flex items-end">
+        <div className="">
+          <Label className="invisible md:visible text-white">-</Label>
           <Button
             onClick={handleSearch}
             className="bg-[#78b49a] text-white hover:bg-[#78b49a]/80 border-gray-300 shadow-sm rounded-lg px-4 py-2 flex items-center gap-2"
