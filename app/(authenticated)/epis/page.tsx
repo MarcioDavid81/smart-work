@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { IoExit } from "react-icons/io5";
 import { auth } from "@clerk/nextjs/server";
 import { redirect } from "next/navigation";
+import { Title } from "../_components/Title";
 
 
 const Epis = async () => {
@@ -19,9 +20,9 @@ const Epis = async () => {
     <div className="min-h-screen flex bg-gray-50">
       {/* Conteúdo principal */}
       <main className="flex-1 py-4 px-8 text-gray-800">
-        <div className="flex justify-between items-center mb-6">
-          <h1 className="text-2xl font-bold">EPI's</h1>
-          <div className="flex items-center gap-4">
+        <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-6">
+          <Title>EPI's</Title>
+          <div className="flex flex-row gap-4 justify-between items-start md:items-center mb-6">
             {/* Botão para retornar para a lista de funcionários */}
             <Link href="/epis/saidas">
               <Button

@@ -23,6 +23,7 @@ import { EntryEpiModal } from "./EntryEpiModal";
 import { ExitEpiModal } from "./ExitEpiModal";
 import { Epi } from "../../../types";
 import { Employee } from "@/generated/prisma";
+import { Subtitle } from "../../_components/Subtitle";
 
 
 
@@ -95,14 +96,14 @@ export default function EpisListTable() {
 
   return (
     <div className="bg-white rounded-xl shadow-md p-6">
-      <div className="flex justify-between items-center mb-4">
-        <h2 className="text-xl font-bold">EPI's em estoque</h2>
+      <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 mb-4">
+        <Subtitle>Lista de EPI's</Subtitle>
         <Input
           type="text"
           placeholder="Buscar por nome..."
           value={search}
           onChange={(e) => setSearch(e.target.value)}
-          className="max-w-sm"
+          className="w-full md:max-w-sm"
         />
       </div>
 
@@ -113,7 +114,7 @@ export default function EpisListTable() {
         </div>
       ) : (
         <>
-          <table className="w-full border border-gray-200">
+          <table className="w-full border border-gray-200 hidden md:table">
             <thead className="bg-gray-100">
               <tr>
                 <th className="p-2 text-left border-b">Nome</th>
@@ -167,6 +168,62 @@ export default function EpisListTable() {
               ))}
             </tbody>
           </table>
+          {/* Tabela responsiva para dispositivos móveis */}
+          <div className="block md:hidden space-y-4 mt-4">
+            {paginatedEpis.map((epi) => (
+              <div
+                key={epi.id}
+                className="bg-white rounded-lg shadow-md p-4 flex flex-col"
+              >
+                <div className="text-lg font-semibold text-gray-700 mb-2">
+                  Nome: {epi.name}
+                </div>
+                <div className="text-sm text-gray-700">
+                  CA: {epi.certification}
+                </div>
+                <div className="text-sm text-gray-700">
+                  Fornecedor: {epi.supplier}
+                </div>
+                <div className="text-sm text-gray-700">
+                  Validade:
+                  {new Date(epi.expiration).toLocaleDateString("pt-BR", {
+                    year: "numeric",
+                    month: "2-digit",
+                    day: "2-digit",
+                  })}
+                </div>
+                <div className="text-sm text-gray-700">
+                  Estoque: {epi.quantity}
+                </div>
+                <div className="flex flex-col">
+                  <span className="font-semibold">Ações:</span>
+                  <DropdownMenu>
+                    <DropdownMenuTrigger asChild>
+                      <Button variant="ghost" size="icon">
+                        <MoreHorizontal className="h-5 w-5" />
+                      </Button>
+                    </DropdownMenuTrigger>
+                    <DropdownMenuContent align="end">
+                      <DropdownMenuLabel>Ações em {epi.name}</DropdownMenuLabel>
+                      <DropdownMenuSeparator />
+                      <DropdownMenuItem onClick={() => handleEdit(epi)}>
+                        <Pencil className="mr-2 h-4 w-4" />
+                        Editar
+                      </DropdownMenuItem>
+                      <DropdownMenuItem onClick={() => handleEntry(epi)}>
+                        <ArrowDownCircle className="mr-2 h-4 w-4" />
+                        Entrada
+                      </DropdownMenuItem>
+                      <DropdownMenuItem onClick={() => handleExit(epi)}>
+                        <ArrowUpCircle className="mr-2 h-4 w-4" />
+                        Saída
+                      </DropdownMenuItem>
+                    </DropdownMenuContent>
+                  </DropdownMenu>
+                </div>
+              </div>
+            ))}
+          </div>
           <div className="flex justify-center mt-4">
             <div className="flex items-center space-x-2">
               {Array.from({ length: totalPages }, (_, i) => i + 1).map(

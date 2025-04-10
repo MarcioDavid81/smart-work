@@ -89,8 +89,8 @@ export default function EpiExitHistory({ onDataChange }: EpiExitHistoryProps) {
 
   return (
     <div className="space-y-4">
-      <div className="flex gap-4">
-        <div>
+      <div className="flex gap-4 w-full flex-col md:flex-row justify-between items-start md:items-center mb-6">
+        <div className="w-full">
           <Label>Funcionário</Label>
           <Select value={employeeId} onValueChange={setEmployeeId}>
             <SelectTrigger>
@@ -106,7 +106,7 @@ export default function EpiExitHistory({ onDataChange }: EpiExitHistoryProps) {
             </SelectContent>
           </Select>
         </div>
-        <div>
+        <div className="w-full">
           <Label>EPI</Label>
           <Select value={epiId} onValueChange={setEpiId}>
             <SelectTrigger>
@@ -134,7 +134,7 @@ export default function EpiExitHistory({ onDataChange }: EpiExitHistoryProps) {
       </div>
 
       {/* Tabela de saídas */}
-      <table className="w-full mt-4 border">
+      <table className="w-full border border-gray-200 hidden md:table">
         <thead>
           <tr className="bg-gray-100">
             <th className="p-2 text-left">Funcionário</th>
@@ -156,6 +156,30 @@ export default function EpiExitHistory({ onDataChange }: EpiExitHistoryProps) {
           ))}
         </tbody>
       </table>
+      {/* Tabela responsiva para dispositivos móveis */}
+      <div className="block md:hidden space-y-4 mt-4">
+        {exits.map((exit) => (
+          <div
+            key={exit.id}
+            className="border border-gray-200 rounded-lg p-4 flex flex-col gap-2"
+          >
+            <div>
+              <span className="font-bold">Funcionário:</span>{" "}
+              {exit.employee?.name}
+            </div>
+            <div>
+              <span className="font-bold">EPI:</span> {exit.epi?.name}
+            </div>
+            <div>
+              <span className="font-bold">Quantidade:</span> {exit.quantity}
+            </div>
+            <div>
+              <span className="font-bold">Data:</span>{" "}
+              {new Date(exit.date).toLocaleDateString("pt-BR")}
+            </div>
+          </div>
+        ))}
+      </div>
     </div>
   );
 }

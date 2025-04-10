@@ -3,6 +3,7 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { GrReturn } from "react-icons/gr";
 import ExamForm from "../_components/ExamForm";
+import { Title } from "../../_components/Title";
 
 export default function NewEpiPage() {
   return (
@@ -11,7 +12,7 @@ export default function NewEpiPage() {
       {/* Conteúdo principal */}
       <main className="flex-1 py-4 px-8 text-gray-800">
         <div className="flex justify-between items-center mb-6">
-          <h1 className="text-2xl font-bold">Novo Exame</h1>
+          <Title>Novo Exame</Title>
           {/* Botão para retornar para a lista de exames */}
           <Link href="/exames">
             <Button

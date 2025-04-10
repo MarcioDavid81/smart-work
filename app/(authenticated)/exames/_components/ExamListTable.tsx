@@ -16,6 +16,7 @@ import { ReportFilters } from "../../funcionarios/_components/generateReportModa
 import { EditExamModal } from "./EditExamModal";
 import { MedicalExam } from "@/app/types";
 import { format } from "date-fns";
+import { Subtitle } from "../../_components/Subtitle";
 
 
 export default function ExamListTable() {
@@ -74,14 +75,14 @@ export default function ExamListTable() {
 
   return (
     <div className="bg-white rounded-xl shadow-md p-6">
-      <div className="flex justify-between items-center mb-4">
-        <h2 className="text-xl font-bold">Últimos Exames</h2>
+      <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 mb-4">
+        <Subtitle> Últimos Exames</Subtitle>
         <Input
           type="text"
           placeholder="Buscar por exame..."
           value={search}
           onChange={(e) => setSearch(e.target.value)}
-          className="max-w-sm"
+          className="w-full md:max-w-sm"
         />
       </div>
 
@@ -92,7 +93,7 @@ export default function ExamListTable() {
         </div>
       ) : (
         <>
-          <table className="w-full border border-gray-200">
+          <table className="w-full border border-gray-200 hidden md:table">
             <thead className="bg-gray-100">
               <tr>
                 <th className="p-2 text-left border-b">Tipo</th>
@@ -132,6 +133,40 @@ export default function ExamListTable() {
               ))}
             </tbody>
           </table>
+          {/* Tabela responsiva para dispositivos móveis */}
+          <div className="block md:hidden space-y-4 mt-4">
+            {paginatedExams.map((exm) => (
+              <div
+                key={exm.id}
+                className="bg-white rounded-lg shadow-md p-4 flex flex-col md:flex-row items-start md:items-center justify-between"
+              >
+                <div className="text-lg font-semibold text-gray-700 mb-2">
+                  Tipo: {exm.type}                  
+                </div>
+                <div className="text-sm text-gray-700">
+                  Resultado: {exm.result}
+                </div>
+                <div className="text-sm text-gray-700">
+                  Data: {format(new Date(exm.date), "dd/MM/yyyy")}
+                </div>
+                <div className="flex flex-col md:flex-row items-start md:items-center gap-2">
+                  Funcionário: {exm.employee?.name}
+                </div>
+                <div className="flex flex-col md:flex-row items-start md:items-center gap-2">
+                  Vencimento: {format(new Date(exm.expiration), "dd/MM/yyyy")}
+                </div>
+                <div className="flex flex-col md:flex-row items-start md:items-center gap-2">
+                        <button
+                          onClick={() => handleOpenEditModal(exm)}
+                          className="mt-2 text-[#78b49a] text-sm font-medium hover:underline"
+                        >
+                          Editar
+                        </button>
+    
+                </div>
+              </div>
+            ))}
+          </div>
           <div className="flex justify-between mt-4">
             <div>
               <Button
