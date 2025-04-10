@@ -8,6 +8,8 @@ import { AiOutlineDashboard } from 'react-icons/ai';
 import { GrUserWorker } from 'react-icons/gr';
 import Image from 'next/image';
 import { IoClose, IoMenu } from 'react-icons/io5';
+import { UserButton } from '@clerk/nextjs';
+import { useUser } from "@clerk/nextjs";
 
 const routes = [
   {
@@ -41,28 +43,11 @@ export default function Navbar() {
   const pathname = usePathname();
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const { user, isLoaded } = useUser();
 
-  // Fechar menu ao redimensionar para desktop
-  useEffect(() => {
-    const handleResize = () => {
-      if (window.innerWidth >= 768) {
-        setIsOpen(false);
-      }
-    };
+  if (!isLoaded) return null;
 
-    // Verificar scroll para efeito de navbar
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 10);
-    };
-
-    window.addEventListener('resize', handleResize);
-    window.addEventListener('scroll', handleScroll);
-
-    return () => {
-      window.removeEventListener('resize', handleResize);
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, []);
+  const userName = user?.firstName || "Usuário";
 
   return (
     <nav className={` w-full z-50 transition-all duration-300 ${isScrolled ? 'bg-white shadow-md py-2' : 'bg-white/90 py-4'} md:hidden`}>
@@ -71,24 +56,6 @@ export default function Navbar() {
         <Link href="/" className="text-2xl font-bold text-gray-800">
           <Image src="/logo2.png" alt="Logo" width={200} height={50} />
         </Link>
-
-        {/* Menu para desktop - Esconder em mobile */}
-        <div className="hidden md:flex space-x-6">
-          {routes.map((route) => (
-            <Link
-              key={route.path}
-              href={route.path}
-              className={`flex items-center px-3 py-2 rounded-lg transition-colors ${
-                pathname === route.path
-                  ? 'text-green-600 font-medium'
-                  : 'text-gray-600 hover:text-green-500'
-              }`}
-            >
-              <span className="mr-2">{route.icon}</span>
-              {route.name}
-            </Link>
-          ))}
-        </div>
 
         {/* Botão do menu mobile - Mostrar apenas em telas pequenas */}
         <button
@@ -102,7 +69,7 @@ export default function Navbar() {
 
       {/* Menu mobile - Mostrar apenas quando aberto */}
       {isOpen && (
-        <div className="md:hidden bg-white shadow-lg absolute w-full left-0 right-0 transition-all duration-300 ease-in-out">
+        <div className="md:hidden bg-white shadow-lg absolute w-full h-screen left-0 right-0 transition-all duration-300 ease-in-out">
           <div className="container mx-auto px-4 py-3 flex flex-col mt-2 border-t border-[#78b49a] space-y-3">
             {routes.map((route) => (
               <Link
@@ -119,6 +86,10 @@ export default function Navbar() {
                 {route.name}
               </Link>
             ))}
+          </div>
+          <div className="flex justify-start mt-4 gap-3 text-gray-50 bg-[#78b49a] py-2 px-4 mx-6 rounded-lg">
+            <UserButton />
+            <span className="text-md font-medium text-gray-50">{userName}</span>
           </div>
         </div>
       )}

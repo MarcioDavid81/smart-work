@@ -3,6 +3,7 @@ import EmployeeForm from "../_components/employeeForm";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { GrReturn } from "react-icons/gr";
+import { Title } from "../../_components/Title";
 
 export default function NewEmployeePage() {
   return (
@@ -11,7 +12,7 @@ export default function NewEmployeePage() {
       {/* Conteúdo principal */}
       <main className="flex-1 py-4 px-8 text-gray-800">
         <div className="flex justify-between items-center mb-6">
-          <h1 className="text-2xl font-bold">Novo Funcionário</h1>
+          <Title>Novo Funcionário</Title>
           {/* Botão para retornar para a lista de funcionários */}
           <Link href="/funcionarios">
             <Button

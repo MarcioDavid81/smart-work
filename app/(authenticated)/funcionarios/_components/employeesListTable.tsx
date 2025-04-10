@@ -16,6 +16,9 @@ import { Button } from "@/components/ui/button";
 import { generateEmployeeReport } from "@/lib/pdfGenerator";
 import { Label } from "@/components/ui/label";
 import { Switch } from "@/components/ui/switch";
+import { Title } from "../../_components/Title";
+import { Sub } from "@radix-ui/react-dropdown-menu";
+import { Subtitle } from "../../_components/Subtitle";
 
 interface Employee {
   id: number;
@@ -83,8 +86,10 @@ export default function EmployeesListTable() {
 
   return (
     <div className="bg-white rounded-xl shadow-md p-6">
-      <div className="flex justify-between items-center mb-4">
-        <h2 className="text-xl font-bold">Funcionários Cadastrados</h2>
+      <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 mb-4">
+        <div>
+          <Subtitle>Funcionários</Subtitle>
+        </div>
         <div className="flex items-center gap-2 mb-4">
           <Label htmlFor="status-switch">
             {showOnlyActive ? "Ativos" : "Todos"}
@@ -95,13 +100,15 @@ export default function EmployeesListTable() {
             onCheckedChange={(checked) => setShowOnlyActive(checked)}
           />
         </div>
-        <Input
-          type="text"
-          placeholder="Buscar por nome..."
-          value={search}
-          onChange={(e) => setSearch(e.target.value)}
-          className="max-w-sm"
-        />
+        <div className="w-full md:w-auto">
+          <Input
+            type="text"
+            placeholder="Buscar por nome..."
+            value={search}
+            onChange={(e) => setSearch(e.target.value)}
+            className="w-full max-w-sm"
+          />
+        </div>
       </div>
 
       {loading ? (
@@ -111,7 +118,7 @@ export default function EmployeesListTable() {
         </div>
       ) : (
         <>
-          <table className="w-full border border-gray-200">
+          <table className="w-full border border-gray-200 hidden md:table">
             <thead className="bg-gray-100">
               <tr>
                 <th className="p-2 text-left border-b">Nome</th>
@@ -161,6 +168,45 @@ export default function EmployeesListTable() {
               ))}
             </tbody>
           </table>
+          {/* Tabela responsiva para telas menores */}
+          <div className="block md:hidden space-y-4 mt-4">
+            {paginatedEmployees.map((emp) => (
+              <div
+                key={emp.id}
+                className="border p-4 rounded-md shadow-sm bg-gray-50"
+              >
+                <div className="font-semibold text-lg">{emp.name}</div>
+                <div className="text-sm text-gray-700">
+                  Telefone: {emp.phone}
+                </div>
+                <div className="text-sm text-gray-700">
+                  Setor: {emp.department}
+                </div>
+                <div className="text-sm text-gray-700">
+                  Empregador: {emp.employer}
+                </div>
+                <div className="text-sm">
+                  Status:{" "}
+                  <span
+                    className={`px-2 py-1 text-xs rounded-full ${
+                      emp.status === "Ativo"
+                        ? "bg-green-200 text-green-800"
+                        : "bg-red-200 text-red-800"
+                    }`}
+                  >
+                    {emp.status}
+                  </span>
+                </div>
+                <button
+                  onClick={() => handleOpenEditModal(emp)}
+                  className="mt-2 text-[#78b49a] text-sm font-medium hover:underline"
+                >
+                  Editar
+                </button>
+              </div>
+            ))}
+          </div>
+
           <div className="flex justify-between mt-4">
             <div>
               <Button

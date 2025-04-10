@@ -100,31 +100,31 @@ export default function EmployeeForm() {
       if (!res.ok) {
         alert(result.message || "Erro ao cadastrar");
         toast("Erro ao cadastrar funcionário", {
-            style: {
-                backgroundColor: "#f87171",
-                color: "white",
-              },
-            icon: "❌",
+          style: {
+            backgroundColor: "#f87171",
+            color: "white",
+          },
+          icon: "❌",
         });
         return;
       }
       toast("Funcionário cadastrado com sucesso!", {
         style: {
-            backgroundColor: "#78b49a",
-            color: "white",
+          backgroundColor: "#78b49a",
+          color: "white",
         },
         icon: "✅",
-    });
+      });
       resetForm();
     } catch (err) {
       console.error("Erro no envio do formulário:", err);
       toast("Erro inesperado. Tente novamente.", {
-            style: {
-                backgroundColor: "#f87171",
-                color: "white",
-              },
-            icon: "❌",
-        });
+        style: {
+          backgroundColor: "#f87171",
+          color: "white",
+        },
+        icon: "❌",
+      });
     } finally {
       setIsSubmitting(false); // Re-enable the button after submission
     }
@@ -133,7 +133,7 @@ export default function EmployeeForm() {
   return (
     <motion.form
       onSubmit={handleSubmit}
-      className="bg-white p-6 rounded-xl shadow-md h-[75vh] w-full grid grid-cols-2 gap-4"
+      className="bg-white p-6 rounded-xl shadow-md w-full h-auto grid grid-cols-1 md:grid-cols-2 gap-4"
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.4 }}
@@ -185,7 +185,7 @@ export default function EmployeeForm() {
           Email
         </label>
         <input
-          type="text"
+          type="email"
           name="email"
           placeholder="Email"
           value={formData.email}
@@ -201,7 +201,10 @@ export default function EmployeeForm() {
       >
         {(inputProps: React.InputHTMLAttributes<HTMLInputElement>) => (
           <div>
-            <label htmlFor="phone" className="text-sm font-medium mb-1 block"> Celular</label>
+            <label htmlFor="phone" className="text-sm font-medium mb-1 block">
+              {" "}
+              Celular
+            </label>
             <input
               {...inputProps}
               type="text"
@@ -215,28 +218,32 @@ export default function EmployeeForm() {
       </InputMask>
 
       <div>
-        <label htmlFor="birthDate" className="text-sm font-medium mb-1 block">Data de Nascimento</label>
+        <label htmlFor="birthDate" className="text-sm font-medium mb-1 block">
+          Data de Nascimento
+        </label>
         <input
-        type="date"
-        name="birthDate"
-        placeholder="Nascimento"
-        value={formData.birthDate}
-        onChange={handleChange}
-        required
-        className="px-4 py-2 w-full border border-gray-300 rounded-md focus:outline-none focus:ring-1 focus:ring-[#78b49a]"
-      />
+          type="date"
+          name="birthDate"
+          placeholder="Nascimento"
+          value={formData.birthDate}
+          onChange={handleChange}
+          required
+          className="px-4 py-2 w-full border border-gray-300 rounded-md focus:outline-none focus:ring-1 focus:ring-[#78b49a]"
+        />
       </div>
       <div>
-        <label htmlFor="admission" className="text-sm font-medium mb-1 block">Admissão</label>
+        <label htmlFor="admission" className="text-sm font-medium mb-1 block">
+          Admissão
+        </label>
         <input
-        type="date"
-        name="admission"
-        placeholder="Admissão"
-        value={formData.admission}
-        onChange={handleChange}
-        required
-        className="px-4 py-2 w-full border border-gray-300 rounded-md focus:outline-none focus:ring-1 focus:ring-[#78b49a]"
-      />
+          type="date"
+          name="admission"
+          placeholder="Admissão"
+          value={formData.admission}
+          onChange={handleChange}
+          required
+          className="px-4 py-2 w-full border border-gray-300 rounded-md focus:outline-none focus:ring-1 focus:ring-[#78b49a]"
+        />
       </div>
 
       <InputMask
@@ -246,7 +253,9 @@ export default function EmployeeForm() {
       >
         {(inputProps: React.InputHTMLAttributes<HTMLInputElement>) => (
           <div>
-            <label htmlFor="cpf" className="text-sm font-medium mb-1 block">CPF</label>
+            <label htmlFor="cpf" className="text-sm font-medium mb-1 block">
+              CPF
+            </label>
             <input
               {...inputProps}
               type="text"
@@ -265,7 +274,9 @@ export default function EmployeeForm() {
       >
         {(inputProps: React.InputHTMLAttributes<HTMLInputElement>) => (
           <div>
-            <label htmlFor="rg" className="text-sm font-medium mb-1 block">RG</label>
+            <label htmlFor="rg" className="text-sm font-medium mb-1 block">
+              RG
+            </label>
             <input
               {...inputProps}
               type="text"
@@ -279,7 +290,9 @@ export default function EmployeeForm() {
       </InputMask>
 
       <div>
-        <label htmlFor="employer" className="text-sm font-medium mb-1 block">Empregador</label>
+        <label htmlFor="employer" className="text-sm font-medium mb-1 block">
+          Empregador
+        </label>
         <select
           name="employer"
           onChange={handleChange}
@@ -297,7 +310,9 @@ export default function EmployeeForm() {
       </div>
 
       <div>
-        <label htmlFor="department" className="text-sm font-medium mb-1 block">Setor</label>
+        <label htmlFor="department" className="text-sm font-medium mb-1 block">
+          Setor
+        </label>
         <select
           name="department"
           onChange={handleChange}
@@ -315,7 +330,9 @@ export default function EmployeeForm() {
       </div>
 
       <div>
-        <label htmlFor="function" className="text-sm font-medium mb-1 block">Função</label>
+        <label htmlFor="function" className="text-sm font-medium mb-1 block">
+          Função
+        </label>
         <select
           name="function"
           onChange={handleChange}
@@ -332,7 +349,7 @@ export default function EmployeeForm() {
         </select>
       </div>
 
-      <div className="flex items-center justify-between col-span-2">
+      <div className="flex items-start md:items-center gap-4 justify-between flex-col sm:flex-row md:col-span-2">
         <div>
           <label className="mr-4">Status:</label>
           {enums.status.map((item) => (
@@ -349,22 +366,21 @@ export default function EmployeeForm() {
             </label>
           ))}
         </div>
-      <button
-        type="submit"
-        disabled={isSubmitting}
-        className="bg-[#78b49a] text-white px-4 py-2 rounded hover:bg-[#78b49a]/80 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2 col-span-2"
-      >
-        {isSubmitting ? (
-          <>
-            <Loader2 className="h-4 w-4 animate-spin" />
-            Cadastrando...
-          </>
-        ) : (
-          "Cadastrar"
-        )}
-      </button>
+        <button
+          type="submit"
+          disabled={isSubmitting}
+          className="bg-[#78b49a] text-white px-4 py-2 rounded hover:bg-[#78b49a]/80 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2 col-span-2"
+        >
+          {isSubmitting ? (
+            <>
+              <Loader2 className="h-4 w-4 animate-spin" />
+              Cadastrando...
+            </>
+          ) : (
+            "Cadastrar"
+          )}
+        </button>
       </div>
-
     </motion.form>
   );
 }
