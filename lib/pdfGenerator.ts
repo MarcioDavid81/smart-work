@@ -1,4 +1,4 @@
-import jsPDF from "jspdf";
+import {jsPDF} from "jspdf";
 import autoTable from "jspdf-autotable";
 import { toZonedTime, format, formatInTimeZone } from "date-fns-tz";
 
@@ -95,25 +95,31 @@ export async function generateEmployeeReport(filters: ReportFilters) {
           fillColor: [120, 180, 154],
         },
         didDrawPage: (data) => {
-          // Rodapé
           const pageSize = doc.internal.pageSize;
           const pageHeight = pageSize.height || pageSize.getHeight();
-          const pageNumber = doc.internal.getCurrentPageInfo().pageNumber;
-          const totalPages = doc.internal.getNumberOfPages();
-
+          const pageWidth = pageSize.width || pageSize.getWidth();
+        
+          const pageNumber = doc.getCurrentPageInfo();
+        
           doc.setFontSize(10);
           doc.setTextColor(150);
+        
           doc.text(
-            `Página ${pageNumber} de ${totalPages}`,
+            `Página ${pageNumber.pageNumber}`,
+
             data.settings.margin.left,
             pageHeight - 10
           );
-
+        
           const date = format(new Date(), "dd/MM/yyyy", { timeZone });
-          doc.text(`Gerado em: ${date} - Sistema Smart Work`, 150, pageHeight - 10, {
-            align: "center",
-          });
-        },
+          doc.text(
+            `Gerado em: ${date} - Sistema Smart Work`,
+            pageWidth / 2,
+            pageHeight - 10,
+            { align: "center" }
+          );
+        }
+        
       });
 
       // 8. Salvar
