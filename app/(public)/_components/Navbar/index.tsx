@@ -133,7 +133,7 @@ export default function Navbar() {
         </nav>
         {/* MENU MOBILE */}
         <nav
-          className={`fixed right-0 bg-gray-50 top-0 w-[70%] h-screen z-20 transform transition-transform duration-300 ${
+          className={`fixed right-0 bg-gray-50 top-0 w-[70%] flex flex-col justify-between h-screen z-20 transform transition-transform duration-300 ${
             isMenuMobileOpen ? "translate-x-0" : "translate-x-full"
           }`}
           onClick={() => setIsMenuMobileOpen(false)}
@@ -148,8 +148,8 @@ export default function Navbar() {
               </li>
             ))}
           </ul>
-          <Link href="/login" className="pl-4">
-            <Button className="bg-[#78b49a] text-white text-md lg:text-xl hover:bg-[#78b49a]/80 hover:text-white/80 absolute bottom-10">
+          <Link href="/login" className="pl-4 pb-4">
+            <Button className="bg-[#78b49a] text-white text-md lg:text-xl hover:bg-[#78b49a]/80 hover:text-white/80">
               <UserIcon className="mr-2" />
               Entrar
             </Button>
